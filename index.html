@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Kinder Kidz Home Page — Responsive v2 (desktop/tablet/mobile) -->
+<!-- Kinder Kidz Home Page — Responsive v3 (desktop/tablet/mobile) — spacing, typography & scroll controls refined -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -132,6 +132,99 @@ html,body{max-width:100%;overflow-x:hidden}
   .proof-card{align-items:center}
 }
 
+
+
+/* ============================================================
+   HOMEPAGE REFINEMENTS — v3
+   Requested mobile + desktop corrections
+   ============================================================ */
+
+/* Footer headings: high contrast on green */
+footer h3{color:#f7d85b!important;font-family:inherit;font-weight:800}
+
+/* Prevent the trust / Ofsted panel from overlapping the hero */
+.trust-wrap{margin-top:14px}
+.trust-icon.ofsted{width:48px;height:48px;font-size:9px;line-height:1.08;padding:3px}
+
+/* Desktop: bring the hero text and image upward and reduce headline size */
+@media (min-width:981px){
+  .hero .container{
+    align-items:start;
+    min-height:500px;
+    padding-top:18px;
+    padding-bottom:38px;
+    grid-template-columns:1.02fr 1.18fr;
+  }
+  .hero> .container > div:first-child{padding-top:18px}
+  h1{font-size:clamp(44px,4.15vw,62px);line-height:1.01}
+  .hero-media{align-self:start;height:430px;min-height:430px}
+  .hero-media img{height:410px}
+  .hero-media:before{bottom:12px}
+  .why{padding-top:48px}
+}
+
+/* Mobile: tighter menu and tighter top spacing */
+@media (max-width:620px){
+  .navlinks{padding:9px 18px 14px;gap:0}
+  .navlinks a{font-size:13px;padding:7px 4px;line-height:1.25}
+  .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}
+  .menu-btn svg{width:26px;height:26px}
+
+  /* Move "Kinder Kidz Day Nursery · Laindon" and hero content upward */
+  .hero .container{padding-top:7px;padding-bottom:34px;gap:20px}
+  .eyebrow{font-size:11px;margin-top:0}
+
+  /* Match the calmer scale of the Our Rooms heading */
+  h1{font-size:34px;line-height:1.04;letter-spacing:-.025em}
+  .hero p{font-size:14.5px;line-height:1.55;margin:13px 0 18px}
+  .hero-media{min-height:285px}
+
+  /* Ofsted / trust panel sits clearly below the hero */
+  .trust-wrap{margin-top:12px}
+  .trust-item{padding-top:18px;padding-bottom:16px}
+  .trust-icon.ofsted{width:50px;height:50px;font-size:9px;margin-top:3px}
+
+  /* Pull the final journey CTA upward by removing empty vertical space */
+  .why{padding-bottom:20px}
+  .cta-inner{padding-top:16px;padding-bottom:24px}
+
+  /* Footer headings need to remain obvious on small screens */
+  footer h3{color:#f7d85b!important;font-size:16px;margin-bottom:9px}
+}
+
+@media (max-width:420px){
+  h1{font-size:32px}
+  .hero .container{padding-top:5px}
+  .navlinks a{font-size:12.5px;padding:6px 4px}
+}
+
+/* One floating navigation control: down at page top, up after scrolling */
+.scroll-nav-btn{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:70;
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--green);
+  color:#fff;
+  font-size:27px;
+  line-height:1;
+  font-weight:800;
+  box-shadow:0 10px 28px rgba(18,60,43,.28);
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease,opacity .2s ease;
+}
+.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}
+.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
+@media(max-width:620px){
+  .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
+}
+
 </style>
 </head>
 <body>
@@ -213,7 +306,32 @@ html,body{max-width:100%;overflow-x:hidden}
     <div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div>
   </div>
 </footer>
+<button class="scroll-nav-btn" id="scrollNavBtn" type="button" aria-label="Scroll down" title="Scroll down">↓</button>
+
 <script>
 const btn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')});document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 </script>
+
+<script>
+const scrollNavBtn=document.getElementById('scrollNavBtn');
+function updateScrollNav(){
+  const moved=window.scrollY>90;
+  scrollNavBtn.textContent=moved?'↑':'↓';
+  scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');
+  scrollNavBtn.title=moved?'Back to top':'Scroll down';
+}
+scrollNavBtn.addEventListener('click',()=>{
+  if(window.scrollY>90){
+    window.scrollTo({top:0,behavior:'smooth'});
+  }else{
+    const target=document.querySelector('.trust-wrap') || document.querySelector('#rooms');
+    const header=document.querySelector('header');
+    const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+12:12);
+    window.scrollTo({top,behavior:'smooth'});
+  }
+});
+window.addEventListener('scroll',updateScrollNav,{passive:true});
+updateScrollNav();
+</script>
+
 </body></html>
