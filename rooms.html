@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore the rooms and play spaces at Kinder Kidz Day Nursery in Laindon, Basildon.">
+<title>Our Rooms | Kinder Kidz Day Nursery</title>
+<style>
+:root{
+  --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;--soft:#f7f3e8;
+  --text:#1f2a24;--muted:#5f6761;--line:#e8e2d5;--gold:#f7d85b;--pink:#e9799f;
+  --blue:#70b5d4;--shadow:0 12px 30px rgba(18,60,43,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;max-width:100%;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+h1,h2,h3{margin:0;color:var(--deep);line-height:1.06}h1,h2{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(40px,4.2vw,60px);letter-spacing:-.035em}h2{font-size:clamp(32px,3vw,44px);letter-spacing:-.025em}p{margin:0}
+
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:7px 0;font-size:13px;color:#294633;font-weight:600}
+.topbar span{display:flex;align-items:center;gap:8px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+.nav{height:82px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;min-width:198px}.brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:21px;flex:1;font-size:13px;font-weight:700}.navlinks a{padding:9px 0;position:relative;white-space:nowrap}.navlinks a.active:after,.navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:99px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:800;border:1.5px solid var(--green);cursor:pointer;transition:.2s ease}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--green)}.btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(23,106,59,.13)}
+.menu-btn{display:none;background:#f3f7ec;border:0;width:40px;height:40px;border-radius:11px;color:var(--green);padding:5px;place-items:center;margin-left:auto}
+
+.hero{padding:10px 0 10px;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px;align-items:center}
+.eyebrow{font-size:12px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
+.hero-copy p{font-size:17px;color:#47554d;max-width:520px;margin:15px 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-media{position:relative;min-height:350px}.hero-media:before{content:"";position:absolute;inset:14px -26px 5px 20px;background:#dceab8;border-radius:46% 5% 5% 48%;transform:rotate(-1deg)}.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:45% 5% 5% 46%;box-shadow:var(--shadow)}
+.doodle{position:absolute;font-size:28px;color:var(--pink);line-height:1}.doodle.one{left:-12px;top:44px}.doodle.two{right:12px;bottom:16px;color:#80a967;font-size:34px}
+
+.feature-strip{padding:10px 0 14px}.feature-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}.feature{padding:17px 14px;text-align:center;position:relative}.feature:not(:last-child):after{content:"";position:absolute;right:0;top:16px;bottom:16px;width:1px;background:#e9e4d8}.feature .ico{width:42px;height:42px;border-radius:14px;background:#eff7e8;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:21px}.feature:nth-child(2) .ico{background:#fff0f4;color:#cf668b}.feature:nth-child(3) .ico{background:#fff7da;color:#bd9200}.feature:nth-child(4) .ico{background:#edf7fb;color:#4f8fae}.feature:nth-child(5) .ico{background:#eef5e8;color:#5e8e4e}.feature b{display:block;font-size:13px}.feature small{display:block;margin-top:3px;color:#69726c;font-size:11.5px;line-height:1.35}
+
+.section{padding:28px 0}.section-title{text-align:center;margin-bottom:18px}.section-title .kicker{font-size:13px;font-weight:800;color:var(--green2);margin-bottom:4px}.section-title p{color:var(--muted);font-size:15px;max-width:680px;margin:8px auto 0}
+.rooms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.room-card{background:#fff;border:1px solid #e7e1d5;border-radius:24px;overflow:hidden;box-shadow:0 9px 24px rgba(23,70,42,.06);display:flex;flex-direction:column}.room-card img{width:100%;height:185px;object-fit:cover}.room-body{padding:16px 15px 17px;display:flex;flex-direction:column;gap:8px;flex:1}.room-head{display:flex;gap:9px;align-items:center}.room-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:#fff0f4;color:#ca6689}.room-card:nth-child(2) .room-icon{background:#fff7dc;color:#bd9000}.room-card:nth-child(3) .room-icon{background:#eef7e8;color:#478255}.room-card:nth-child(4) .room-icon{background:#edf7fb;color:#4f8fae}.room-card h3{font-family:inherit;font-size:18px}.room-age{font-size:13px;color:#6c746f}.room-body>p{font-size:13.5px;color:#525d57;line-height:1.45}.mini-list{display:grid;gap:5px;font-size:12.5px;color:#36413c;margin-top:2px}.mini-list span{display:flex;gap:7px}.mini-list i{font-style:normal;color:var(--green);font-weight:900}
+
+.experience{padding:24px 0 22px}.experience-panel{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0}.experience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.experience-item{text-align:center;padding:6px 16px}.experience-item:not(:last-child){border-right:1px dashed #d5dcd0}.experience-item .ico{width:52px;height:52px;border-radius:50%;border:2px solid #8fbd8f;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:23px}.experience-item:nth-child(2) .ico,.experience-item:nth-child(4) .ico{border-color:#ecc553;color:#c69700}.experience-item h3{font-family:inherit;font-size:15px;margin-bottom:4px}.experience-item p{font-size:12px;color:#69716c;line-height:1.4}
+
+.gallery-strip{padding:18px 0 20px}.gallery-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-row img{width:100%;height:160px;object-fit:cover;border-radius:18px;box-shadow:0 8px 20px rgba(23,70,42,.06)}
+
+.cta-wrap{padding:4px 0 8px}.cta{background:linear-gradient(135deg,#eff8e3 0%,#fff9df 68%,#eff5d8 100%);border:1px solid #e4ead5;border-radius:20px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-family:inherit;font-size:18px;color:var(--green)}.cta p{color:#5d6861;font-size:14px;margin-top:3px}.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:22px 0 12px}.footer-grid{display:grid;grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;align-items:start;gap:20px}.footer-grid>div{text-align:center;min-width:0}.footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}.footer-brand p{max-width:240px;margin:0 auto;color:#dce9df;font-size:13px}.footer h3{font-family:inherit;color:var(--gold);font-size:14px;margin:0 0 8px}.footer-list{display:grid;gap:5px;font-size:12.5px;color:#e5f0e8;justify-items:center}.footer-list a,.footer-list div{text-align:center}.quicklinks-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.quicklinks-column{justify-items:center}.footer-contact-col .footer-list a{overflow-wrap:anywhere}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:14px;padding-top:9px;font-size:11px;color:#cfe0d5;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-size:27px;font-weight:800;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:.2s ease}.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}.scroll-nav-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media(max-width:980px){
+  .container{width:min(100% - 34px,1180px)}
+  .nav{height:76px;gap:16px}.brand img{width:180px;height:58px}.nav>.desktop-only{display:none}.menu-btn{display:grid}
+  .navlinks{position:fixed;display:none;flex-direction:column;align-items:stretch;left:0;right:0;top:76px;background:#fffdf7;padding:16px 20px 20px;border-bottom:1px solid #e9e5dc;box-shadow:0 16px 28px rgba(0,0,0,.08)}.navlinks.open{display:flex}.navlinks a{padding:9px 4px}
+  .hero-grid{grid-template-columns:1fr;gap:14px}.hero-media{min-height:330px}.hero-media img{border-radius:28px}.hero-media:before{inset:10px -8px -7px 12px;border-radius:30px}
+  .feature-card{grid-template-columns:repeat(2,1fr)}.feature:nth-child(2n):after{display:none}.feature{border-bottom:1px solid #eee9df}.feature:last-child{grid-column:1/-1;border-bottom:0}.feature:last-child:after{display:none}
+  .rooms-grid{grid-template-columns:repeat(2,1fr)}
+  .experience-grid{grid-template-columns:repeat(2,1fr)}.experience-item:nth-child(2n){border-right:none}.experience-item{border-bottom:1px dashed #d5dcd0;padding:15px}.experience-item:last-child{grid-column:1/-1;border-bottom:0}.experience-item:last-child{border-right:none}
+  .gallery-row{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}.topbar{display:none}.nav{height:70px;gap:10px}.brand{min-width:0}.brand img{width:156px;height:52px}
+  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.menu-btn svg{width:26px;height:26px}
+  .hero{padding:3px 0 5px}.hero-grid{gap:10px}.eyebrow{font-size:11px;margin-bottom:6px}h1{font-size:34px;line-height:1.04}.hero-copy p{font-size:14.5px;line-height:1.5;margin:11px 0 14px}.hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.btn{width:100%;padding:11px 15px;font-size:14px}.hero-media{min-height:270px}
+  .feature-strip{padding:7px 0 9px}.feature{padding:13px 9px}.feature .ico{width:38px;height:38px;margin-bottom:6px}.feature b{font-size:12px}.feature small{font-size:10.5px}
+  .section{padding:18px 0}.section-title{margin-bottom:12px}.section-title h2{font-size:31px}.section-title p{font-size:14px;margin-top:6px}.rooms-grid{grid-template-columns:1fr;gap:9px}.room-card{display:grid;grid-template-columns:42% 58%;border-radius:20px}.room-card img{height:100%;min-height:230px}.room-body{padding:13px 12px}.room-card h3{font-size:17px}.room-body>p{font-size:13px}.mini-list{font-size:12px;gap:4px}
+  .experience{padding:11px 0 10px}.experience-panel{padding:11px 0}.experience-grid{grid-template-columns:1fr}.experience-item,.experience-item:last-child{grid-column:auto;border-right:0;border-bottom:1px dashed #d5dcd0;padding:12px 10px}.experience-item:last-child{border-bottom:0}.experience-item .ico{width:45px;height:45px;margin-bottom:6px}.experience-item h3{font-size:14px}.experience-item p{font-size:11.5px}
+  .gallery-strip{padding:10px 0 11px}.gallery-row{grid-template-columns:1fr 1fr;gap:8px}.gallery-row img{height:116px;border-radius:14px}
+  .cta-wrap{padding:2px 0 6px}.cta{padding:15px 14px;display:grid;gap:10px}.cta h2{font-size:17px}.cta p{font-size:13px}.cta-actions{display:grid;grid-template-columns:1fr;gap:8px}
+  footer{padding:20px 0 11px}.footer-grid{grid-template-columns:1fr;gap:16px}.footer-brand img{width:160px;height:58px}.footer h3{font-size:16px;margin-bottom:7px}.footer-list{gap:5px;font-size:13px}.quicklinks-columns{grid-template-columns:1fr 1fr;gap:0 16px}.footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
+  .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
+}
+@media(max-width:420px){.navlinks{width:min(47vw,176px)}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕒 7:30am – 6:30pm, Mon – Fri</span></div></div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Kinder Kidz Day Nursery home"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a>
+    <nav class="navlinks" id="navlinks" aria-label="Primary">
+      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html" class="active">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn pink desktop-only" href="contact.html">Book a Visit</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path></svg></button>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Our Rooms</div>
+      <h1>Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
+      <p>Carefully designed spaces where children feel safe, supported and inspired to learn, play and grow within our warm nursery environment.</p>
+      <div class="hero-actions"><a class="btn primary" href="contact.html">📅 Book a Visit</a><a class="btn secondary" href="contact.html">✉ Enquire Now</a></div>
+    </div>
+    <div class="hero-media"><img src="images/hero-room.jpg" alt="Kinder Kidz nursery learning room"><span class="doodle one">☆</span><span class="doodle two">⌁</span></div>
+  </div>
+</section>
+
+<section class="feature-strip">
+  <div class="container feature-card">
+    <div class="feature"><div class="ico">⌂</div><b>Age-Appropriate Rooms</b><small>Designed for each stage of development</small></div>
+    <div class="feature"><div class="ico">♡</div><b>Safe &amp; Nurturing Spaces</b><small>Calm, caring and welcoming environments</small></div>
+    <div class="feature"><div class="ico">☀</div><b>3 Months – 5 Years</b><small>Spaces tailored to every milestone</small></div>
+    <div class="feature"><div class="ico">☼</div><b>Indoor &amp; Outdoor Play</b><small>Plenty of space to explore and grow</small></div>
+    <div class="feature"><div class="ico">♧</div><b>Qualified &amp; Caring Staff</b><small>Experienced practitioners who truly care</small></div>
+  </div>
+</section>
+
+<section class="section" id="rooms">
+  <div class="container">
+    <div class="section-title"><div class="kicker">Learning Through Play</div><h2>Our Rooms &amp; Play Spaces</h2><p>Each area is prepared to support confidence, curiosity, communication and happy early learning.</p></div>
+    <div class="rooms-grid">
+      <article class="room-card"><img src="images/reading-corner.jpg" alt="Baby room area at Kinder Kidz"><div class="room-body"><div class="room-head"><div class="room-icon">♡</div><div><h3>Baby Room</h3><div class="room-age">3 months – 2 years</div></div></div><p>A calm, nurturing space designed for comfort, sensory play and secure relationships.</p><div class="mini-list"><span><i>●</i> Cosy and sensory-rich environment</span><span><i>●</i> Individual routines and gentle care</span><span><i>●</i> Stimulating toys for early discovery</span></div></div></article>
+      <article class="room-card"><img src="images/play-corner.jpg" alt="Toddler play and learning area at Kinder Kidz"><div class="room-body"><div class="room-head"><div class="room-icon">☼</div><div><h3>Toddler Room</h3><div class="room-age">2 – 3 years</div></div></div><p>Encouraging independence through movement, imaginative play and hands-on discovery.</p><div class="mini-list"><span><i>●</i> Hands-on learning and exploration</span><span><i>●</i> Support for language development</span><span><i>●</i> Encouraging independence</span></div></div></article>
+      <article class="room-card"><img src="images/role-play.jpg" alt="Pre-school role play area at Kinder Kidz"><div class="room-body"><div class="room-head"><div class="room-icon">▣</div><div><h3>Pre-School Room</h3><div class="room-age">3 – 5 years</div></div></div><p>Preparing children for school through active learning, creativity and purposeful play.</p><div class="mini-list"><span><i>●</i> Early literacy, maths and creativity</span><span><i>●</i> Confidence and social development</span><span><i>●</i> School-readiness activities</span></div></div></article>
+      <article class="room-card"><img src="images/outdoor-play.jpg" alt="Outdoor play area at Kinder Kidz"><div class="room-body"><div class="room-head"><div class="room-icon">♧</div><div><h3>Outdoor Play Area</h3><div class="room-age">Explore, play, grow</div></div></div><p>A safe outdoor space for active play, fresh air and big adventures every day.</p><div class="mini-list"><span><i>●</i> Bikes, movement and physical play</span><span><i>●</i> Fresh air and active exploration</span><span><i>●</i> Building confidence and friendships</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="experience">
+  <div class="container">
+    <div class="section-title"><div class="kicker">Every Child, Every Day</div><h2 style="font-size:clamp(28px,2.5vw,38px)">What Children Experience in Every Room</h2></div>
+    <div class="experience-panel"><div class="experience-grid">
+      <div class="experience-item"><div class="ico">♡</div><h3>Warm &amp; Loving Care</h3><p>Children feel secure, valued and supported every day.</p></div>
+      <div class="experience-item"><div class="ico">☆</div><h3>Learning Through Play</h3><p>Play-based experiences that build curiosity and confidence.</p></div>
+      <div class="experience-item"><div class="ico">☏</div><h3>Communication &amp; Language</h3><p>Encouraging speech, listening and social confidence.</p></div>
+      <div class="experience-item"><div class="ico">☼</div><h3>Healthy Routines</h3><p>Fresh meals, rest, movement and daily wellbeing.</p></div>
+      <div class="experience-item"><div class="ico">✓</div><h3>Safe &amp; Secure Environment</h3><p>High standards of safety and attentive care throughout.</p></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="gallery-strip"><div class="container gallery-row"><img src="images/sensory.jpg" alt="Sensory learning at Kinder Kidz"><img src="images/reading-corner.jpg" alt="Reading corner at Kinder Kidz"><img src="images/outdoor-play.jpg" alt="Outdoor play at Kinder Kidz"><img src="images/hero-room.jpg" alt="Nursery room at Kinder Kidz"></div></section>
+
+<section class="cta-wrap" id="visit"><div class="container"><div class="cta"><div><h2>Come and See Our Rooms for Yourself</h2><p>We’d love to welcome you and your child for a personal tour.</p></div><div class="cta-actions"><a class="btn primary" href="contact.html">📅 Book a Visit</a><a class="btn secondary" href="contact.html">✉ Enquire Now</a></div></div></div></section>
+</main>
+
+<footer id="footer-contact"><div class="container"><div class="footer-grid">
+  <div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div>
+  <div class="quicklinks-group"><h3>Quick Links</h3><div class="quicklinks-columns"><div class="footer-list quicklinks-column"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list quicklinks-column"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div>
+  <div><h3>Information</h3><div class="footer-list"><div>🕒 7:30am – 6:30pm<br>Monday – Friday</div><div>📅 51 Weeks a Year</div><div>👶 3 Months – 5 Years</div></div></div>
+  <div class="footer-contact-col"><h3>Contact Us</h3><div class="footer-list"><a href="tel:+447886017430">☎ 07886 017430</a><a href="tel:+441268425881">☎ 01268 425881</a><a href="mailto:kinderkidzdaynursery@hotmail.com">✉ kinderkidzdaynursery@hotmail.com</a><div>📍 26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div>
+</div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
+
+<button class="scroll-nav-btn" id="scrollNavBtn" type="button" aria-label="Scroll down" title="Scroll down">↓</button>
+<script>
+const btn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.addEventListener('click',(event)=>{event.stopPropagation();const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click',(event)=>{if(nav.classList.contains('open')&&!nav.contains(event.target)&&!btn.contains(event.target))closeMenu();});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeMenu();});
+const scrollNavBtn=document.getElementById('scrollNavBtn');
+function updateScrollNav(){const moved=window.scrollY>90;scrollNavBtn.textContent=moved?'↑':'↓';scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');scrollNavBtn.title=moved?'Back to top':'Scroll down';}
+scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo({top:0,behavior:'smooth'});}else{const target=document.getElementById('rooms');const header=document.querySelector('header');const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);window.scrollTo({top,behavior:'smooth'});}});
+window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
+</script>
+</body>
+</html>
