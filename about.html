@@ -75,6 +75,124 @@ footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34p
   .footer-grid{grid-template-columns:1fr;gap:22px}.footer h3{font-size:16px}
   .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
 }
+
+
+/* ============================================================
+   ABOUT US REFINEMENTS — v3
+   Compact spacing + exact homepage mobile drawer + subtle
+   desktop nursery animation. Existing content/images retained.
+   ============================================================ */
+
+/* Footer headings match the homepage footer exactly. */
+footer h3{color:#f7d85b!important;font-weight:800}
+
+/* Desktop: remove unnecessary vertical gaps without touching
+   image sizes, type scale or content. */
+@media (min-width:981px){
+  .hero{padding-top:8px;padding-bottom:6px}
+  .hero-grid{gap:22px}
+  .wave-sep{height:7px;margin-top:2px}
+  .wave-sep:before{height:5px}
+
+  /* Book/Enquire area -> first image/story section */
+  .story-section{padding-top:18px;padding-bottom:18px}
+
+  /* Age-range stats -> Our Values */
+  .values-section{padding-top:14px;padding-bottom:18px}
+
+  /* Values cards -> What Makes Us Different */
+  .difference-section{padding-top:16px;padding-bottom:14px}
+
+  /* Gallery -> final green CTA */
+  .cta-wrap{padding-top:4px;padding-bottom:8px}
+}
+
+/* Professional, non-human nursery-style motion for the unused
+   desktop area beneath the final difference bullet. */
+.playful-animation{
+  position:relative;
+  height:106px;
+  margin-top:18px;
+  overflow:hidden;
+  border-radius:18px;
+  background:linear-gradient(180deg,#fffaf0 0%,#f2f7e9 100%);
+  border:1px solid rgba(23,106,59,.10);
+}
+.anim-path{
+  position:absolute;left:18px;right:18px;bottom:25px;height:36px;
+  border-bottom:3px dashed rgba(47,138,73,.28);
+  border-radius:50%;transform:rotate(-2deg);
+}
+.anim-cloud{position:absolute;width:46px;height:17px;background:#fff;border-radius:999px;opacity:.9;box-shadow:0 5px 15px rgba(30,60,40,.05)}
+.anim-cloud:before,.anim-cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.anim-cloud:before{width:20px;height:20px;left:8px;top:-8px}.anim-cloud:after{width:25px;height:25px;right:5px;top:-12px}
+.cloud-a{left:18px;top:17px;animation:cloudFloat 5.8s ease-in-out infinite alternate}
+.cloud-b{right:24px;top:22px;transform:scale(.75);animation:cloudFloat 4.8s ease-in-out infinite alternate-reverse}
+.anim-bee{position:absolute;left:22px;top:47px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#f7d85b;color:#176a3b;font-size:14px;box-shadow:0 5px 12px rgba(23,106,59,.12);animation:beeTravel 6s ease-in-out infinite}
+.anim-block{position:absolute;bottom:13px;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:14px;box-shadow:0 6px 13px rgba(30,60,40,.10)}
+.block-a{left:34%;background:#f7d85b;color:#5a4b00;animation:blockBob 2.6s ease-in-out infinite}
+.block-b{left:48%;background:#f8dce5;color:#a84f70;animation:blockBob 2.9s ease-in-out .3s infinite}
+.anim-ball{position:absolute;right:26%;bottom:14px;width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#69b2d2 0 48%,#fff 49% 58%,#e97b9f 59%);box-shadow:0 6px 13px rgba(30,60,40,.10);animation:ballBounce 2.4s ease-in-out infinite}
+.anim-leaf{position:absolute;right:10%;bottom:13px;font-size:38px;line-height:1;color:#5f9c51;transform:rotate(-14deg);animation:leafSway 3.2s ease-in-out infinite alternate}
+@keyframes beeTravel{0%{transform:translate(0,8px) rotate(-8deg)}45%{transform:translate(185px,-12px) rotate(7deg)}75%{transform:translate(300px,3px) rotate(-4deg)}100%{transform:translate(0,8px) rotate(-8deg)}}
+@keyframes cloudFloat{from{transform:translateX(0)}to{transform:translateX(18px)}}
+@keyframes blockBob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes ballBounce{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-13px) rotate(18deg)}}
+@keyframes leafSway{from{transform:rotate(-18deg)}to{transform:rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.playful-animation *{animation:none!important}}
+
+@media (max-width:980px){
+  .playful-animation{display:none}
+}
+
+/* Mobile: use the exact compact drawer dimensions/type from the
+   final homepage and tighten all section transitions. */
+@media (max-width:620px){
+  .navlinks{
+    left:auto;
+    right:0;
+    width:min(46vw,190px);
+    top:70px;
+    max-height:calc(100vh - 70px);
+    overflow:auto;
+    padding:9px 12px 14px;
+    gap:0;
+    border-left:1px solid #e9e5dc;
+    border-bottom:1px solid #e9e5dc;
+    border-radius:0 0 0 18px;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10);
+  }
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
+  .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}
+  .menu-btn svg{width:26px;height:26px}
+
+  /* Enquire -> hero image -> story image: keep only a small gap. */
+  .hero{padding-top:4px;padding-bottom:2px}
+  .hero-grid{gap:11px}
+  .wave-sep{display:none}
+  .story-section{padding-top:11px;padding-bottom:9px}
+  .story-grid{gap:11px}
+
+  /* Age range stats -> Our Values */
+  .values-section{padding-top:10px;padding-bottom:9px}
+  .values-head{margin-bottom:15px}
+
+  /* Fun -> What Makes Us Different */
+  .difference-section{padding-top:10px;padding-bottom:9px}
+  .diff-card{gap:11px}
+
+  /* Gallery/image -> Ready to see Kinder Kidz CTA */
+  .cta-wrap{padding-top:3px;padding-bottom:7px}
+  .cta{margin-top:0}
+
+  footer{padding-top:28px}
+  footer h3{color:#f7d85b!important;font-size:16px;margin-bottom:9px}
+}
+
+@media (max-width:420px){
+  .navlinks{width:min(47vw,176px)}
+}
+
 </style>
 </head>
 <body>
@@ -134,7 +252,7 @@ footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34p
     <div class="wave-sep"></div>
   </section>
 
-  <section class="section compact">
+  <section class="section compact story-section">
     <div class="container story-grid">
       <div class="story-image">
         <img src="images/storytime-mixed-race.png" alt="Teacher and children learning together at Kinder Kidz Day Nursery">
@@ -153,7 +271,7 @@ footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34p
     </div>
   </section>
 
-  <section class="section compact values">
+  <section class="section compact values values-section">
     <div class="container">
       <div class="values-head">
         <h2>Our Values</h2>
@@ -189,7 +307,7 @@ footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34p
     </div>
   </section>
 
-  <section class="section compact">
+  <section class="section compact difference-section">
     <div class="container diff-card">
       <div class="diff-copy">
         <h2>What Makes Us Different</h2>
@@ -201,6 +319,16 @@ footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34p
           <div class="tick"><span>●</span><span>Strong focus on communication and development</span></div>
           <div class="tick"><span>●</span><span>Support for children with additional needs</span></div>
           <div class="tick"><span>●</span><span>Outdoor play and healthy lifestyle encouraged</span></div>
+        </div>
+        <div class="playful-animation" aria-hidden="true">
+          <div class="anim-cloud cloud-a"></div>
+          <div class="anim-cloud cloud-b"></div>
+          <div class="anim-path"></div>
+          <div class="anim-bee">✦</div>
+          <div class="anim-block block-a">A</div>
+          <div class="anim-block block-b">★</div>
+          <div class="anim-ball"></div>
+          <div class="anim-leaf">⌁</div>
         </div>
       </div>
 
