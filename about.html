@@ -193,6 +193,84 @@ footer h3{color:#f7d85b!important;font-weight:800}
   .navlinks{width:min(47vw,176px)}
 }
 
+
+
+/* ============================================================
+   ABOUT US FINAL SPACING + FOOTER REFINEMENTS — v4
+   ============================================================ */
+
+@media (min-width:981px){
+  /* Care/Respect/Growth/Partnership/Fun -> What Makes Us Different */
+  .values-section{padding-bottom:5px!important}
+  .difference-section{padding-top:5px!important}
+
+  /* Make the left side of What Makes Us Different finish at the
+     same visual depth as the nursery image grid on the right. */
+  .diff-card{align-items:stretch}
+  .diff-copy{display:flex;flex-direction:column;min-height:100%}
+  .animation-stack{margin-top:18px;display:flex;flex-direction:column;gap:10px;flex:1;min-height:250px}
+  .animation-stack .playful-animation{margin-top:0}
+  .playful-animation-one{height:106px;flex:0 0 106px}
+  .playful-animation-two{flex:1;min-height:136px}
+
+  /* Compact, centred desktop footer. */
+  footer{padding:24px 0 13px}
+  .footer-grid-v4{
+    display:grid;
+    grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;
+    align-items:start;
+    gap:22px;
+  }
+  .footer-grid-v4>div{text-align:center;min-width:0}
+  .footer-brand img{margin:0 auto 6px;width:172px;height:62px}
+  .footer-brand p{margin:0 auto;max-width:245px}
+  .quicklinks-group h3{text-align:center;margin-bottom:9px}
+  .quicklinks-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+  .quicklinks-column{justify-items:center}
+  .footer-grid-v4 .footer-list{gap:6px;justify-items:center}
+  .footer-grid-v4 .footer-list a,.footer-grid-v4 .footer-list div{text-align:center}
+  .footer-contact-col .footer-list a{overflow-wrap:anywhere}
+  .footer-bottom{margin-top:16px;padding-top:11px}
+}
+
+/* Second professional nursery animation — no human figures. */
+.playful-animation-two{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  background:linear-gradient(180deg,#f3f8ec 0%,#fff8e8 100%);
+  border:1px solid rgba(23,106,59,.10);
+}
+.grass-line{position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(180deg,#dcecbf,#bfdc8f);clip-path:polygon(0 55%,7% 40%,15% 58%,24% 36%,33% 57%,42% 41%,52% 60%,62% 37%,72% 57%,82% 38%,91% 55%,100% 42%,100% 100%,0 100%)}
+.rainbow{position:absolute;left:8%;bottom:27px;width:108px;height:56px;overflow:hidden;animation:rainbowFloat 3.8s ease-in-out infinite alternate}
+.rainbow span{position:absolute;left:50%;bottom:-55px;transform:translateX(-50%);border-radius:50%;border-style:solid;background:transparent}
+.rainbow span:nth-child(1){width:108px;height:108px;border-width:12px;border-color:#ef9aad}
+.rainbow span:nth-child(2){width:82px;height:82px;border-width:11px;border-color:#f5cf55}
+.rainbow span:nth-child(3){width:56px;height:56px;border-width:10px;border-color:#82bdda}
+.kite{position:absolute;right:18%;top:20%;font-size:42px;color:#76b5d4;transform:rotate(45deg);animation:kiteFloat 3.4s ease-in-out infinite alternate}.kite i{position:absolute;width:55px;height:2px;background:#8ead91;left:23px;top:35px;transform:rotate(55deg);transform-origin:left center}.kite i:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#f1c94a;left:26px;top:-3px}
+.pencil{position:absolute;left:45%;top:24%;font-size:42px;color:#e79a46;transform:rotate(-14deg);animation:pencilBob 2.8s ease-in-out infinite}
+.mini-star{position:absolute;color:#e9b62c;animation:starPulse 2.3s ease-in-out infinite}.star-one{left:39%;top:15%;font-size:20px}.star-two{right:7%;top:14%;font-size:17px;animation-delay:.5s}
+.toy-cube{position:absolute;bottom:24px;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:900;box-shadow:0 6px 12px rgba(30,60,40,.10);z-index:2;animation:cubeWiggle 3s ease-in-out infinite}.cube-one{left:36%;background:#f7d85b;color:#6c5700}.cube-two{right:8%;background:#8cc798;color:#174c2d;animation-delay:.4s}
+@keyframes rainbowFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+@keyframes kiteFloat{from{transform:translate(0,0) rotate(45deg)}to{transform:translate(-10px,10px) rotate(50deg)}}
+@keyframes pencilBob{0%,100%{transform:translateY(0) rotate(-14deg)}50%{transform:translateY(-8px) rotate(-8deg)}}
+@keyframes starPulse{0%,100%{transform:scale(.8);opacity:.6}50%{transform:scale(1.2);opacity:1}}
+@keyframes cubeWiggle{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg) translateY(-4px)}}
+
+@media (max-width:980px){
+  .animation-stack{display:none}
+  .footer-grid-v4{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .quicklinks-columns{grid-template-columns:1fr}
+}
+
+@media (max-width:620px){
+  /* The only remaining mobile spacing correction: Fun -> Difference. */
+  .values-section{padding-bottom:2px!important}
+  .difference-section{padding-top:2px!important}
+  .footer-grid-v4{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -320,15 +398,29 @@ footer h3{color:#f7d85b!important;font-weight:800}
           <div class="tick"><span>●</span><span>Support for children with additional needs</span></div>
           <div class="tick"><span>●</span><span>Outdoor play and healthy lifestyle encouraged</span></div>
         </div>
-        <div class="playful-animation" aria-hidden="true">
-          <div class="anim-cloud cloud-a"></div>
-          <div class="anim-cloud cloud-b"></div>
-          <div class="anim-path"></div>
-          <div class="anim-bee">✦</div>
-          <div class="anim-block block-a">A</div>
-          <div class="anim-block block-b">★</div>
-          <div class="anim-ball"></div>
-          <div class="anim-leaf">⌁</div>
+        <div class="animation-stack" aria-hidden="true">
+          <div class="playful-animation playful-animation-one">
+            <div class="anim-cloud cloud-a"></div>
+            <div class="anim-cloud cloud-b"></div>
+            <div class="anim-path"></div>
+            <div class="anim-bee">✦</div>
+            <div class="anim-block block-a">A</div>
+            <div class="anim-block block-b">★</div>
+            <div class="anim-ball"></div>
+            <div class="anim-leaf">⌁</div>
+          </div>
+          <div class="playful-animation playful-animation-two">
+            <div class="rainbow">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="kite">◆<i></i></div>
+            <div class="pencil">✎</div>
+            <div class="mini-star star-one">★</div>
+            <div class="mini-star star-two">✦</div>
+            <div class="toy-cube cube-one">1</div>
+            <div class="toy-cube cube-two">B</div>
+            <div class="grass-line"></div>
+          </div>
         </div>
       </div>
 
@@ -362,27 +454,31 @@ footer h3{color:#f7d85b!important;font-weight:800}
 
 <footer id="footer-contact">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid footer-grid-v4">
       <div class="footer-brand">
         <img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo">
         <p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p>
       </div>
 
-      <div>
+      <div class="quicklinks-group">
         <h3>Quick Links</h3>
-        <div class="footer-list">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="#">Our Rooms</a>
-          <a href="#">Learning &amp; Development</a>
-          <a href="#">Fees &amp; Funding</a>
-          <a href="#">Gallery</a>
-          <a href="#">Parents</a>
-          <a href="#footer-contact">Contact</a>
+        <div class="quicklinks-columns">
+          <div class="footer-list quicklinks-column">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="#">Our Rooms</a>
+            <a href="#">Learning &amp; Development</a>
+          </div>
+          <div class="footer-list quicklinks-column">
+            <a href="#">Fees &amp; Funding</a>
+            <a href="#">Gallery</a>
+            <a href="#">Parents</a>
+            <a href="#footer-contact">Contact</a>
+          </div>
         </div>
       </div>
 
-      <div>
+      <div class="footer-info">
         <h3>Information</h3>
         <div class="footer-list">
           <div>🕒 7:30am – 6:30pm<br>Monday – Friday</div>
@@ -391,7 +487,7 @@ footer h3{color:#f7d85b!important;font-weight:800}
         </div>
       </div>
 
-      <div>
+      <div class="footer-contact-col">
         <h3>Contact Us</h3>
         <div class="footer-list">
           <a href="tel:+447886017430">☎ 07886 017430</a>
