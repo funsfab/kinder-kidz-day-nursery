@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Kinder Kidz Home Page — Responsive v3 (desktop/tablet/mobile) — spacing, typography & scroll controls refined -->
+<!-- Kinder Kidz Home Page — Responsive v4 (desktop/tablet/mobile) — menu width and spacing refinements -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -225,6 +225,98 @@ footer h3{color:#f7d85b!important;font-family:inherit;font-weight:800}
   .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
 }
 
+
+/* ============================================================
+   HOMEPAGE REFINEMENTS — v4
+   Final spacing pass + right-side mobile drawer
+   ============================================================ */
+
+/* Floating arrow stays visible over the green footer:
+   keep the green circle, change only the arrow glyph colour. */
+.scroll-nav-btn{color:#f7d85b}
+
+/* Desktop refinements */
+@media (min-width:981px){
+  /* Bring the whole opening hero row closer to the header. */
+  .hero .container{
+    min-height:470px;
+    padding-top:4px;
+    padding-bottom:22px;
+    align-items:start;
+  }
+  .hero > .container > div:first-child{padding-top:6px}
+  h1{font-size:clamp(42px,3.8vw,56px)}
+  .hero-media{height:414px;min-height:414px}
+  .hero-media img{height:398px}
+
+  /* Bring Ofsted/trust strip closer to the hero buttons/image. */
+  .trust-wrap{margin-top:2px}
+
+  /* Tighten the gaps after Our Rooms and before the final CTA. */
+  .rooms{padding-bottom:34px}
+  .why{padding-top:28px;padding-bottom:34px}
+  .cta-inner{padding-top:20px;padding-bottom:30px}
+}
+
+/* Mobile refinements */
+@media (max-width:620px){
+  /* The menu is a narrow drawer on the RIGHT only.
+     The left side of the page remains visible and tappable. */
+  .navlinks{
+    left:auto;
+    right:0;
+    width:min(46vw,190px);
+    top:70px;
+    max-height:calc(100vh - 70px);
+    overflow:auto;
+    padding:9px 12px 14px;
+    border-left:1px solid #e9e5dc;
+    border-bottom:1px solid #e9e5dc;
+    border-radius:0 0 0 18px;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10);
+  }
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
+
+  /* Pull Kinder Kidz Day Nursery · Laindon and the hero content upward. */
+  .hero .container{
+    padding-top:0;
+    padding-bottom:10px;
+    gap:16px;
+  }
+  .hero > .container > div:first-child{margin-top:-3px}
+  .eyebrow{margin-top:0}
+
+  /* Keep Ofsted clearly separate, but remove the empty gap after the hero image. */
+  .trust-wrap{margin-top:0}
+
+  /* Smaller Our Rooms photographs/cards. */
+  .rooms{padding-bottom:22px}
+  .room-grid{gap:11px}
+  .room-card{
+    grid-template-columns:35% 65%;
+    min-height:122px;
+  }
+  .room-card img{
+    height:122px;
+    min-height:122px;
+  }
+  .room-body{padding:11px 12px}
+  .room-body h3{font-size:14px}
+  .room-body p{font-size:11px}
+
+  /* Bring Why Families closer to Outdoor Play Area. */
+  .why{padding-top:22px;padding-bottom:14px}
+
+  /* Keep the final journey section close to the family/quality cards. */
+  .cta-inner{padding-top:10px;padding-bottom:22px}
+}
+
+@media (max-width:420px){
+  .navlinks{width:min(47vw,176px)}
+  .room-card{grid-template-columns:36% 64%;min-height:116px}
+  .room-card img{height:116px;min-height:116px}
+}
+
 </style>
 </head>
 <body>
@@ -309,7 +401,30 @@ footer h3{color:#f7d85b!important;font-family:inherit;font-weight:800}
 <button class="scroll-nav-btn" id="scrollNavBtn" type="button" aria-label="Scroll down" title="Scroll down">↓</button>
 
 <script>
-const btn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')});document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const btn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+
+function closeMenu(){
+  nav.classList.remove('open');
+  btn.setAttribute('aria-expanded','false');
+}
+btn.addEventListener('click',(event)=>{
+  event.stopPropagation();
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open?'true':'false');
+});
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* On mobile/tablet, tapping anywhere away from the burger closes the drawer.
+   This includes the visible left-hand side of the webpage. */
+document.addEventListener('click',(event)=>{
+  if(nav.classList.contains('open') && !btn.contains(event.target)){
+    closeMenu();
+  }
+});
+document.addEventListener('keydown',(event)=>{
+  if(event.key==='Escape') closeMenu();
+});
 </script>
 
 <script>
