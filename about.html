@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="About Kinder Kidz Day Nursery in Laindon, Basildon.">
+<title>About Us | Kinder Kidz Day Nursery</title>
+<style>
+:root{
+  --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;--soft:#f7f3e8;
+  --text:#1f2a24;--muted:#5f6761;--line:#e8e2d5;--gold:#f7d85b;
+  --shadow:0 14px 34px rgba(18,60,43,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;max-width:100%;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+h1,h2,h3{margin:0;color:var(--deep);line-height:1.05}h1,h2{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(40px,4.3vw,62px);letter-spacing:-.035em}h2{font-size:clamp(34px,3.6vw,48px);letter-spacing:-.03em}
+p{margin:0}
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:8px 0;font-size:14px;color:#294633;font-weight:600}
+.topbar span{display:flex;align-items:center;gap:8px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+.nav{height:86px;display:flex;align-items:center;gap:26px}.brand{display:flex;align-items:center;min-width:205px}.brand img{width:205px;height:66px;object-fit:contain;object-position:left center}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:22px;flex:1;font-size:14px;font-weight:700}.navlinks a{padding:10px 0;position:relative}.navlinks a.active:after,.navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--green);border-radius:999px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 22px;font-weight:800;border:1.5px solid var(--green);cursor:pointer;transition:.2s ease}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--green)}.btn.pink{background:#e9799f;border-color:#e9799f;color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(23,106,59,.14)}
+.menu-btn{display:none;background:#f3f7ec;border:0;width:40px;height:40px;border-radius:11px;color:var(--green);padding:5px;place-items:center;margin-left:auto}
+.hero{padding:14px 0 20px;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 56%,#eef7dc 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:center}
+.eyebrow{font-size:13px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.hero-copy p{font-size:18px;color:#47554d;max-width:530px;margin:20px 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-media{position:relative;min-height:385px}.hero-media:before{content:"";position:absolute;inset:18px -36px 12px 24px;background:#dceab8;border-radius:42% 0 0 52%;transform:rotate(-2deg)}.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:40% 0 0 44%;box-shadow:var(--shadow)}
+.sun{position:absolute;right:4px;top:8px;font-size:72px;line-height:1;filter:drop-shadow(0 5px 10px rgba(244,180,0,.18))}
+.wave-sep{height:18px;position:relative;margin-top:8px}.wave-sep:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-bottom:2px solid rgba(47,138,73,.6);border-radius:0 0 50% 50%/0 0 100% 100%}
+.section{padding:52px 0}.section.compact{padding-top:40px;padding-bottom:40px}
+.story-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center}.story-image img{width:100%;aspect-ratio:1.08/1;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
+.story-copy h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:14px;position:relative;display:inline-block}.story-copy h2:after{content:"";display:block;width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin-top:8px}.story-copy p{font-size:16px;color:#36433c;margin-bottom:14px}
+.stat-strip{margin-top:22px;background:#f6f5e8;border:1px solid #ebe4d6;border-radius:22px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}.stat{padding:22px 18px;text-align:center;position:relative}.stat:not(:last-child):after{content:"";position:absolute;right:0;top:18px;bottom:18px;width:1px;background:#d7dec9}.stat b{display:block;font-size:14px;color:#24332c}.stat small{display:block;font-size:12px;color:#67716b;margin-top:4px}
+.values{text-align:center}.values-head{margin-bottom:26px}.values-head h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:8px}.values-head .line{width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.value{padding:16px 18px}.value:not(:last-child){border-right:1px dashed #d6dcd1}.value .ico{width:62px;height:62px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;border:2px solid #7eb27e;color:var(--green);font-size:28px}.value:nth-child(2) .ico,.value:nth-child(4) .ico{border-color:#efc64a;color:#efb310}.value h3{font-family:inherit;font-size:18px;margin-bottom:8px}.value p{font-size:14px;color:#5f6761}
+.diff-card{background:#faf5ea;border:1px solid #efe5d5;border-radius:28px;padding:26px;display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:start}.diff-copy h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:8px}.diff-copy .line{width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin-bottom:18px}.diff-copy p{font-size:16px;color:#37433d;margin-bottom:16px}.tick-list{display:grid;gap:10px}.tick{display:flex;gap:10px;align-items:flex-start;color:#25322c;font-size:15px}.tick span:first-child{color:var(--green);font-weight:900}
+.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:0 8px 22px rgba(38,70,48,.06)}.gallery-sub{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gallery-tall{min-height:255px}.gallery-small{min-height:120px}
+.cta-wrap{padding:18px 0 8px}.cta{background:linear-gradient(135deg,#1b7a43,#125e33);color:#fff;border-radius:20px;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-family:inherit;color:#fff;font-size:18px}.cta p{color:#e4efe7;margin-top:4px}.cta .btn.primary{background:#f3c420;border-color:#f3c420;color:#123c2b}.cta .btn.secondary{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34px 0 18px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:26px}.footer-brand img{width:190px;height:70px;object-fit:contain;object-position:left center}.footer-brand p{max-width:260px;color:#dce9df;font-size:14px}.footer h3{font-family:inherit;color:var(--gold);font-size:15px;margin-bottom:12px}.footer-list{display:grid;gap:8px;font-size:14px;color:#e5f0e8}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:14px;font-size:12px;color:#cfe0d5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-size:27px;font-weight:800;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
+
+@media (max-width:980px){
+  .container{width:min(100% - 34px,1180px)}
+  .topbar .container{gap:14px;font-size:13px}
+  .nav{height:76px;gap:16px}.brand img{width:180px;height:58px}
+  .navlinks{position:fixed;display:none;flex-direction:column;align-items:stretch;left:0;right:0;top:76px;background:#fffdf7;padding:16px 20px 20px;border-bottom:1px solid #e9e5dc;box-shadow:0 16px 28px rgba(0,0,0,.08)}.navlinks.open{display:flex}.navlinks a{padding:9px 4px}
+  .nav>.desktop-only{display:none}.menu-btn{display:grid}
+  .hero-grid,.story-grid,.diff-card,.cta{grid-template-columns:1fr;display:grid}
+  .hero{padding-top:10px;padding-bottom:12px}.hero-copy p{font-size:16px}.hero-media{min-height:340px}.hero-media img{border-radius:30px}.hero-media:before{inset:12px -10px -10px 14px;border-radius:32px}
+  .values-grid{grid-template-columns:repeat(2,1fr)}.value:nth-child(2){border-right:none}.value:nth-child(1),.value:nth-child(2),.value:nth-child(3),.value:nth-child(4){border-bottom:1px dashed #d6dcd1}
+  .gallery-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+@media (max-width:620px){
+  .container{width:calc(100% - 28px)}
+  .topbar{display:none}
+  .nav{height:70px;gap:10px}.brand{min-width:0}.brand img{width:156px;height:52px}
+  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
+  .hero{padding-top:4px;padding-bottom:8px}.hero-grid{gap:16px}.eyebrow{font-size:11px;margin-bottom:8px}h1{font-size:34px;line-height:1.04}.hero-copy p{font-size:14.5px;line-height:1.55;margin:14px 0 18px}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.btn{width:100%;padding:12px 16px;font-size:14px}.hero-media{min-height:290px}.sun{font-size:52px;right:8px;top:6px}
+  .section{padding:42px 0}.section.compact{padding-top:30px;padding-bottom:30px}
+  .story-grid{gap:18px}.story-copy p{font-size:14px}.story-image img{aspect-ratio:1.12/1}
+  .stat-strip{grid-template-columns:1fr}.stat:not(:last-child):after{display:none}.stat{padding:18px 14px;border-bottom:1px solid #e7e0d0}.stat:last-child{border-bottom:0}
+  .values-grid{grid-template-columns:1fr}.value{border-right:0!important;border-bottom:1px dashed #d6dcd1}.value:last-child{border-bottom:0}
+  .diff-card{padding:18px;gap:16px}.diff-copy p,.tick{font-size:14px}
+  .gallery-sub{grid-template-columns:1fr 1fr;gap:10px}.gallery-grid{gap:10px}.gallery-tall{min-height:180px}.gallery-small{min-height:102px}
+  .cta{padding:20px 18px;gap:14px}.cta-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .footer-grid{grid-template-columns:1fr;gap:22px}.footer h3{font-size:16px}
+  .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>☎ 07886 017430</span>
+    <span>☎ 01268 425881</span>
+    <span>✉ kinderkidzdaynursery@hotmail.com</span>
+    <span>🕒 7:30am – 6:30pm, Mon – Fri</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Kinder Kidz Day Nursery home">
+      <img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo">
+    </a>
+
+    <nav class="navlinks" id="navlinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="#">Our Rooms</a>
+      <a href="#">Learning &amp; Development</a>
+      <a href="#">Fees &amp; Funding</a>
+      <a href="#">Gallery</a>
+      <a href="#">Parents</a>
+      <a href="#footer-contact">Contact</a>
+    </nav>
+
+    <a class="btn pink desktop-only" href="#visit">Book a Visit</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">About Kinder Kidz Day Nursery</div>
+        <h1>A Loving Start,<br><span style="color:var(--green)">A Bright Future</span></h1>
+        <p>At Kinder Kidz, we provide a warm, safe and inspiring environment where children feel happy, valued and encouraged to explore, learn and grow.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#visit">📅 Book a Visit</a>
+          <a class="btn secondary" href="#footer-contact">✉ Enquire Now</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="images/hero-room.jpg" alt="Kinder Kidz nursery room interior">
+        <div class="sun">☀️</div>
+      </div>
+    </div>
+    <div class="wave-sep"></div>
+  </section>
+
+  <section class="section compact">
+    <div class="container story-grid">
+      <div class="story-image">
+        <img src="images/storytime-mixed-race.png" alt="Teacher and children learning together at Kinder Kidz Day Nursery">
+      </div>
+      <div class="story-copy">
+        <h2>Our Story</h2>
+        <p>Kinder Kidz Day Nursery was established in 2022 with a simple vision — to create a nurturing place where every child can thrive.</p>
+        <p>We believe every child deserves the best possible start in life. Our dedicated team works closely with families to support each child’s individual journey, helping them build confidence, develop curiosity and reach their full potential in a caring, inclusive and welcoming setting.</p>
+
+        <div class="stat-strip">
+          <div class="stat"><b>Established 2022</b><small>A caring start for local families</small></div>
+          <div class="stat"><b>Ofsted Rated GOOD</b><small>Supportive, safe and welcoming care</small></div>
+          <div class="stat"><b>3 Months – 5 Years</b><small>Age range supported</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact values">
+    <div class="container">
+      <div class="values-head">
+        <h2>Our Values</h2>
+        <div class="line"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value">
+          <div class="ico">♡</div>
+          <h3>Care</h3>
+          <p>We provide a safe, welcoming and caring environment for every child.</p>
+        </div>
+        <div class="value">
+          <div class="ico">☆</div>
+          <h3>Respect</h3>
+          <p>We value each child as an individual and celebrate their uniqueness.</p>
+        </div>
+        <div class="value">
+          <div class="ico">🌿</div>
+          <h3>Growth</h3>
+          <p>We support children to learn, explore and develop at their own pace.</p>
+        </div>
+        <div class="value">
+          <div class="ico">♡</div>
+          <h3>Partnership</h3>
+          <p>We work closely with parents and families to support every child’s journey.</p>
+        </div>
+        <div class="value">
+          <div class="ico">☺</div>
+          <h3>Fun</h3>
+          <p>We believe children learn best when they are happy and having fun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container diff-card">
+      <div class="diff-copy">
+        <h2>What Makes Us Different</h2>
+        <div class="line"></div>
+        <p>We combine high quality early education with lots of love, patience and encouragement. Our setting is designed to spark curiosity, build independence and help children feel confident in who they are.</p>
+        <div class="tick-list">
+          <div class="tick"><span>●</span><span>Qualified, experienced and caring staff</span></div>
+          <div class="tick"><span>●</span><span>Warm and stimulating learning environment</span></div>
+          <div class="tick"><span>●</span><span>Strong focus on communication and development</span></div>
+          <div class="tick"><span>●</span><span>Support for children with additional needs</span></div>
+          <div class="tick"><span>●</span><span>Outdoor play and healthy lifestyle encouraged</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <img class="gallery-tall" src="images/outdoor-play.jpg" alt="Outdoor play area at Kinder Kidz Day Nursery">
+        <div class="gallery-sub">
+          <img class="gallery-small" src="images/play-corner.jpg" alt="Play corner at Kinder Kidz Day Nursery">
+          <img class="gallery-small" src="images/role-play.jpg" alt="Role play area at Kinder Kidz Day Nursery">
+          <img class="gallery-small" src="images/sensory.jpg" alt="Sensory play setup at Kinder Kidz Day Nursery">
+          <img class="gallery-small" src="images/reading-corner.jpg" alt="Reading corner at Kinder Kidz Day Nursery">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-wrap" id="visit">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>Ready to see Kinder Kidz for yourself?</h2>
+          <p>We’d love to welcome you and your child for a visit.</p>
+        </div>
+        <div class="cta-actions" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="#">📅 Book a Visit</a>
+          <a class="btn secondary" href="#footer-contact">📞 Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo">
+        <p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-list">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="#">Our Rooms</a>
+          <a href="#">Learning &amp; Development</a>
+          <a href="#">Fees &amp; Funding</a>
+          <a href="#">Gallery</a>
+          <a href="#">Parents</a>
+          <a href="#footer-contact">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Information</h3>
+        <div class="footer-list">
+          <div>🕒 7:30am – 6:30pm<br>Monday – Friday</div>
+          <div>📅 51 Weeks a Year</div>
+          <div>👶 3 Months – 5 Years</div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <div class="footer-list">
+          <a href="tel:+447886017430">☎ 07886 017430</a>
+          <a href="tel:+441268425881">☎ 01268 425881</a>
+          <a href="mailto:kinderkidzdaynursery@hotmail.com">✉ kinderkidzdaynursery@hotmail.com</a>
+          <div>📍 26 Elizabeth Court,<br>Laindon, SS15 5AG</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span>
+      <span>About Us page — responsive layout</span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-nav-btn" id="scrollNavBtn" type="button" aria-label="Scroll down" title="Scroll down">↓</button>
+
+<script>
+const btn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.addEventListener('click',(event)=>{event.stopPropagation();const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click',(event)=>{if(nav.classList.contains('open') && !btn.contains(event.target)){closeMenu();}});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape') closeMenu();});
+
+const scrollNavBtn=document.getElementById('scrollNavBtn');
+function updateScrollNav(){
+  const moved=window.scrollY>90;
+  scrollNavBtn.textContent=moved?'↑':'↓';
+  scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');
+  scrollNavBtn.title=moved?'Back to top':'Scroll down';
+}
+scrollNavBtn.addEventListener('click',()=>{
+  if(window.scrollY>90){window.scrollTo({top:0,behavior:'smooth'});} 
+  else {
+    const target=document.querySelector('.story-grid') || document.querySelector('main');
+    const header=document.querySelector('header');
+    const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+10:10);
+    window.scrollTo({top,behavior:'smooth'});
+  }
+});
+window.addEventListener('scroll',updateScrollNav,{passive:true});
+updateScrollNav();
+</script>
+
+</body>
+</html>
