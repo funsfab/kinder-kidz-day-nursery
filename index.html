@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Kinder Kidz Home Page — Responsive v4 (desktop/tablet/mobile) — menu width and spacing refinements -->
+<!-- Kinder Kidz Home Page — Responsive v5 (desktop/tablet/mobile) — compact hero spacing -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -315,6 +315,37 @@ footer h3{color:#f7d85b!important;font-family:inherit;font-weight:800}
   .navlinks{width:min(47vw,176px)}
   .room-card{grid-template-columns:36% 64%;min-height:116px}
   .room-card img{height:116px;min-height:116px}
+}
+
+
+
+/* ============================================================
+   HOMEPAGE REFINEMENTS — v5
+   Compact hero only: remove the generic SECTION whitespace
+   above and below the opening hero while preserving every
+   content size, image size, font size and existing layout.
+   ============================================================ */
+.hero{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+/* Keep the desktop hero content/image exactly the same size;
+   only trim the small remaining internal bottom breathing room. */
+@media (min-width:981px){
+  .hero .container{
+    padding-top:4px!important;
+    padding-bottom:6px!important;
+  }
+}
+
+/* Mobile: same approved content and image dimensions, with the
+   blank band above/below removed so the page stays compact. */
+@media (max-width:620px){
+  .hero .container{
+    padding-top:4px!important;
+    padding-bottom:8px!important;
+  }
 }
 
 </style>
