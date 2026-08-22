@@ -564,6 +564,139 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   .hero-copy{grid-template-rows:14px 104px 110px 92px!important}
   .hero h1,.hero-copy h1{font-size:32px!important}
 }
+
+
+/* ============================================================
+   FINAL CONSISTENCY PASS v4 — buttons, hero surface & footer
+   Approved rules carried across Home / About / Our Rooms.
+   ============================================================ */
+
+/* Our Rooms hero surface is the master on all three pages. */
+.hero{
+  background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;
+  border-top:0!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-bottom:1px solid #e8eadf!important;
+  box-shadow:none!important;
+}
+.hero > .container,.hero-grid{border:0!important;box-shadow:none!important;background:transparent!important}
+
+/* One professional icon system. No emoji icons inside action buttons. */
+.btn.visit-action,.btn.enquire-action,.btn.contact-action{
+  white-space:nowrap!important;
+  flex-wrap:nowrap!important;
+  gap:8px!important;
+}
+.btn-icon{width:16px;height:16px;display:inline-grid;place-items:center;flex:0 0 16px;line-height:0}
+.btn-icon svg{display:block;width:16px;height:16px}
+.btn-label{display:inline-block;white-space:nowrap;line-height:1}
+.btn.visit-action{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
+.btn.enquire-action{background:#fff!important;color:var(--green)!important;border-color:var(--green)!important}
+.btn.contact-action{background:#fff!important;color:var(--green)!important;border-color:rgba(255,255,255,.82)!important}
+.btn.contact-action .icon-phone{color:#e66f91!important}
+
+/* Desktop header Book a Visit: same visual family, always one row. */
+.header-visit.visit-action{
+  width:148px!important;
+  min-width:148px!important;
+  max-width:148px!important;
+  flex:0 0 148px!important;
+  height:42px!important;
+  min-height:42px!important;
+  padding:0 15px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  border-radius:999px!important;
+}
+.hero-actions .btn,.cta-actions .btn{
+  min-height:42px!important;
+  font-size:14px!important;
+  border-radius:999px!important;
+}
+@media (min-width:981px){
+  .hero-actions .btn{width:148px!important;min-width:148px!important;height:42px!important;padding:0 12px!important}
+  .cta-actions .btn{min-width:148px!important;height:42px!important;padding:0 16px!important}
+}
+@media (min-width:981px) and (max-width:1199px){
+  .nav{gap:14px!important}
+  .navlinks{gap:13px!important;font-size:12px!important}
+  .header-visit.visit-action{width:136px!important;min-width:136px!important;max-width:136px!important;flex-basis:136px!important;padding:0 12px!important;font-size:13px!important}
+}
+
+/* About Us bottom CTA: green visit + white contact with pink phone icon. */
+.cta .contact-action,.cta-wrap .contact-action{background:#fff!important;color:var(--green)!important;border-color:#fff!important}
+.cta .contact-action .icon-phone,.cta-wrap .contact-action .icon-phone{color:#e66f91!important}
+
+/* Small desktop-only nursery animation uses the spare third title line on About Us. */
+.hero-copy{position:relative!important}
+.about-hero-mini-animation{display:none}
+@media (min-width:981px){
+  .about-hero-mini-animation{
+    display:flex;
+    position:absolute;
+    left:3px;
+    top:135px;
+    width:118px;
+    height:24px;
+    align-items:center;
+    gap:9px;
+    pointer-events:none;
+    opacity:.9;
+  }
+  .about-hero-mini-animation .mini-track{height:2px;width:46px;background:linear-gradient(90deg,#d9e9b9,#f2c94c);border-radius:999px;position:relative;overflow:visible}
+  .about-hero-mini-animation .mini-track:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#2f8a49;top:-3px;left:0;animation:kkMiniTravel 3.2s ease-in-out infinite alternate}
+  .about-hero-mini-animation .mini-star{font-size:14px;color:#e4ab20;animation:kkMiniTwinkle 2.1s ease-in-out infinite}
+  .about-hero-mini-animation .mini-leaf{font-size:15px;color:#6fa34e;animation:kkMiniFloat 2.8s ease-in-out infinite}
+}
+@keyframes kkMiniTravel{to{transform:translateX(38px)}}
+@keyframes kkMiniTwinkle{50%{transform:scale(1.22) rotate(12deg);opacity:.6}}
+@keyframes kkMiniFloat{50%{transform:translateY(-3px) rotate(-7deg)}}
+
+/* About CTA colour treatment is the same on desktop and mobile. */
+.about-bottom-cta{background:linear-gradient(135deg,#f5f9ed,#eef6df)!important;color:var(--deep)!important;border:1px solid #e0e8d4!important}
+.about-bottom-cta h2{color:var(--deep)!important}
+.about-bottom-cta p{color:#56635a!important}
+
+/* One identical footer content and layout across all three pages. */
+.site-footer-v5{background:linear-gradient(135deg,#145c34,#0f4b2f)!important;color:#fff!important;padding:24px 0 13px!important}
+.footer-grid-v5{
+  display:grid!important;
+  grid-template-columns:1.05fr 1.5fr .95fr 1.18fr!important;
+  align-items:start!important;
+  gap:22px!important;
+}
+.footer-grid-v5>div{text-align:center!important;min-width:0!important}
+.site-footer-v5 .footer-brand img{width:176px!important;height:62px!important;object-fit:contain!important;margin:0 auto 5px!important}
+.site-footer-v5 .footer-brand p{max-width:240px!important;margin:5px auto 0!important;color:#e6f0e8!important;font-size:12.5px!important;line-height:1.45!important}
+.site-footer-v5 h3{font-family:inherit!important;color:#f7d85b!important;font-size:14px!important;line-height:1.2!important;margin:0 0 8px!important;font-weight:800!important}
+.site-footer-v5 .footer-list{display:grid!important;gap:6px!important;font-size:12.5px!important;line-height:1.35!important;color:#eef6f0!important;justify-items:center!important}
+.site-footer-v5 .footer-list a,.site-footer-v5 .footer-list div{text-align:center!important;color:#eef6f0!important}
+.quicklinks-group h3{text-align:center!important}
+.quicklinks-columns{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0 18px!important;width:100%!important}
+.quicklinks-column{justify-items:start!important}
+.quicklinks-column a{text-align:left!important;width:100%!important}
+.site-footer-v5 .footer-bottom{border-top:1px solid rgba(255,255,255,.16)!important;margin-top:15px!important;padding-top:9px!important;font-size:11px!important;line-height:1.3!important;color:#d5e6d9!important;display:flex!important;justify-content:space-between!important;gap:10px!important;flex-wrap:wrap!important}
+
+@media(max-width:980px){
+  .footer-grid-v5{grid-template-columns:1fr 1fr!important;gap:18px!important}
+  .footer-grid-v5 .footer-brand{grid-column:1/-1!important}
+  .quicklinks-column{justify-items:center!important}.quicklinks-column a{text-align:center!important}
+}
+@media(max-width:620px){
+  .header-visit.visit-action{display:none!important}
+  .hero-actions .btn,.cta-actions .btn{width:100%!important;min-width:0!important;height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .site-footer-v5{padding:20px 0 11px!important}
+  .footer-grid-v5{grid-template-columns:1fr!important;gap:16px!important}
+  .footer-grid-v5 .footer-brand{grid-column:auto!important}
+  .site-footer-v5 .footer-brand img{width:160px!important;height:58px!important}
+  .site-footer-v5 h3{font-size:16px!important;margin-bottom:7px!important;color:#f7d85b!important}
+  .site-footer-v5 .footer-list{gap:5px!important;font-size:13px!important}
+  .quicklinks-columns{grid-template-columns:1fr 1fr!important;gap:0 16px!important}
+  .quicklinks-column{justify-items:center!important}.quicklinks-column a{text-align:center!important}
+  .site-footer-v5 .footer-bottom{margin-top:12px!important;padding-top:8px!important;font-size:11px!important;justify-content:center!important;text-align:center!important}
+}
+
 </style>
 </head>
 <body>
@@ -584,7 +717,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
       <a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html" class="active">Our Rooms</a><a href="learning.html">Learning & Development</a><a href="fees.html">Fees & Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
     </nav>
-    <a class="btn primary desktop-only header-visit" href="contact.html#visit">Book a Visit</a>
+    <a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
         <path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
@@ -599,7 +732,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
       <div class="eyebrow">Our Rooms</div>
       <h1>Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
       <p>Carefully designed spaces where children feel safe, supported and inspired to learn, play and grow within our warm nursery environment.</p>
-      <div class="hero-actions"><a class="btn primary" href="contact.html#visit">📅 Book a Visit</a><a class="btn secondary" href="contact.html#enquiry">✉ Enquire Now</a></div>
+      <div class="hero-actions"><a class="btn primary visit-action" href="contact.html#visit"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html#enquiry"><span class="btn-icon icon-mail" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div>
     </div>
     <div class="hero-media"><img src="images/hero-room.jpg" alt="Kinder Kidz nursery learning room"><span class="doodle one">☆</span><span class="doodle two">⌁</span></div>
   </div>
@@ -642,15 +775,48 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 <section class="gallery-strip"><div class="container gallery-row"><img src="images/sensory.jpg" alt="Sensory learning at Kinder Kidz"><img src="images/reading-corner.jpg" alt="Reading corner at Kinder Kidz"><img src="images/outdoor-play.jpg" alt="Outdoor play at Kinder Kidz"><img src="images/hero-room.jpg" alt="Nursery room at Kinder Kidz"></div></section>
 
-<section class="cta-wrap" id="visit"><div class="container"><div class="cta"><div><h2>Come and See Our Rooms for Yourself</h2><p>We’d love to welcome you and your child for a personal tour.</p></div><div class="cta-actions"><a class="btn primary" href="contact.html">📅 Book a Visit</a><a class="btn secondary" href="contact.html">✉ Enquire Now</a></div></div></div></section>
+<section class="cta-wrap" id="visit"><div class="container"><div class="cta"><div><h2>Come and See Our Rooms for Yourself</h2><p>We’d love to welcome you and your child for a personal tour.</p></div><div class="cta-actions"><a class="btn primary visit-action" href="contact.html#visit"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html#enquiry"><span class="btn-icon icon-mail" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div></div></div></section>
 </main>
 
-<footer id="footer-contact"><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div>
-  <div class="quicklinks-group"><h3>Quick Links</h3><div class="quicklinks-columns"><div class="footer-list quicklinks-column"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list quicklinks-column"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div>
-  <div><h3>Information</h3><div class="footer-list"><div>🕒 7:30am – 6:30pm<br>Monday – Friday</div><div>📅 51 Weeks a Year</div><div>👶 3 Months – 5 Years</div></div></div>
-  <div class="footer-contact-col"><h3>Contact Us</h3><div class="footer-list"><a href="tel:+447886017430">☎ 07886 017430</a><a href="tel:+441268425881">☎ 01268 425881</a><a href="mailto:kinderkidzdaynursery@hotmail.com">✉ kinderkidzdaynursery@hotmail.com</a><div>📍 26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div>
-</div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
+<footer id="footer-contact" class="site-footer-v5">
+  <div class="container">
+    <div class="footer-grid footer-grid-v5">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo">
+        <p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p>
+      </div>
+      <div class="quicklinks-group">
+        <h3>Quick Links</h3>
+        <div class="quicklinks-columns">
+          <div class="footer-list quicklinks-column">
+            <a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a>
+          </div>
+          <div class="footer-list quicklinks-column">
+            <a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3>Information</h3>
+        <div class="footer-list">
+          <div>🕒 7:30am – 6:30pm<br>Monday – Friday</div>
+          <div>📅 51 Weeks a Year</div>
+          <div>👶 3 Months – 5 Years</div>
+        </div>
+      </div>
+      <div class="footer-contact-col">
+        <h3>Contact Us</h3>
+        <div class="footer-list">
+          <a href="tel:+447886017430">☎ 07886 017430</a>
+          <a href="tel:+441268425881">☎ 01268 425881</a>
+          <a href="mailto:kinderkidzdaynursery@hotmail.com">✉ kinderkidzdaynursery@hotmail.com</a>
+          <div>📍 26 Elizabeth Court,<br>Laindon, SS15 5AG</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div>
+  </div>
+</footer>
 
 <button class="scroll-nav-btn" id="scrollNavBtn" type="button" aria-label="Scroll down" title="Scroll down">↓</button>
 <script>
