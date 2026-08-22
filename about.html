@@ -462,6 +462,303 @@ footer h3,.footer h3{font-size:var(--site-footer-title-size)!important;line-heig
 }
 @media(max-width:420px){.navlinks{width:min(47vw,176px)!important}}
 
+
+
+/* ============================================================
+   FINAL SHARED HEADER + HERO ALIGNMENT — Pages 1–3
+   Goal: switching Home / About Us / Our Rooms must feel stationary.
+   Existing cards, sections and page content below the hero are untouched.
+   ============================================================ */
+:root{
+  --kk-topbar-font:13px;
+  --kk-nav-font:13px;
+  --kk-header-btn-font:14px;
+  --kk-eyebrow-font:12px;
+  --kk-hero-title-font:50px;
+  --kk-hero-body-font:15px;
+  --kk-hero-line:1.04;
+}
+
+/* One identical header frame on all three pages */
+.topbar{background:#fbf6eb!important;border-bottom:1px solid rgba(23,106,59,.09)!important}
+.topbar .container{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:34px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:22px!important;
+  padding:7px 0!important;
+  font-size:var(--kk-topbar-font)!important;
+  line-height:1.25!important;
+  color:#294633!important;
+  font-weight:600!important;
+}
+.topbar span{display:flex!important;align-items:center!important;gap:8px!important;white-space:nowrap!important}
+header{position:sticky!important;top:0!important;z-index:50!important;background:rgba(255,253,247,.96)!important;backdrop-filter:blur(10px)!important;border-bottom:1px solid rgba(23,106,59,.08)!important}
+.nav{
+  width:min(1180px,calc(100% - 40px))!important;
+  height:82px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:24px!important;
+  margin:auto!important;
+  padding:0!important;
+}
+.brand{display:flex!important;align-items:center!important;min-width:198px!important;width:198px!important;flex:0 0 198px!important}
+.brand img{width:198px!important;height:64px!important;object-fit:contain!important;object-position:left center!important}
+.navlinks{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:1 1 auto!important;
+  gap:21px!important;
+  font-size:var(--kk-nav-font)!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  margin:0!important;
+  padding:0!important;
+}
+.navlinks a{padding:9px 0!important;white-space:nowrap!important;position:relative!important}
+.navlinks a.active:after,.navlinks a:hover:after{content:""!important;position:absolute!important;left:0!important;right:0!important;bottom:1px!important;height:2px!important;background:var(--green)!important;border-radius:999px!important}
+.header-visit{
+  display:inline-flex!important;
+  width:118px!important;
+  min-width:118px!important;
+  height:42px!important;
+  min-height:42px!important;
+  padding:0 15px!important;
+  font-size:var(--kk-header-btn-font)!important;
+  line-height:1!important;
+  gap:0!important;
+  flex:0 0 118px!important;
+}
+.menu-btn{display:none!important}
+
+/* Shared desktop hero frame */
+@media (min-width:981px){
+  .hero{padding:0!important;min-height:410px!important;overflow:hidden!important}
+  .hero > .container,
+  .hero-grid{
+    width:min(1180px,calc(100% - 40px))!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+    align-items:start!important;
+    gap:24px!important;
+    min-height:410px!important;
+    margin:auto!important;
+    padding:0!important;
+  }
+  .hero-copy{
+    width:100%!important;
+    min-width:0!important;
+    min-height:398px!important;
+    align-self:start!important;
+    display:grid!important;
+    grid-template-rows:16px 164px 76px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    padding:20px 0 0!important;
+    margin:0!important;
+  }
+  .eyebrow{
+    align-self:start!important;
+    font-size:var(--kk-eyebrow-font)!important;
+    line-height:16px!important;
+    font-weight:900!important;
+    letter-spacing:.08em!important;
+    text-transform:uppercase!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero h1,.hero-copy h1{
+    align-self:start!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:var(--kk-hero-title-font)!important;
+    line-height:var(--kk-hero-line)!important;
+    letter-spacing:-.03em!important;
+    margin:0!important;
+    padding:0!important;
+    max-width:520px!important;
+  }
+  .hero-copy > p,.hero .container > .hero-copy > p{
+    align-self:start!important;
+    font-size:var(--kk-hero-body-font)!important;
+    line-height:1.5!important;
+    max-width:520px!important;
+    margin:0!important;
+    padding:0!important;
+    color:#47554d!important;
+  }
+  .hero-actions{
+    align-self:start!important;
+    display:flex!important;
+    align-items:flex-start!important;
+    gap:10px!important;
+    margin:0!important;
+    padding:0!important;
+    flex-wrap:nowrap!important;
+  }
+  .hero-actions .btn{
+    width:148px!important;
+    min-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    padding:0 12px!important;
+    font-size:14px!important;
+    line-height:1!important;
+  }
+  .hero-media{
+    position:relative!important;
+    align-self:start!important;
+    width:100%!important;
+    height:390px!important;
+    min-height:390px!important;
+    margin:10px 0 0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  .hero-media:before{
+    content:""!important;
+    position:absolute!important;
+    inset:12px -18px -8px 18px!important;
+    background:#dceab8!important;
+    border-radius:40% 0 0 44%!important;
+    transform:rotate(-1.5deg)!important;
+  }
+  .hero-media img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    border-radius:40% 0 0 44%!important;
+    box-shadow:0 14px 40px rgba(20,66,42,.10)!important;
+  }
+}
+
+/* Slightly tighter shared desktop frame on smaller laptops */
+@media (min-width:981px) and (max-width:1199px){
+  :root{--kk-hero-title-font:46px}
+  .topbar .container,.nav,.hero > .container,.hero-grid{width:min(1080px,calc(100% - 44px))!important}
+  .nav{gap:18px!important}
+  .brand{min-width:185px!important;width:185px!important;flex-basis:185px!important}
+  .brand img{width:185px!important}
+  .navlinks{gap:16px!important;font-size:12.5px!important}
+  .header-visit{width:112px!important;min-width:112px!important;flex-basis:112px!important}
+  .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
+}
+
+/* One identical mobile header + hero frame */
+@media (max-width:980px){
+  .topbar{display:none!important}
+  .nav{
+    width:min(100% - 34px,1180px)!important;
+    height:76px!important;
+    gap:16px!important;
+  }
+  .brand{min-width:0!important;width:auto!important;flex:0 0 auto!important}
+  .brand img{width:180px!important;height:58px!important}
+  .header-visit{display:none!important}
+  .menu-btn{display:grid!important;margin-left:auto!important}
+  .navlinks{display:none!important}
+  .navlinks.open{display:flex!important}
+}
+
+@media (max-width:620px){
+  .nav{width:calc(100% - 28px)!important;height:70px!important;gap:10px!important}
+  .brand img{width:156px!important;height:52px!important}
+  .menu-btn{width:40px!important;height:40px!important;border-radius:11px!important;padding:5px!important;background:#f3f7ec!important;color:var(--green)!important}
+  .menu-btn svg{width:26px!important;height:26px!important}
+  .navlinks{
+    position:fixed!important;
+    left:auto!important;
+    right:0!important;
+    top:70px!important;
+    width:min(46vw,190px)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    padding:9px 12px 14px!important;
+    background:#fffdf7!important;
+    border-left:1px solid #e9e5dc!important;
+    border-bottom:1px solid #e9e5dc!important;
+    border-radius:0 0 0 18px!important;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important;
+  }
+  .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
+
+  .hero{padding:0!important;min-height:0!important}
+  .hero > .container,.hero-grid{
+    width:calc(100% - 28px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:14px!important;
+    margin:auto!important;
+    padding:4px 0 8px!important;
+    min-height:0!important;
+  }
+  .hero-copy{
+    width:100%!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-rows:14px 108px 110px 92px!important;
+    row-gap:6px!important;
+    align-content:start!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .eyebrow{font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+  .hero h1,.hero-copy h1{
+    font-size:34px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .hero-copy > p,.hero .container > .hero-copy > p{
+    font-size:14.5px!important;
+    line-height:1.5!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .hero-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+    align-content:start!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero-actions .btn{width:100%!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .hero-media{
+    position:relative!important;
+    width:100%!important;
+    height:270px!important;
+    min-height:270px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero-media:before{content:""!important;position:absolute!important;inset:9px -7px -7px 11px!important;background:#dceab8!important;border-radius:28px!important;transform:rotate(-1deg)!important}
+  .hero-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;border-radius:28px!important;box-shadow:0 12px 28px rgba(20,66,42,.10)!important}
+}
+@media(max-width:420px){
+  .navlinks{width:min(47vw,176px)!important}
+  .hero > .container,.hero-grid{width:calc(100% - 22px)!important}
+  .hero-copy{grid-template-rows:14px 104px 110px 92px!important}
+  .hero h1,.hero-copy h1{font-size:32px!important}
+}
 </style>
 </head>
 <body>
@@ -480,19 +777,10 @@ footer h3,.footer h3{font-size:var(--site-footer-title-size)!important;line-heig
     <a class="brand" href="index.html" aria-label="Kinder Kidz Day Nursery home">
       <img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo">
     </a>
-
-    <nav class="navlinks" id="navlinks" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Us</a>
-      <a href="rooms.html">Our Rooms</a>
-      <a href="learning.html">Learning &amp; Development</a>
-      <a href="fees.html">Fees &amp; Funding</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="parents.html">Parents</a>
-      <a href="contact.html">Contact</a>
+    <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a href="about.html" class="active">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning & Development</a><a href="fees.html">Fees & Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
     </nav>
-
-    <a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a>
+    <a class="btn primary desktop-only header-visit" href="contact.html#visit">Book a Visit</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
         <path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
@@ -509,8 +797,8 @@ footer h3,.footer h3{font-size:var(--site-footer-title-size)!important;line-heig
         <h1>A Loving Start,<br><span style="color:var(--green)">A Bright Future</span></h1>
         <p>At Kinder Kidz, we provide a warm, safe and inspiring environment where children feel happy, valued and encouraged to explore, learn and grow.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#visit">📅 Book a Visit</a>
-          <a class="btn secondary" href="#footer-contact">✉ Enquire Now</a>
+          <a class="btn primary" href="contact.html#visit">📅 Book a Visit</a>
+          <a class="btn secondary" href="contact.html#enquiry">✉ Enquire Now</a>
         </div>
       </div>
       <div class="hero-media">
