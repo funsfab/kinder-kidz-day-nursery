@@ -984,6 +984,57 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 @keyframes kkWideFloat{50%{transform:translateY(-4px) rotate(-9deg)}}
 @keyframes kkWideBob{50%{transform:translateY(-3px) rotate(-3deg)}}
 
+
+
+/* ============================================================
+   FINAL HERO-ANIMATION POLISH v6 — ABOUT US
+   Desktop: wider animation centred in the spare title/body gap.
+   Mobile: larger animation shifted into the visual centre of the gap.
+   No cards, images, buttons or approved section positions are changed.
+   ============================================================ */
+@media (min-width:981px){
+  .about-hero-mini-animation{
+    left:0!important;
+    top:186px!important;
+    width:min(500px,96%)!important;
+    height:34px!important;
+    justify-content:center!important;
+    gap:14px!important;
+    opacity:.96!important;
+  }
+  .about-hero-mini-animation .mini-track{width:76%!important;height:2px!important}
+  .about-hero-mini-animation .mini-track:before{
+    width:28px!important;height:28px!important;top:-13px!important;border-radius:8px!important;
+    font-size:13px!important;
+  }
+  .about-hero-mini-animation .mini-track:after{width:12px!important;height:12px!important;top:-5px!important}
+  .about-hero-mini-animation .mini-star{font-size:20px!important}
+  .about-hero-mini-animation .mini-leaf{font-size:20px!important}
+}
+@media (max-width:620px){
+  .mobile-hero-gap-animation{
+    width:100%!important;
+    height:34px!important;
+    justify-content:center!important;
+    gap:13px!important;
+    margin:0!important;
+    overflow:visible!important;
+    transform:translateY(-24px)!important;
+  }
+  .mobile-hero-gap-animation .m-line{
+    width:64%!important;
+    min-width:180px!important;
+  }
+  .mobile-hero-gap-animation .m-star{font-size:19px!important}
+  .mobile-hero-gap-animation .m-leaf{font-size:18px!important}
+  .hero-copy{grid-template-rows:14px 108px 34px 92px 92px!important;row-gap:6px!important}
+}
+@media (max-width:420px){
+  .mobile-hero-gap-animation{height:32px!important;transform:translateY(-20px)!important}
+  .mobile-hero-gap-animation .m-line{min-width:150px!important;width:62%!important}
+  .hero-copy{grid-template-rows:14px 104px 32px 92px 92px!important}
+}
+
 </style>
 </head>
 <body>
