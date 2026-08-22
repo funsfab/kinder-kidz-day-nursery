@@ -4,274 +4,79 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="About Kinder Kidz Day Nursery in Laindon, Basildon." name="description"/>
-<title>About Us | Kinder Kidz Day Nursery</title>
+<meta content="Learning and development at Kinder Kidz Day Nursery in Laindon, supporting children through play and the EYFS." name="description"/>
+<title>Learning &amp; Development | Kinder Kidz Day Nursery</title>
 <style>
 :root{
   --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;--soft:#f7f3e8;
-  --text:#1f2a24;--muted:#5f6761;--line:#e8e2d5;--gold:#f7d85b;
-  --shadow:0 14px 34px rgba(18,60,43,.08);
+  --text:#1f2a24;--muted:#5f6761;--line:#e8e2d5;--gold:#f7d85b;--pink:#e9799f;
+  --blue:#70b5d4;--shadow:0 12px 30px rgba(18,60,43,.08);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;max-width:100%;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;max-width:100%;overflow-x:hidden}
 a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
 .container{width:min(1180px,calc(100% - 40px));margin:auto}
-h1,h2,h3{margin:0;color:var(--deep);line-height:1.05}h1,h2{font-family:Georgia,"Times New Roman",serif}
-h1{font-size:clamp(40px,4.3vw,62px);letter-spacing:-.035em}h2{font-size:clamp(34px,3.6vw,48px);letter-spacing:-.03em}
-p{margin:0}
-.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
-.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:8px 0;font-size:14px;color:#294633;font-weight:600}
-.topbar span{display:flex;align-items:center;gap:8px}
-header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
-.nav{height:86px;display:flex;align-items:center;gap:26px}.brand{display:flex;align-items:center;min-width:205px}.brand img{width:205px;height:66px;object-fit:contain;object-position:left center}
-.navlinks{display:flex;align-items:center;justify-content:center;gap:22px;flex:1;font-size:14px;font-weight:700}.navlinks a{padding:10px 0;position:relative}.navlinks a.active:after,.navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--green);border-radius:999px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 22px;font-weight:800;border:1.5px solid var(--green);cursor:pointer;transition:.2s ease}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--green)}.btn.pink{background:#e9799f;border-color:#e9799f;color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(23,106,59,.14)}
-.menu-btn{display:none;background:#f3f7ec;border:0;width:40px;height:40px;border-radius:11px;color:var(--green);padding:5px;place-items:center;margin-left:auto}
-.hero{padding:14px 0 20px;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 56%,#eef7dc 100%);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:center}
-.eyebrow{font-size:13px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.hero-copy p{font-size:18px;color:#47554d;max-width:530px;margin:20px 0 26px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-media{position:relative;min-height:385px}.hero-media:before{content:"";position:absolute;inset:18px -36px 12px 24px;background:#dceab8;border-radius:42% 0 0 52%;transform:rotate(-2deg)}.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:40% 0 0 44%;box-shadow:var(--shadow)}
-.sun{position:absolute;right:4px;top:8px;font-size:72px;line-height:1;filter:drop-shadow(0 5px 10px rgba(244,180,0,.18))}
-.wave-sep{height:18px;position:relative;margin-top:8px}.wave-sep:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-bottom:2px solid rgba(47,138,73,.6);border-radius:0 0 50% 50%/0 0 100% 100%}
-.section{padding:52px 0}.section.compact{padding-top:40px;padding-bottom:40px}
-.story-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center}.story-image img{width:100%;aspect-ratio:1.08/1;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
-.story-copy h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:14px;position:relative;display:inline-block}.story-copy h2:after{content:"";display:block;width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin-top:8px}.story-copy p{font-size:16px;color:#36433c;margin-bottom:14px}
-.stat-strip{margin-top:22px;background:#f6f5e8;border:1px solid #ebe4d6;border-radius:22px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}.stat{padding:22px 18px;text-align:center;position:relative}.stat:not(:last-child):after{content:"";position:absolute;right:0;top:18px;bottom:18px;width:1px;background:#d7dec9}.stat b{display:block;font-size:14px;color:#24332c}.stat small{display:block;font-size:12px;color:#67716b;margin-top:4px}
-.values{text-align:center}.values-head{margin-bottom:26px}.values-head h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:8px}.values-head .line{width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin:0 auto}
-.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.value{padding:16px 18px}.value:not(:last-child){border-right:1px dashed #d6dcd1}.value .ico{width:62px;height:62px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;border:2px solid #7eb27e;color:var(--green);font-size:28px}.value:nth-child(2) .ico,.value:nth-child(4) .ico{border-color:#efc64a;color:#efb310}.value h3{font-family:inherit;font-size:18px;margin-bottom:8px}.value p{font-size:14px;color:#5f6761}
-.diff-card{background:#faf5ea;border:1px solid #efe5d5;border-radius:28px;padding:26px;display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:start}.diff-copy h2{font-family:inherit;color:var(--green);font-size:18px;margin-bottom:8px}.diff-copy .line{width:66px;height:4px;background:#e6bf3e;border-radius:999px;margin-bottom:18px}.diff-copy p{font-size:16px;color:#37433d;margin-bottom:16px}.tick-list{display:grid;gap:10px}.tick{display:flex;gap:10px;align-items:flex-start;color:#25322c;font-size:15px}.tick span:first-child{color:var(--green);font-weight:900}
-.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:0 8px 22px rgba(38,70,48,.06)}.gallery-sub{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gallery-tall{min-height:255px}.gallery-small{min-height:120px}
-.cta-wrap{padding:18px 0 8px}.cta{background:linear-gradient(135deg,#1b7a43,#125e33);color:#fff;border-radius:20px;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-family:inherit;color:#fff;font-size:18px}.cta p{color:#e4efe7;margin-top:4px}.cta .btn.primary{background:#f3c420;border-color:#f3c420;color:#123c2b}.cta .btn.secondary{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
-footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:34px 0 18px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:26px}.footer-brand img{width:190px;height:70px;object-fit:contain;object-position:left center}.footer-brand p{max-width:260px;color:#dce9df;font-size:14px}.footer h3{font-family:inherit;color:var(--gold);font-size:15px;margin-bottom:12px}.footer-list{display:grid;gap:8px;font-size:14px;color:#e5f0e8}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:14px;font-size:12px;color:#cfe0d5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-size:27px;font-weight:800;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
+h1,h2,h3{margin:0;color:var(--deep);line-height:1.06}h1,h2{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(40px,4.2vw,60px);letter-spacing:-.035em}h2{font-size:clamp(32px,3vw,44px);letter-spacing:-.025em}p{margin:0}
 
-@media (max-width:980px){
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:7px 0;font-size:13px;color:#294633;font-weight:600}
+.topbar span{display:flex;align-items:center;gap:8px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+.nav{height:82px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;min-width:198px}.brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:21px;flex:1;font-size:13px;font-weight:700}.navlinks a{padding:9px 0;position:relative;white-space:nowrap}.navlinks a.active:after,.navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:99px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:800;border:1.5px solid var(--green);cursor:pointer;transition:.2s ease}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--green)}.btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(23,106,59,.13)}
+.menu-btn{display:none;background:#f3f7ec;border:0;width:40px;height:40px;border-radius:11px;color:var(--green);padding:5px;place-items:center;margin-left:auto}
+
+.hero{padding:10px 0 10px;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px;align-items:center}
+.eyebrow{font-size:12px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
+.hero-copy p{font-size:17px;color:#47554d;max-width:520px;margin:15px 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-media{position:relative;min-height:350px}.hero-media:before{content:"";position:absolute;inset:14px -26px 5px 20px;background:#dceab8;border-radius:46% 5% 5% 48%;transform:rotate(-1deg)}.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:45% 5% 5% 46%;box-shadow:var(--shadow)}
+.doodle{position:absolute;font-size:28px;color:var(--pink);line-height:1}.doodle.one{left:-12px;top:44px}.doodle.two{right:12px;bottom:16px;color:#80a967;font-size:34px}
+
+.feature-strip{padding:10px 0 14px}.feature-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}.feature{padding:17px 14px;text-align:center;position:relative}.feature:not(:last-child):after{content:"";position:absolute;right:0;top:16px;bottom:16px;width:1px;background:#e9e4d8}.feature .ico{width:42px;height:42px;border-radius:14px;background:#eff7e8;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:21px}.feature:nth-child(2) .ico{background:#fff0f4;color:#cf668b}.feature:nth-child(3) .ico{background:#fff7da;color:#bd9200}.feature:nth-child(4) .ico{background:#edf7fb;color:#4f8fae}.feature:nth-child(5) .ico{background:#eef5e8;color:#5e8e4e}.feature b{display:block;font-size:13px}.feature small{display:block;margin-top:3px;color:#69726c;font-size:11.5px;line-height:1.35}
+
+.section{padding:28px 0}.section-title{text-align:center;margin-bottom:18px}.section-title .kicker{font-size:13px;font-weight:800;color:var(--green2);margin-bottom:4px}.section-title p{color:var(--muted);font-size:15px;max-width:680px;margin:8px auto 0}
+.rooms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.room-card{background:#fff;border:1px solid #e7e1d5;border-radius:24px;overflow:hidden;box-shadow:0 9px 24px rgba(23,70,42,.06);display:flex;flex-direction:column}.room-card img{width:100%;height:185px;object-fit:cover}.room-body{padding:16px 15px 17px;display:flex;flex-direction:column;gap:8px;flex:1}.room-head{display:flex;gap:9px;align-items:center}.room-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:#fff0f4;color:#ca6689}.room-card:nth-child(2) .room-icon{background:#fff7dc;color:#bd9000}.room-card:nth-child(3) .room-icon{background:#eef7e8;color:#478255}.room-card:nth-child(4) .room-icon{background:#edf7fb;color:#4f8fae}.room-card h3{font-family:inherit;font-size:18px}.room-age{font-size:13px;color:#6c746f}.room-body>p{font-size:13.5px;color:#525d57;line-height:1.45}.mini-list{display:grid;gap:5px;font-size:12.5px;color:#36413c;margin-top:2px}.mini-list span{display:flex;gap:7px}.mini-list i{font-style:normal;color:var(--green);font-weight:900}
+
+.experience{padding:24px 0 22px}.experience-panel{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0}.experience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.experience-item{text-align:center;padding:6px 16px}.experience-item:not(:last-child){border-right:1px dashed #d5dcd0}.experience-item .ico{width:52px;height:52px;border-radius:50%;border:2px solid #8fbd8f;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:23px}.experience-item:nth-child(2) .ico,.experience-item:nth-child(4) .ico{border-color:#ecc553;color:#c69700}.experience-item h3{font-family:inherit;font-size:15px;margin-bottom:4px}.experience-item p{font-size:12px;color:#69716c;line-height:1.4}
+
+.gallery-strip{padding:18px 0 20px}.gallery-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-row img{width:100%;height:160px;object-fit:cover;border-radius:18px;box-shadow:0 8px 20px rgba(23,70,42,.06)}
+
+.cta-wrap{padding:4px 0 8px}.cta{background:linear-gradient(135deg,#eff8e3 0%,#fff9df 68%,#eff5d8 100%);border:1px solid #e4ead5;border-radius:20px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-family:inherit;font-size:18px;color:var(--green)}.cta p{color:#5d6861;font-size:14px;margin-top:3px}.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:22px 0 12px}.footer-grid{display:grid;grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;align-items:start;gap:20px}.footer-grid>div{text-align:center;min-width:0}.footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}.footer-brand p{max-width:240px;margin:0 auto;color:#dce9df;font-size:13px}.footer h3{font-family:inherit;color:var(--gold);font-size:14px;margin:0 0 8px}.footer-list{display:grid;gap:5px;font-size:12.5px;color:#e5f0e8;justify-items:center}.footer-list a,.footer-list div{text-align:center}.quicklinks-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.quicklinks-column{justify-items:center}.footer-contact-col .footer-list a{overflow-wrap:anywhere}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:14px;padding-top:9px;font-size:11px;color:#cfe0d5;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-size:27px;font-weight:800;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:.2s ease}.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}.scroll-nav-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media(max-width:980px){
   .container{width:min(100% - 34px,1180px)}
-  .topbar .container{gap:14px;font-size:13px}
-  .nav{height:76px;gap:16px}.brand img{width:180px;height:58px}
+  .nav{height:76px;gap:16px}.brand img{width:180px;height:58px}.nav>.desktop-only{display:none}.menu-btn{display:grid}
   .navlinks{position:fixed;display:none;flex-direction:column;align-items:stretch;left:0;right:0;top:76px;background:#fffdf7;padding:16px 20px 20px;border-bottom:1px solid #e9e5dc;box-shadow:0 16px 28px rgba(0,0,0,.08)}.navlinks.open{display:flex}.navlinks a{padding:9px 4px}
-  .nav>.desktop-only{display:none}.menu-btn{display:grid}
-  .hero-grid,.story-grid,.diff-card,.cta{grid-template-columns:1fr;display:grid}
-  .hero{padding-top:10px;padding-bottom:12px}.hero-copy p{font-size:16px}.hero-media{min-height:340px}.hero-media img{border-radius:30px}.hero-media:before{inset:12px -10px -10px 14px;border-radius:32px}
-  .values-grid{grid-template-columns:repeat(2,1fr)}.value:nth-child(2){border-right:none}.value:nth-child(1),.value:nth-child(2),.value:nth-child(3),.value:nth-child(4){border-bottom:1px dashed #d6dcd1}
-  .gallery-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;gap:14px}.hero-media{min-height:330px}.hero-media img{border-radius:28px}.hero-media:before{inset:10px -8px -7px 12px;border-radius:30px}
+  .feature-card{grid-template-columns:repeat(2,1fr)}.feature:nth-child(2n):after{display:none}.feature{border-bottom:1px solid #eee9df}.feature:last-child{grid-column:1/-1;border-bottom:0}.feature:last-child:after{display:none}
+  .rooms-grid{grid-template-columns:repeat(2,1fr)}
+  .experience-grid{grid-template-columns:repeat(2,1fr)}.experience-item:nth-child(2n){border-right:none}.experience-item{border-bottom:1px dashed #d5dcd0;padding:15px}.experience-item:last-child{grid-column:1/-1;border-bottom:0}.experience-item:last-child{border-right:none}
+  .gallery-row{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
 }
-@media (max-width:620px){
-  .container{width:calc(100% - 28px)}
-  .topbar{display:none}
-  .nav{height:70px;gap:10px}.brand{min-width:0}.brand img{width:156px;height:52px}
-  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
-  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
-  .hero{padding-top:4px;padding-bottom:8px}.hero-grid{gap:16px}.eyebrow{font-size:11px;margin-bottom:8px}h1{font-size:34px;line-height:1.04}.hero-copy p{font-size:14.5px;line-height:1.55;margin:14px 0 18px}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.btn{width:100%;padding:12px 16px;font-size:14px}.hero-media{min-height:290px}.sun{font-size:52px;right:8px;top:6px}
-  .section{padding:42px 0}.section.compact{padding-top:30px;padding-bottom:30px}
-  .story-grid{gap:18px}.story-copy p{font-size:14px}.story-image img{aspect-ratio:1.12/1}
-  .stat-strip{grid-template-columns:1fr}.stat:not(:last-child):after{display:none}.stat{padding:18px 14px;border-bottom:1px solid #e7e0d0}.stat:last-child{border-bottom:0}
-  .values-grid{grid-template-columns:1fr}.value{border-right:0!important;border-bottom:1px dashed #d6dcd1}.value:last-child{border-bottom:0}
-  .diff-card{padding:18px;gap:16px}.diff-copy p,.tick{font-size:14px}
-  .gallery-sub{grid-template-columns:1fr 1fr;gap:10px}.gallery-grid{gap:10px}.gallery-tall{min-height:180px}.gallery-small{min-height:102px}
-  .cta{padding:20px 18px;gap:14px}.cta-actions{display:grid;grid-template-columns:1fr;gap:10px}
-  .footer-grid{grid-template-columns:1fr;gap:22px}.footer h3{font-size:16px}
+
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}.topbar{display:none}.nav{height:70px;gap:10px}.brand{min-width:0}.brand img{width:156px;height:52px}
+  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.menu-btn svg{width:26px;height:26px}
+  .hero{padding:3px 0 5px}.hero-grid{gap:10px}.eyebrow{font-size:11px;margin-bottom:6px}h1{font-size:34px;line-height:1.04}.hero-copy p{font-size:14.5px;line-height:1.5;margin:11px 0 14px}.hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.btn{width:100%;padding:11px 15px;font-size:14px}.hero-media{min-height:270px}
+  .feature-strip{padding:7px 0 9px}.feature{padding:13px 9px}.feature .ico{width:38px;height:38px;margin-bottom:6px}.feature b{font-size:12px}.feature small{font-size:10.5px}
+  .section{padding:18px 0}.section-title{margin-bottom:12px}.section-title h2{font-size:31px}.section-title p{font-size:14px;margin-top:6px}.rooms-grid{grid-template-columns:1fr;gap:9px}.room-card{display:grid;grid-template-columns:42% 58%;border-radius:20px}.room-card img{height:100%;min-height:230px}.room-body{padding:13px 12px}.room-card h3{font-size:17px}.room-body>p{font-size:13px}.mini-list{font-size:12px;gap:4px}
+  .experience{padding:11px 0 10px}.experience-panel{padding:11px 0}.experience-grid{grid-template-columns:1fr}.experience-item,.experience-item:last-child{grid-column:auto;border-right:0;border-bottom:1px dashed #d5dcd0;padding:12px 10px}.experience-item:last-child{border-bottom:0}.experience-item .ico{width:45px;height:45px;margin-bottom:6px}.experience-item h3{font-size:14px}.experience-item p{font-size:11.5px}
+  .gallery-strip{padding:10px 0 11px}.gallery-row{grid-template-columns:1fr 1fr;gap:8px}.gallery-row img{height:116px;border-radius:14px}
+  .cta-wrap{padding:2px 0 6px}.cta{padding:15px 14px;display:grid;gap:10px}.cta h2{font-size:17px}.cta p{font-size:13px}.cta-actions{display:grid;grid-template-columns:1fr;gap:8px}
+  footer{padding:20px 0 11px}.footer-grid{grid-template-columns:1fr;gap:16px}.footer-brand img{width:160px;height:58px}.footer h3{font-size:16px;margin-bottom:7px}.footer-list{gap:5px;font-size:13px}.quicklinks-columns{grid-template-columns:1fr 1fr;gap:0 16px}.footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
   .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
 }
-
-
-/* ============================================================
-   ABOUT US REFINEMENTS — v3
-   Compact spacing + exact homepage mobile drawer + subtle
-   desktop nursery animation. Existing content/images retained.
-   ============================================================ */
-
-/* Footer headings match the homepage footer exactly. */
-footer h3{color:#f7d85b!important;font-weight:800}
-
-/* Desktop: remove unnecessary vertical gaps without touching
-   image sizes, type scale or content. */
-@media (min-width:981px){
-  .hero{padding-top:8px;padding-bottom:6px}
-  .hero-grid{gap:22px}
-  .wave-sep{height:7px;margin-top:2px}
-  .wave-sep:before{height:5px}
-
-  /* Book/Enquire area -> first image/story section */
-  .story-section{padding-top:18px;padding-bottom:18px}
-
-  /* Age-range stats -> Our Values */
-  .values-section{padding-top:14px;padding-bottom:18px}
-
-  /* Values cards -> What Makes Us Different */
-  .difference-section{padding-top:16px;padding-bottom:14px}
-
-  /* Gallery -> final green CTA */
-  .cta-wrap{padding-top:4px;padding-bottom:8px}
-}
-
-/* Professional, non-human nursery-style motion for the unused
-   desktop area beneath the final difference bullet. */
-.playful-animation{
-  position:relative;
-  height:106px;
-  margin-top:18px;
-  overflow:hidden;
-  border-radius:18px;
-  background:linear-gradient(180deg,#fffaf0 0%,#f2f7e9 100%);
-  border:1px solid rgba(23,106,59,.10);
-}
-.anim-path{
-  position:absolute;left:18px;right:18px;bottom:25px;height:36px;
-  border-bottom:3px dashed rgba(47,138,73,.28);
-  border-radius:50%;transform:rotate(-2deg);
-}
-.anim-cloud{position:absolute;width:46px;height:17px;background:#fff;border-radius:999px;opacity:.9;box-shadow:0 5px 15px rgba(30,60,40,.05)}
-.anim-cloud:before,.anim-cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
-.anim-cloud:before{width:20px;height:20px;left:8px;top:-8px}.anim-cloud:after{width:25px;height:25px;right:5px;top:-12px}
-.cloud-a{left:18px;top:17px;animation:cloudFloat 5.8s ease-in-out infinite alternate}
-.cloud-b{right:24px;top:22px;transform:scale(.75);animation:cloudFloat 4.8s ease-in-out infinite alternate-reverse}
-.anim-bee{position:absolute;left:22px;top:47px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#f7d85b;color:#176a3b;font-size:14px;box-shadow:0 5px 12px rgba(23,106,59,.12);animation:beeTravel 6s ease-in-out infinite}
-.anim-block{position:absolute;bottom:13px;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:14px;box-shadow:0 6px 13px rgba(30,60,40,.10)}
-.block-a{left:34%;background:#f7d85b;color:#5a4b00;animation:blockBob 2.6s ease-in-out infinite}
-.block-b{left:48%;background:#f8dce5;color:#a84f70;animation:blockBob 2.9s ease-in-out .3s infinite}
-.anim-ball{position:absolute;right:26%;bottom:14px;width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#69b2d2 0 48%,#fff 49% 58%,#e97b9f 59%);box-shadow:0 6px 13px rgba(30,60,40,.10);animation:ballBounce 2.4s ease-in-out infinite}
-.anim-leaf{position:absolute;right:10%;bottom:13px;font-size:38px;line-height:1;color:#5f9c51;transform:rotate(-14deg);animation:leafSway 3.2s ease-in-out infinite alternate}
-@keyframes beeTravel{0%{transform:translate(0,8px) rotate(-8deg)}45%{transform:translate(185px,-12px) rotate(7deg)}75%{transform:translate(300px,3px) rotate(-4deg)}100%{transform:translate(0,8px) rotate(-8deg)}}
-@keyframes cloudFloat{from{transform:translateX(0)}to{transform:translateX(18px)}}
-@keyframes blockBob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(2deg)}}
-@keyframes ballBounce{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-13px) rotate(18deg)}}
-@keyframes leafSway{from{transform:rotate(-18deg)}to{transform:rotate(8deg)}}
-@media (prefers-reduced-motion:reduce){.playful-animation *{animation:none!important}}
-
-@media (max-width:980px){
-  .playful-animation{display:none}
-}
-
-/* Mobile: use the exact compact drawer dimensions/type from the
-   final homepage and tighten all section transitions. */
-@media (max-width:620px){
-  .navlinks{
-    left:auto;
-    right:0;
-    width:min(46vw,190px);
-    top:70px;
-    max-height:calc(100vh - 70px);
-    overflow:auto;
-    padding:9px 12px 14px;
-    gap:0;
-    border-left:1px solid #e9e5dc;
-    border-bottom:1px solid #e9e5dc;
-    border-radius:0 0 0 18px;
-    box-shadow:-12px 16px 30px rgba(0,0,0,.10);
-  }
-  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
-  .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}
-  .menu-btn svg{width:26px;height:26px}
-
-  /* Enquire -> hero image -> story image: keep only a small gap. */
-  .hero{padding-top:4px;padding-bottom:2px}
-  .hero-grid{gap:11px}
-  .wave-sep{display:none}
-  .story-section{padding-top:11px;padding-bottom:9px}
-  .story-grid{gap:11px}
-
-  /* Age range stats -> Our Values */
-  .values-section{padding-top:10px;padding-bottom:9px}
-  .values-head{margin-bottom:15px}
-
-  /* Fun -> What Makes Us Different */
-  .difference-section{padding-top:10px;padding-bottom:9px}
-  .diff-card{gap:11px}
-
-  /* Gallery/image -> Ready to see Kinder Kidz CTA */
-  .cta-wrap{padding-top:3px;padding-bottom:7px}
-  .cta{margin-top:0}
-
-  footer{padding-top:28px}
-  footer h3{color:#f7d85b!important;font-size:16px;margin-bottom:9px}
-}
-
-@media (max-width:420px){
-  .navlinks{width:min(47vw,176px)}
-}
-
-
-
-/* ============================================================
-   ABOUT US FINAL SPACING + FOOTER REFINEMENTS — v4
-   ============================================================ */
-
-@media (min-width:981px){
-  /* Care/Respect/Growth/Partnership/Fun -> What Makes Us Different */
-  .values-section{padding-bottom:5px!important}
-  .difference-section{padding-top:5px!important}
-
-  /* Make the left side of What Makes Us Different finish at the
-     same visual depth as the nursery image grid on the right. */
-  .diff-card{align-items:stretch}
-  .diff-copy{display:flex;flex-direction:column;min-height:100%}
-  .animation-stack{margin-top:18px;display:flex;flex-direction:column;gap:10px;flex:1;min-height:250px}
-  .animation-stack .playful-animation{margin-top:0}
-  .playful-animation-one{height:106px;flex:0 0 106px}
-  .playful-animation-two{flex:1;min-height:136px}
-
-  /* Compact, centred desktop footer. */
-  footer{padding:24px 0 13px}
-  .footer-grid-v4{
-    display:grid;
-    grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;
-    align-items:start;
-    gap:22px;
-  }
-  .footer-grid-v4>div{text-align:center;min-width:0}
-  .footer-brand img{margin:0 auto 6px;width:172px;height:62px}
-  .footer-brand p{margin:0 auto;max-width:245px}
-  .quicklinks-group h3{text-align:center;margin-bottom:9px}
-  .quicklinks-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
-  .quicklinks-column{justify-items:center}
-  .footer-grid-v4 .footer-list{gap:6px;justify-items:center}
-  .footer-grid-v4 .footer-list a,.footer-grid-v4 .footer-list div{text-align:center}
-  .footer-contact-col .footer-list a{overflow-wrap:anywhere}
-  .footer-bottom{margin-top:16px;padding-top:11px}
-}
-
-/* Second professional nursery animation — no human figures. */
-.playful-animation-two{
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  background:linear-gradient(180deg,#f3f8ec 0%,#fff8e8 100%);
-  border:1px solid rgba(23,106,59,.10);
-}
-.grass-line{position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(180deg,#dcecbf,#bfdc8f);clip-path:polygon(0 55%,7% 40%,15% 58%,24% 36%,33% 57%,42% 41%,52% 60%,62% 37%,72% 57%,82% 38%,91% 55%,100% 42%,100% 100%,0 100%)}
-.rainbow{position:absolute;left:8%;bottom:27px;width:108px;height:56px;overflow:hidden;animation:rainbowFloat 3.8s ease-in-out infinite alternate}
-.rainbow span{position:absolute;left:50%;bottom:-55px;transform:translateX(-50%);border-radius:50%;border-style:solid;background:transparent}
-.rainbow span:nth-child(1){width:108px;height:108px;border-width:12px;border-color:#ef9aad}
-.rainbow span:nth-child(2){width:82px;height:82px;border-width:11px;border-color:#f5cf55}
-.rainbow span:nth-child(3){width:56px;height:56px;border-width:10px;border-color:#82bdda}
-.kite{position:absolute;right:18%;top:20%;font-size:42px;color:#76b5d4;transform:rotate(45deg);animation:kiteFloat 3.4s ease-in-out infinite alternate}.kite i{position:absolute;width:55px;height:2px;background:#8ead91;left:23px;top:35px;transform:rotate(55deg);transform-origin:left center}.kite i:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#f1c94a;left:26px;top:-3px}
-.pencil{position:absolute;left:45%;top:24%;font-size:42px;color:#e79a46;transform:rotate(-14deg);animation:pencilBob 2.8s ease-in-out infinite}
-.mini-star{position:absolute;color:#e9b62c;animation:starPulse 2.3s ease-in-out infinite}.star-one{left:39%;top:15%;font-size:20px}.star-two{right:7%;top:14%;font-size:17px;animation-delay:.5s}
-.toy-cube{position:absolute;bottom:24px;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:900;box-shadow:0 6px 12px rgba(30,60,40,.10);z-index:2;animation:cubeWiggle 3s ease-in-out infinite}.cube-one{left:36%;background:#f7d85b;color:#6c5700}.cube-two{right:8%;background:#8cc798;color:#174c2d;animation-delay:.4s}
-@keyframes rainbowFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
-@keyframes kiteFloat{from{transform:translate(0,0) rotate(45deg)}to{transform:translate(-10px,10px) rotate(50deg)}}
-@keyframes pencilBob{0%,100%{transform:translateY(0) rotate(-14deg)}50%{transform:translateY(-8px) rotate(-8deg)}}
-@keyframes starPulse{0%,100%{transform:scale(.8);opacity:.6}50%{transform:scale(1.2);opacity:1}}
-@keyframes cubeWiggle{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg) translateY(-4px)}}
-
-@media (max-width:980px){
-  .animation-stack{display:none}
-  .footer-grid-v4{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
-  .quicklinks-columns{grid-template-columns:1fr}
-}
-
-@media (max-width:620px){
-  /* The only remaining mobile spacing correction: Fun -> Difference. */
-  .values-section{padding-bottom:2px!important}
-  .difference-section{padding-top:2px!important}
-  .footer-grid-v4{grid-template-columns:1fr}
-}
-
+@media(max-width:420px){.navlinks{width:min(47vw,176px)}}
 
 /* ============================================================
    GLOBAL HEADER CONSISTENCY — Pages 1–3
@@ -894,6 +699,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 
 
+
 /* ============================================================
    MOBILE HERO GAP ANIMATION v5
    Small nursery-style motion placed between the large title and body copy.
@@ -939,51 +745,39 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 @keyframes kkMobileTwinkle{50%{transform:scale(1.22) rotate(15deg);opacity:.58}}
 @keyframes kkMobileFloat{50%{transform:translateY(-3px) rotate(-8deg)}}
 
-
 /* ============================================================
-   ABOUT HERO DESKTOP ANIMATION v5
-   Wider, centred in the existing spare space between title and body copy.
+   PAGE 4 — LEARNING & DEVELOPMENT
+   Same shared header/hero/footer system as Pages 1–3.
+   Compact vertical rhythm from the start.
    ============================================================ */
-@media(min-width:981px){
-  .about-hero-mini-animation{
-    display:flex!important;
-    position:absolute!important;
-    left:2px!important;
-    top:177px!important;
-    width:min(430px,92%)!important;
-    height:30px!important;
-    align-items:center!important;
-    gap:12px!important;
-    pointer-events:none!important;
-    opacity:.92!important;
-  }
-  .about-hero-mini-animation .mini-track{
-    position:relative!important;
-    width:68%!important;
-    height:2px!important;
-    background:linear-gradient(90deg,rgba(47,138,73,.18),rgba(247,216,91,.86),rgba(47,138,73,.22))!important;
-    border-radius:999px!important;
-    overflow:visible!important;
-  }
-  .about-hero-mini-animation .mini-track:before{
-    content:"A"!important;position:absolute!important;left:0!important;top:-12px!important;width:25px!important;height:25px!important;
-    display:grid!important;place-items:center!important;border-radius:7px!important;background:#f1c84d!important;color:#285738!important;
-    font:800 12px/1 system-ui,sans-serif!important;box-shadow:0 4px 12px rgba(25,79,49,.08)!important;
-    animation:kkWideBob 2.7s ease-in-out infinite!important;
-  }
-  .about-hero-mini-animation .mini-track:after{
-    content:""!important;position:absolute!important;width:11px!important;height:11px!important;border-radius:50%!important;
-    background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;top:-5px!important;left:38px!important;
-    box-shadow:0 0 0 4px rgba(109,181,223,.10)!important;animation:kkWideTravel 4.2s ease-in-out infinite alternate!important;
-  }
-  .about-hero-mini-animation .mini-star{font-size:18px!important;color:#e4ab20!important;animation:kkWideTwinkle 2.2s ease-in-out infinite!important}
-  .about-hero-mini-animation .mini-leaf{font-size:19px!important;color:#69a55d!important;animation:kkWideFloat 2.8s ease-in-out infinite!important}
+.learning-section{padding:28px 0}
+.compact-section{padding-top:24px;padding-bottom:24px}
+.learning-section .section-title{text-align:center;margin:0 auto 17px;max-width:820px}
+.learning-section .section-title h2{font-family:Georgia,"Times New Roman",serif;color:var(--deep);font-size:clamp(30px,3vw,42px);line-height:1.08}
+.learning-section .section-title .kicker{font-size:12px;color:var(--green2);font-weight:900;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.learning-section .section-title p{font-size:14px;line-height:1.5;color:#5d6761;margin-top:7px}
+.approach-grid{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid #ebe6dc;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 12px 28px rgba(20,66,42,.05)}
+.learning-card{text-align:center;padding:16px 10px;min-width:0}
+.learning-card:not(:last-child){border-right:1px solid #eee9df}
+.learning-ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:#f2f8e9;color:var(--green);font-size:21px}
+.learning-card:nth-child(2n) .learning-ico{background:#fff3f6;color:#d96c91}.learning-card:nth-child(3n) .learning-ico{background:#fff7de;color:#d7a317}
+.learning-card h3{font-family:inherit;color:#23342a;font-size:13px;line-height:1.25;margin:0 0 5px}.learning-card p{font-size:11.5px;line-height:1.4;color:#667069;margin:0}
+.learn-how{background:linear-gradient(180deg,#fffdf8,#fbfaf3)}
+.how-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:0;border-top:1px solid #ece6da;border-bottom:1px solid #ece6da}
+.how-item{text-align:center;padding:13px 9px}.how-item:not(:last-child){border-right:1px dashed #dce2d8}.how-item>span{display:block;font-size:24px;color:var(--green2);height:30px}.how-item:nth-child(2n)>span{color:#d9a21d}.how-item:nth-child(3n)>span{color:#d66f93}.how-item h3{font-family:inherit;font-size:12.5px;line-height:1.25;margin:4px 0 5px;color:#25352c}.how-item p{font-size:11px;line-height:1.35;color:#68716c;margin:0}
+.experiences-section{padding-top:24px;padding-bottom:22px}
+.experience-gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.experience-gallery figure{margin:0;background:#fff;border:1px solid #ebe6dc;border-radius:16px;overflow:hidden;box-shadow:0 8px 18px rgba(20,66,42,.05)}.experience-gallery img{width:100%;height:128px;object-fit:cover}.experience-gallery figcaption{text-align:center;font-size:11.5px;font-weight:800;color:#314238;padding:8px 5px}
+.learning-proof{padding:12px 0 16px}.proof-row{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #ebe6dc;background:#fff;border-radius:20px;overflow:hidden}.proof-item{display:flex;gap:9px;align-items:center;padding:13px 12px;min-width:0}.proof-item:not(:last-child){border-right:1px solid #eee9df}.proof-item>b,.proof-item div b{display:block;font-size:12px;line-height:1.25;color:#24362b}.proof-item small{display:block;font-size:10.5px;color:#6a726d;margin-top:3px;line-height:1.3}.proof-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f2f8e9;color:var(--green);font-size:19px;flex:0 0 38px}.proof-badge{background:#234f8d;color:#fff;border-radius:10px;padding:5px 7px;text-align:center;font-size:8.5px;line-height:1.05;flex:0 0 48px}.proof-badge b{font-size:12px;color:#fff}
+.learning-cta{padding-top:4px!important;padding-bottom:7px!important}
+@media(max-width:1100px){.approach-grid{grid-template-columns:repeat(4,1fr)}.learning-card{border-bottom:1px solid #eee9df}.learning-card:nth-child(4n){border-right:0}.learning-card:nth-last-child(-n+3){border-bottom:0}.how-grid{grid-template-columns:repeat(4,1fr)}.how-item{border-bottom:1px dashed #dce2d8}.how-item:nth-child(4n){border-right:0}.how-item:nth-last-child(-n+4){border-bottom:0}.experience-gallery{grid-template-columns:repeat(3,1fr)}.proof-row{grid-template-columns:repeat(3,1fr)}.proof-item{border-bottom:1px solid #eee9df}.proof-item:nth-child(3n){border-right:0}.proof-item:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:620px){
+  .learning-section{padding:18px 0}.compact-section{padding-top:16px;padding-bottom:16px}.learning-section .section-title{margin-bottom:12px}.learning-section .section-title h2{font-size:30px}.learning-section .section-title p{font-size:13px}
+  .approach-grid{grid-template-columns:1fr 1fr;border-radius:18px}.learning-card{padding:12px 8px}.learning-card:nth-child(2n){border-right:0}.learning-card:nth-last-child(-n+1){grid-column:1/-1;border-bottom:0}.learning-ico{width:40px;height:40px;font-size:18px;margin-bottom:6px}.learning-card h3{font-size:12px}.learning-card p{font-size:10.8px}
+  .how-grid{grid-template-columns:1fr 1fr}.how-item:nth-child(2n){border-right:0}.how-item:nth-last-child(-n+2){border-bottom:0}.how-item{padding:11px 8px}.how-item h3{font-size:12px}.how-item p{font-size:10.5px}
+  .experience-gallery{grid-template-columns:1fr 1fr;gap:8px}.experience-gallery img{height:112px}.experience-gallery figcaption{font-size:10.8px;padding:6px 4px}
+  .learning-proof{padding:8px 0 10px}.proof-row{grid-template-columns:1fr 1fr;border-radius:18px}.proof-item{padding:10px 8px}.proof-item:nth-child(2n){border-right:0}.proof-item:last-child{grid-column:1/-1;border-bottom:0}.proof-item div b{font-size:11.5px}.proof-item small{font-size:10px}.proof-icon{width:34px;height:34px;flex-basis:34px}
+  .learning-cta{padding-top:2px!important;padding-bottom:5px!important}
 }
-@keyframes kkWideTravel{to{transform:translateX(190px) rotate(220deg)}}
-@keyframes kkWideTwinkle{50%{transform:scale(1.28) rotate(16deg);opacity:.62}}
-@keyframes kkWideFloat{50%{transform:translateY(-4px) rotate(-9deg)}}
-@keyframes kkWideBob{50%{transform:translateY(-3px) rotate(-3deg)}}
-
 </style>
 </head>
 <body>
@@ -1001,7 +795,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 <img alt="Kinder Kidz Day Nursery logo" src="images/logo.jpg"/>
 </a>
 <nav aria-label="Primary navigation" class="navlinks" id="navlinks">
-<a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
+<a class="" href="index.html">Home</a><a class="" href="about.html">About Us</a><a class="" href="rooms.html">Our Rooms</a><a class="active" href="learning.html">Learning &amp; Development</a><a class="" href="fees.html">Fees &amp; Funding</a><a class="" href="gallery.html">Gallery</a><a class="" href="parents.html">Parents</a><a class="" href="contact.html">Contact</a>
 </nav>
 <a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
 <button aria-controls="navlinks" aria-expanded="false" aria-label="Open menu" class="menu-btn" id="menuBtn">
@@ -1012,140 +806,73 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 </div>
 </header>
 <main>
-<section class="hero">
+<section class="hero learning-hero">
 <div class="container hero-grid">
 <div class="hero-copy">
-<div class="eyebrow">About Kinder Kidz Day Nursery</div>
-<h1>A Loving Start,<br/><span style="color:var(--green)">A Bright Future</span></h1><div aria-hidden="true" class="mobile-hero-gap-animation"><span class="m-line"><span class="m-dot"></span></span><span class="m-star">☆</span><span class="m-leaf">⌁</span></div>
-<div aria-hidden="true" class="about-hero-mini-animation"><span class="mini-track"></span><span class="mini-star">☆</span><span class="mini-leaf">⌁</span></div>
-<p>At Kinder Kidz, we provide a warm, safe and inspiring environment where children feel happy, valued and encouraged to explore, learn and grow.</p>
+<div class="eyebrow">Learning &amp; Development</div>
+<h1>Learning, Play &amp;<br/><span style="color:var(--green)">Discovery Every Day</span></h1>
+<div aria-hidden="true" class="mobile-hero-gap-animation"><span class="m-line"><span class="m-dot"></span></span><span class="m-star">☆</span><span class="m-leaf">⌁</span></div>
+<p>We nurture every child’s unique potential through play, exploration and meaningful experiences, guided by the Early Years Foundation Stage (EYFS) framework. For children aged 3 months to 5 years.</p>
 <div class="hero-actions">
 <a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
 <a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a>
 </div>
 </div>
-<div class="hero-media">
-<img alt="Kinder Kidz nursery room interior" src="images/hero-room.jpg"/>
-<div class="sun">☀️</div>
-</div>
-</div>
-<div class="wave-sep"></div>
-</section>
-<section class="section compact story-section">
-<div class="container story-grid">
-<div class="story-image">
-<img alt="Teacher and children learning together at Kinder Kidz Day Nursery" src="images/storytime-mixed-race.png"/>
-</div>
-<div class="story-copy">
-<h2>Our Story</h2>
-<p>Kinder Kidz Day Nursery was established in 2022 with a simple vision — to create a nurturing place where every child can thrive.</p>
-<p>We believe every child deserves the best possible start in life. Our dedicated team works closely with families to support each child’s individual journey, helping them build confidence, develop curiosity and reach their full potential in a caring, inclusive and welcoming setting.</p>
-<div class="stat-strip">
-<div class="stat"><b>Established 2022</b><small>A caring start for local families</small></div>
-<div class="stat"><b>Ofsted Rated GOOD</b><small>Supportive, safe and welcoming care</small></div>
-<div class="stat"><b>3 Months – 5 Years</b><small>Age range supported</small></div>
-</div>
-</div>
+<div class="hero-media"><img alt="Children learning together at Kinder Kidz Day Nursery" src="images/storytime-mixed-race.png"/><span class="doodle one">☆</span><span class="doodle two">⌁</span></div>
 </div>
 </section>
-<section class="section compact values values-section">
+<section class="learning-section compact-section" id="learning-approach">
 <div class="container">
-<div class="values-head">
-<h2>Our Values</h2>
-<div class="line"></div>
-</div>
-<div class="values-grid">
-<div class="value">
-<div class="ico">♡</div>
-<h3>Care</h3>
-<p>We provide a safe, welcoming and caring environment for every child.</p>
-</div>
-<div class="value">
-<div class="ico">☆</div>
-<h3>Respect</h3>
-<p>We value each child as an individual and celebrate their uniqueness.</p>
-</div>
-<div class="value">
-<div class="ico">🌿</div>
-<h3>Growth</h3>
-<p>We support children to learn, explore and develop at their own pace.</p>
-</div>
-<div class="value">
-<div class="ico">♡</div>
-<h3>Partnership</h3>
-<p>We work closely with parents and families to support every child’s journey.</p>
-</div>
-<div class="value">
-<div class="ico">☺</div>
-<h3>Fun</h3>
-<p>We believe children learn best when they are happy and having fun.</p>
-</div>
+<div class="section-title"><div class="kicker">Nurturing Every Area of Development</div><h2>Our Learning Approach</h2><p>Children learn best through play, exploration, creativity and caring relationships that help them feel secure and confident.</p></div>
+<div class="approach-grid">
+<article class="learning-card"><div class="learning-ico">☏</div><h3>Communication &amp; Language</h3><p>Listening, speaking and sharing ideas through everyday interaction.</p></article>
+<article class="learning-card"><div class="learning-ico">♡</div><h3>Personal, Social &amp; Emotional</h3><p>Building confidence, friendships, independence and emotional wellbeing.</p></article>
+<article class="learning-card"><div class="learning-ico">☼</div><h3>Physical Development</h3><p>Movement, coordination, healthy routines and active play.</p></article>
+<article class="learning-card"><div class="learning-ico">▤</div><h3>Literacy</h3><p>Stories, books, sounds and early writing in meaningful play.</p></article>
+<article class="learning-card"><div class="learning-ico">＋</div><h3>Mathematics</h3><p>Numbers, patterns, shapes, sorting and problem solving.</p></article>
+<article class="learning-card"><div class="learning-ico">◎</div><h3>Understanding the World</h3><p>People, communities, nature and the wider world around us.</p></article>
+<article class="learning-card"><div class="learning-ico">☆</div><h3>Expressive Arts &amp; Design</h3><p>Music, art, imagination, movement and creative expression.</p></article>
 </div>
 </div>
 </section>
-<section class="section compact difference-section">
-<div class="container diff-card">
-<div class="diff-copy">
-<h2>What Makes Us Different</h2>
-<div class="line"></div>
-<p>We combine high quality early education with lots of love, patience and encouragement. Our setting is designed to spark curiosity, build independence and help children feel confident in who they are.</p>
-<div class="tick-list">
-<div class="tick"><span>●</span><span>Qualified, experienced and caring staff</span></div>
-<div class="tick"><span>●</span><span>Warm and stimulating learning environment</span></div>
-<div class="tick"><span>●</span><span>Strong focus on communication and development</span></div>
-<div class="tick"><span>●</span><span>Support for children with additional needs</span></div>
-<div class="tick"><span>●</span><span>Outdoor play and healthy lifestyle encouraged</span></div>
-</div>
-<div aria-hidden="true" class="animation-stack">
-<div class="playful-animation playful-animation-one">
-<div class="anim-cloud cloud-a"></div>
-<div class="anim-cloud cloud-b"></div>
-<div class="anim-path"></div>
-<div class="anim-bee">✦</div>
-<div class="anim-block block-a">A</div>
-<div class="anim-block block-b">★</div>
-<div class="anim-ball"></div>
-<div class="anim-leaf">⌁</div>
-</div>
-<div class="playful-animation playful-animation-two">
-<div class="rainbow">
-<span></span><span></span><span></span>
-</div>
-<div class="kite">◆<i></i></div>
-<div class="pencil">✎</div>
-<div class="mini-star star-one">★</div>
-<div class="mini-star star-two">✦</div>
-<div class="toy-cube cube-one">1</div>
-<div class="toy-cube cube-two">B</div>
-<div class="grass-line"></div>
-</div>
-</div>
-</div>
-<div class="gallery-grid">
-<img alt="Outdoor play area at Kinder Kidz Day Nursery" class="gallery-tall" src="images/outdoor-play.jpg"/>
-<div class="gallery-sub">
-<img alt="Play corner at Kinder Kidz Day Nursery" class="gallery-small" src="images/play-corner.jpg"/>
-<img alt="Role play area at Kinder Kidz Day Nursery" class="gallery-small" src="images/role-play.jpg"/>
-<img alt="Sensory play setup at Kinder Kidz Day Nursery" class="gallery-small" src="images/sensory.jpg"/>
-<img alt="Reading corner at Kinder Kidz Day Nursery" class="gallery-small" src="images/reading-corner.jpg"/>
-</div>
-</div>
-</div>
-</section>
-<section class="cta-wrap" id="visit">
+<section class="learning-section learn-how">
 <div class="container">
-<div class="cta about-bottom-cta">
-<div>
-<h2>Ready to see Kinder Kidz for yourself?</h2>
-<p>We’d love to welcome you and your child for a visit.</p>
-</div>
-<div class="cta-actions" style="display:flex;gap:12px;flex-wrap:wrap">
-<a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
-<a class="btn secondary contact-action" href="contact.html"><span aria-hidden="true" class="btn-icon icon-phone"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg></span><span class="btn-label">Contact Us</span></a>
-</div>
+<div class="section-title"><div class="kicker">Play With Purpose</div><h2>How Children Learn at Kinder Kidz</h2></div>
+<div class="how-grid">
+<div class="how-item"><span>✿</span><h3>Learning Through Play</h3><p>Hands-on experiences that spark curiosity.</p></div>
+<div class="how-item"><span>✎</span><h3>Creative Activities</h3><p>Art, craft and design that encourage imagination.</p></div>
+<div class="how-item"><span>▤</span><h3>Story Time</h3><p>Daily stories that build vocabulary and a love of reading.</p></div>
+<div class="how-item"><span>◌</span><h3>Sensory Play</h3><p>Textures, sounds and materials explored through the senses.</p></div>
+<div class="how-item"><span>♧</span><h3>Outdoor Learning</h3><p>Fresh air, movement and discovery every day.</p></div>
+<div class="how-item"><span>⌂</span><h3>Role Play</h3><p>Imaginative play that develops language and social skills.</p></div>
+<div class="how-item"><span>♫</span><h3>Music &amp; Movement</h3><p>Singing, rhythm and movement to support learning and fun.</p></div>
+<div class="how-item"><span>★</span><h3>Independence &amp; Confidence</h3><p>Encouraging children to try, achieve and believe in themselves.</p></div>
 </div>
 </div>
 </section>
+<section class="learning-section experiences-section">
+<div class="container">
+<div class="section-title"><div class="kicker">Real Nursery Experiences</div><h2>Learning Experiences in Action</h2></div>
+<div class="experience-gallery">
+<figure><img alt="Creative and sensory learning" src="images/sensory.jpg"/><figcaption>Creative Expression</figcaption></figure>
+<figure><img alt="Role play area" src="images/role-play.jpg"/><figcaption>Imaginative Role Play</figcaption></figure>
+<figure><img alt="Hands-on play resources" src="images/play-corner.jpg"/><figcaption>Sensory Exploration</figcaption></figure>
+<figure><img alt="Reading and story area" src="images/reading-corner.jpg"/><figcaption>Books &amp; Story Time</figcaption></figure>
+<figure><img alt="Nursery learning room" src="images/hero-room.jpg"/><figcaption>Group Learning</figcaption></figure>
+<figure><img alt="Outdoor play area" src="images/outdoor-play.jpg"/><figcaption>Outdoor Discovery</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="learning-proof">
+<div class="container proof-row">
+<div class="proof-item"><span class="proof-badge">Ofsted<br/><b>GOOD</b></span><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
+<div class="proof-item"><span class="proof-icon">☆</span><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
+<div class="proof-item"><span class="proof-icon">♧</span><div><b>3 Months – 5 Years</b><small>Caring for children from 3 months to 5 years</small></div></div>
+<div class="proof-item"><span class="proof-icon">◷</span><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
+<div class="proof-item"><span class="proof-icon">♡</span><div><b>Funded Places</b><small>38 weeks</small></div></div>
+</div>
+</section>
+<section class="cta-wrap learning-cta"><div class="container"><div class="cta"><div><h2>See Learning in Action — We’d Love to Welcome You!</h2><p>Book a visit and discover how we help children learn, grow and thrive every day.</p></div><div class="cta-actions"><a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div></div></div></section>
 </main>
 <footer class="site-footer-v5" id="footer-contact">
 <div class="container">
@@ -1193,27 +920,12 @@ const nav=document.getElementById('navlinks');
 function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
 btn.addEventListener('click',(event)=>{event.stopPropagation();const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
 document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
-document.addEventListener('click',(event)=>{if(nav.classList.contains('open') && !btn.contains(event.target)){closeMenu();}});
-document.addEventListener('keydown',(event)=>{if(event.key==='Escape') closeMenu();});
-
+document.addEventListener('click',(event)=>{if(nav.classList.contains('open')&&!nav.contains(event.target)&&!btn.contains(event.target))closeMenu();});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeMenu();});
 const scrollNavBtn=document.getElementById('scrollNavBtn');
-function updateScrollNav(){
-  const moved=window.scrollY>90;
-  scrollNavBtn.textContent=moved?'↑':'↓';
-  scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');
-  scrollNavBtn.title=moved?'Back to top':'Scroll down';
-}
-scrollNavBtn.addEventListener('click',()=>{
-  if(window.scrollY>90){window.scrollTo({top:0,behavior:'smooth'});} 
-  else {
-    const target=document.querySelector('.story-grid') || document.querySelector('main');
-    const header=document.querySelector('header');
-    const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+10:10);
-    window.scrollTo({top,behavior:'smooth'});
-  }
-});
-window.addEventListener('scroll',updateScrollNav,{passive:true});
-updateScrollNav();
+function updateScrollNav(){const moved=window.scrollY>90;scrollNavBtn.textContent=moved?'↑':'↓';scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');scrollNavBtn.title=moved?'Back to top':'Scroll down';}
+scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo({top:0,behavior:'smooth'});}else{const target=document.getElementById('learning-approach');const header=document.querySelector('header');const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);window.scrollTo({top,behavior:'smooth'});}});
+window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
 </script>
 </body>
 </html>
