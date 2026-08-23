@@ -6,61 +6,411 @@
   <meta name="description" content="Fees and funding information for Kinder Kidz Day Nursery." />
   <title>Fees &amp; Funding | Kinder Kidz Day Nursery</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ============================================================
+       FEES & FUNDING — CONSISTENCY PASS
+       Home / About Us / Our Rooms / Learning = visual reference.
+       These rules are intentionally page-scoped so the rest of the
+       website is not affected when only fees.html is replaced.
+       ============================================================ */
+
+    body.fees-page{
+      --fees-green:#176a3b;
+      --fees-green2:#2f8a49;
+      --fees-deep:#143c2c;
+      --fees-gold:#f7d85b;
+      --fees-pink:#e9799f;
+      --fees-blue:#70b5d4;
+      --fees-line:#e8e2d5;
+      --fees-shadow:0 12px 30px rgba(18,60,43,.08);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    /* ---------- SAME TOP BAR + HEADER AS APPROVED PAGES ---------- */
+    .fees-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+    .fees-page .topbar .container{
+      display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+      gap:22px;padding:7px 0;font-size:13px;line-height:1.25;
+      color:#294633;font-weight:600;
+    }
+    .fees-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+    .fees-page .nav{height:82px;gap:24px;align-items:center}
+    .fees-page .brand{min-width:198px;display:flex;align-items:center}
+    .fees-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+    .fees-page .navlinks{gap:21px;font-size:13px;font-weight:700;line-height:1.2}
+    .fees-page .navlinks a{padding:9px 0;white-space:nowrap}
+    .fees-page .nav>.btn.primary.desktop-only{
+      padding:12px 20px;min-height:42px;font-size:14px;line-height:1;
+      gap:8px;background:var(--fees-green);border-color:var(--fees-green);color:#fff;
+    }
+
+    /* ---------- SAME HERO GEOMETRY / TYPE SCALE ---------- */
+    .fees-page .hero{
+      padding:10px 0 10px;
+      background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);
+      overflow:hidden;
+    }
+    .fees-page .hero-grid{
+      display:grid;grid-template-columns:.86fr 1.14fr;gap:24px;align-items:center;
+    }
+    .fees-page .hero-copy{align-self:start;padding-top:34px;margin:0}
+    .fees-page .eyebrow{
+      font-size:12px;line-height:1.2;font-weight:900;color:#2f8a49;
+      letter-spacing:.08em;text-transform:uppercase;margin:0 0 9px;
+    }
+    .fees-page h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(40px,4.2vw,60px);line-height:1.06;
+      letter-spacing:-.035em;margin:0;color:var(--fees-deep);
+    }
+    .fees-page .hero-copy .lead{
+      font-size:17px;line-height:1.5;color:#47554d;max-width:520px;
+      margin:15px 0 20px;
+    }
+    .fees-page .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .fees-page .hero-actions .btn{
+      width:auto;padding:12px 20px;min-height:44px;font-size:14px;line-height:1;
+      gap:8px;font-weight:800;
+    }
+    .fees-page .btn-icon{width:17px;height:17px;display:block;flex:0 0 17px}
+    .fees-page .hero-media{position:relative;min-height:350px}
+    .fees-page .hero-media::before{
+      content:"";position:absolute;inset:14px -26px 5px 20px;background:#dceab8;
+      border-radius:46% 5% 5% 48%;transform:rotate(-1deg);
+    }
+    .fees-page .hero-media img{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+      border-radius:45% 5% 5% 46%;box-shadow:var(--fees-shadow);
+    }
+    .fees-page .title-gap{margin:14px 0 12px}
+    .fees-page .title-gap .lines{height:34px}
+
+    /* ---------- COMPACT PAGE RHYTHM ---------- */
+    .fees-page .section-tight{padding:18px 0}
+    .fees-page .fees-heading{margin-bottom:12px!important}
+    .fees-page .fees-heading .eyebrow{margin-bottom:4px}
+    .fees-page .fees-heading h2{
+      font-family:inherit!important;font-size:16px!important;line-height:1.35!important;
+      color:var(--fees-green)!important;font-weight:700!important;
+    }
+    .fees-page .price-grid{gap:14px}
+    .fees-page .price-card{border-radius:22px}
+    .fees-page .price-head{padding:14px 17px;font-size:15px;line-height:1.25}
+    .fees-page .price-head small{font-size:12px;line-height:1.35}
+    .fees-page .price-card table{font-size:13.5px}
+    .fees-page .price-card td{padding:9px 17px}
+
+    /* Four facts stay on one clean row; no unused empty column. */
+    .fees-page .accent-grid{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;
+    }
+    .fees-page .accent-grid>.card{
+      padding:14px 12px;text-align:center;border-radius:20px;min-height:138px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+    }
+    .fees-page .accent-grid .icon-badge{width:44px;height:44px;font-size:20px;margin:0 auto 8px}
+    .fees-page .accent-grid h3{font-size:15px!important;line-height:1.25;margin:0 0 4px}
+    .fees-page .accent-grid p{font-size:12.5px;line-height:1.4}
+
+    /* Wide animated card fills the previously unused space. */
+    .fees-page .fees-play-card{
+      grid-column:1/-1;position:relative;height:128px;min-height:128px!important;
+      padding:0!important;overflow:hidden;background:linear-gradient(180deg,#fffaf0,#f2f7e9);
+      border:1px solid rgba(23,106,59,.10);
+    }
+    .fees-page .fees-play-card::before{
+      content:"";position:absolute;left:4%;right:4%;bottom:24px;height:30px;
+      border-bottom:3px dashed rgba(47,138,73,.25);border-radius:50%;transform:rotate(-1deg);
+    }
+    .fees-page .play-cloud{position:absolute;width:50px;height:17px;background:#fff;border-radius:999px;opacity:.9;box-shadow:0 5px 15px rgba(30,60,40,.05)}
+    .fees-page .play-cloud::before,.fees-page .play-cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+    .fees-page .play-cloud::before{width:21px;height:21px;left:8px;top:-8px}
+    .fees-page .play-cloud::after{width:25px;height:25px;right:5px;top:-12px}
+    .fees-page .cloud-one{left:6%;top:20px;animation:feeCloud 5s ease-in-out infinite alternate}
+    .fees-page .cloud-two{right:7%;top:23px;transform:scale(.8);animation:feeCloud 4.2s ease-in-out infinite alternate-reverse}
+    .fees-page .fee-block,.fees-page .fee-ball,.fees-page .fee-rainbow,.fees-page .fee-star{position:absolute}
+    .fees-page .fee-block{bottom:16px;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-weight:900;box-shadow:0 6px 13px rgba(30,60,40,.10);animation:feeBob 2.5s ease-in-out infinite}
+    .fees-page .block-one{left:30%;background:#f7d85b;color:#5f5100}
+    .fees-page .block-two{left:43%;background:#f6dce6;color:#a84f70;animation-delay:.3s}
+    .fees-page .fee-ball{right:31%;bottom:17px;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#69b2d2 0 48%,#fff 49% 58%,#e97b9f 59%);box-shadow:0 6px 13px rgba(30,60,40,.10);animation:feeBall 2.3s ease-in-out infinite}
+    .fees-page .fee-rainbow{left:10%;bottom:14px;font-size:42px;line-height:1;animation:feeFloat 3.2s ease-in-out infinite alternate}
+    .fees-page .fee-star{right:13%;bottom:26px;color:#e4b52a;font-size:29px;animation:feeStar 2.1s ease-in-out infinite}
+    @keyframes feeCloud{from{transform:translateX(0)}to{transform:translateX(20px)}}
+    @keyframes feeBob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(3deg)}}
+    @keyframes feeBall{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(20deg)}}
+    @keyframes feeFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+    @keyframes feeStar{0%,100%{transform:scale(.8) rotate(0);opacity:.65}50%{transform:scale(1.2) rotate(14deg);opacity:1}}
+
+    /* Funding + FAQs stay compact. */
+    .fees-page .dual-columns{gap:14px;align-items:stretch}
+    .fees-page .funding-card{padding:17px 18px;display:flex;flex-direction:column}
+    .fees-page .funding-card h2{font-size:17px!important;line-height:1.25;margin-bottom:7px!important}
+    .fees-page .funding-card>.muted{font-size:13.5px;line-height:1.45}
+    .fees-page .funding-card .inline-note{margin:10px 0!important;padding:12px 14px;font-size:13px;line-height:1.4}
+    .fees-page .funding-card .hero-actions{margin-bottom:10px}
+    .fees-page .funding-card .hero-actions .btn{padding:10px 18px;min-height:40px}
+    .fees-page .faq-list{gap:8px}
+    .fees-page .faq-item{padding:12px 14px;border-radius:16px}
+    .fees-page .faq-item summary{font-size:13.5px}
+    .fees-page .faq-item p{font-size:12.5px;line-height:1.4;margin-top:7px}
+
+    /* Different animation inside Funding Support card. */
+    .fees-page .support-animation{
+      position:relative;height:116px;margin-top:auto;border-radius:17px;overflow:hidden;
+      background:linear-gradient(180deg,#eef7f2 0%,#fff8e5 100%);
+      border:1px solid rgba(23,106,59,.10);
+    }
+    .fees-page .book-stack{position:absolute;left:12%;bottom:19px;width:70px;height:45px;animation:bookFloat 3s ease-in-out infinite alternate}
+    .fees-page .book-stack span{position:absolute;left:0;width:70px;height:11px;border-radius:4px}
+    .fees-page .book-stack span:nth-child(1){bottom:0;background:#70b5d4;transform:rotate(-3deg)}
+    .fees-page .book-stack span:nth-child(2){bottom:13px;background:#e9799f;transform:rotate(2deg)}
+    .fees-page .book-stack span:nth-child(3){bottom:26px;background:#f1c84a;transform:rotate(-1deg)}
+    .fees-page .moving-pencil{position:absolute;left:44%;top:25px;font-size:38px;line-height:1;animation:pencilMove 3.1s ease-in-out infinite}
+    .fees-page .support-kite{position:absolute;right:17%;top:21px;width:34px;height:34px;background:#70b5d4;transform:rotate(45deg);animation:kiteMove 3.6s ease-in-out infinite alternate}
+    .fees-page .support-kite::after{content:"";position:absolute;width:48px;height:2px;background:#8ead91;left:27px;top:30px;transform:rotate(52deg);transform-origin:left center}
+    .fees-page .spark-one,.fees-page .spark-two{position:absolute;color:#e7b92d;animation:feeStar 2.2s ease-in-out infinite}
+    .fees-page .spark-one{right:38%;top:20px;font-size:20px}
+    .fees-page .spark-two{right:8%;bottom:17px;font-size:16px;animation-delay:.5s}
+    @keyframes bookFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+    @keyframes pencilMove{0%,100%{transform:translate(0,0) rotate(-14deg)}50%{transform:translate(18px,-8px) rotate(-6deg)}}
+    @keyframes kiteMove{from{transform:translate(0,0) rotate(45deg)}to{transform:translate(-12px,9px) rotate(51deg)}}
+
+    /* Final CTA and footer remain compact and consistent. */
+    .fees-page .banner-stack{margin-top:0;padding-top:4px;padding-bottom:0}
+    .fees-page .action-banner{padding:18px 24px 68px;border-radius:24px 24px 0 0}
+    .fees-page .action-banner h3{font-size:17px}
+    .fees-page .action-banner p{font-size:13px;line-height:1.4}
+    .fees-page .action-banner .btn{padding:10px 18px;font-size:13px;min-height:40px}
+    .fees-page footer{padding:22px 0 12px;margin-top:-1px}
+    .fees-page .footer-grid{grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;gap:20px}
+    .fees-page .footer-brand img{width:168px;height:60px;margin:0 auto 5px}
+    .fees-page .footer-brand p{max-width:240px;margin:0 auto;font-size:13px}
+    .fees-page .footer-title{font-size:14px;margin-bottom:8px}
+    .fees-page .footer-list{gap:5px;font-size:12.5px}
+    .fees-page .footer-bottom{margin-top:14px;padding-top:9px;font-size:11px}
+
+    @media (prefers-reduced-motion:reduce){
+      .fees-page .fees-play-card *, .fees-page .support-animation *{animation:none!important}
+    }
+
+    @media(max-width:980px){
+      .fees-page .nav{height:76px;gap:16px}
+      .fees-page .brand img{width:180px;height:58px}
+      .fees-page .nav>.desktop-only{display:none}
+      .fees-page .menu-btn{display:grid}
+      .fees-page .navlinks{
+        position:fixed;display:none;flex-direction:column;align-items:stretch;
+        left:auto;right:0;width:min(46vw,190px);top:76px;background:#fffdf7;
+        padding:9px 12px 14px;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;
+        border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10);
+        max-height:calc(100vh - 76px);overflow:auto;
+      }
+      .fees-page .navlinks.open{display:flex}
+      .fees-page .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
+      .fees-page .hero-grid{grid-template-columns:1fr;gap:14px}
+      .fees-page .hero-copy{padding-top:8px}
+      .fees-page .hero-media{min-height:330px}
+      .fees-page .hero-media img{border-radius:28px}
+      .fees-page .hero-media::before{inset:10px -8px -7px 12px;border-radius:30px}
+      .fees-page .price-grid{grid-template-columns:1fr}
+      .fees-page .accent-grid{grid-template-columns:repeat(2,1fr)}
+      .fees-page .fees-play-card{grid-column:1/-1}
+      .fees-page .dual-columns{grid-template-columns:1fr}
+      .fees-page .footer-grid{grid-template-columns:1fr 1fr}
+      .fees-page .footer-brand{grid-column:1/-1}
+    }
+
+    @media(max-width:620px){
+      .fees-page .topbar{display:none}
+      .fees-page .nav{height:70px;gap:10px}
+      .fees-page .brand{min-width:0}
+      .fees-page .brand img{width:156px;height:52px}
+      .fees-page .navlinks{top:70px;max-height:calc(100vh - 70px);width:min(46vw,190px)}
+      .fees-page .hero{padding:4px 0 5px}
+      .fees-page .hero-grid{gap:10px}
+      .fees-page .hero-copy{padding-top:0}
+      .fees-page .eyebrow{font-size:11px;margin-bottom:6px}
+      .fees-page h1{font-size:34px;line-height:1.04}
+      .fees-page .title-gap{margin:10px 0 9px;justify-content:center}
+      .fees-page .hero-copy .lead{font-size:14.5px;line-height:1.5;margin:10px 0 13px}
+      .fees-page .hero-actions{display:grid;grid-template-columns:1fr;gap:8px}
+      .fees-page .hero-actions .btn{width:100%;padding:11px 15px;font-size:14px}
+      .fees-page .hero-media{min-height:270px}
+      .fees-page .section-tight{padding:12px 0}
+      .fees-page .fees-heading{margin-bottom:9px!important}
+      .fees-page .price-grid{gap:9px}
+      .fees-page .price-head{padding:12px 14px}
+      .fees-page .price-card td{padding:8px 14px;font-size:13px}
+      .fees-page .accent-grid{grid-template-columns:1fr 1fr;gap:8px}
+      .fees-page .accent-grid>.card{min-height:124px;padding:12px 9px}
+      .fees-page .fees-play-card{height:112px;min-height:112px!important}
+      .fees-page .fee-rainbow{font-size:34px}
+      .fees-page .funding-card{padding:14px}
+      .fees-page .support-animation{height:105px}
+      .fees-page .action-banner{padding:17px 14px 80px}
+      .fees-page .action-banner .banner-grid{gap:10px}
+      .fees-page .action-banner .actions{display:grid;grid-template-columns:1fr;gap:8px}
+      .fees-page footer{padding:18px 0 11px}
+      .fees-page .footer-grid{grid-template-columns:1fr;gap:16px}
+      .fees-page .footer-brand img{width:156px;height:56px}
+      .fees-page .footer-title{font-size:16px;margin-bottom:7px}
+      .fees-page .footer-list{gap:5px;font-size:13px}
+      .fees-page .footer-links-2{grid-template-columns:1fr 1fr;gap:0 16px}
+      .fees-page .footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
+    }
+
+    @media(max-width:420px){
+      .fees-page .navlinks{width:min(47vw,176px)}
+      .fees-page .accent-grid{grid-template-columns:1fr}
+      .fees-page .fees-play-card{grid-column:auto}
+    }
+  </style>
 </head>
-<body>
-  <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
-  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html" class="active">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
+<body class="fees-page">
+  <div class="topbar">
+    <div class="container">
+      <span>☎ 07886 017430</span>
+      <span>☎ 01268 425881</span>
+      <span>✉ kinderkidzdaynursery@hotmail.com</span>
+      <span>🕢 7:30am – 6:30pm, Mon – Fri</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Our Rooms</a>
+        <a href="learning.html">Learning &amp; Development</a>
+        <a href="fees.html" class="active">Fees &amp; Funding</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="parents.html">Parents</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Fees &amp; Funding</div>
-          <h1>Quality Care,<br><span style="color:var(--green)">Affordable for Families</span></h1>
-          <div class="title-gap"><div class="lines"><span class="line top"></span><span class="line bottom"></span><span class="dot"></span><span class="star">☆</span><span class="leaf">⌁</span></div></div>
+          <h1>Quality Care,<br><span style="color:var(--fees-green)">Affordable for Families</span></h1>
+
+          <div class="title-gap">
+            <div class="lines" aria-hidden="true">
+              <span class="line top"></span><span class="line bottom"></span><span class="dot"></span><span class="star">☆</span><span class="leaf">⌁</span>
+            </div>
+          </div>
+
           <p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
-          <div class="hero-actions"><a class="btn primary" href="contact.html#visit">Book a Visit</a><a class="btn secondary" href="contact.html#enquiry">Enquire Now</a></div>
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html#visit">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+              Book a Visit
+            </a>
+            <a class="btn secondary" href="contact.html#enquiry">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Enquire Now
+            </a>
+          </div>
         </div>
-        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Children and educator around the table"></div>
+        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Children learning with an educator at Kinder Kidz Day Nursery"></div>
       </div>
     </section>
 
     <section class="section-tight">
-      <div class="container center" style="margin-bottom:20px"><div class="eyebrow">Our Fees</div><h2 style="font-family:inherit;font-size:18px;color:var(--green)">Flexible sessions and clear pricing to help you plan with confidence.</h2></div>
+      <div class="container center fees-heading">
+        <div class="eyebrow">Our Fees</div>
+        <h2>Flexible sessions and clear pricing to help you plan with confidence.</h2>
+      </div>
+
       <div class="container price-grid">
-        <div class="card price-card">
+        <article class="card price-card">
           <div class="price-head">3 Months to 2 Years<small>Warm care for our youngest children</small></div>
-          <table><tr><td>Daily Fees</td><td>£72</td></tr><tr><td>Full week Fees</td><td>£340</td></tr><tr><td>Full week session Fees</td><td>£190</td></tr><tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£42</td></tr><tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£42</td></tr></table>
-        </div>
-        <div class="card price-card">
+          <table>
+            <tr><td>Daily Fees</td><td>£72</td></tr>
+            <tr><td>Full week Fees</td><td>£340</td></tr>
+            <tr><td>Full week session Fees</td><td>£190</td></tr>
+            <tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£42</td></tr>
+            <tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£42</td></tr>
+          </table>
+        </article>
+
+        <article class="card price-card">
           <div class="price-head">2 Years<small>Flexible care to support growing confidence</small></div>
-          <table><tr><td>Daily Fees</td><td>£67</td></tr><tr><td>Full week Fees</td><td>£300</td></tr><tr><td>Full week session Fees</td><td>£180</td></tr><tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£40</td></tr><tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£40</td></tr></table>
-        </div>
-        <div class="card price-card">
+          <table>
+            <tr><td>Daily Fees</td><td>£67</td></tr>
+            <tr><td>Full week Fees</td><td>£300</td></tr>
+            <tr><td>Full week session Fees</td><td>£180</td></tr>
+            <tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£40</td></tr>
+            <tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£40</td></tr>
+          </table>
+        </article>
+
+        <article class="card price-card">
           <div class="price-head">3 Years to 5 Years<small>Care and early learning for preschool children</small></div>
-          <table><tr><td>Daily Fees</td><td>£65</td></tr><tr><td>Full week Fees</td><td>£290</td></tr><tr><td>Full week session Fees</td><td>£170</td></tr><tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£38</td></tr><tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£38</td></tr></table>
-        </div>
+          <table>
+            <tr><td>Daily Fees</td><td>£65</td></tr>
+            <tr><td>Full week Fees</td><td>£290</td></tr>
+            <tr><td>Full week session Fees</td><td>£170</td></tr>
+            <tr><td>Morning Session<br><small>7:30 to 12:30</small></td><td>£38</td></tr>
+            <tr><td>Afternoon Session<br><small>13:30 to 18:30</small></td><td>£38</td></tr>
+          </table>
+        </article>
       </div>
     </section>
 
     <section class="section-tight">
       <div class="container accent-grid">
-        <div class="card"><div class="icon-badge" style="margin-inline:auto">🧾</div><h3 style="font-size:18px">£20</h3><p class="muted">Non-refundable registration fee</p></div>
-        <div class="card"><div class="icon-badge" style="margin-inline:auto">🛡️</div><h3 style="font-size:18px">Refundable Deposit</h3><p class="muted">A one-week deposit is required and returned as stated in the parent handbook.</p></div>
-        <div class="card"><div class="icon-badge" style="margin-inline:auto">🗓️</div><h3 style="font-size:18px">Open 51 Weeks</h3><p class="muted">Open all year except bank holidays to support families.</p></div>
-        <div class="card"><div class="icon-badge" style="margin-inline:auto">👨‍👩‍👧</div><h3 style="font-size:18px">Funded Places</h3><p class="muted">Available for eligible children for 38 weeks.</p></div>
+        <div class="card"><div class="icon-badge">🧾</div><h3>£20</h3><p class="muted">Non-refundable registration fee</p></div>
+        <div class="card"><div class="icon-badge">🛡️</div><h3>Refundable Deposit</h3><p class="muted">A one-week deposit is required and returned as stated in the parent handbook.</p></div>
+        <div class="card"><div class="icon-badge">🗓️</div><h3>Open 51 Weeks</h3><p class="muted">Open all year except bank holidays to support families.</p></div>
+        <div class="card"><div class="icon-badge">👨‍👩‍👧</div><h3>Funded Places</h3><p class="muted">Available for eligible children for 38 weeks.</p></div>
+
+        <div class="card fees-play-card" aria-label="Playful animated nursery illustration">
+          <span class="play-cloud cloud-one"></span>
+          <span class="play-cloud cloud-two"></span>
+          <span class="fee-rainbow" aria-hidden="true">🌈</span>
+          <span class="fee-block block-one">A</span>
+          <span class="fee-block block-two">★</span>
+          <span class="fee-ball"></span>
+          <span class="fee-star" aria-hidden="true">☆</span>
+        </div>
       </div>
     </section>
 
     <section class="section-tight">
       <div class="container dual-columns">
-        <div class="card feature-card">
+        <article class="card funding-card">
           <div class="eyebrow">Funding Support for Families</div>
-          <h2 style="font-family:inherit;font-size:18px;color:var(--green);margin-bottom:10px">We are here to help</h2>
+          <h2 style="font-family:inherit;color:var(--fees-green)">We are here to help</h2>
           <p class="muted">Funded places are available for eligible children. We can help you understand your options and guide you through the process.</p>
-          <div class="inline-note" style="margin:16px 0">For help with funding and eligibility information, please contact our team — we’re happy to help.</div>
-          <div class="hero-actions"><a class="btn primary small" href="contact.html#enquiry">Enquire Now</a><a class="btn secondary small" href="contact.html">Email Us</a></div>
-        </div>
+          <div class="inline-note">For help with funding and eligibility information, please contact our team — we’re happy to help.</div>
+          <div class="hero-actions">
+            <a class="btn primary small" href="contact.html#enquiry">Enquire Now</a>
+            <a class="btn secondary small" href="mailto:kinderkidzdaynursery@hotmail.com">Email Us</a>
+          </div>
+
+          <div class="support-animation" aria-label="Animated books, pencil and kite illustration">
+            <div class="book-stack"><span></span><span></span><span></span></div>
+            <span class="moving-pencil" aria-hidden="true">✏️</span>
+            <span class="spark-one" aria-hidden="true">☆</span>
+            <span class="spark-two" aria-hidden="true">☆</span>
+            <span class="support-kite"></span>
+          </div>
+        </article>
+
         <div class="faq-list">
           <details class="faq-item" open><summary>Are meals and snacks included in the fees?</summary><p>Please contact the nursery directly for the latest information about meals, snacks and what is included in each session.</p></details>
           <details class="faq-item"><summary>What is your payment policy?</summary><p>Fees are payable in advance. We will always explain payment arrangements clearly before your child starts.</p></details>
@@ -72,11 +422,39 @@
     </section>
 
     <section class="section banner-stack">
-      <div class="container"><div class="action-banner"><div class="banner-flower"><span></span><i></i><b></b></div><div class="banner-landscape"><span class="hill"></span><span class="trunk"></span><span class="crown c1"></span><span class="crown c2"></span><span class="crown c3"></span><div class="flower-row"><span></span><span></span><span></span></div></div><div class="banner-grid"><div><h3>We’d Love to Welcome You and Your Child</h3><p>If you would like to discuss fees, funding or sessions, please get in touch with our friendly team.</p></div><div class="actions"><a class="btn primary small" href="contact.html#visit">Book a Visit</a><a class="btn secondary small" href="contact.html#enquiry">Enquire Now</a></div></div><div class="banner-zigzag"></div></div></div>
+      <div class="container">
+        <div class="action-banner">
+          <div class="banner-flower"><span></span><i></i><b></b></div>
+          <div class="banner-landscape"><span class="hill"></span><span class="trunk"></span><span class="crown c1"></span><span class="crown c2"></span><span class="crown c3"></span><div class="flower-row"><span></span><span></span><span></span></div></div>
+          <div class="banner-grid">
+            <div><h3>We’d Love to Welcome You and Your Child</h3><p>If you would like to discuss fees, funding or sessions, please get in touch with our friendly team.</p></div>
+            <div class="actions"><a class="btn primary small" href="contact.html#visit">Book a Visit</a><a class="btn secondary small" href="contact.html#enquiry">Enquire Now</a></div>
+          </div>
+          <div class="banner-zigzag"></div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>Funded places for 38 weeks</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
-  <button class="scroll-top" type="button" aria-label="Back to top">↑</button><script src="js/script.js"></script>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div>
+        <div>
+          <div class="footer-title">Quick Links</div>
+          <div class="footer-links-2">
+            <div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div>
+            <div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div>
+          </div>
+        </div>
+        <div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>Funded places for 38 weeks</div></div></div>
+        <div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="Back to top">↑</button>
+  <script src="js/script.js"></script>
 </body>
 </html>
