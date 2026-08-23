@@ -1388,6 +1388,279 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   .learning-hero .mobile-hero-gap-animation{height:42px!important}
 }
 @keyframes kkLearningMobileDotV11{to{transform:translateX(185px)}}
+
+
+/* ============================================================
+   LEARNING PAGE CONSISTENCY v12
+   Visual master: approved Home / About Us / Our Rooms hero.
+   ONLY learning.html is affected by this final override.
+   ============================================================ */
+
+/* --- Desktop hero: identical geometry and typography to Our Rooms --- */
+@media (min-width:981px){
+  .learning-hero{
+    padding:0!important;
+    min-height:410px!important;
+    overflow:hidden!important;
+    background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;
+    border-bottom:1px solid #e8eadf!important;
+  }
+  .learning-hero > .container,
+  .learning-hero .hero-grid{
+    width:min(1180px,calc(100% - 40px))!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+    align-items:start!important;
+    gap:24px!important;
+    min-height:410px!important;
+    margin:auto!important;
+    padding:0!important;
+  }
+  .learning-hero .hero-copy{
+    position:relative!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:398px!important;
+    align-self:start!important;
+    display:grid!important;
+    grid-template-rows:16px 164px 76px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    padding:20px 0 0!important;
+    margin:0!important;
+  }
+  .learning-hero .eyebrow{
+    grid-row:1!important;
+    align-self:start!important;
+    font-size:12px!important;
+    line-height:16px!important;
+    font-weight:900!important;
+    letter-spacing:.08em!important;
+    text-transform:uppercase!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .learning-hero h1{
+    grid-row:2!important;
+    align-self:start!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:50px!important;
+    line-height:1.04!important;
+    letter-spacing:-.03em!important;
+    margin:0!important;
+    padding:0!important;
+    max-width:520px!important;
+  }
+  .learning-hero .hero-copy>p{
+    grid-row:3!important;
+    align-self:start!important;
+    font-size:15px!important;
+    line-height:1.5!important;
+    max-width:520px!important;
+    margin:0!important;
+    padding:0!important;
+    color:#47554d!important;
+  }
+  .learning-hero .hero-actions{
+    grid-row:4!important;
+    align-self:start!important;
+    display:flex!important;
+    align-items:flex-start!important;
+    gap:10px!important;
+    flex-wrap:nowrap!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .learning-hero .hero-actions .btn{
+    width:148px!important;
+    min-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    padding:0 12px!important;
+    font-size:14px!important;
+    line-height:1!important;
+  }
+  .learning-hero .hero-media{
+    position:relative!important;
+    align-self:start!important;
+    width:100%!important;
+    height:390px!important;
+    min-height:390px!important;
+    margin:10px 0 0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  .learning-hero .hero-media:before{
+    content:""!important;
+    position:absolute!important;
+    inset:12px -18px -8px 18px!important;
+    background:#dceab8!important;
+    border-radius:40% 0 0 44%!important;
+    transform:rotate(-1.5deg)!important;
+  }
+  .learning-hero .hero-media img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    border-radius:40% 0 0 44%!important;
+    box-shadow:0 14px 40px rgba(20,66,42,.10)!important;
+  }
+
+  /* Keep the approved animation moving without changing any hero row position. */
+  .learning-desktop-gap-animation{
+    display:flex!important;
+    position:absolute!important;
+    left:0!important;
+    top:181px!important;
+    width:500px!important;
+    max-width:96%!important;
+    height:30px!important;
+    margin:0!important;
+    padding:0!important;
+    pointer-events:none!important;
+    z-index:3!important;
+    overflow:visible!important;
+  }
+  .mobile-hero-gap-animation{display:none!important}
+}
+
+@media (min-width:981px) and (max-width:1199px){
+  .learning-hero > .container,.learning-hero .hero-grid{width:min(1080px,calc(100% - 44px))!important}
+  .learning-hero h1{font-size:46px!important}
+  .learning-hero .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
+  .learning-desktop-gap-animation{top:171px!important}
+}
+
+/* --- Mobile hero: same scale / positions / image size as approved Our Rooms --- */
+@media (max-width:620px){
+  .learning-hero{padding:0!important;min-height:0!important}
+  .learning-hero > .container,.learning-hero .hero-grid{
+    width:calc(100% - 28px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:14px!important;
+    margin:auto!important;
+    padding:4px 0 8px!important;
+    min-height:0!important;
+  }
+  .learning-hero .hero-copy{
+    position:relative!important;
+    width:100%!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-rows:14px 108px 110px 92px!important;
+    row-gap:6px!important;
+    align-content:start!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .learning-hero .eyebrow{grid-row:1!important;font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+  .learning-hero h1{
+    grid-row:2!important;
+    font-size:34px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .learning-hero .hero-copy>p{
+    grid-row:3!important;
+    font-size:14.5px!important;
+    line-height:1.5!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .learning-hero .hero-actions{
+    grid-row:4!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+    align-content:start!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .learning-hero .hero-actions .btn{width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .learning-hero .hero-media{
+    position:relative!important;
+    width:100%!important;
+    height:270px!important;
+    min-height:270px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .learning-hero .hero-media:before{content:""!important;position:absolute!important;inset:9px -7px -7px 11px!important;background:#dceab8!important;border-radius:28px!important;transform:rotate(-1deg)!important}
+  .learning-hero .hero-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;border-radius:28px!important;box-shadow:0 12px 28px rgba(20,66,42,.10)!important}
+
+  /* Animation remains moving but is overlaid, so it cannot push the approved layout. */
+  .learning-desktop-gap-animation{display:none!important}
+  .learning-hero .mobile-hero-gap-animation{
+    display:flex!important;
+    position:absolute!important;
+    left:0!important;
+    top:121px!important;
+    width:100%!important;
+    height:30px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin:0!important;
+    padding:0!important;
+    pointer-events:none!important;
+    z-index:3!important;
+    overflow:visible!important;
+  }
+}
+@media(max-width:420px){
+  .learning-hero > .container,.learning-hero .hero-grid{width:calc(100% - 22px)!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 104px 110px 92px!important}
+  .learning-hero h1{font-size:32px!important}
+  .learning-hero .mobile-hero-gap-animation{top:117px!important}
+}
+
+/* --- Learning content: same compact font hierarchy used by approved pages --- */
+.learning-section .section-title .kicker{font-size:12px!important}
+.learning-section .section-title h2{font-size:clamp(28px,2.5vw,38px)!important;line-height:1.08!important}
+.learning-section .section-title p{font-size:14px!important;line-height:1.5!important}
+.learning-card h3,.how-item h3,.experience-gallery figcaption{font-size:15px!important;line-height:1.25!important}
+.learning-card p,.how-item p{font-size:12.5px!important;line-height:1.45!important}
+.learning-proof .proof-item b{font-size:12px!important;line-height:1.25!important}
+.learning-proof .proof-item small{font-size:10.5px!important;line-height:1.35!important}
+.learning-proof .proof-icon{width:38px!important;height:38px!important;font-size:18px!important}
+.learning-proof .proof-badge{font-size:9px!important;padding:6px!important}
+
+/* --- Welcome banner: compact, lifted clear of footer, with only a tiny gap --- */
+.learning-cta{
+  position:relative!important;
+  z-index:3!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:-4px!important;
+  margin-bottom:5px!important;
+  transform:translateY(-4px)!important;
+}
+.learning-cta .learning-cta-copy h2{font-size:18px!important;line-height:1.22!important}
+.learning-cta .learning-cta-copy p{font-size:14px!important;line-height:1.45!important}
+.learning-cta .cta-actions .btn{min-width:148px!important;height:42px!important;min-height:42px!important;padding:0 16px!important;font-size:14px!important}
+
+@media(max-width:620px){
+  .learning-section .section-title h2{font-size:28px!important}
+  .learning-section .section-title p{font-size:13px!important}
+  .learning-card h3,.how-item h3,.experience-gallery figcaption{font-size:12px!important}
+  .learning-card p,.how-item p{font-size:10.8px!important}
+  .learning-cta{margin-top:0!important;margin-bottom:4px!important;transform:translateY(-2px)!important}
+  .learning-cta .learning-cta-copy h2{font-size:17px!important}
+  .learning-cta .learning-cta-copy p{font-size:13px!important}
+  .learning-cta .cta-actions .btn{width:100%!important;min-width:0!important;height:42px!important;font-size:14px!important}
+}
+
 </style>
 </head>
 <body>
