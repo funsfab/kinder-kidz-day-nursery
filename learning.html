@@ -1725,6 +1725,59 @@ main + footer{
   }
 }
 
+
+
+/* ============================================================
+   LEARNING PAGE — footer clearance v15
+   ONLY the lower vertical spacing is adjusted.
+   The approved header, hero, animation, fonts, buttons and images
+   are intentionally left untouched.
+   ============================================================ */
+
+/* Tighten the lower content so the welcome banner sits higher. */
+.experiences-section{
+  padding-bottom:2px!important;
+}
+.learning-proof{
+  padding-top:1px!important;
+  padding-bottom:6px!important;
+  margin:0!important;
+}
+
+/* Keep the welcome banner in normal document flow with a tiny,
+   deliberate gap to both the Ofsted strip and the footer. */
+.learning-cta{
+  position:relative!important;
+  z-index:2!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:0!important;
+  margin-bottom:4px!important;
+  transform:none!important;
+}
+
+/* Keep the decorative zig-zag/land edge INSIDE the banner instead
+   of letting it project down over the green footer. */
+.learning-cta .cta::after{
+  bottom:0!important;
+  height:18px!important;
+}
+
+/* Footer begins after the banner — no negative pull-up/overlap. */
+.learning-cta + footer,
+main + footer{
+  margin-top:0!important;
+  position:relative!important;
+  z-index:1!important;
+}
+
+@media(max-width:620px){
+  .experiences-section{padding-bottom:2px!important}
+  .learning-proof{padding-top:1px!important;padding-bottom:5px!important}
+  .learning-cta{margin-top:0!important;margin-bottom:4px!important;transform:none!important}
+  .learning-cta .cta::after{bottom:0!important;height:16px!important}
+}
+
 </style>
 </head>
 <body>
