@@ -1650,6 +1650,18 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 .learning-cta .learning-cta-copy p{font-size:14px!important;line-height:1.45!important}
 .learning-cta .cta-actions .btn{min-width:148px!important;height:42px!important;min-height:42px!important;padding:0 16px!important;font-size:14px!important}
 
+
+/* ============================================================
+   LEARNING PAGE — animation line position v13
+   ONLY the FIRST desktop animation line is moved upward.
+   All approved hero/header/text/button/image positions stay unchanged.
+   ============================================================ */
+@media (min-width:981px){
+  .learning-desktop-gap-animation::before{
+    top:-28px!important;
+  }
+}
+
 @media(max-width:620px){
   .learning-section .section-title h2{font-size:28px!important}
   .learning-section .section-title p{font-size:13px!important}
