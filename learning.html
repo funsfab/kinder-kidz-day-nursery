@@ -1,121 +1,1542 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learning and development at Kinder Kidz Day Nursery." />
-  <title>Learning &amp; Development | Kinder Kidz Day Nursery</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Learning and development at Kinder Kidz Day Nursery in Laindon, supporting children through play and the EYFS." name="description"/>
+<title>Learning &amp; Development | Kinder Kidz Day Nursery</title>
+<style>
+:root{
+  --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;--soft:#f7f3e8;
+  --text:#1f2a24;--muted:#5f6761;--line:#e8e2d5;--gold:#f7d85b;--pink:#e9799f;
+  --blue:#70b5d4;--shadow:0 12px 30px rgba(18,60,43,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;max-width:100%;overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+h1,h2,h3{margin:0;color:var(--deep);line-height:1.06}h1,h2{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(40px,4.2vw,60px);letter-spacing:-.035em}h2{font-size:clamp(32px,3vw,44px);letter-spacing:-.025em}p{margin:0}
+
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:7px 0;font-size:13px;color:#294633;font-weight:600}
+.topbar span{display:flex;align-items:center;gap:8px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+.nav{height:82px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;min-width:198px}.brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:21px;flex:1;font-size:13px;font-weight:700}.navlinks a{padding:9px 0;position:relative;white-space:nowrap}.navlinks a.active:after,.navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:99px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:800;border:1.5px solid var(--green);cursor:pointer;transition:.2s ease}.btn.primary{background:var(--green);color:#fff}.btn.secondary{background:#fff;color:var(--green)}.btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(23,106,59,.13)}
+.menu-btn{display:none;background:#f3f7ec;border:0;width:40px;height:40px;border-radius:11px;color:var(--green);padding:5px;place-items:center;margin-left:auto}
+
+.hero{padding:10px 0 10px;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px;align-items:center}
+.eyebrow{font-size:12px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
+.hero-copy p{font-size:17px;color:#47554d;max-width:520px;margin:15px 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-media{position:relative;min-height:350px}.hero-media:before{content:"";position:absolute;inset:14px -26px 5px 20px;background:#dceab8;border-radius:46% 5% 5% 48%;transform:rotate(-1deg)}.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:45% 5% 5% 46%;box-shadow:var(--shadow)}
+.doodle{position:absolute;font-size:28px;color:var(--pink);line-height:1}.doodle.one{left:-12px;top:44px}.doodle.two{right:12px;bottom:16px;color:#80a967;font-size:34px}
+
+.feature-strip{padding:10px 0 14px}.feature-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}.feature{padding:17px 14px;text-align:center;position:relative}.feature:not(:last-child):after{content:"";position:absolute;right:0;top:16px;bottom:16px;width:1px;background:#e9e4d8}.feature .ico{width:42px;height:42px;border-radius:14px;background:#eff7e8;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:21px}.feature:nth-child(2) .ico{background:#fff0f4;color:#cf668b}.feature:nth-child(3) .ico{background:#fff7da;color:#bd9200}.feature:nth-child(4) .ico{background:#edf7fb;color:#4f8fae}.feature:nth-child(5) .ico{background:#eef5e8;color:#5e8e4e}.feature b{display:block;font-size:13px}.feature small{display:block;margin-top:3px;color:#69726c;font-size:11.5px;line-height:1.35}
+
+.section{padding:28px 0}.section-title{text-align:center;margin-bottom:18px}.section-title .kicker{font-size:13px;font-weight:800;color:var(--green2);margin-bottom:4px}.section-title p{color:var(--muted);font-size:15px;max-width:680px;margin:8px auto 0}
+.rooms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.room-card{background:#fff;border:1px solid #e7e1d5;border-radius:24px;overflow:hidden;box-shadow:0 9px 24px rgba(23,70,42,.06);display:flex;flex-direction:column}.room-card img{width:100%;height:185px;object-fit:cover}.room-body{padding:16px 15px 17px;display:flex;flex-direction:column;gap:8px;flex:1}.room-head{display:flex;gap:9px;align-items:center}.room-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:#fff0f4;color:#ca6689}.room-card:nth-child(2) .room-icon{background:#fff7dc;color:#bd9000}.room-card:nth-child(3) .room-icon{background:#eef7e8;color:#478255}.room-card:nth-child(4) .room-icon{background:#edf7fb;color:#4f8fae}.room-card h3{font-family:inherit;font-size:18px}.room-age{font-size:13px;color:#6c746f}.room-body>p{font-size:13.5px;color:#525d57;line-height:1.45}.mini-list{display:grid;gap:5px;font-size:12.5px;color:#36413c;margin-top:2px}.mini-list span{display:flex;gap:7px}.mini-list i{font-style:normal;color:var(--green);font-weight:900}
+
+.experience{padding:24px 0 22px}.experience-panel{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0}.experience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.experience-item{text-align:center;padding:6px 16px}.experience-item:not(:last-child){border-right:1px dashed #d5dcd0}.experience-item .ico{width:52px;height:52px;border-radius:50%;border:2px solid #8fbd8f;color:var(--green);display:grid;place-items:center;margin:0 auto 8px;font-size:23px}.experience-item:nth-child(2) .ico,.experience-item:nth-child(4) .ico{border-color:#ecc553;color:#c69700}.experience-item h3{font-family:inherit;font-size:15px;margin-bottom:4px}.experience-item p{font-size:12px;color:#69716c;line-height:1.4}
+
+.gallery-strip{padding:18px 0 20px}.gallery-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-row img{width:100%;height:160px;object-fit:cover;border-radius:18px;box-shadow:0 8px 20px rgba(23,70,42,.06)}
+
+.cta-wrap{padding:4px 0 8px}.cta{background:linear-gradient(135deg,#eff8e3 0%,#fff9df 68%,#eff5d8 100%);border:1px solid #e4ead5;border-radius:20px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-family:inherit;font-size:18px;color:var(--green)}.cta p{color:#5d6861;font-size:14px;margin-top:3px}.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{background:linear-gradient(135deg,#145c34,#0f4b2f);color:#fff;padding:22px 0 12px}.footer-grid{display:grid;grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;align-items:start;gap:20px}.footer-grid>div{text-align:center;min-width:0}.footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}.footer-brand p{max-width:240px;margin:0 auto;color:#dce9df;font-size:13px}.footer h3{font-family:inherit;color:var(--gold);font-size:14px;margin:0 0 8px}.footer-list{display:grid;gap:5px;font-size:12.5px;color:#e5f0e8;justify-items:center}.footer-list a,.footer-list div{text-align:center}.quicklinks-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.quicklinks-column{justify-items:center}.footer-contact-col .footer-list a{overflow-wrap:anywhere}.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:14px;padding-top:9px;font-size:11px;color:#cfe0d5;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold);font-size:27px;font-weight:800;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:.2s ease}.scroll-nav-btn:hover{transform:translateY(-2px);background:var(--green2)}.scroll-nav-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media(max-width:980px){
+  .container{width:min(100% - 34px,1180px)}
+  .nav{height:76px;gap:16px}.brand img{width:180px;height:58px}.nav>.desktop-only{display:none}.menu-btn{display:grid}
+  .navlinks{position:fixed;display:none;flex-direction:column;align-items:stretch;left:0;right:0;top:76px;background:#fffdf7;padding:16px 20px 20px;border-bottom:1px solid #e9e5dc;box-shadow:0 16px 28px rgba(0,0,0,.08)}.navlinks.open{display:flex}.navlinks a{padding:9px 4px}
+  .hero-grid{grid-template-columns:1fr;gap:14px}.hero-media{min-height:330px}.hero-media img{border-radius:28px}.hero-media:before{inset:10px -8px -7px 12px;border-radius:30px}
+  .feature-card{grid-template-columns:repeat(2,1fr)}.feature:nth-child(2n):after{display:none}.feature{border-bottom:1px solid #eee9df}.feature:last-child{grid-column:1/-1;border-bottom:0}.feature:last-child:after{display:none}
+  .rooms-grid{grid-template-columns:repeat(2,1fr)}
+  .experience-grid{grid-template-columns:repeat(2,1fr)}.experience-item:nth-child(2n){border-right:none}.experience-item{border-bottom:1px dashed #d5dcd0;padding:15px}.experience-item:last-child{grid-column:1/-1;border-bottom:0}.experience-item:last-child{border-right:none}
+  .gallery-row{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+
+@media(max-width:620px){
+  .container{width:calc(100% - 28px)}.topbar{display:none}.nav{height:70px;gap:10px}.brand{min-width:0}.brand img{width:156px;height:52px}
+  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.menu-btn svg{width:26px;height:26px}
+  .hero{padding:3px 0 5px}.hero-grid{gap:10px}.eyebrow{font-size:11px;margin-bottom:6px}h1{font-size:34px;line-height:1.04}.hero-copy p{font-size:14.5px;line-height:1.5;margin:11px 0 14px}.hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.btn{width:100%;padding:11px 15px;font-size:14px}.hero-media{min-height:270px}
+  .feature-strip{padding:7px 0 9px}.feature{padding:13px 9px}.feature .ico{width:38px;height:38px;margin-bottom:6px}.feature b{font-size:12px}.feature small{font-size:10.5px}
+  .section{padding:18px 0}.section-title{margin-bottom:12px}.section-title h2{font-size:31px}.section-title p{font-size:14px;margin-top:6px}.rooms-grid{grid-template-columns:1fr;gap:9px}.room-card{display:grid;grid-template-columns:42% 58%;border-radius:20px}.room-card img{height:100%;min-height:230px}.room-body{padding:13px 12px}.room-card h3{font-size:17px}.room-body>p{font-size:13px}.mini-list{font-size:12px;gap:4px}
+  .experience{padding:11px 0 10px}.experience-panel{padding:11px 0}.experience-grid{grid-template-columns:1fr}.experience-item,.experience-item:last-child{grid-column:auto;border-right:0;border-bottom:1px dashed #d5dcd0;padding:12px 10px}.experience-item:last-child{border-bottom:0}.experience-item .ico{width:45px;height:45px;margin-bottom:6px}.experience-item h3{font-size:14px}.experience-item p{font-size:11.5px}
+  .gallery-strip{padding:10px 0 11px}.gallery-row{grid-template-columns:1fr 1fr;gap:8px}.gallery-row img{height:116px;border-radius:14px}
+  .cta-wrap{padding:2px 0 6px}.cta{padding:15px 14px;display:grid;gap:10px}.cta h2{font-size:17px}.cta p{font-size:13px}.cta-actions{display:grid;grid-template-columns:1fr;gap:8px}
+  footer{padding:20px 0 11px}.footer-grid{grid-template-columns:1fr;gap:16px}.footer-brand img{width:160px;height:58px}.footer h3{font-size:16px;margin-bottom:7px}.footer-list{gap:5px;font-size:13px}.quicklinks-columns{grid-template-columns:1fr 1fr;gap:0 16px}.footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
+  .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}
+}
+@media(max-width:420px){.navlinks{width:min(47vw,176px)}}
+
+/* ============================================================
+   GLOBAL HEADER CONSISTENCY — Pages 1–3
+   Same top contact bar, nav sizing, mobile drawer and CTA style.
+   ============================================================ */
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:7px 0;font-size:13px;color:#294633;font-weight:600}
+.topbar span{display:flex;align-items:center;gap:8px}
+.nav{height:82px;gap:24px}
+.brand{min-width:198px}
+.brand img{width:198px;height:64px}
+.navlinks{gap:21px;font-size:13px;font-weight:700}
+.navlinks a{padding:9px 0;white-space:nowrap}
+.nav>.btn.primary.desktop-only{background:var(--green);border-color:var(--green);color:#fff}
+@media(max-width:980px){
+  .nav{height:76px;gap:16px}
+  .brand img{width:180px;height:58px}
+  .nav>.desktop-only{display:none}
+  .menu-btn{display:grid}
+  .navlinks{top:76px}
+}
+@media(max-width:620px){
+  .topbar{display:none}
+  .nav{height:70px;gap:10px}
+  .brand{min-width:0}
+  .brand img{width:156px;height:52px}
+  .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+  .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}
+  .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}
+  .menu-btn svg{width:26px;height:26px}
+}
+@media(max-width:420px){.navlinks{width:min(47vw,176px)}}
+
+
+
+/* ============================================================
+   SITE-WIDE CONSISTENCY PASS — Pages 1–3
+   Our Rooms = header/nav/eyebrow/body-copy reference.
+   Home = main hero-title reference.
+   No cards, photos or section structures are repositioned here.
+   ============================================================ */
+:root{
+  --site-topbar-size:13px;
+  --site-nav-size:13px;
+  --site-header-btn-size:14px;
+  --site-eyebrow-size:12px;
+  --site-hero-body-size:16px;
+  --site-section-body-size:14px;
+  --site-card-title-size:16px;
+  --site-card-body-size:13px;
+  --site-footer-title-size:14px;
+  --site-footer-body-size:12.5px;
+}
+body{font-size:15px;line-height:1.5}
+
+/* Exact same top contact bar on every page */
+.topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+.topbar .container{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:22px!important;
+  padding:7px 0!important;
+  font-size:var(--site-topbar-size)!important;
+  line-height:1.25!important;
+  color:#294633!important;
+  font-weight:600!important;
+}
+.topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+
+/* Our Rooms header is now the single master header */
+.nav{height:82px!important;gap:24px!important;align-items:center!important}
+.brand{min-width:198px!important;display:flex;align-items:center}
+.brand img{width:198px!important;height:64px!important;object-fit:contain!important;object-position:left center!important}
+.navlinks{
+  gap:21px!important;
+  font-size:var(--site-nav-size)!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+}
+.navlinks a{padding:9px 0!important;white-space:nowrap!important}
+.nav > .btn{
+  padding:12px 20px!important;
+  min-height:42px!important;
+  font-size:var(--site-header-btn-size)!important;
+  line-height:1!important;
+  gap:8px!important;
+}
+
+/* Same hero text starting point on desktop; images/cards stay untouched */
+.hero-copy{align-self:start!important;padding-top:34px!important;margin:0!important}
+.eyebrow{
+  font-size:var(--site-eyebrow-size)!important;
+  line-height:1.2!important;
+  margin-top:0!important;
+  margin-bottom:9px!important;
+  letter-spacing:.08em!important;
+  font-weight:900!important;
+}
+
+/* Home page hero title becomes the master title scale */
+.hero h1,
+.hero-copy h1{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(42px,3.8vw,56px)!important;
+  line-height:1.04!important;
+  letter-spacing:-.03em!important;
+  margin:0!important;
+}
+
+/* Our Rooms intro paragraph becomes the master hero body scale */
+.hero-copy > p,
+.hero .container > .hero-copy > p{
+  font-size:var(--site-hero-body-size)!important;
+  line-height:1.5!important;
+  max-width:520px!important;
+  margin:15px 0 20px!important;
+}
+
+/* Shared section typography: smaller, cleaner and repeatable */
+.section-title .kicker{font-size:12px!important;line-height:1.2!important;margin-bottom:4px!important}
+.section-title h2{font-size:clamp(28px,2.6vw,36px)!important;line-height:1.08!important;letter-spacing:-.02em!important}
+.section-title p{font-size:var(--site-section-body-size)!important;line-height:1.5!important;margin-top:7px!important}
+
+/* Page-specific headings/body copy mapped onto the same restrained scale */
+.story-copy h2,.values-head h2,.diff-copy h2{font-size:18px!important;line-height:1.2!important}
+.story-copy p,.diff-copy p,.tick{font-size:var(--site-section-body-size)!important;line-height:1.5!important}
+.value h3,.room-body h3,.room-card h3,.feature h3,.proof-card h3,.experience-item h3{font-size:var(--site-card-title-size)!important;line-height:1.25!important}
+.value p,.room-body p,.room-body>p,.feature p,.proof-card p,.experience-item p{font-size:var(--site-card-body-size)!important;line-height:1.45!important}
+
+/* One button text scale across sections */
+.btn{font-size:14px!important;line-height:1.1!important}
+
+/* Footer typography uses the same compact scale on all three pages */
+footer h3,.footer h3{font-size:var(--site-footer-title-size)!important;line-height:1.2!important}
+.footer-list{font-size:var(--site-footer-body-size)!important;line-height:1.4!important}
+.footer-brand p{font-size:13px!important;line-height:1.45!important}
+.footer-bottom{font-size:11px!important;line-height:1.35!important}
+
+@media (max-width:980px){
+  .nav{height:76px!important;gap:16px!important}
+  .brand{min-width:0!important}
+  .brand img{width:180px!important;height:58px!important}
+  .navlinks{top:76px!important}
+  .hero-copy{padding-top:18px!important}
+}
+
+@media (max-width:620px){
+  body{font-size:14px}
+  .topbar{display:none!important}
+  .nav{height:70px!important;gap:10px!important}
+  .brand img{width:156px!important;height:52px!important}
+  .navlinks{
+    left:auto!important;
+    right:0!important;
+    width:min(46vw,190px)!important;
+    top:70px!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+    padding:9px 12px 14px!important;
+    gap:0!important;
+    border-left:1px solid #e9e5dc!important;
+    border-bottom:1px solid #e9e5dc!important;
+    border-radius:0 0 0 18px!important;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important;
+  }
+  .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
+  .menu-btn{width:40px!important;height:40px!important;border-radius:11px!important;padding:5px!important}
+  .menu-btn svg{width:26px!important;height:26px!important}
+
+  /* All three hero text blocks begin at the same mobile offset */
+  .hero-copy{align-self:stretch!important;padding-top:0!important;margin:0!important}
+  .eyebrow{font-size:11px!important;margin-bottom:6px!important}
+  .hero h1,.hero-copy h1{font-size:34px!important;line-height:1.04!important;letter-spacing:-.025em!important}
+  .hero-copy > p,.hero .container > .hero-copy > p{font-size:14.5px!important;line-height:1.5!important;margin:11px 0 14px!important;max-width:none!important}
+
+  .section-title h2{font-size:29px!important;line-height:1.08!important}
+  .section-title p{font-size:13.5px!important;line-height:1.48!important}
+  .story-copy h2,.values-head h2,.diff-copy h2{font-size:17px!important}
+  .story-copy p,.diff-copy p,.tick{font-size:13.5px!important}
+  .value h3,.room-body h3,.room-card h3,.feature h3,.proof-card h3,.experience-item h3{font-size:15px!important}
+  .value p,.room-body p,.room-body>p,.feature p,.proof-card p,.experience-item p{font-size:12.5px!important}
+
+  .btn{font-size:14px!important}
+  footer h3,.footer h3{font-size:16px!important}
+  .footer-list{font-size:13px!important}
+  .footer-brand p{font-size:13px!important}
+}
+@media(max-width:420px){.navlinks{width:min(47vw,176px)!important}}
+
+
+
+/* ============================================================
+   FINAL SHARED HEADER + HERO ALIGNMENT — Pages 1–3
+   Goal: switching Home / About Us / Our Rooms must feel stationary.
+   Existing cards, sections and page content below the hero are untouched.
+   ============================================================ */
+:root{
+  --kk-topbar-font:13px;
+  --kk-nav-font:13px;
+  --kk-header-btn-font:14px;
+  --kk-eyebrow-font:12px;
+  --kk-hero-title-font:50px;
+  --kk-hero-body-font:15px;
+  --kk-hero-line:1.04;
+}
+
+/* One identical header frame on all three pages */
+.topbar{background:#fbf6eb!important;border-bottom:1px solid rgba(23,106,59,.09)!important}
+.topbar .container{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:34px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:22px!important;
+  padding:7px 0!important;
+  font-size:var(--kk-topbar-font)!important;
+  line-height:1.25!important;
+  color:#294633!important;
+  font-weight:600!important;
+}
+.topbar span{display:flex!important;align-items:center!important;gap:8px!important;white-space:nowrap!important}
+header{position:sticky!important;top:0!important;z-index:50!important;background:rgba(255,253,247,.96)!important;backdrop-filter:blur(10px)!important;border-bottom:1px solid rgba(23,106,59,.08)!important}
+.nav{
+  width:min(1180px,calc(100% - 40px))!important;
+  height:82px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:24px!important;
+  margin:auto!important;
+  padding:0!important;
+}
+.brand{display:flex!important;align-items:center!important;min-width:198px!important;width:198px!important;flex:0 0 198px!important}
+.brand img{width:198px!important;height:64px!important;object-fit:contain!important;object-position:left center!important}
+.navlinks{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:1 1 auto!important;
+  gap:21px!important;
+  font-size:var(--kk-nav-font)!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  margin:0!important;
+  padding:0!important;
+}
+.navlinks a{padding:9px 0!important;white-space:nowrap!important;position:relative!important}
+.navlinks a.active:after,.navlinks a:hover:after{content:""!important;position:absolute!important;left:0!important;right:0!important;bottom:1px!important;height:2px!important;background:var(--green)!important;border-radius:999px!important}
+.header-visit{
+  display:inline-flex!important;
+  width:118px!important;
+  min-width:118px!important;
+  height:42px!important;
+  min-height:42px!important;
+  padding:0 15px!important;
+  font-size:var(--kk-header-btn-font)!important;
+  line-height:1!important;
+  gap:0!important;
+  flex:0 0 118px!important;
+}
+.menu-btn{display:none!important}
+
+/* Shared desktop hero frame */
+@media (min-width:981px){
+  .hero{padding:0!important;min-height:410px!important;overflow:hidden!important}
+  .hero > .container,
+  .hero-grid{
+    width:min(1180px,calc(100% - 40px))!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+    align-items:start!important;
+    gap:24px!important;
+    min-height:410px!important;
+    margin:auto!important;
+    padding:0!important;
+  }
+  .hero-copy{
+    width:100%!important;
+    min-width:0!important;
+    min-height:398px!important;
+    align-self:start!important;
+    display:grid!important;
+    grid-template-rows:16px 164px 76px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    padding:20px 0 0!important;
+    margin:0!important;
+  }
+  .eyebrow{
+    align-self:start!important;
+    font-size:var(--kk-eyebrow-font)!important;
+    line-height:16px!important;
+    font-weight:900!important;
+    letter-spacing:.08em!important;
+    text-transform:uppercase!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero h1,.hero-copy h1{
+    align-self:start!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:var(--kk-hero-title-font)!important;
+    line-height:var(--kk-hero-line)!important;
+    letter-spacing:-.03em!important;
+    margin:0!important;
+    padding:0!important;
+    max-width:520px!important;
+  }
+  .hero-copy > p,.hero .container > .hero-copy > p{
+    align-self:start!important;
+    font-size:var(--kk-hero-body-font)!important;
+    line-height:1.5!important;
+    max-width:520px!important;
+    margin:0!important;
+    padding:0!important;
+    color:#47554d!important;
+  }
+  .hero-actions{
+    align-self:start!important;
+    display:flex!important;
+    align-items:flex-start!important;
+    gap:10px!important;
+    margin:0!important;
+    padding:0!important;
+    flex-wrap:nowrap!important;
+  }
+  .hero-actions .btn{
+    width:148px!important;
+    min-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    padding:0 12px!important;
+    font-size:14px!important;
+    line-height:1!important;
+  }
+  .hero-media{
+    position:relative!important;
+    align-self:start!important;
+    width:100%!important;
+    height:390px!important;
+    min-height:390px!important;
+    margin:10px 0 0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  .hero-media:before{
+    content:""!important;
+    position:absolute!important;
+    inset:12px -18px -8px 18px!important;
+    background:#dceab8!important;
+    border-radius:40% 0 0 44%!important;
+    transform:rotate(-1.5deg)!important;
+  }
+  .hero-media img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    border-radius:40% 0 0 44%!important;
+    box-shadow:0 14px 40px rgba(20,66,42,.10)!important;
+  }
+}
+
+/* Slightly tighter shared desktop frame on smaller laptops */
+@media (min-width:981px) and (max-width:1199px){
+  :root{--kk-hero-title-font:46px}
+  .topbar .container,.nav,.hero > .container,.hero-grid{width:min(1080px,calc(100% - 44px))!important}
+  .nav{gap:18px!important}
+  .brand{min-width:185px!important;width:185px!important;flex-basis:185px!important}
+  .brand img{width:185px!important}
+  .navlinks{gap:16px!important;font-size:12.5px!important}
+  .header-visit{width:112px!important;min-width:112px!important;flex-basis:112px!important}
+  .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
+}
+
+/* One identical mobile header + hero frame */
+@media (max-width:980px){
+  .topbar{display:none!important}
+  .nav{
+    width:min(100% - 34px,1180px)!important;
+    height:76px!important;
+    gap:16px!important;
+  }
+  .brand{min-width:0!important;width:auto!important;flex:0 0 auto!important}
+  .brand img{width:180px!important;height:58px!important}
+  .header-visit{display:none!important}
+  .menu-btn{display:grid!important;margin-left:auto!important}
+  .navlinks{display:none!important}
+  .navlinks.open{display:flex!important}
+}
+
+@media (max-width:620px){
+  .nav{width:calc(100% - 28px)!important;height:70px!important;gap:10px!important}
+  .brand img{width:156px!important;height:52px!important}
+  .menu-btn{width:40px!important;height:40px!important;border-radius:11px!important;padding:5px!important;background:#f3f7ec!important;color:var(--green)!important}
+  .menu-btn svg{width:26px!important;height:26px!important}
+  .navlinks{
+    position:fixed!important;
+    left:auto!important;
+    right:0!important;
+    top:70px!important;
+    width:min(46vw,190px)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    padding:9px 12px 14px!important;
+    background:#fffdf7!important;
+    border-left:1px solid #e9e5dc!important;
+    border-bottom:1px solid #e9e5dc!important;
+    border-radius:0 0 0 18px!important;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important;
+  }
+  .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
+
+  .hero{padding:0!important;min-height:0!important}
+  .hero > .container,.hero-grid{
+    width:calc(100% - 28px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:14px!important;
+    margin:auto!important;
+    padding:4px 0 8px!important;
+    min-height:0!important;
+  }
+  .hero-copy{
+    width:100%!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-rows:14px 108px 110px 92px!important;
+    row-gap:6px!important;
+    align-content:start!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .eyebrow{font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+  .hero h1,.hero-copy h1{
+    font-size:34px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .hero-copy > p,.hero .container > .hero-copy > p{
+    font-size:14.5px!important;
+    line-height:1.5!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:start!important;
+  }
+  .hero-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+    align-content:start!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero-actions .btn{width:100%!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .hero-media{
+    position:relative!important;
+    width:100%!important;
+    height:270px!important;
+    min-height:270px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .hero-media:before{content:""!important;position:absolute!important;inset:9px -7px -7px 11px!important;background:#dceab8!important;border-radius:28px!important;transform:rotate(-1deg)!important}
+  .hero-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;border-radius:28px!important;box-shadow:0 12px 28px rgba(20,66,42,.10)!important}
+}
+@media(max-width:420px){
+  .navlinks{width:min(47vw,176px)!important}
+  .hero > .container,.hero-grid{width:calc(100% - 22px)!important}
+  .hero-copy{grid-template-rows:14px 104px 110px 92px!important}
+  .hero h1,.hero-copy h1{font-size:32px!important}
+}
+
+
+/* ============================================================
+   FINAL CONSISTENCY PASS v4 — buttons, hero surface & footer
+   Approved rules carried across Home / About / Our Rooms.
+   ============================================================ */
+
+/* Our Rooms hero surface is the master on all three pages. */
+.hero{
+  background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;
+  border-top:0!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-bottom:1px solid #e8eadf!important;
+  box-shadow:none!important;
+}
+.hero > .container,.hero-grid{border:0!important;box-shadow:none!important;background:transparent!important}
+
+/* One professional icon system. No emoji icons inside action buttons. */
+.btn.visit-action,.btn.enquire-action,.btn.contact-action{
+  white-space:nowrap!important;
+  flex-wrap:nowrap!important;
+  gap:8px!important;
+}
+.btn-icon{width:16px;height:16px;display:inline-grid;place-items:center;flex:0 0 16px;line-height:0}
+.btn-icon svg{display:block;width:16px;height:16px}
+.btn-label{display:inline-block;white-space:nowrap;line-height:1}
+.btn.visit-action{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
+.btn.enquire-action{background:#fff!important;color:var(--green)!important;border-color:var(--green)!important}
+.btn.contact-action{background:#fff!important;color:var(--green)!important;border-color:rgba(255,255,255,.82)!important}
+.btn.contact-action .icon-phone{color:#e66f91!important}
+
+/* Desktop header Book a Visit: same visual family, always one row. */
+.header-visit.visit-action{
+  width:148px!important;
+  min-width:148px!important;
+  max-width:148px!important;
+  flex:0 0 148px!important;
+  height:42px!important;
+  min-height:42px!important;
+  padding:0 15px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  border-radius:999px!important;
+}
+.hero-actions .btn,.cta-actions .btn{
+  min-height:42px!important;
+  font-size:14px!important;
+  border-radius:999px!important;
+}
+@media (min-width:981px){
+  .hero-actions .btn{width:148px!important;min-width:148px!important;height:42px!important;padding:0 12px!important}
+  .cta-actions .btn{min-width:148px!important;height:42px!important;padding:0 16px!important}
+}
+@media (min-width:981px) and (max-width:1199px){
+  .nav{gap:14px!important}
+  .navlinks{gap:13px!important;font-size:12px!important}
+  .header-visit.visit-action{width:136px!important;min-width:136px!important;max-width:136px!important;flex-basis:136px!important;padding:0 12px!important;font-size:13px!important}
+}
+
+/* About Us bottom CTA: green visit + white contact with pink phone icon. */
+.cta .contact-action,.cta-wrap .contact-action{background:#fff!important;color:var(--green)!important;border-color:#fff!important}
+.cta .contact-action .icon-phone,.cta-wrap .contact-action .icon-phone{color:#e66f91!important}
+
+/* Small desktop-only nursery animation uses the spare third title line on About Us. */
+.hero-copy{position:relative!important}
+.about-hero-mini-animation{display:none}
+@media (min-width:981px){
+  .about-hero-mini-animation{
+    display:flex;
+    position:absolute;
+    left:3px;
+    top:135px;
+    width:118px;
+    height:24px;
+    align-items:center;
+    gap:9px;
+    pointer-events:none;
+    opacity:.9;
+  }
+  .about-hero-mini-animation .mini-track{height:2px;width:46px;background:linear-gradient(90deg,#d9e9b9,#f2c94c);border-radius:999px;position:relative;overflow:visible}
+  .about-hero-mini-animation .mini-track:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#2f8a49;top:-3px;left:0;animation:kkMiniTravel 3.2s ease-in-out infinite alternate}
+  .about-hero-mini-animation .mini-star{font-size:14px;color:#e4ab20;animation:kkMiniTwinkle 2.1s ease-in-out infinite}
+  .about-hero-mini-animation .mini-leaf{font-size:15px;color:#6fa34e;animation:kkMiniFloat 2.8s ease-in-out infinite}
+}
+@keyframes kkMiniTravel{to{transform:translateX(38px)}}
+@keyframes kkMiniTwinkle{50%{transform:scale(1.22) rotate(12deg);opacity:.6}}
+@keyframes kkMiniFloat{50%{transform:translateY(-3px) rotate(-7deg)}}
+
+/* About CTA colour treatment is the same on desktop and mobile. */
+.about-bottom-cta{background:linear-gradient(135deg,#f5f9ed,#eef6df)!important;color:var(--deep)!important;border:1px solid #e0e8d4!important}
+.about-bottom-cta h2{color:var(--deep)!important}
+.about-bottom-cta p{color:#56635a!important}
+
+/* One identical footer content and layout across all three pages. */
+.site-footer-v5{background:linear-gradient(135deg,#145c34,#0f4b2f)!important;color:#fff!important;padding:24px 0 13px!important}
+.footer-grid-v5{
+  display:grid!important;
+  grid-template-columns:1.05fr 1.5fr .95fr 1.18fr!important;
+  align-items:start!important;
+  gap:22px!important;
+}
+.footer-grid-v5>div{text-align:center!important;min-width:0!important}
+.site-footer-v5 .footer-brand img{width:176px!important;height:62px!important;object-fit:contain!important;margin:0 auto 5px!important}
+.site-footer-v5 .footer-brand p{max-width:240px!important;margin:5px auto 0!important;color:#e6f0e8!important;font-size:12.5px!important;line-height:1.45!important}
+.site-footer-v5 h3{font-family:inherit!important;color:#f7d85b!important;font-size:14px!important;line-height:1.2!important;margin:0 0 8px!important;font-weight:800!important}
+.site-footer-v5 .footer-list{display:grid!important;gap:6px!important;font-size:12.5px!important;line-height:1.35!important;color:#eef6f0!important;justify-items:center!important}
+.site-footer-v5 .footer-list a,.site-footer-v5 .footer-list div{text-align:center!important;color:#eef6f0!important}
+.quicklinks-group h3{text-align:center!important}
+.quicklinks-columns{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0 18px!important;width:100%!important}
+.quicklinks-column{justify-items:start!important}
+.quicklinks-column a{text-align:left!important;width:100%!important}
+.site-footer-v5 .footer-bottom{border-top:1px solid rgba(255,255,255,.16)!important;margin-top:15px!important;padding-top:9px!important;font-size:11px!important;line-height:1.3!important;color:#d5e6d9!important;display:flex!important;justify-content:space-between!important;gap:10px!important;flex-wrap:wrap!important}
+
+@media(max-width:980px){
+  .footer-grid-v5{grid-template-columns:1fr 1fr!important;gap:18px!important}
+  .footer-grid-v5 .footer-brand{grid-column:1/-1!important}
+  .quicklinks-column{justify-items:center!important}.quicklinks-column a{text-align:center!important}
+}
+@media(max-width:620px){
+  .header-visit.visit-action{display:none!important}
+  .hero-actions .btn,.cta-actions .btn{width:100%!important;min-width:0!important;height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .site-footer-v5{padding:20px 0 11px!important}
+  .footer-grid-v5{grid-template-columns:1fr!important;gap:16px!important}
+  .footer-grid-v5 .footer-brand{grid-column:auto!important}
+  .site-footer-v5 .footer-brand img{width:160px!important;height:58px!important}
+  .site-footer-v5 h3{font-size:16px!important;margin-bottom:7px!important;color:#f7d85b!important}
+  .site-footer-v5 .footer-list{gap:5px!important;font-size:13px!important}
+  .quicklinks-columns{grid-template-columns:1fr 1fr!important;gap:0 16px!important}
+  .quicklinks-column{justify-items:center!important}.quicklinks-column a{text-align:center!important}
+  .site-footer-v5 .footer-bottom{margin-top:12px!important;padding-top:8px!important;font-size:11px!important;justify-content:center!important;text-align:center!important}
+}
+
+
+
+/* ============================================================
+   MOBILE HERO GAP ANIMATION v5
+   Small nursery-style motion placed between the large title and body copy.
+   It fills the visual breathing space without changing cards/images below.
+   ============================================================ */
+.mobile-hero-gap-animation{display:none}
+@media(max-width:620px){
+  .hero-copy{position:relative!important}
+  .mobile-hero-gap-animation{
+    display:flex!important;
+    height:24px!important;
+    width:min(92%,520px)!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:11px!important;
+    margin:2px 0 2px!important;
+    overflow:hidden!important;
+    pointer-events:none!important;
+  }
+  .mobile-hero-gap-animation .m-line{
+    position:relative!important;
+    height:2px!important;
+    width:58%!important;
+    min-width:150px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.18),rgba(247,216,91,.75),rgba(47,138,73,.18))!important;
+    border-radius:999px!important;
+  }
+  .mobile-hero-gap-animation .m-dot{
+    position:absolute!important;top:-4px!important;left:0!important;width:10px!important;height:10px!important;border-radius:50%!important;
+    background:#2f8a49!important;box-shadow:0 0 0 4px rgba(47,138,73,.08)!important;
+    animation:kkMobileTravel 3.8s ease-in-out infinite alternate!important;
+  }
+  .mobile-hero-gap-animation .m-star{font-size:15px!important;color:#e4ac20!important;animation:kkMobileTwinkle 2.2s ease-in-out infinite!important}
+  .mobile-hero-gap-animation .m-leaf{font-size:15px!important;color:#64a15c!important;animation:kkMobileFloat 2.8s ease-in-out infinite!important}
+  /* add one animation row while keeping the same compact hierarchy */
+  .hero-copy{grid-template-rows:14px 108px 24px 92px 92px!important;row-gap:6px!important}
+}
+@media(max-width:420px){
+  .hero-copy{grid-template-rows:14px 104px 24px 92px 92px!important}
+  .mobile-hero-gap-animation{height:22px!important;width:94%!important}
+}
+@keyframes kkMobileTravel{to{transform:translateX(calc(100% + 105px))}}
+@keyframes kkMobileTwinkle{50%{transform:scale(1.22) rotate(15deg);opacity:.58}}
+@keyframes kkMobileFloat{50%{transform:translateY(-3px) rotate(-8deg)}}
+
+/* ============================================================
+   PAGE 4 — LEARNING & DEVELOPMENT
+   Same shared header/hero/footer system as Pages 1–3.
+   Compact vertical rhythm from the start.
+   ============================================================ */
+.learning-section{padding:28px 0}
+.compact-section{padding-top:24px;padding-bottom:24px}
+.learning-section .section-title{text-align:center;margin:0 auto 17px;max-width:820px}
+.learning-section .section-title h2{font-family:Georgia,"Times New Roman",serif;color:var(--deep);font-size:clamp(30px,3vw,42px);line-height:1.08}
+.learning-section .section-title .kicker{font-size:12px;color:var(--green2);font-weight:900;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.learning-section .section-title p{font-size:14px;line-height:1.5;color:#5d6761;margin-top:7px}
+.approach-grid{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid #ebe6dc;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 12px 28px rgba(20,66,42,.05)}
+.learning-card{text-align:center;padding:16px 10px;min-width:0}
+.learning-card:not(:last-child){border-right:1px solid #eee9df}
+.learning-ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:#f2f8e9;color:var(--green);font-size:21px}
+.learning-card:nth-child(2n) .learning-ico{background:#fff3f6;color:#d96c91}.learning-card:nth-child(3n) .learning-ico{background:#fff7de;color:#d7a317}
+.learning-card h3{font-family:inherit;color:#23342a;font-size:13px;line-height:1.25;margin:0 0 5px}.learning-card p{font-size:11.5px;line-height:1.4;color:#667069;margin:0}
+.learn-how{background:linear-gradient(180deg,#fffdf8,#fbfaf3)}
+.how-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:0;border-top:1px solid #ece6da;border-bottom:1px solid #ece6da}
+.how-item{text-align:center;padding:13px 9px}.how-item:not(:last-child){border-right:1px dashed #dce2d8}.how-item>span{display:block;font-size:24px;color:var(--green2);height:30px}.how-item:nth-child(2n)>span{color:#d9a21d}.how-item:nth-child(3n)>span{color:#d66f93}.how-item h3{font-family:inherit;font-size:12.5px;line-height:1.25;margin:4px 0 5px;color:#25352c}.how-item p{font-size:11px;line-height:1.35;color:#68716c;margin:0}
+.experiences-section{padding-top:24px;padding-bottom:22px}
+.experience-gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.experience-gallery figure{margin:0;background:#fff;border:1px solid #ebe6dc;border-radius:16px;overflow:hidden;box-shadow:0 8px 18px rgba(20,66,42,.05)}.experience-gallery img{width:100%;height:128px;object-fit:cover}.experience-gallery figcaption{text-align:center;font-size:11.5px;font-weight:800;color:#314238;padding:8px 5px}
+.learning-proof{padding:12px 0 16px}.proof-row{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #ebe6dc;background:#fff;border-radius:20px;overflow:hidden}.proof-item{display:flex;gap:9px;align-items:center;padding:13px 12px;min-width:0}.proof-item:not(:last-child){border-right:1px solid #eee9df}.proof-item>b,.proof-item div b{display:block;font-size:12px;line-height:1.25;color:#24362b}.proof-item small{display:block;font-size:10.5px;color:#6a726d;margin-top:3px;line-height:1.3}.proof-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f2f8e9;color:var(--green);font-size:19px;flex:0 0 38px}.proof-badge{background:#234f8d;color:#fff;border-radius:10px;padding:5px 7px;text-align:center;font-size:8.5px;line-height:1.05;flex:0 0 48px}.proof-badge b{font-size:12px;color:#fff}
+.learning-cta{padding-top:4px!important;padding-bottom:7px!important}
+@media(max-width:1100px){.approach-grid{grid-template-columns:repeat(4,1fr)}.learning-card{border-bottom:1px solid #eee9df}.learning-card:nth-child(4n){border-right:0}.learning-card:nth-last-child(-n+3){border-bottom:0}.how-grid{grid-template-columns:repeat(4,1fr)}.how-item{border-bottom:1px dashed #dce2d8}.how-item:nth-child(4n){border-right:0}.how-item:nth-last-child(-n+4){border-bottom:0}.experience-gallery{grid-template-columns:repeat(3,1fr)}.proof-row{grid-template-columns:repeat(3,1fr)}.proof-item{border-bottom:1px solid #eee9df}.proof-item:nth-child(3n){border-right:0}.proof-item:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:620px){
+  .learning-section{padding:18px 0}.compact-section{padding-top:16px;padding-bottom:16px}.learning-section .section-title{margin-bottom:12px}.learning-section .section-title h2{font-size:30px}.learning-section .section-title p{font-size:13px}
+  .approach-grid{grid-template-columns:1fr 1fr;border-radius:18px}.learning-card{padding:12px 8px}.learning-card:nth-child(2n){border-right:0}.learning-card:nth-last-child(-n+1){grid-column:1/-1;border-bottom:0}.learning-ico{width:40px;height:40px;font-size:18px;margin-bottom:6px}.learning-card h3{font-size:12px}.learning-card p{font-size:10.8px}
+  .how-grid{grid-template-columns:1fr 1fr}.how-item:nth-child(2n){border-right:0}.how-item:nth-last-child(-n+2){border-bottom:0}.how-item{padding:11px 8px}.how-item h3{font-size:12px}.how-item p{font-size:10.5px}
+  .experience-gallery{grid-template-columns:1fr 1fr;gap:8px}.experience-gallery img{height:112px}.experience-gallery figcaption{font-size:10.8px;padding:6px 4px}
+  .learning-proof{padding:8px 0 10px}.proof-row{grid-template-columns:1fr 1fr;border-radius:18px}.proof-item{padding:10px 8px}.proof-item:nth-child(2n){border-right:0}.proof-item:last-child{grid-column:1/-1;border-bottom:0}.proof-item div b{font-size:11.5px}.proof-item small{font-size:10px}.proof-icon{width:34px;height:34px;flex-basis:34px}
+  .learning-cta{padding-top:2px!important;padding-bottom:5px!important}
+}
+
+
+/* ============================================================
+   PAGE 4 FINAL POLISH v6
+   1) Wide desktop hero animation centred in the heading/body gap.
+   2) Mobile hero animation centred in the same visual gap.
+   3) "See Learning in Action" banner recreated with soft nursery
+      colour, flower, green landscape/tree and a zig-zag lower edge.
+   Existing content/buttons remain unchanged.
+   ============================================================ */
+.learning-desktop-gap-animation{display:none}
+@media (min-width:981px){
+  .learning-hero .hero-copy{position:relative!important}
+  .learning-desktop-gap-animation{
+    display:flex!important;
+    position:absolute!important;
+    left:0!important;
+    top:184px!important;
+    width:min(500px,96%)!important;
+    height:34px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:13px!important;
+    pointer-events:none!important;
+    opacity:.94!important;
+    z-index:2!important;
+  }
+  .learning-desktop-gap-animation .ld-line{
+    position:relative!important;
+    width:72%!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.14),rgba(247,216,91,.88),rgba(47,138,73,.18))!important;
+  }
+  .learning-desktop-gap-animation .ld-runner{
+    position:absolute!important;left:0!important;top:-5px!important;width:12px!important;height:12px!important;border-radius:50%!important;
+    background:#2f8a49!important;box-shadow:0 0 0 5px rgba(47,138,73,.08)!important;
+    animation:kkLearningTravel 4.3s ease-in-out infinite alternate!important;
+  }
+  .learning-desktop-gap-animation .ld-book{font-size:18px!important;color:#d36d8d!important;animation:kkLearningBob 2.7s ease-in-out infinite!important}
+  .learning-desktop-gap-animation .ld-star{font-size:20px!important;color:#e4ac20!important;animation:kkLearningTwinkle 2.2s ease-in-out infinite!important}
+  .learning-desktop-gap-animation .ld-leaf{font-size:20px!important;color:#67a35c!important;animation:kkLearningFloat 2.9s ease-in-out infinite!important}
+}
+@keyframes kkLearningTravel{to{transform:translateX(265px) rotate(240deg)}}
+@keyframes kkLearningBob{50%{transform:translateY(-4px) rotate(-5deg)}}
+@keyframes kkLearningTwinkle{50%{transform:scale(1.28) rotate(16deg);opacity:.62}}
+@keyframes kkLearningFloat{50%{transform:translateY(-4px) rotate(-8deg)}}
+
+@media (max-width:620px){
+  .learning-hero .mobile-hero-gap-animation{
+    width:100%!important;
+    height:34px!important;
+    justify-content:center!important;
+    gap:13px!important;
+    margin:0!important;
+    overflow:visible!important;
+    transform:translateY(-24px)!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-line{width:64%!important;min-width:180px!important}
+  .learning-hero .mobile-hero-gap-animation .m-star{font-size:19px!important}
+  .learning-hero .mobile-hero-gap-animation .m-leaf{font-size:18px!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 108px 34px 92px 92px!important;row-gap:6px!important}
+}
+@media (max-width:420px){
+  .learning-hero .mobile-hero-gap-animation{height:32px!important;transform:translateY(-20px)!important}
+  .learning-hero .mobile-hero-gap-animation .m-line{min-width:150px!important;width:62%!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 104px 32px 92px 92px!important}
+}
+
+/* Mock-up style welcome banner before footer */
+.learning-cta{
+  position:relative!important;
+  z-index:3!important;
+  margin-bottom:-10px!important;
+  padding-top:2px!important;
+  padding-bottom:0!important;
+}
+.learning-cta .container{position:relative!important}
+.learning-cta .cta{
+  position:relative!important;
+  overflow:visible!important;
+  min-height:94px!important;
+  padding:18px 142px 25px 78px!important;
+  border:1px solid #e7e7cf!important;
+  border-radius:22px 22px 8px 8px!important;
+  background:linear-gradient(105deg,#fffdf0 0%,#fbf4d9 48%,#edf6d7 100%)!important;
+  box-shadow:0 8px 22px rgba(35,74,45,.05)!important;
+}
+.learning-cta .cta::after{
+  content:""!important;
+  position:absolute!important;
+  left:-1px!important;right:-1px!important;bottom:-14px!important;height:22px!important;
+  background:linear-gradient(90deg,#f8f2d8 0%,#eef6d7 100%)!important;
+  clip-path:polygon(0 0,5% 38%,10% 10%,15% 42%,20% 13%,25% 45%,30% 12%,35% 43%,40% 15%,45% 46%,50% 13%,55% 42%,60% 10%,65% 45%,70% 13%,75% 42%,80% 11%,85% 44%,90% 12%,95% 40%,100% 0,100% 100%,0 100%)!important;
+  z-index:0!important;
+}
+.learning-cta .learning-cta-copy,.learning-cta .cta-actions{position:relative!important;z-index:3!important}
+.learning-cta-flower{
+  position:absolute!important;left:18px!important;bottom:18px!important;width:42px!important;height:62px!important;z-index:2!important;pointer-events:none!important;
+}
+.learning-cta-flower:before{
+  content:""!important;position:absolute!important;left:20px!important;bottom:0!important;width:3px!important;height:39px!important;background:#67a858!important;border-radius:999px!important;transform:rotate(-4deg)!important;
+}
+.learning-cta-flower:after{
+  content:"✿"!important;position:absolute!important;left:5px!important;top:0!important;color:#e7bd2e!important;font-size:34px!important;line-height:1!important;filter:drop-shadow(0 2px 2px rgba(74,90,45,.08))!important;animation:kkCtaFlower 3.2s ease-in-out infinite alternate!important;
+}
+.learning-cta-flower span:before,.learning-cta-flower span:after{
+  content:""!important;position:absolute!important;width:14px!important;height:7px!important;border-radius:100% 0 100% 0!important;background:#7bae59!important;bottom:17px!important;
+}
+.learning-cta-flower span:before{left:7px!important;transform:rotate(18deg)!important}.learning-cta-flower span:after{left:23px!important;transform:scaleX(-1) rotate(18deg)!important}
+.learning-cta-landscape{position:absolute!important;right:12px!important;bottom:2px!important;width:116px!important;height:78px!important;z-index:2!important;pointer-events:none!important}
+.learning-cta-landscape .hill{position:absolute!important;left:0!important;right:0!important;bottom:0!important;height:31px!important;background:#9dcc63!important;border-radius:65% 65% 8px 8px/100% 100% 8px 8px!important;transform:rotate(-1deg)!important}
+.learning-cta-landscape .trunk{position:absolute!important;right:37px!important;bottom:19px!important;width:7px!important;height:34px!important;background:#9b7047!important;border-radius:5px!important}
+.learning-cta-landscape .crown{position:absolute!important;border-radius:50%!important;background:#6ca858!important;box-shadow:inset -3px -3px 0 rgba(33,101,54,.08)!important}
+.learning-cta-landscape .crown-a{width:36px!important;height:36px!important;right:22px!important;bottom:43px!important}.learning-cta-landscape .crown-b{width:31px!important;height:31px!important;right:47px!important;bottom:39px!important;background:#80b862!important}.learning-cta-landscape .crown-c{width:29px!important;height:29px!important;right:12px!important;bottom:33px!important;background:#73ad5d!important}
+.learning-cta-landscape .tiny-flower{position:absolute!important;left:18px!important;bottom:10px!important;font-size:16px!important;color:#df8da9!important;animation:kkCtaFlower 2.8s ease-in-out infinite alternate-reverse!important}
+@keyframes kkCtaFlower{to{transform:rotate(7deg) translateY(-2px)}}
+
+@media(max-width:980px){
+  .learning-cta .cta{padding:17px 105px 24px 62px!important}
+  .learning-cta-landscape{transform:scale(.86);transform-origin:right bottom!important;right:6px!important}
+  .learning-cta-flower{transform:scale(.86);transform-origin:left bottom!important;left:10px!important}
+}
+@media(max-width:620px){
+  .learning-cta{margin-bottom:-8px!important}
+  .learning-cta .cta{
+    min-height:0!important;
+    padding:16px 16px 24px!important;
+    border-radius:18px 18px 7px 7px!important;
+  }
+  .learning-cta .learning-cta-copy{padding:0 34px!important;text-align:center!important}
+  .learning-cta .cta-actions{margin-top:4px!important}
+  .learning-cta-flower{left:3px!important;bottom:18px!important;transform:scale(.63)!important}
+  .learning-cta-landscape{right:0!important;bottom:3px!important;transform:scale(.60)!important}
+  .learning-cta .cta::after{bottom:-11px!important;height:18px!important}
+}
+
+
+
+/* ============================================================
+   v7 FINAL GAP-FILL + CTA LANDSCAPE POLISH — LEARNING PAGE
+   ============================================================ */
+@media (min-width:981px){
+  .learning-desktop-gap-animation{
+    left:0!important;
+    top:178px!important;
+    width:min(540px,98%)!important;
+    height:58px!important;
+    justify-content:center!important;
+    gap:15px!important;
+    overflow:visible!important;
+  }
+  .learning-desktop-gap-animation::before{
+    content:""!important;
+    position:absolute!important;
+    left:7%!important;
+    right:24%!important;
+    top:11px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.85),rgba(47,138,73,.12))!important;
+  }
+  .learning-desktop-gap-animation .ld-line{
+    position:absolute!important;
+    left:9%!important;
+    right:18%!important;
+    bottom:11px!important;
+    width:auto!important;
+    height:2px!important;
+  }
+  .learning-desktop-gap-animation .ld-book,
+  .learning-desktop-gap-animation .ld-star,
+  .learning-desktop-gap-animation .ld-leaf{position:absolute!important;top:0!important;z-index:2!important}
+  .learning-desktop-gap-animation .ld-book{right:15%!important;font-size:18px!important}
+  .learning-desktop-gap-animation .ld-star{right:8%!important;font-size:20px!important}
+  .learning-desktop-gap-animation .ld-leaf{right:1%!important;font-size:19px!important}
+  .learning-desktop-gap-animation .ld-runner{animation:kkLearningTravelV7 4.6s ease-in-out infinite alternate!important}
+}
+@keyframes kkLearningTravelV7{to{transform:translateX(235px) rotate(240deg)}}
+
+@media (max-width:620px){
+  .learning-hero .mobile-hero-gap-animation{
+    position:relative!important;
+    width:100%!important;
+    height:46px!important;
+    justify-content:center!important;
+    gap:13px!important;
+    margin:2px 0 6px!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  .learning-hero .mobile-hero-gap-animation::before{
+    content:""!important;
+    position:absolute!important;
+    left:10%!important;
+    right:28%!important;
+    top:10px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.82),rgba(47,138,73,.12))!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-line{
+    position:absolute!important;
+    left:10%!important;
+    right:18%!important;
+    top:27px!important;
+    width:auto!important;
+    min-width:0!important;
+    height:2px!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-star,
+  .learning-hero .mobile-hero-gap-animation .m-leaf{position:relative!important;top:2px!important;z-index:2!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 108px 46px 92px 92px!important;row-gap:6px!important}
+}
+@media (max-width:420px){
+  .learning-hero .mobile-hero-gap-animation{height:42px!important;margin:1px 0 5px!important}
+  .learning-hero .mobile-hero-gap-animation::before{left:12%!important;right:30%!important;top:8px!important}
+  .learning-hero .mobile-hero-gap-animation .m-line{left:12%!important;right:20%!important;top:24px!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 104px 42px 92px 92px!important}
+}
+
+/* Welcome banner before footer refined to match the mockup more closely. */
+.learning-cta{margin-bottom:-14px!important;padding-top:4px!important;padding-bottom:0!important}
+.learning-cta .container{position:relative!important}
+.learning-cta .cta{
+  position:relative!important;
+  width:100%!important;
+  overflow:visible!important;
+  min-height:104px!important;
+  padding:18px 150px 34px 88px!important;
+  border:1px solid #e5e5c7!important;
+  border-radius:22px 22px 0 0!important;
+  background:linear-gradient(180deg,#f5f4dc 0%,#edf3d1 100%)!important;
+  box-shadow:0 8px 22px rgba(35,74,45,.05)!important;
+}
+.learning-cta .cta::after{
+  content:""!important;
+  position:absolute!important;
+  left:-1px!important;right:-1px!important;bottom:-18px!important;height:30px!important;
+  background:linear-gradient(180deg,#eef3d1 0%,#e4ecc4 100%)!important;
+  clip-path:polygon(0 0,4% 38%,8% 8%,12% 42%,16% 11%,20% 43%,24% 12%,28% 41%,32% 10%,36% 44%,40% 12%,44% 41%,48% 8%,52% 44%,56% 12%,60% 41%,64% 10%,68% 44%,72% 11%,76% 43%,80% 9%,84% 42%,88% 12%,92% 39%,96% 10%,100% 0,100% 100%,0 100%)!important;
+  z-index:0!important;
+}
+.learning-cta .learning-cta-copy,.learning-cta .cta-actions{position:relative!important;z-index:3!important}
+.learning-cta-flower{
+  position:absolute!important;left:18px!important;bottom:18px!important;width:68px!important;height:90px!important;z-index:2!important;pointer-events:none!important;
+}
+.learning-cta-flower:before{
+  content:""!important;position:absolute!important;left:28px!important;bottom:0!important;width:3px!important;height:53px!important;background:#6da85b!important;border-radius:999px!important;
+  box-shadow:-11px 14px 0 -1px #7bb265,10px 18px 0 -1px #7bb265!important;
+}
+.learning-cta-flower:after{
+  content:"✿"!important;position:absolute!important;left:0!important;top:2px!important;color:#f0c54e!important;font-size:26px!important;line-height:1!important;
+  text-shadow:18px 14px 0 #f2d66b,36px 2px 0 #e9a0b5!important;
+  filter:drop-shadow(0 2px 2px rgba(74,90,45,.08))!important;
+  animation:kkCtaFlower 3.2s ease-in-out infinite alternate!important;
+}
+.learning-cta-flower span:before,.learning-cta-flower span:after{
+  content:""!important;position:absolute!important;width:15px!important;height:8px!important;border-radius:100% 0 100% 0!important;background:#7bae59!important;bottom:28px!important;
+}
+.learning-cta-flower span:before{left:16px!important;transform:rotate(18deg)!important}
+.learning-cta-flower span:after{left:32px!important;transform:scaleX(-1) rotate(18deg)!important}
+.learning-cta-landscape{position:absolute!important;right:0!important;bottom:0!important;width:162px!important;height:94px!important;z-index:2!important;pointer-events:none!important}
+.learning-cta-landscape .hill{
+  position:absolute!important;left:0!important;right:0!important;bottom:0!important;height:38px!important;
+  background:linear-gradient(180deg,#a9d36f 0%,#8fc458 100%)!important;
+  border-radius:60% 60% 0 0/100% 100% 0 0!important;
+  clip-path:polygon(0 72%,10% 58%,20% 71%,30% 52%,40% 69%,50% 56%,60% 72%,70% 54%,80% 69%,90% 57%,100% 71%,100% 100%,0 100%)!important;
+}
+.learning-cta-landscape .trunk{position:absolute!important;right:48px!important;bottom:24px!important;width:8px!important;height:38px!important;background:#9b7047!important;border-radius:5px!important}
+.learning-cta-landscape .crown{position:absolute!important;border-radius:50%!important;background:#6ca858!important;box-shadow:inset -3px -3px 0 rgba(33,101,54,.08)!important}
+.learning-cta-landscape .crown-a{width:40px!important;height:40px!important;right:28px!important;bottom:50px!important}
+.learning-cta-landscape .crown-b{width:34px!important;height:34px!important;right:56px!important;bottom:47px!important;background:#80b862!important}
+.learning-cta-landscape .crown-c{width:32px!important;height:32px!important;right:14px!important;bottom:42px!important;background:#73ad5d!important}
+.learning-cta-landscape .tiny-flower{
+  position:absolute!important;left:18px!important;bottom:10px!important;font-size:14px!important;color:#df8da9!important;
+  text-shadow:22px 4px 0 #efc54f,46px -1px 0 #df8da9,70px 2px 0 #efc54f!important;
+  animation:kkCtaFlower 2.8s ease-in-out infinite alternate-reverse!important;
+}
+
+@media (max-width:980px){
+  .learning-cta .cta{padding:18px 118px 31px 72px!important}
+  .learning-cta-landscape{transform:scale(.88)!important;transform-origin:right bottom!important;right:-2px!important}
+  .learning-cta-flower{transform:scale(.9)!important;transform-origin:left bottom!important;left:10px!important}
+}
+@media (max-width:620px){
+  .learning-cta{margin-bottom:-10px!important}
+  .learning-cta .container{width:calc(100% - 0px)!important}
+  .learning-cta .cta{
+    min-height:0!important;
+    padding:16px 12px 28px!important;
+    border-radius:20px 20px 0 0!important;
+  }
+  .learning-cta .learning-cta-copy{padding:0 18px!important;text-align:center!important}
+  .learning-cta .cta-actions{margin-top:4px!important}
+  .learning-cta-flower{left:2px!important;bottom:20px!important;transform:scale(.72)!important}
+  .learning-cta-landscape{right:-8px!important;bottom:2px!important;transform:scale(.72)!important}
+  .learning-cta .cta::after{bottom:-13px!important;height:22px!important}
+}
+
+
+
+/* ============================================================
+   FINAL LEARNING PAGE CONSISTENCY — v11
+   Home / About Us / Our Rooms are the visual master.
+   This block changes ONLY learning.html and keeps its content.
+   ============================================================ */
+:root{
+  --site-topbar-size:13px;
+  --site-nav-size:13px;
+  --site-header-btn-size:14px;
+  --site-eyebrow-size:12px;
+  --site-hero-body-size:16px;
+  --site-section-body-size:14px;
+  --site-card-title-size:16px;
+  --site-card-body-size:13px;
+  --site-footer-title-size:14px;
+  --site-footer-body-size:12.5px;
+}
+
+/* Same top contact bar and header geometry as the approved pages. */
+.topbar .container{
+  gap:22px!important;
+  padding:7px 0!important;
+  font-size:var(--site-topbar-size)!important;
+  line-height:1.25!important;
+}
+.nav{height:82px!important;gap:24px!important;align-items:center!important}
+.brand{min-width:198px!important}
+.brand img{width:198px!important;height:64px!important;object-fit:contain!important;object-position:left center!important}
+.navlinks{gap:21px!important;font-size:var(--site-nav-size)!important;font-weight:700!important;line-height:1.2!important}
+.navlinks a{padding:9px 0!important;white-space:nowrap!important}
+.nav>.btn{height:42px!important;min-height:42px!important;padding:0 20px!important;font-size:var(--site-header-btn-size)!important;line-height:1!important;gap:8px!important}
+
+/* Same hero surface, starting point, title scale and body scale. */
+.learning-hero{
+  padding:8px 0 8px!important;
+  background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;
+  border-bottom:1px solid #e8eadf!important;
+  overflow:hidden!important;
+}
+.learning-hero .hero-grid{
+  display:grid!important;
+  grid-template-columns:.92fr 1.08fr!important;
+  gap:24px!important;
+  align-items:center!important;
+  min-height:385px!important;
+}
+.learning-hero .hero-copy{
+  position:relative!important;
+  align-self:start!important;
+  padding-top:34px!important;
+  margin:0!important;
+  display:grid!important;
+  grid-template-rows:14px 118px 46px 82px 42px!important;
+  row-gap:7px!important;
+  align-content:start!important;
+  min-width:0!important;
+}
+.learning-hero .eyebrow{
+  font-size:var(--site-eyebrow-size)!important;
+  line-height:14px!important;
+  margin:0!important;
+  letter-spacing:.08em!important;
+}
+.learning-hero h1{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(42px,3.8vw,56px)!important;
+  line-height:1.04!important;
+  letter-spacing:-.03em!important;
+  margin:0!important;
+  padding:0!important;
+  max-width:540px!important;
+}
+.learning-hero .hero-copy>p{
+  font-size:var(--site-hero-body-size)!important;
+  line-height:1.5!important;
+  max-width:520px!important;
+  margin:0!important;
+  padding:0!important;
+  align-self:start!important;
+}
+.learning-hero .hero-actions{
+  display:flex!important;
+  gap:10px!important;
+  flex-wrap:nowrap!important;
+  margin:0!important;
+  padding:0!important;
+  align-items:start!important;
+}
+.learning-hero .hero-actions .btn{
+  width:auto!important;
+  min-width:148px!important;
+  height:42px!important;
+  min-height:42px!important;
+  padding:0 16px!important;
+  font-size:14px!important;
+  line-height:1!important;
+  gap:8px!important;
+}
+.learning-hero .hero-media{min-height:350px!important;height:350px!important}
+
+/* DESKTOP: two-line animation sits in the exact middle of the spare gap. */
+.learning-desktop-gap-animation{
+  display:flex!important;
+  position:relative!important;
+  width:min(500px,96%)!important;
+  height:46px!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:visible!important;
+  pointer-events:none!important;
+}
+.learning-desktop-gap-animation::before{
+  content:""!important;
+  position:absolute!important;
+  left:7%!important;
+  right:18%!important;
+  top:12px!important;
+  height:2px!important;
+  border-radius:999px!important;
+  background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.86),rgba(47,138,73,.14))!important;
+}
+.learning-desktop-gap-animation .ld-line{
+  position:absolute!important;
+  left:7%!important;
+  right:12%!important;
+  bottom:12px!important;
+  width:auto!important;
+  height:2px!important;
+  border-radius:999px!important;
+  background:linear-gradient(90deg,rgba(47,138,73,.16),rgba(247,216,91,.70),rgba(47,138,73,.18))!important;
+}
+.learning-desktop-gap-animation .ld-runner{
+  position:absolute!important;
+  left:0!important;
+  top:-5px!important;
+  width:12px!important;
+  height:12px!important;
+  border-radius:50%!important;
+  background:linear-gradient(135deg,#69b5df 0 50%,#e87899 50% 100%)!important;
+  box-shadow:0 0 0 5px rgba(105,181,223,.10)!important;
+  animation:kkLearningDotV11 4.2s ease-in-out infinite alternate!important;
+}
+.learning-desktop-gap-animation .ld-book,
+.learning-desktop-gap-animation .ld-star,
+.learning-desktop-gap-animation .ld-leaf{
+  position:absolute!important;
+  z-index:2!important;
+  line-height:1!important;
+  animation-duration:2.6s!important;
+  animation-iteration-count:infinite!important;
+  animation-timing-function:ease-in-out!important;
+}
+.learning-desktop-gap-animation .ld-book{right:19%!important;top:2px!important;font-size:17px!important;color:#d68aa8!important;animation-name:kkLearningFloatV11!important}
+.learning-desktop-gap-animation .ld-star{right:10%!important;top:1px!important;font-size:20px!important;color:#e2ab20!important;animation-name:kkLearningTwinkleV11!important}
+.learning-desktop-gap-animation .ld-leaf{right:3%!important;top:3px!important;font-size:19px!important;color:#69a35c!important;animation-name:kkLearningFloatV11!important}
+.mobile-hero-gap-animation{display:none!important}
+@keyframes kkLearningDotV11{to{transform:translateX(245px) rotate(260deg)}}
+@keyframes kkLearningTwinkleV11{50%{transform:scale(1.25) rotate(14deg);opacity:.58}}
+@keyframes kkLearningFloatV11{50%{transform:translateY(-4px) rotate(-8deg)}}
+
+/* Restrained, consistent typography throughout the Learning page. */
+.learning-section{padding:26px 0!important}
+.learning-section.compact-section{padding-top:22px!important;padding-bottom:24px!important}
+.learning-section .section-title{margin-bottom:16px!important}
+.learning-section .section-title .kicker{font-size:12px!important;line-height:1.2!important;margin-bottom:4px!important}
+.learning-section .section-title h2{font-size:clamp(28px,2.6vw,36px)!important;line-height:1.08!important;letter-spacing:-.02em!important}
+.learning-section .section-title p{font-size:var(--site-section-body-size)!important;line-height:1.5!important;margin-top:7px!important}
+.learning-card h3,.how-item h3,.experience-gallery figcaption{font-size:var(--site-card-title-size)!important;line-height:1.25!important}
+.learning-card p,.how-item p{font-size:var(--site-card-body-size)!important;line-height:1.45!important}
+
+/* Ofsted / proof strip uses the same compact scale as the approved pages. */
+.learning-proof{padding:12px 0 14px!important}
+.learning-proof .proof-item{padding:14px 12px!important}
+.learning-proof .proof-item b{font-size:13px!important;line-height:1.25!important}
+.learning-proof .proof-item small{font-size:11.5px!important;line-height:1.35!important;margin-top:3px!important}
+.learning-proof .proof-icon{width:40px!important;height:40px!important;font-size:19px!important}
+.learning-proof .proof-badge{font-size:10px!important;line-height:1.05!important;padding:7px!important}
+
+/* "See Learning in Action" matches the approved restrained text/button scale. */
+.learning-cta{padding-top:4px!important;padding-bottom:0!important;margin-bottom:-12px!important}
+.learning-cta .cta{min-height:104px!important;padding:18px 150px 34px 88px!important}
+.learning-cta .learning-cta-copy h2{font-family:inherit!important;font-size:18px!important;line-height:1.22!important;color:var(--green)!important}
+.learning-cta .learning-cta-copy p{font-size:14px!important;line-height:1.45!important;margin-top:4px!important}
+.learning-cta .cta-actions{display:flex!important;gap:10px!important;flex-wrap:nowrap!important}
+.learning-cta .cta-actions .btn{width:auto!important;min-width:148px!important;height:42px!important;min-height:42px!important;padding:0 16px!important;font-size:14px!important;line-height:1!important}
+
+/* Footer remains on the same shared layout/scale. */
+.site-footer-v5 h3{font-size:var(--site-footer-title-size)!important}
+.site-footer-v5 .footer-list{font-size:var(--site-footer-body-size)!important;line-height:1.4!important}
+.site-footer-v5 .footer-brand p{font-size:13px!important;line-height:1.45!important}
+.site-footer-v5 .footer-bottom{font-size:11px!important;line-height:1.35!important}
+
+@media(max-width:980px){
+  .nav{height:76px!important;gap:16px!important}
+  .brand{min-width:0!important}
+  .brand img{width:180px!important;height:58px!important}
+  .navlinks{top:76px!important}
+  .learning-hero .hero-grid{grid-template-columns:1fr!important;gap:14px!important;min-height:0!important}
+  .learning-hero .hero-copy{padding-top:18px!important}
+  .learning-hero .hero-media{height:330px!important;min-height:330px!important}
+}
+
+@media(max-width:620px){
+  .topbar{display:none!important}
+  .nav{height:70px!important;gap:10px!important}
+  .brand img{width:156px!important;height:52px!important}
+  .navlinks{
+    left:auto!important;right:0!important;width:min(46vw,190px)!important;top:70px!important;
+    max-height:calc(100vh - 70px)!important;overflow:auto!important;padding:9px 12px 14px!important;gap:0!important;
+    border-left:1px solid #e9e5dc!important;border-bottom:1px solid #e9e5dc!important;border-radius:0 0 0 18px!important;
+    box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important;
+  }
+  .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
+
+  .learning-hero{padding:0!important}
+  .learning-hero .hero-grid{
+    width:calc(100% - 28px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:14px!important;
+    margin:auto!important;
+    padding:4px 0 8px!important;
+  }
+  .learning-hero .hero-copy{
+    width:100%!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-rows:14px 108px 46px 118px 92px!important;
+    row-gap:6px!important;
+    align-content:start!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .learning-hero .eyebrow{font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+  .learning-hero h1{font-size:34px!important;line-height:1.04!important;letter-spacing:-.025em!important;max-width:none!important;margin:0!important;padding:0!important}
+  .learning-hero .hero-copy>p{font-size:14.5px!important;line-height:1.5!important;max-width:none!important;margin:0!important;padding:0!important}
+  .learning-hero .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;align-content:start!important;margin:0!important;padding:0!important}
+  .learning-hero .hero-actions .btn{width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+  .learning-hero .hero-media{position:relative!important;width:100%!important;height:270px!important;min-height:270px!important;margin:0!important;padding:0!important}
+
+  /* MOBILE: same centred, moving two-line animation in the spare gap. */
+  .learning-desktop-gap-animation{display:none!important}
+  .learning-hero .mobile-hero-gap-animation{
+    display:flex!important;
+    position:relative!important;
+    width:100%!important;
+    height:46px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:13px!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+  .learning-hero .mobile-hero-gap-animation::before{
+    content:""!important;
+    position:absolute!important;
+    left:10%!important;right:25%!important;top:11px!important;height:2px!important;border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.13),rgba(247,216,91,.84),rgba(47,138,73,.13))!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-line{
+    position:absolute!important;
+    left:10%!important;right:17%!important;bottom:11px!important;width:auto!important;min-width:0!important;height:2px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.16),rgba(247,216,91,.72),rgba(47,138,73,.18))!important;
+    border-radius:999px!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-dot{
+    position:absolute!important;left:0!important;top:-4px!important;width:10px!important;height:10px!important;border-radius:50%!important;
+    background:#2f8a49!important;box-shadow:0 0 0 4px rgba(47,138,73,.08)!important;
+    animation:kkLearningMobileDotV11 3.8s ease-in-out infinite alternate!important;
+  }
+  .learning-hero .mobile-hero-gap-animation .m-star{position:absolute!important;right:10%!important;top:1px!important;font-size:19px!important;color:#e4ac20!important;animation:kkLearningTwinkleV11 2.2s ease-in-out infinite!important}
+  .learning-hero .mobile-hero-gap-animation .m-leaf{position:absolute!important;right:3%!important;top:3px!important;font-size:18px!important;color:#64a15c!important;animation:kkLearningFloatV11 2.8s ease-in-out infinite!important}
+
+  .learning-section{padding:18px 0!important}
+  .learning-section .section-title{margin-bottom:12px!important}
+  .learning-section .section-title h2{font-size:28px!important}
+  .learning-section .section-title p{font-size:14px!important}
+  .learning-card h3,.how-item h3,.experience-gallery figcaption{font-size:15px!important}
+  .learning-card p,.how-item p{font-size:12.5px!important}
+
+  .learning-proof{padding:8px 0 10px!important}
+  .learning-proof .proof-item{padding:12px 10px!important}
+  .learning-proof .proof-item b{font-size:12px!important}
+  .learning-proof .proof-item small{font-size:10.5px!important}
+
+  .learning-cta{margin-bottom:-10px!important}
+  .learning-cta .container{width:100%!important}
+  .learning-cta .cta{min-height:0!important;padding:16px 12px 28px!important;border-radius:20px 20px 0 0!important}
+  .learning-cta .learning-cta-copy{padding:0 18px!important;text-align:center!important}
+  .learning-cta .learning-cta-copy h2{font-size:17px!important;line-height:1.25!important}
+  .learning-cta .learning-cta-copy p{font-size:13px!important;line-height:1.45!important}
+  .learning-cta .cta-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;margin-top:6px!important}
+  .learning-cta .cta-actions .btn{width:100%!important;min-width:0!important;height:42px!important;padding:0 14px!important;font-size:14px!important}
+}
+@media(max-width:420px){
+  .navlinks{width:min(47vw,176px)!important}
+  .learning-hero .hero-grid{width:calc(100% - 22px)!important}
+  .learning-hero .hero-copy{grid-template-rows:14px 104px 42px 118px 92px!important}
+  .learning-hero h1{font-size:32px!important}
+  .learning-hero .mobile-hero-gap-animation{height:42px!important}
+}
+@keyframes kkLearningMobileDotV11{to{transform:translateX(185px)}}
+</style>
 </head>
 <body>
-  <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Kinder Kidz Day Nursery home"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a>
-      <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="rooms.html">Our Rooms</a>
-        <a href="learning.html" class="active">Learning &amp; Development</a>
-        <a href="fees.html">Fees &amp; Funding</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="parents.html">Parents</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Learning &amp; Development</div>
-          <h1>Learning, Play &amp;<br><span style="color:var(--green)">Discovery Every Day</span></h1>
-          <div class="title-gap"><div class="lines"><span class="line top"></span><span class="line bottom"></span><span class="dot"></span><span class="star">☆</span><span class="leaf">⌁</span></div></div>
-          <p class="lead">We nurture every child’s unique potential through play, exploration and meaningful experiences, guided by the Early Years Foundation Stage (EYFS) framework.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="contact.html#visit">Book a Visit</a>
-            <a class="btn secondary" href="contact.html#enquiry">Enquire Now</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <img src="images/storytime-mixed-race.png" alt="Children learning together at Kinder Kidz" />
-        </div>
-      </div>
-      <div class="wave-sep"></div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container">
-        <div class="stat-row stats-compact">
-          <div class="stat-item"><div class="icon">📘</div><div><b>Learning Through Play</b><small>Hands-on experiences that spark curiosity and confidence.</small></div></div>
-          <div class="stat-item"><div class="icon">🎨</div><div><b>Creative Expression</b><small>Art, music and role play to inspire imagination.</small></div></div>
-          <div class="stat-item"><div class="icon">🎵</div><div><b>Music &amp; Movement</b><small>Songs, dancing and movement to support wellbeing.</small></div></div>
-          <div class="stat-item"><div class="icon">⭐</div><div><b>Independence &amp; Confidence</b><small>Helping children try new things and believe in themselves.</small></div></div>
-          <div class="stat-item"><div class="icon">🌿</div><div><b>Outdoor Discovery</b><small>Fresh air, movement and nature every day.</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container photo-grid">
-        <div class="card"><img src="images/play-corner.jpg" alt="Creative expression"><div class="caption">Creative Expression</div></div>
-        <div class="card"><img src="images/storytime-mixed-race.png" alt="Imaginative role play"><div class="caption">Imaginative Role Play</div></div>
-        <div class="card"><img src="images/hero-room.jpg" alt="Sensory exploration"><div class="caption">Sensory Exploration</div></div>
-        <div class="card"><img src="images/reading-corner.jpg" alt="Books and story time"><div class="caption">Books &amp; Story Time</div></div>
-        <div class="card"><img src="images/outdoor-play.jpg" alt="Group learning"><div class="caption">Group Learning</div></div>
-        <div class="card"><img src="images/outdoor-play.jpg" alt="Outdoor discovery"><div class="caption">Outdoor Discovery</div></div>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container">
-        <div class="stat-row">
-          <div class="stat-item"><div class="icon">🟦</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
-          <div class="stat-item"><div class="icon">☆</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
-          <div class="stat-item"><div class="icon">♣</div><div><b>3 Months – 5 Years</b><small>Caring for children from 3 months to 5 years</small></div></div>
-          <div class="stat-item"><div class="icon">🕒</div><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
-          <div class="stat-item"><div class="icon">♡</div><div><b>Funded Places</b><small>38 weeks</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section banner-stack">
-      <div class="container">
-        <div class="action-banner">
-          <div class="banner-flower"><span></span><i></i><b></b></div>
-          <div class="banner-landscape"><span class="hill"></span><span class="trunk"></span><span class="crown c1"></span><span class="crown c2"></span><span class="crown c3"></span><div class="flower-row"><span></span><span></span><span></span></div></div>
-          <div class="banner-grid">
-            <div>
-              <h3>See Learning in Action — We’d Love to Welcome You!</h3>
-              <p>Book a visit and discover how we help children learn, grow and thrive every day.</p>
-            </div>
-            <div class="actions">
-              <a class="btn primary small" href="contact.html#visit">Book a Visit</a>
-              <a class="btn secondary small" href="contact.html#enquiry">Enquire Now</a>
-            </div>
-          </div>
-          <div class="banner-zigzag"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div>
-        <div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div>
-        <div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>3 Months – 5 Years</div></div></div>
-        <div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div>
-      </div>
-      <div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div>
-    </div>
-  </footer>
-
-  <button class="scroll-top" type="button" aria-label="Back to top">↑</button>
-  <script src="js/script.js"></script>
+<div class="topbar">
+<div class="container">
+<span>☎ 07886 017430</span>
+<span>☎ 01268 425881</span>
+<span>✉ kinderkidzdaynursery@hotmail.com</span>
+<span>🕒 7:30am – 6:30pm, Mon – Fri</span>
+</div>
+</div>
+<header>
+<div class="container nav">
+<a aria-label="Kinder Kidz Day Nursery home" class="brand" href="index.html">
+<img alt="Kinder Kidz Day Nursery logo" src="images/logo.jpg"/>
+</a>
+<nav aria-label="Primary navigation" class="navlinks" id="navlinks">
+<a class="" href="index.html">Home</a><a class="" href="about.html">About Us</a><a class="" href="rooms.html">Our Rooms</a><a class="active" href="learning.html">Learning &amp; Development</a><a class="" href="fees.html">Fees &amp; Funding</a><a class="" href="gallery.html">Gallery</a><a class="" href="parents.html">Parents</a><a class="" href="contact.html">Contact</a>
+</nav>
+<a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
+<button aria-controls="navlinks" aria-expanded="false" aria-label="Open menu" class="menu-btn" id="menuBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
+</svg>
+</button>
+</div>
+</header>
+<main>
+<section class="hero learning-hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">Learning &amp; Development</div>
+<h1>Learning, Play &amp;<br/><span style="color:var(--green)">Discovery Every Day</span></h1>
+<div aria-hidden="true" class="learning-desktop-gap-animation"><span class="ld-line"><span class="ld-runner"></span></span><span class="ld-book">▤</span><span class="ld-star">☆</span><span class="ld-leaf">⌁</span></div>
+<div aria-hidden="true" class="mobile-hero-gap-animation"><span class="m-line"><span class="m-dot"></span></span><span class="m-star">☆</span><span class="m-leaf">⌁</span></div>
+<p>We nurture every child’s unique potential through play, exploration and meaningful experiences, guided by the Early Years Foundation Stage (EYFS) framework. For children aged 3 months to 5 years.</p>
+<div class="hero-actions">
+<a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
+<a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a>
+</div>
+</div>
+<div class="hero-media"><img alt="Children learning together at Kinder Kidz Day Nursery" src="images/storytime-mixed-race.png"/><span class="doodle one">☆</span><span class="doodle two">⌁</span></div>
+</div>
+</section>
+<section class="learning-section compact-section" id="learning-approach">
+<div class="container">
+<div class="section-title"><div class="kicker">Nurturing Every Area of Development</div><h2>Our Learning Approach</h2><p>Children learn best through play, exploration, creativity and caring relationships that help them feel secure and confident.</p></div>
+<div class="approach-grid">
+<article class="learning-card"><div class="learning-ico">☏</div><h3>Communication &amp; Language</h3><p>Listening, speaking and sharing ideas through everyday interaction.</p></article>
+<article class="learning-card"><div class="learning-ico">♡</div><h3>Personal, Social &amp; Emotional</h3><p>Building confidence, friendships, independence and emotional wellbeing.</p></article>
+<article class="learning-card"><div class="learning-ico">☼</div><h3>Physical Development</h3><p>Movement, coordination, healthy routines and active play.</p></article>
+<article class="learning-card"><div class="learning-ico">▤</div><h3>Literacy</h3><p>Stories, books, sounds and early writing in meaningful play.</p></article>
+<article class="learning-card"><div class="learning-ico">＋</div><h3>Mathematics</h3><p>Numbers, patterns, shapes, sorting and problem solving.</p></article>
+<article class="learning-card"><div class="learning-ico">◎</div><h3>Understanding the World</h3><p>People, communities, nature and the wider world around us.</p></article>
+<article class="learning-card"><div class="learning-ico">☆</div><h3>Expressive Arts &amp; Design</h3><p>Music, art, imagination, movement and creative expression.</p></article>
+</div>
+</div>
+</section>
+<section class="learning-section learn-how">
+<div class="container">
+<div class="section-title"><div class="kicker">Play With Purpose</div><h2>How Children Learn at Kinder Kidz</h2></div>
+<div class="how-grid">
+<div class="how-item"><span>✿</span><h3>Learning Through Play</h3><p>Hands-on experiences that spark curiosity.</p></div>
+<div class="how-item"><span>✎</span><h3>Creative Activities</h3><p>Art, craft and design that encourage imagination.</p></div>
+<div class="how-item"><span>▤</span><h3>Story Time</h3><p>Daily stories that build vocabulary and a love of reading.</p></div>
+<div class="how-item"><span>◌</span><h3>Sensory Play</h3><p>Textures, sounds and materials explored through the senses.</p></div>
+<div class="how-item"><span>♧</span><h3>Outdoor Learning</h3><p>Fresh air, movement and discovery every day.</p></div>
+<div class="how-item"><span>⌂</span><h3>Role Play</h3><p>Imaginative play that develops language and social skills.</p></div>
+<div class="how-item"><span>♫</span><h3>Music &amp; Movement</h3><p>Singing, rhythm and movement to support learning and fun.</p></div>
+<div class="how-item"><span>★</span><h3>Independence &amp; Confidence</h3><p>Encouraging children to try, achieve and believe in themselves.</p></div>
+</div>
+</div>
+</section>
+<section class="learning-section experiences-section">
+<div class="container">
+<div class="section-title"><div class="kicker">Real Nursery Experiences</div><h2>Learning Experiences in Action</h2></div>
+<div class="experience-gallery">
+<figure><img alt="Creative and sensory learning" src="images/sensory.jpg"/><figcaption>Creative Expression</figcaption></figure>
+<figure><img alt="Role play area" src="images/role-play.jpg"/><figcaption>Imaginative Role Play</figcaption></figure>
+<figure><img alt="Hands-on play resources" src="images/play-corner.jpg"/><figcaption>Sensory Exploration</figcaption></figure>
+<figure><img alt="Reading and story area" src="images/reading-corner.jpg"/><figcaption>Books &amp; Story Time</figcaption></figure>
+<figure><img alt="Nursery learning room" src="images/hero-room.jpg"/><figcaption>Group Learning</figcaption></figure>
+<figure><img alt="Outdoor play area" src="images/outdoor-play.jpg"/><figcaption>Outdoor Discovery</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="learning-proof">
+<div class="container proof-row">
+<div class="proof-item"><span class="proof-badge">Ofsted<br/><b>GOOD</b></span><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
+<div class="proof-item"><span class="proof-icon">☆</span><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
+<div class="proof-item"><span class="proof-icon">♧</span><div><b>3 Months – 5 Years</b><small>Caring for children from 3 months to 5 years</small></div></div>
+<div class="proof-item"><span class="proof-icon">◷</span><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
+<div class="proof-item"><span class="proof-icon">♡</span><div><b>Funded Places</b><small>38 weeks</small></div></div>
+</div>
+</section>
+<section class="cta-wrap learning-cta"><div class="container"><div class="cta"><div aria-hidden="true" class="learning-cta-flower"><span></span></div><div aria-hidden="true" class="learning-cta-landscape"><span class="hill"></span><span class="tree trunk"></span><span class="tree crown crown-a"></span><span class="tree crown crown-b"></span><span class="tree crown crown-c"></span><span class="tiny-flower">✿</span></div><div class="learning-cta-copy"><h2>See Learning in Action — We’d Love to Welcome You!</h2><p>Book a visit and discover how we help children learn, grow and thrive every day.</p></div><div class="cta-actions"><a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div></div></div></section>
+</main>
+<footer class="site-footer-v5" id="footer-contact">
+<div class="container">
+<div class="footer-grid footer-grid-v5">
+<div class="footer-brand">
+<img alt="Kinder Kidz Day Nursery logo" src="images/logo.jpg"/>
+<p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p>
+</div>
+<div class="quicklinks-group">
+<h3>Quick Links</h3>
+<div class="quicklinks-columns">
+<div class="footer-list quicklinks-column">
+<a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a>
+</div>
+<div class="footer-list quicklinks-column">
+<a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+<div class="footer-info">
+<h3>Information</h3>
+<div class="footer-list">
+<div>🕒 7:30am – 6:30pm<br/>Monday – Friday</div>
+<div>📅 51 Weeks a Year</div>
+<div>👶 3 Months – 5 Years</div>
+</div>
+</div>
+<div class="footer-contact-col">
+<h3>Contact Us</h3>
+<div class="footer-list">
+<a href="tel:+447886017430">☎ 07886 017430</a>
+<a href="tel:+441268425881">☎ 01268 425881</a>
+<a href="mailto:kinderkidzdaynursery@hotmail.com">✉ kinderkidzdaynursery@hotmail.com</a>
+<div>📍 26 Elizabeth Court,<br/>Laindon, SS15 5AG</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div>
+</div>
+</footer>
+<button aria-label="Scroll down" class="scroll-nav-btn" id="scrollNavBtn" title="Scroll down" type="button">↓</button>
+<script>
+const btn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.addEventListener('click',(event)=>{event.stopPropagation();const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click',(event)=>{if(nav.classList.contains('open')&&!nav.contains(event.target)&&!btn.contains(event.target))closeMenu();});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeMenu();});
+const scrollNavBtn=document.getElementById('scrollNavBtn');
+function updateScrollNav(){const moved=window.scrollY>90;scrollNavBtn.textContent=moved?'↑':'↓';scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');scrollNavBtn.title=moved?'Back to top':'Scroll down';}
+scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo({top:0,behavior:'smooth'});}else{const target=document.getElementById('learning-approach');const header=document.querySelector('header');const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);window.scrollTo({top,behavior:'smooth'});}});
+window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
+</script>
 </body>
 </html>
