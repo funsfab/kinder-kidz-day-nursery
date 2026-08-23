@@ -1673,6 +1673,58 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   .learning-cta .cta-actions .btn{width:100%!important;min-width:0!important;height:42px!important;font-size:14px!important}
 }
 
+
+
+/* ============================================================
+   LEARNING PAGE — final lower-section tightening v14
+   ONLY vertical spacing from Learning Experiences -> Ofsted ->
+   See Learning in Action -> footer is adjusted.
+   Approved header, hero, animation, text, buttons and images stay unchanged.
+   ============================================================ */
+
+/* Close the oversized space below the experience cards. */
+.experiences-section{
+  padding-bottom:6px!important;
+}
+
+/* Pull the Ofsted/proof strip closer to the cards above and CTA below. */
+.learning-proof{
+  padding-top:3px!important;
+  padding-bottom:4px!important;
+  margin:0!important;
+}
+
+/* Keep the welcome banner in normal flow: lifted by the tightened sections,
+   but never allowed to overlap the footer. */
+.learning-cta{
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:0!important;
+  margin-bottom:3px!important;
+  transform:none!important;
+}
+
+/* Tiny intentional gap before the footer. */
+.learning-cta + footer,
+main + footer{
+  margin-top:0!important;
+}
+
+@media(max-width:620px){
+  .experiences-section{
+    padding-bottom:5px!important;
+  }
+  .learning-proof{
+    padding-top:2px!important;
+    padding-bottom:4px!important;
+  }
+  .learning-cta{
+    margin-top:0!important;
+    margin-bottom:3px!important;
+    transform:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
