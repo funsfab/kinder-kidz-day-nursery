@@ -1035,6 +1035,94 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   .hero-copy{grid-template-rows:14px 104px 32px 92px 92px!important}
 }
 
+
+
+/* ============================================================
+   v7 FINAL GAP-FILL POLISH — ABOUT US
+   Desktop: fuller animation to visually occupy the spare gap.
+   Mobile: two-tier decorative line centred in the title/body gap.
+   ============================================================ */
+@media (min-width:981px){
+  .about-hero-mini-animation{
+    left:0!important;
+    top:178px!important;
+    width:min(540px,98%)!important;
+    height:58px!important;
+    justify-content:center!important;
+    gap:16px!important;
+    overflow:visible!important;
+  }
+  .about-hero-mini-animation::before{
+    content:""!important;
+    position:absolute!important;
+    left:6%!important;
+    right:26%!important;
+    top:11px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.85),rgba(47,138,73,.12))!important;
+  }
+  .about-hero-mini-animation .mini-track{
+    width:74%!important;
+    height:2px!important;
+    position:absolute!important;
+    left:8%!important;
+    right:20%!important;
+    bottom:11px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.14),rgba(247,216,91,.92),rgba(47,138,73,.16))!important;
+  }
+  .about-hero-mini-animation .mini-track:before{left:-2px!important;top:-14px!important}
+  .about-hero-mini-animation .mini-track:after{top:-5px!important;left:44px!important;animation:kkWideTravelV7 4.6s ease-in-out infinite alternate!important}
+  .about-hero-mini-animation .mini-star,
+  .about-hero-mini-animation .mini-leaf{position:absolute!important;top:0!important;right:8%!important;z-index:2!important}
+  .about-hero-mini-animation .mini-star{right:10%!important;font-size:20px!important}
+  .about-hero-mini-animation .mini-leaf{right:3%!important;font-size:19px!important;top:1px!important}
+}
+@keyframes kkWideTravelV7{to{transform:translateX(235px) rotate(260deg)}}
+
+@media (max-width:620px){
+  .mobile-hero-gap-animation{
+    position:relative!important;
+    width:100%!important;
+    height:46px!important;
+    justify-content:center!important;
+    gap:13px!important;
+    margin:2px 0 6px!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  .mobile-hero-gap-animation::before{
+    content:""!important;
+    position:absolute!important;
+    left:10%!important;
+    right:28%!important;
+    top:10px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.82),rgba(47,138,73,.12))!important;
+  }
+  .mobile-hero-gap-animation .m-line{
+    position:absolute!important;
+    left:10%!important;
+    right:18%!important;
+    top:27px!important;
+    width:auto!important;
+    min-width:0!important;
+    height:2px!important;
+  }
+  .mobile-hero-gap-animation .m-star,
+  .mobile-hero-gap-animation .m-leaf{position:relative!important;top:2px!important;z-index:2!important}
+  .mobile-hero-gap-animation .m-star{font-size:18px!important}
+  .mobile-hero-gap-animation .m-leaf{font-size:18px!important}
+  .hero-copy{grid-template-rows:14px 108px 46px 92px 92px!important;row-gap:6px!important}
+}
+@media (max-width:420px){
+  .mobile-hero-gap-animation{height:42px!important;margin:1px 0 5px!important}
+  .mobile-hero-gap-animation::before{left:12%!important;right:30%!important;top:8px!important}
+  .mobile-hero-gap-animation .m-line{left:12%!important;right:20%!important;top:24px!important}
+  .hero-copy{grid-template-rows:14px 104px 42px 92px 92px!important}
+}
+
 </style>
 </head>
 <body>
