@@ -379,7 +379,16 @@
     .fees-page .funding-card .hero-actions{margin-bottom:6px!important}
     .fees-page .support-animation{margin-top:4px!important}
 
-  </style>
+  
+    /* v18: the Fees hero title uses three lines, so no decorative gap animation is needed. */
+    .fees-page .fees-hero .title-gap{display:none!important}
+    @media(max-width:620px){
+      .fees-page .fees-hero .hero-copy{grid-template-rows:14px 108px 92px 92px!important}
+    }
+    @media(max-width:420px){
+      .fees-page .fees-hero .hero-copy{grid-template-rows:14px 104px 92px 92px!important}
+    }
+</style>
 </head>
 <body class="fees-page">
   <div class="topbar">
@@ -419,14 +428,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Fees &amp; Funding</div>
           <h1>Quality Care,<br><span style="color:var(--fees-green)">Affordable for Families</span></h1>
-
-          <div class="title-gap">
-            <div class="lines" aria-hidden="true">
-              <span class="line top"></span><span class="line bottom"></span><span class="dot"></span><span class="star">☆</span><span class="leaf">⌁</span>
-            </div>
-          </div>
-
-          <p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
+<p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
           <div class="hero-actions">
             <a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
             <a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a>
