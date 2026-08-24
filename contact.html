@@ -3,89 +3,120 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact Kinder Kidz Day Nursery." />
+  <meta name="description" content="Contact Kinder Kidz Day Nursery in Laindon." />
   <title>Contact | Kinder Kidz Day Nursery</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* CONTACT v21 — locked to the approved Home/About/Rooms/Gallery geometry. */
+    body.contact-page{
+      --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;--gold:#f7d85b;--pink:#e9799f;--muted:#5f6761;--line:#e8e2d5;
+      --kk-topbar-font:13px;--kk-nav-font:13px;--kk-header-btn-font:14px;--kk-eyebrow-font:12px;--kk-hero-title-font:50px;--kk-hero-body-font:15px;
+      margin:0;background:var(--cream);color:#1f2a24;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px;line-height:1.5;max-width:100%;overflow-x:hidden;
+    }
+    .contact-page *{box-sizing:border-box}.contact-page a{text-decoration:none;color:inherit}.contact-page img{display:block;max-width:100%}.contact-page button,.contact-page input,.contact-page select,.contact-page textarea{font:inherit}.contact-page p{margin:0}.contact-page h1,.contact-page h2,.contact-page h3{margin:0;color:var(--deep);line-height:1.06}.contact-page h1,.contact-page h2{font-family:Georgia,"Times New Roman",serif}
+    .contact-page .container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+    /* SAME STATIC TOP BAR / HEADER / NAV / BUTTON FOOTPRINT */
+    .contact-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+    .contact-page .topbar .container{min-height:34px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;padding:7px 0;font-size:var(--kk-topbar-font);line-height:1.25;color:#294633;font-weight:600}
+    .contact-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+    .contact-page header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+    .contact-page .nav{width:min(1180px,calc(100% - 40px));height:82px;display:flex;align-items:center;gap:24px;margin:auto;padding:0}
+    .contact-page .brand{display:flex;align-items:center;min-width:198px;width:198px;flex:0 0 198px}.contact-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+    .contact-page .navlinks{display:flex;align-items:center;justify-content:center;flex:1 1 auto;gap:21px;font-size:var(--kk-nav-font);font-weight:700;line-height:1.2;margin:0;padding:0}
+    .contact-page .navlinks a{padding:9px 0;white-space:nowrap;position:relative}.contact-page .navlinks a.active:after,.contact-page .navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:999px}
+    .contact-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:1.5px solid var(--green);font-weight:800;cursor:pointer;white-space:nowrap}.contact-page .btn.primary{background:var(--green);color:#fff;border-color:var(--green)}.contact-page .btn.secondary{background:#fff;color:var(--green);border-color:var(--green)}
+    .contact-page .header-visit{display:inline-flex;width:148px;min-width:148px;max-width:148px;flex:0 0 148px;height:42px;min-height:42px;padding:0 15px;font-size:var(--kk-header-btn-font);line-height:1;background:var(--green);color:#fff;border-color:var(--green)}
+    .contact-page .btn-icon{width:16px;height:16px;display:inline-grid;place-items:center;flex:0 0 16px;line-height:0}.contact-page .btn-icon svg{width:16px;height:16px;display:block}
+    .contact-page .menu-btn{display:none;width:44px;height:44px;border:0;border-radius:12px;background:#f2f7ea;color:var(--green);place-items:center;padding:7px;cursor:pointer}.contact-page .menu-btn svg{width:26px;height:26px}
+
+    /* HERO — EXACT SAME STARTING POSITION / TYPE / BUTTON / IMAGE FOOTPRINT */
+    .contact-page .hero{padding:0;min-height:410px;overflow:hidden;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);border-bottom:1px solid #e8eadf}
+    .contact-page .hero-grid{width:min(1180px,calc(100% - 40px));display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:start;gap:24px;min-height:410px;margin:auto;padding:0}
+    .contact-page .hero-copy{position:relative;width:100%;min-width:0;min-height:398px;align-self:start;display:grid;grid-template-rows:16px 154px 42px 76px 44px;row-gap:6px;align-content:start;padding:20px 0 0;margin:0}
+    .contact-page .hero .eyebrow{font-size:var(--kk-eyebrow-font);line-height:16px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin:0}
+    .contact-page .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:var(--kk-hero-title-font);line-height:1.04;letter-spacing:-.035em;margin:0;color:var(--deep);max-width:520px;align-self:start}
+    .contact-page .hero .lead{font-size:var(--kk-hero-body-font);line-height:1.5;color:#566159;max-width:520px;margin:0;align-self:start}
+    .contact-page .hero-actions{display:flex;gap:10px;flex-wrap:nowrap;align-items:start;margin:0}.contact-page .hero-actions .btn{width:148px;min-width:148px;height:42px;min-height:42px;padding:0 12px;font-size:14px;line-height:1}
+    .contact-page .hero-media{position:relative;align-self:start;width:100%;height:390px;min-height:390px;margin:10px 0 0;padding:0;overflow:visible}
+    .contact-page .hero-media:before{content:"";position:absolute;inset:12px -18px -8px 18px;background:#dceab8;border-radius:40% 0 0 44%;transform:rotate(-1.5deg)}
+    .contact-page .hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;border-radius:40% 0 0 44%;box-shadow:0 14px 40px rgba(20,66,42,.10)}
+
+    /* TWO-ROW TITLE: the same subtle moving two-line filler used on approved two-row heroes. */
+    .contact-page .contact-title-gap{position:relative;width:min(540px,98%);height:42px;overflow:hidden;pointer-events:none}
+    .contact-page .contact-title-gap:before,.contact-page .contact-title-gap:after{content:"";position:absolute;height:2px;border-radius:999px;background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.90),rgba(47,138,73,.12))}
+    .contact-page .contact-title-gap:before{left:4%;right:25%;top:10px}.contact-page .contact-title-gap:after{left:9%;right:18%;bottom:9px}
+    .contact-page .contact-runner{position:absolute;top:5px;left:10%;width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%);box-shadow:0 0 0 4px rgba(109,181,223,.10);animation:cTravel 4.6s ease-in-out infinite alternate}
+    .contact-page .contact-star{position:absolute;right:22%;bottom:1px;color:#e3ac20;font-size:20px;animation:cFloat 2.5s ease-in-out infinite alternate}.contact-page .contact-leaf{position:absolute;right:13%;bottom:2px;color:#67a35c;font-size:18px;animation:cFloat 2.5s .35s ease-in-out infinite alternate}
+    @keyframes cTravel{from{transform:translateX(0)}to{transform:translateX(260px)}}@keyframes cFloat{from{transform:translateY(0) rotate(0)}to{transform:translateY(-4px) rotate(8deg)}}
+
+    /* COMPACT CONTACT CONTENT */
+    .contact-page .section-tight{padding:9px 0;margin:0}.contact-page .card{background:#fff;border:1px solid #ebe6da;border-radius:20px;box-shadow:0 8px 22px rgba(20,66,42,.06)}
+    .contact-page .contact-layout{display:grid;grid-template-columns:.78fr 1.42fr;gap:12px;align-items:stretch}.contact-page .contact-card{padding:17px}.contact-page .contact-card>.eyebrow,.contact-page .map-box>.eyebrow,.contact-page .help-box>.eyebrow{font-size:12px;font-weight:900;color:var(--green2);letter-spacing:.07em;text-transform:uppercase;margin:0 0 8px}
+    .contact-page .faq-list{display:grid;gap:7px}.contact-page .inline-note{background:#f7faef;border:1px solid #e9eedf;border-radius:14px;padding:10px 12px;font-size:12.5px;line-height:1.35;color:#536158}.contact-page .inline-note strong{color:#263c30}
+    .contact-page .muted{color:#69716c;font-size:13px;line-height:1.45}
+    .contact-page .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 11px}.contact-page .field{display:grid;gap:4px}.contact-page .field.full{grid-column:1/-1}.contact-page label{font-size:11.5px;font-weight:800;color:#405046}.contact-page input,.contact-page select,.contact-page textarea{width:100%;border:1px solid #dddcd6;border-radius:9px;background:#fff;padding:9px 10px;font-size:12.5px;color:#35423a;outline:none}.contact-page textarea{min-height:86px;resize:vertical}.contact-page input:focus,.contact-page select:focus,.contact-page textarea:focus{border-color:#80b48e;box-shadow:0 0 0 3px rgba(47,138,73,.09)}
+    .contact-page form .btn{height:40px;padding:0 18px;font-size:13px}
+
+    /* SAME SMALL OFSTED CARD TYPE SCALE AS OTHER PAGES */
+    .contact-page .stats-compact{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #ece7db;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 22px rgba(20,66,42,.05)}
+    .contact-page .stat-item{min-height:88px;padding:12px 11px;display:flex;align-items:center;gap:10px;border-right:1px solid #eee9df}.contact-page .stat-item:last-child{border-right:0}.contact-page .stat-item .icon{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;background:#f2f7ea;font-size:18px}.contact-page .stat-item b{display:block;font-size:13px;line-height:1.25;color:#26372e}.contact-page .stat-item small{display:block;margin-top:3px;font-size:11px;line-height:1.3;color:#707771}
+    .contact-page .map-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px}.contact-page .map-box,.contact-page .help-box{padding:16px}.contact-page .fake-map{position:relative;min-height:210px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#e8f0df,#f4efe1);display:grid;place-items:center}.contact-page .fake-map:before,.contact-page .fake-map:after{content:"";position:absolute;background:rgba(255,255,255,.8);transform:rotate(-10deg)}.contact-page .fake-map:before{width:130%;height:18px}.contact-page .fake-map:after{width:18px;height:130%;transform:rotate(18deg)}.contact-page .pin{position:absolute;z-index:2;top:42px;right:32%;font-size:32px}.contact-page .map-address{position:relative;z-index:3;background:#fff;border-radius:13px;padding:12px;text-align:center;font-size:12.5px;box-shadow:0 8px 22px rgba(20,66,42,.08)}.contact-page .map-address .btn{height:36px;padding:0 14px;font-size:12px}
+    .contact-page .help-box{display:flex;flex-direction:column;justify-content:center}.contact-page .help-animation{height:50px;position:relative;margin-top:9px}.contact-page .help-animation:before,.contact-page .help-animation:after{content:"";position:absolute;left:8%;right:12%;height:2px;border-radius:99px;background:linear-gradient(90deg,#d9e7d4,#f0cf5e,#d9e7d4)}.contact-page .help-animation:before{top:12px}.contact-page .help-animation:after{bottom:10px}.contact-page .help-animation span{position:absolute;left:18%;top:5px;width:13px;height:13px;border-radius:50%;background:#2f8a49;animation:hMove 4s ease-in-out infinite alternate}.contact-page .help-animation i{position:absolute;right:18%;bottom:1px;font-style:normal;color:#e8799f;font-size:20px;animation:cFloat 2.3s ease-in-out infinite alternate}@keyframes hMove{to{transform:translateX(230px)}}
+
+    /* SAME FOOTER GEOMETRY */
+    .contact-page footer{background:#0f5f36;color:#fff;padding:22px 0 12px;margin-top:6px}.contact-page .footer-grid{display:grid;grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;gap:20px;align-items:start}.contact-page .footer-grid>div{text-align:center;min-width:0}.contact-page .footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}.contact-page .footer-brand p{max-width:240px;margin:0 auto;font-size:13px;color:#f4fff6}.contact-page .footer-title{font-size:14px;font-weight:900;margin-bottom:8px;color:var(--gold);text-align:center}.contact-page .footer-list{display:grid;gap:5px;font-size:12.5px;justify-items:center;text-align:center;color:#f6fff8}.contact-page .footer-links-2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.contact-page .footer-bottom{display:flex;justify-content:space-between;gap:14px;margin-top:14px;padding-top:9px;border-top:1px solid rgba(255,255,255,.2);font-size:11px;color:#e7f4ea}
+    .contact-page .scroll-top{position:fixed;right:22px;bottom:20px;width:48px;height:48px;border:0;border-radius:50%;background:var(--green);color:var(--gold);font-size:22px;font-weight:900;box-shadow:0 10px 26px rgba(0,0,0,.15);cursor:pointer;z-index:60}
+
+    @media(max-width:980px){
+      .contact-page .nav{height:76px;gap:16px}.contact-page .brand img{width:180px;height:58px}.contact-page .nav>.desktop-only{display:none}.contact-page .menu-btn{display:grid}
+      .contact-page .hero{min-height:0;padding:4px 0 8px}.contact-page .hero-grid{grid-template-columns:1fr;gap:12px;min-height:0}.contact-page .hero-copy{min-height:0;grid-template-rows:auto auto 40px auto auto;padding:8px 0 0}.contact-page .hero h1{font-size:42px}.contact-page .hero-media{height:330px;min-height:330px;margin:0}
+      .contact-page .contact-layout,.contact-page .map-panel{grid-template-columns:1fr}.contact-page .stats-compact{grid-template-columns:1fr 1fr}.contact-page .footer-grid{grid-template-columns:1fr 1fr}.contact-page .footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:620px){
+      .contact-page .container{width:calc(100% - 28px)}.contact-page .topbar{display:none}.contact-page .nav{height:70px;gap:10px}.contact-page .brand{min-width:0;width:auto;flex:1 1 auto}.contact-page .brand img{width:156px;height:52px}.contact-page .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}.contact-page .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.contact-page .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}
+      .contact-page .hero-grid{width:calc(100% - 28px)}.contact-page .hero-copy{grid-template-rows:auto auto 36px auto auto;row-gap:7px}.contact-page .hero .eyebrow{font-size:11px;line-height:14px}.contact-page .hero h1{font-size:34px;line-height:1.04}.contact-page .contact-title-gap{width:100%;height:36px}.contact-page .contact-title-gap:before{top:8px}.contact-page .contact-title-gap:after{bottom:8px}.contact-page .hero .lead{font-size:14.5px;line-height:1.5}.contact-page .hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.contact-page .hero-actions .btn{width:100%;height:44px}.contact-page .hero-media{height:270px;min-height:270px;border-radius:28px}.contact-page .hero-media:before{inset:9px -7px -7px 11px;border-radius:28px}.contact-page .hero-media img{border-radius:28px}
+      .contact-page .section-tight{padding:8px 0}.contact-page .contact-card,.contact-page .map-box,.contact-page .help-box{padding:13px}.contact-page .form-grid{grid-template-columns:1fr}.contact-page .field.full{grid-column:auto}.contact-page .stats-compact{grid-template-columns:1fr 1fr}.contact-page .stat-item{min-height:78px;padding:10px 8px}.contact-page footer{padding:18px 0 10px}.contact-page .footer-grid{grid-template-columns:1fr;gap:16px}.contact-page .footer-brand{grid-column:auto}.contact-page .footer-brand img{width:154px;height:58px}.contact-page .footer-links-2{gap:0 12px}.contact-page .footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:4px;margin-top:10px}.contact-page .scroll-top{width:44px;height:44px;right:18px;bottom:18px}
+    }
+    @media(prefers-reduced-motion:reduce){.contact-page .contact-title-gap *,.contact-page .help-animation *{animation:none!important}}
+  </style>
 </head>
-<body>
+<body class="contact-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
-  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html" class="active">Contact</a></nav><a class="btn primary desktop-only" href="#visit">Book a Visit</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
+  <header><div class="nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html" class="active">Contact</a></nav><a class="btn header-visit desktop-only" href="#visit"><span class="btn-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>Book a Visit</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Contact</div>
           <h1>We’d Love to<br><span style="color:var(--green)">Hear From You</span></h1>
+          <div class="contact-title-gap" aria-hidden="true"><span class="contact-runner"></span><span class="contact-star">☆</span><span class="contact-leaf">⌁</span></div>
           <p class="lead">Whether you have a question, want to chat about your child, or would like to book a visit, we’re here to help and would love to hear from you.</p>
-          <div class="hero-actions"><a class="btn primary" href="#visit">Book a Visit</a><a class="btn secondary" href="tel:07886017430">Call Us Now</a></div>
+          <div class="hero-actions"><a class="btn primary" href="#visit"><span class="btn-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>Book a Visit</a><a class="btn secondary" href="tel:07886017430">☎ Call Us Now</a></div>
         </div>
-        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Kinder Kidz contact page family and staff"></div>
+        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Kinder Kidz nursery staff and families"></div>
       </div>
     </section>
 
-    <section class="section-tight" id="enquiry">
-      <div class="container contact-layout">
-        <div class="card contact-card">
-          <div class="eyebrow">Get in Touch</div>
-          <div class="faq-list">
-            <div class="inline-note"><strong>Address</strong><br>26 Elizabeth Court,<br>Laindon, SS15 5AG</div>
-            <div class="inline-note"><strong>Phone</strong><br>07886 017430</div>
-            <div class="inline-note"><strong>Phone</strong><br>01268 425881</div>
-            <div class="inline-note"><strong>Email</strong><br>kinderkidzdaynursery@hotmail.com</div>
-            <div class="inline-note"><strong>Opening Hours</strong><br>7:30am – 6:30pm<br>Monday – Friday</div>
-          </div>
-          <div class="inline-note" id="visit" style="margin-top:16px"><strong>Book a Visit</strong><br>We’d love to welcome you and your child to our nursery. Contact us and we can arrange a visit.</div>
-        </div>
+    <section class="section-tight" id="enquiry"><div class="container contact-layout">
+      <div class="card contact-card"><div class="eyebrow">Get in Touch</div><div class="faq-list">
+        <div class="inline-note"><strong>Address</strong><br>26 Elizabeth Court,<br>Laindon, SS15 5AG</div><div class="inline-note"><strong>Phone</strong><br>07886 017430</div><div class="inline-note"><strong>Phone</strong><br>01268 425881</div><div class="inline-note"><strong>Email</strong><br>kinderkidzdaynursery@hotmail.com</div><div class="inline-note"><strong>Opening Hours</strong><br>7:30am – 6:30pm<br>Monday – Friday</div>
+      </div><div class="inline-note" id="visit" style="margin-top:8px"><strong>Book a Visit</strong><br>We’d love to welcome you and your child to our nursery. Contact us and we can arrange a visit.</div></div>
+      <div class="card contact-card"><div class="eyebrow">Send Us an Enquiry</div><p class="muted" style="margin-bottom:10px">Please fill in the form below and we’ll get back to you as soon as possible.</p><form><div class="form-grid">
+        <div class="field"><label for="name">Parent Name *</label><input id="name" type="text" placeholder="Enter your full name"></div><div class="field"><label for="email">Email *</label><input id="email" type="email" placeholder="Enter your email address"></div><div class="field"><label for="phone">Phone Number *</label><input id="phone" type="tel" placeholder="Enter your phone number"></div><div class="field"><label for="age">Child Age *</label><select id="age"><option>Select age group</option><option>3 months to 2 years</option><option>2 years</option><option>3 years to 5 years</option></select></div><div class="field"><label for="visitdate">Preferred Visit Date</label><input id="visitdate" type="date"></div><div class="field"><label for="subject">Subject *</label><select id="subject"><option>Select a subject</option><option>Book a visit</option><option>General enquiry</option><option>Fees &amp; funding</option><option>Availability</option></select></div><div class="field full"><label for="message">Message</label><textarea id="message" placeholder="How can we help you?"></textarea></div>
+      </div><div style="margin-top:10px"><button type="submit" class="btn primary">Send Enquiry</button></div><p class="muted" style="margin-top:8px;font-size:11.5px">We respect your privacy. Your information will only be used to respond to your enquiry.</p></form></div>
+    </div></section>
 
-        <div class="card contact-card">
-          <div class="eyebrow">Send Us an Enquiry</div>
-          <p class="muted" style="margin-bottom:14px">Please fill in the form below and we’ll get back to you as soon as possible.</p>
-          <form>
-            <div class="form-grid">
-              <div class="field"><label for="name">Parent Name *</label><input id="name" type="text" placeholder="Enter your full name"></div>
-              <div class="field"><label for="email">Email *</label><input id="email" type="email" placeholder="Enter your email address"></div>
-              <div class="field"><label for="phone">Phone Number *</label><input id="phone" type="tel" placeholder="Enter your phone number"></div>
-              <div class="field"><label for="age">Child Age *</label><select id="age"><option>Select age group</option><option>3 months to 2 years</option><option>2 years</option><option>3 years to 5 years</option></select></div>
-              <div class="field"><label for="visitdate">Preferred Visit Date</label><input id="visitdate" type="date"></div>
-              <div class="field"><label for="subject">Subject *</label><select id="subject"><option>Select a subject</option><option>Book a visit</option><option>General enquiry</option><option>Fees &amp; funding</option><option>Availability</option></select></div>
-              <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="How can we help you?"></textarea></div>
-            </div>
-            <div style="margin-top:16px"><button type="submit" class="btn primary">Send Enquiry</button></div>
-            <p class="muted" style="margin-top:12px;font-size:14px">We respect your privacy. Your information will only be used to respond to your enquiry.</p>
-          </form>
-        </div>
-      </div>
-    </section>
+    <section class="section-tight"><div class="container"><div class="stats-compact">
+      <div class="stat-item"><div class="icon">🟦</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div><div class="stat-item"><div class="icon">🏅</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div><div class="stat-item"><div class="icon">♧</div><div><b>3 Months – 5 Years</b><small>Caring for children up to 5 years</small></div></div><div class="stat-item"><div class="icon">◷</div><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
+    </div></div></section>
 
-    <section class="section-tight">
-      <div class="container">
-        <div class="stat-row stats-compact">
-          <div class="stat-item"><div class="icon">🟦</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
-          <div class="stat-item"><div class="icon">🏅</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
-          <div class="stat-item"><div class="icon">👧</div><div><b>3 Months – 5 Years</b><small>Caring for children up to 5 years</small></div></div>
-          <div class="stat-item"><div class="icon">🕒</div><div><b>51 Weeks a Year</b><small>Open all year except bank holidays</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container map-panel">
-        <div class="card map-box">
-          <div class="eyebrow">Find Us</div>
-          <div class="fake-map"><div class="pin">📍</div><div class="map-address"><strong>26 Elizabeth Court</strong><br>Laindon, SS15 5AG<br><br><a class="btn secondary small" href="https://maps.google.com" target="_blank" rel="noopener">Get Directions</a></div></div>
-        </div>
-        <div class="card help-box">
-          <div class="eyebrow">We’re Here to Help</div>
-          <p class="muted">Our friendly team is happy to answer questions about our nursery, fees, sessions or admissions. We look forward to hearing from you.</p>
-          <div class="inline-note" style="margin-top:16px"><strong>Follow Us</strong><br>Facebook • Instagram • Social updates coming soon</div>
-          <div class="title-gap center" style="margin-top:28px"><div class="lines"><span class="line top"></span><span class="line bottom"></span><span class="dot"></span><span class="star">✿</span><span class="leaf">⌁</span></div></div>
-        </div>
-      </div>
-    </section>
+    <section class="section-tight"><div class="container map-panel"><div class="card map-box"><div class="eyebrow">Find Us</div><div class="fake-map"><div class="pin">📍</div><div class="map-address"><strong>26 Elizabeth Court</strong><br>Laindon, SS15 5AG<br><br><a class="btn secondary" href="https://maps.google.com" target="_blank" rel="noopener">Get Directions</a></div></div></div><div class="card help-box"><div class="eyebrow">We’re Here to Help</div><p class="muted">Our friendly team is happy to answer questions about our nursery, fees, sessions or admissions. We look forward to hearing from you.</p><div class="inline-note" style="margin-top:9px"><strong>Follow Us</strong><br>Facebook • Instagram</div><div class="help-animation" aria-hidden="true"><span></span><i>✿</i></div></div></div></section>
   </main>
 
   <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>3 Months – 5 Years</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
-  <button class="scroll-top" type="button" aria-label="Back to top">↑</button><script src="js/script.js"></script>
+  <button class="scroll-top" type="button" aria-label="Back to top">↑</button>
+  <script src="js/script.js"></script>
 </body>
 </html>
