@@ -266,6 +266,119 @@
       .fees-page .accent-grid{grid-template-columns:1fr}
       .fees-page .fees-play-card{grid-column:auto}
     }
+
+
+    /* ============================================================
+       FEES v17 — MASTER CONSISTENCY LOCK
+       The approved Learning / About / Rooms header + hero geometry
+       is copied verbatim here so switching pages does not move the UI.
+       ============================================================ */
+    .fees-page{
+      --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;
+      --kk-topbar-font:13px;--kk-nav-font:13px;--kk-header-btn-font:14px;
+      --kk-eyebrow-font:12px;--kk-hero-title-font:50px;--kk-hero-body-font:15px;
+      --kk-hero-line:1.04;
+    }
+    .fees-page header{position:sticky!important;top:0!important;z-index:50!important;background:rgba(255,253,247,.96)!important;backdrop-filter:blur(10px)!important;border-bottom:1px solid rgba(23,106,59,.08)!important}
+    .fees-page .topbar{background:#fbf6eb!important;border-bottom:1px solid rgba(23,106,59,.09)!important}
+    .fees-page .topbar .container{width:min(1180px,calc(100% - 40px))!important;min-height:34px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:22px!important;padding:7px 0!important;font-size:var(--kk-topbar-font)!important;line-height:1.25!important;color:#294633!important;font-weight:600!important}
+    .fees-page .topbar span{display:flex!important;align-items:center!important;gap:8px!important;white-space:nowrap!important}
+    .fees-page .nav{width:min(1180px,calc(100% - 40px))!important;height:82px!important;display:flex!important;align-items:center!important;gap:24px!important;margin:auto!important;padding:0!important}
+    .fees-page .brand{display:flex!important;align-items:center!important;min-width:198px!important;width:198px!important;flex:0 0 198px!important}
+    .fees-page .brand img{width:198px!important;height:64px!important;object-fit:contain!important;object-position:left center!important}
+    .fees-page .navlinks{display:flex!important;align-items:center!important;justify-content:center!important;flex:1 1 auto!important;gap:21px!important;font-size:var(--kk-nav-font)!important;font-weight:700!important;line-height:1.2!important;margin:0!important;padding:0!important}
+    .fees-page .navlinks a{padding:9px 0!important;white-space:nowrap!important;position:relative!important}
+    .fees-page .navlinks a.active:after,.fees-page .navlinks a:hover:after{content:""!important;position:absolute!important;left:0!important;right:0!important;bottom:1px!important;height:2px!important;background:var(--green)!important;border-radius:999px!important}
+    .fees-page .header-visit.visit-action{display:inline-flex!important;width:148px!important;min-width:148px!important;max-width:148px!important;flex:0 0 148px!important;height:42px!important;min-height:42px!important;padding:0 15px!important;font-size:var(--kk-header-btn-font)!important;line-height:1!important;gap:8px!important;border-radius:999px!important;background:var(--green)!important;border-color:var(--green)!important;color:#fff!important;white-space:nowrap!important}
+    .fees-page .btn-icon{width:16px!important;height:16px!important;display:inline-grid!important;place-items:center!important;flex:0 0 16px!important;line-height:0!important}
+    .fees-page .btn-icon svg{display:block!important;width:16px!important;height:16px!important}
+    .fees-page .btn-label{display:inline-block!important;white-space:nowrap!important;line-height:1!important}
+    .fees-page .btn.visit-action{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
+    .fees-page .btn.enquire-action{background:#fff!important;color:var(--green)!important;border-color:var(--green)!important}
+
+    /* Exact same desktop hero frame and image footprint. */
+    @media (min-width:981px){
+      .fees-page .hero{padding:0!important;min-height:410px!important;overflow:hidden!important;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;border-bottom:1px solid #e8eadf!important}
+      .fees-page .hero-grid{width:min(1180px,calc(100% - 40px))!important;display:grid!important;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;align-items:start!important;gap:24px!important;min-height:410px!important;margin:auto!important;padding:0!important}
+      .fees-page .hero-copy{position:relative!important;width:100%!important;min-width:0!important;min-height:398px!important;align-self:start!important;display:grid!important;grid-template-rows:16px 164px 76px 44px!important;row-gap:8px!important;align-content:start!important;padding:20px 0 0!important;margin:0!important}
+      .fees-page .eyebrow{align-self:start!important;font-size:var(--kk-eyebrow-font)!important;line-height:16px!important;font-weight:900!important;letter-spacing:.08em!important;text-transform:uppercase!important;margin:0!important;padding:0!important}
+      .fees-page .hero h1,.fees-page .hero-copy h1{align-self:start!important;font-family:Georgia,"Times New Roman",serif!important;font-size:var(--kk-hero-title-font)!important;line-height:var(--kk-hero-line)!important;letter-spacing:-.03em!important;margin:0!important;padding:0!important;max-width:520px!important}
+      .fees-page .hero-copy>.lead{align-self:start!important;font-size:var(--kk-hero-body-font)!important;line-height:1.5!important;max-width:520px!important;margin:0!important;padding:0!important;color:#47554d!important}
+      .fees-page .hero-actions{align-self:start!important;display:flex!important;align-items:flex-start!important;gap:10px!important;margin:0!important;padding:0!important;flex-wrap:nowrap!important}
+      .fees-page .hero-actions .btn{width:148px!important;min-width:148px!important;height:42px!important;min-height:42px!important;padding:0 12px!important;font-size:14px!important;line-height:1!important;border-radius:999px!important}
+      .fees-page .hero-media{position:relative!important;align-self:start!important;width:100%!important;height:390px!important;min-height:390px!important;margin:10px 0 0!important;padding:0!important;overflow:visible!important}
+      .fees-page .hero-media::before{content:""!important;position:absolute!important;inset:12px -18px -8px 18px!important;background:#dceab8!important;border-radius:40% 0 0 44%!important;transform:rotate(-1.5deg)!important}
+      .fees-page .hero-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;border-radius:40% 0 0 44%!important;box-shadow:0 14px 40px rgba(20,66,42,.10)!important}
+      /* Animation occupies the unused third title line without shifting paragraph/buttons. */
+      .fees-page .title-gap{position:absolute!important;left:0!important;top:137px!important;width:360px!important;height:34px!important;margin:0!important;padding:0!important;pointer-events:none!important}
+      .fees-page .title-gap .lines{height:34px!important;width:100%!important}
+    }
+    @media (min-width:981px) and (max-width:1199px){
+      .fees-page{--kk-hero-title-font:46px}
+      .fees-page .topbar .container,.fees-page .nav,.fees-page .hero-grid{width:min(1080px,calc(100% - 44px))!important}
+      .fees-page .nav{gap:14px!important}
+      .fees-page .brand{min-width:185px!important;width:185px!important;flex-basis:185px!important}
+      .fees-page .brand img{width:185px!important}
+      .fees-page .navlinks{gap:13px!important;font-size:12px!important}
+      .fees-page .header-visit.visit-action{width:136px!important;min-width:136px!important;max-width:136px!important;flex-basis:136px!important;padding:0 12px!important;font-size:13px!important}
+      .fees-page .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
+      .fees-page .title-gap{top:128px!important;width:330px!important}
+    }
+
+    /* Same compact mobile header / hero used on approved pages. */
+    @media (max-width:980px){
+      .fees-page .topbar{display:none!important}
+      .fees-page .nav{width:min(100% - 34px,1180px)!important;height:76px!important;gap:16px!important}
+      .fees-page .brand{min-width:0!important;width:auto!important;flex:0 0 auto!important}
+      .fees-page .brand img{width:180px!important;height:58px!important}
+      .fees-page .header-visit.visit-action{display:none!important}
+      .fees-page .menu-btn{display:grid!important;margin-left:auto!important}
+      .fees-page .navlinks{display:none!important}
+      .fees-page .navlinks.open{display:flex!important}
+      .fees-page .hero-grid{grid-template-columns:1fr!important}
+    }
+    @media (max-width:620px){
+      .fees-page .nav{width:calc(100% - 28px)!important;height:70px!important;gap:10px!important}
+      .fees-page .brand img{width:156px!important;height:52px!important}
+      .fees-page .menu-btn{width:40px!important;height:40px!important;border-radius:11px!important;padding:5px!important;background:#f3f7ec!important;color:var(--green)!important}
+      .fees-page .menu-btn svg{width:26px!important;height:26px!important}
+      .fees-page .navlinks{position:fixed!important;left:auto!important;right:0!important;top:70px!important;width:min(46vw,190px)!important;max-height:calc(100vh - 70px)!important;overflow:auto!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;padding:9px 12px 14px!important;background:#fffdf7!important;border-left:1px solid #e9e5dc!important;border-bottom:1px solid #e9e5dc!important;border-radius:0 0 0 18px!important;box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important}
+      .fees-page .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
+      .fees-page .hero{padding:0!important;min-height:0!important;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;border-bottom:1px solid #e8eadf!important}
+      .fees-page .hero-grid{width:calc(100% - 28px)!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:14px!important;margin:auto!important;padding:4px 0 8px!important;min-height:0!important}
+      .fees-page .hero-copy{position:relative!important;width:100%!important;min-height:0!important;display:grid!important;grid-template-rows:14px 108px 42px 92px 92px!important;row-gap:6px!important;align-content:start!important;padding:0!important;margin:0!important}
+      .fees-page .eyebrow{font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+      .fees-page .hero h1,.fees-page .hero-copy h1{font-size:34px!important;line-height:1.04!important;letter-spacing:-.025em!important;max-width:none!important;margin:0!important;padding:0!important;align-self:start!important}
+      .fees-page .title-gap{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:42px!important;margin:0!important;padding:0!important;align-self:center!important}
+      .fees-page .title-gap .lines{height:42px!important;width:100%!important}
+      .fees-page .hero-copy>.lead{font-size:14.5px!important;line-height:1.5!important;max-width:none!important;margin:0!important;padding:0!important;align-self:start!important}
+      .fees-page .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;align-content:start!important;margin:0!important;padding:0!important}
+      .fees-page .hero-actions .btn{width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+      .fees-page .hero-media{position:relative!important;width:100%!important;height:270px!important;min-height:270px!important;margin:0!important;padding:0!important}
+      .fees-page .hero-media::before{content:""!important;position:absolute!important;inset:9px -7px -7px 11px!important;background:#dceab8!important;border-radius:28px!important;transform:rotate(-1deg)!important}
+      .fees-page .hero-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;border-radius:28px!important;box-shadow:0 12px 28px rgba(20,66,42,.10)!important}
+      .fees-page .section-tight{padding:10px 0!important}
+      .fees-page .price-grid{gap:8px!important}
+      .fees-page .accent-grid{gap:8px!important}
+      .fees-page .dual-columns{gap:8px!important}
+    }
+    @media(max-width:420px){
+      .fees-page .navlinks{width:min(47vw,176px)!important}
+      .fees-page .hero-grid{width:calc(100% - 22px)!important}
+      .fees-page .hero-copy{grid-template-rows:14px 104px 40px 92px 92px!important}
+      .fees-page .hero h1,.fees-page .hero-copy h1{font-size:32px!important}
+    }
+
+    /* Reduce empty vertical air throughout Fees without changing content. */
+    .fees-page .section-tight{padding-top:12px!important;padding-bottom:12px!important}
+    .fees-page .fees-heading{margin-bottom:8px!important}
+    .fees-page .price-grid{gap:10px!important}
+    .fees-page .accent-grid{gap:10px!important}
+    .fees-page .dual-columns{gap:10px!important}
+    .fees-page .funding-card{padding-top:14px!important;padding-bottom:14px!important}
+    .fees-page .funding-card .hero-actions{margin-bottom:6px!important}
+    .fees-page .support-animation{margin-top:4px!important}
+
   </style>
 </head>
 <body class="fees-page">
@@ -291,7 +404,7 @@
         <a href="parents.html">Parents</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a>
+      <a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
           <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
@@ -301,7 +414,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero fees-hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Fees &amp; Funding</div>
@@ -315,14 +428,8 @@
 
           <p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="contact.html#visit">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-              Book a Visit
-            </a>
-            <a class="btn secondary" href="contact.html#enquiry">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              Enquire Now
-            </a>
+            <a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
+            <a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a>
           </div>
         </div>
         <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Children learning with an educator at Kinder Kidz Day Nursery"></div>
