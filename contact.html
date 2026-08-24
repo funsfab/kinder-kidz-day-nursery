@@ -79,6 +79,186 @@
       .contact-page .section-tight{padding:8px 0}.contact-page .contact-card,.contact-page .map-box,.contact-page .help-box{padding:13px}.contact-page .form-grid{grid-template-columns:1fr}.contact-page .field.full{grid-column:auto}.contact-page .stats-compact{grid-template-columns:1fr 1fr}.contact-page .stat-item{min-height:78px;padding:10px 8px}.contact-page footer{padding:18px 0 10px}.contact-page .footer-grid{grid-template-columns:1fr;gap:16px}.contact-page .footer-brand{grid-column:auto}.contact-page .footer-brand img{width:154px;height:58px}.contact-page .footer-links-2{gap:0 12px}.contact-page .footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:4px;margin-top:10px}.contact-page .scroll-top{width:44px;height:44px;right:18px;bottom:18px}
     }
     @media(prefers-reduced-motion:reduce){.contact-page .contact-title-gap *,.contact-page .help-animation *{animation:none!important}}
+  
+
+    /* ============================================================
+       CONTACT HERO ALIGNMENT v22
+       Match the approved About Us hero geometry exactly.
+       Only the Contact hero flow/animation/buttons are adjusted.
+       ============================================================ */
+    @media (min-width:981px){
+      .contact-page .hero-copy{
+        grid-template-rows:16px 164px 76px 44px!important;
+        row-gap:8px!important;
+        min-height:398px!important;
+        padding:20px 0 0!important;
+      }
+      .contact-page .hero .eyebrow{
+        font-size:12px!important;
+        line-height:16px!important;
+        margin:0!important;
+        padding:0!important;
+      }
+      .contact-page .hero h1{
+        font-size:50px!important;
+        line-height:1.04!important;
+        letter-spacing:-.03em!important;
+        max-width:520px!important;
+        margin:0!important;
+        padding:0!important;
+      }
+      .contact-page .hero .lead{
+        font-size:15px!important;
+        line-height:1.5!important;
+        max-width:520px!important;
+        margin:0!important;
+        padding:0!important;
+        align-self:start!important;
+      }
+      /* The two-line animation occupies the same visual gap as About Us,
+         but does not push the paragraph or buttons downward. */
+      .contact-page .contact-title-gap{
+        position:absolute!important;
+        left:0!important;
+        top:142px!important;
+        width:min(540px,98%)!important;
+        height:58px!important;
+        margin:0!important;
+        overflow:visible!important;
+        pointer-events:none!important;
+      }
+      .contact-page .contact-title-gap:before{
+        left:6%!important;
+        right:26%!important;
+        top:11px!important;
+        bottom:auto!important;
+        height:2px!important;
+      }
+      .contact-page .contact-title-gap:after{
+        left:8%!important;
+        right:20%!important;
+        top:auto!important;
+        bottom:11px!important;
+        height:2px!important;
+      }
+      .contact-page .contact-runner{
+        top:auto!important;
+        bottom:6px!important;
+        left:12%!important;
+        width:12px!important;
+        height:12px!important;
+        animation:cTravelV22 4.6s ease-in-out infinite alternate!important;
+      }
+      .contact-page .contact-star{
+        right:10%!important;
+        top:1px!important;
+        bottom:auto!important;
+        font-size:20px!important;
+      }
+      .contact-page .contact-leaf{
+        right:3%!important;
+        top:2px!important;
+        bottom:auto!important;
+        font-size:19px!important;
+      }
+      .contact-page .hero-actions{
+        display:flex!important;
+        align-items:flex-start!important;
+        gap:10px!important;
+        margin:0!important;
+        padding:0!important;
+        flex-wrap:nowrap!important;
+      }
+      .contact-page .hero-actions .btn{
+        width:148px!important;
+        min-width:148px!important;
+        max-width:148px!important;
+        height:42px!important;
+        min-height:42px!important;
+        padding:0 12px!important;
+        font-size:14px!important;
+        line-height:1!important;
+      }
+    }
+    @keyframes cTravelV22{
+      from{transform:translateX(0) rotate(0deg)}
+      to{transform:translateX(235px) rotate(260deg)}
+    }
+
+    @media (max-width:620px){
+      .contact-page .hero{padding:0!important;min-height:0!important}
+      .contact-page .hero-grid{
+        width:calc(100% - 28px)!important;
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        gap:14px!important;
+        margin:auto!important;
+        padding:4px 0 8px!important;
+        min-height:0!important;
+      }
+      .contact-page .hero-copy{
+        width:100%!important;
+        min-height:0!important;
+        display:grid!important;
+        grid-template-rows:14px 108px 46px 92px 92px!important;
+        row-gap:6px!important;
+        align-content:start!important;
+        padding:0!important;
+        margin:0!important;
+      }
+      .contact-page .hero .eyebrow{font-size:11px!important;line-height:14px!important;margin:0!important;padding:0!important}
+      .contact-page .hero h1{font-size:34px!important;line-height:1.04!important;letter-spacing:-.025em!important;max-width:none!important;margin:0!important;padding:0!important}
+      .contact-page .contact-title-gap{
+        position:relative!important;
+        left:auto!important;
+        top:auto!important;
+        width:100%!important;
+        height:46px!important;
+        margin:2px 0 6px!important;
+        overflow:visible!important;
+      }
+      .contact-page .contact-title-gap:before{
+        left:10%!important;
+        right:28%!important;
+        top:10px!important;
+        bottom:auto!important;
+      }
+      .contact-page .contact-title-gap:after{
+        left:10%!important;
+        right:18%!important;
+        top:27px!important;
+        bottom:auto!important;
+      }
+      .contact-page .contact-runner{
+        top:22px!important;
+        bottom:auto!important;
+        left:13%!important;
+        width:11px!important;
+        height:11px!important;
+        animation:cTravelMobileV22 4.4s ease-in-out infinite alternate!important;
+      }
+      .contact-page .contact-star{right:19%!important;top:0!important;bottom:auto!important;font-size:18px!important}
+      .contact-page .contact-leaf{right:10%!important;top:1px!important;bottom:auto!important;font-size:18px!important}
+      .contact-page .hero .lead{font-size:14.5px!important;line-height:1.5!important;max-width:none!important;margin:0!important;padding:0!important;align-self:start!important}
+      .contact-page .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;align-content:start!important;margin:0!important;padding:0!important}
+      .contact-page .hero-actions .btn{width:100%!important;min-width:0!important;max-width:none!important;height:42px!important;min-height:42px!important;padding:0 14px!important;font-size:14px!important}
+      .contact-page .hero-media{height:270px!important;min-height:270px!important;margin:0!important}
+    }
+    @media (max-width:420px){
+      .contact-page .hero-grid{width:calc(100% - 22px)!important}
+      .contact-page .hero-copy{grid-template-rows:14px 104px 42px 92px 92px!important}
+      .contact-page .hero h1{font-size:32px!important}
+      .contact-page .contact-title-gap{height:42px!important;margin:1px 0 5px!important}
+      .contact-page .contact-title-gap:before{left:12%!important;right:30%!important;top:8px!important}
+      .contact-page .contact-title-gap:after{left:12%!important;right:20%!important;top:24px!important}
+      .contact-page .contact-runner{top:19px!important;left:15%!important}
+    }
+    @keyframes cTravelMobileV22{
+      from{transform:translateX(0) rotate(0deg)}
+      to{transform:translateX(190px) rotate(260deg)}
+    }
+
   </style>
 </head>
 <body class="contact-page">
