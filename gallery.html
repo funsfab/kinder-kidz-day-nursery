@@ -6,10 +6,108 @@
   <meta name="description" content="Gallery page for Kinder Kidz Day Nursery." />
   <title>Gallery | Kinder Kidz Day Nursery</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* GALLERY — same header/hero/type system as the approved pages. */
+    body.gallery-page{
+      --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--gold:#f7d85b;
+      --kk-topbar-font:13px;--kk-nav-font:13px;--kk-header-btn-font:14px;
+      --kk-eyebrow-font:12px;--kk-hero-title-font:50px;--kk-hero-body-font:15px;
+      font-size:15px;line-height:1.5;
+    }
+    .gallery-page header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+    .gallery-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+    .gallery-page .topbar .container{width:min(1180px,calc(100% - 40px));min-height:34px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;padding:7px 0;font-size:var(--kk-topbar-font);line-height:1.25;color:#294633;font-weight:600}
+    .gallery-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+    .gallery-page .nav{width:min(1180px,calc(100% - 40px));height:82px;display:flex;align-items:center;gap:24px;margin:auto;padding:0}
+    .gallery-page .brand{display:flex;align-items:center;min-width:198px;width:198px;flex:0 0 198px}
+    .gallery-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+    .gallery-page .navlinks{display:flex;align-items:center;justify-content:center;flex:1 1 auto;gap:21px;font-size:var(--kk-nav-font);font-weight:700;line-height:1.2;margin:0;padding:0}
+    .gallery-page .navlinks a{padding:9px 0;white-space:nowrap;position:relative}
+    .gallery-page .navlinks a.active:after,.gallery-page .navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:999px}
+    .gallery-page .header-visit.visit-action{display:inline-flex;width:148px;min-width:148px;max-width:148px;flex:0 0 148px;height:42px;min-height:42px;padding:0 15px;font-size:var(--kk-header-btn-font);line-height:1;gap:8px;border-radius:999px;background:var(--green);border-color:var(--green);color:#fff;white-space:nowrap}
+    .gallery-page .btn-icon{width:16px;height:16px;display:inline-grid;place-items:center;flex:0 0 16px;line-height:0}
+    .gallery-page .btn-icon svg{display:block;width:16px;height:16px}
+    .gallery-page .btn-label{display:inline-block;white-space:nowrap;line-height:1}
+    .gallery-page .btn.visit-action{background:var(--green);color:#fff;border-color:var(--green)}
+    .gallery-page .btn.enquire-action,.gallery-page .btn.contact-action{background:#fff;color:var(--green);border-color:var(--green)}
+    .gallery-page .contact-phone{color:#e9799f;font-size:16px;line-height:1}
+
+    /* Hero is locked to the same footprint and coordinates. */
+    .gallery-page .hero{padding:0;min-height:410px;overflow:hidden;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);border-bottom:1px solid #e8eadf}
+    .gallery-page .hero-grid{width:min(1180px,calc(100% - 40px));display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:start;gap:24px;min-height:410px;margin:auto;padding:0}
+    .gallery-page .hero-copy{position:relative;width:100%;min-width:0;min-height:398px;align-self:start;display:grid;grid-template-rows:16px 154px 42px 76px 44px;row-gap:6px;align-content:start;padding:20px 0 0;margin:0}
+    .gallery-page .hero .eyebrow{font-size:var(--kk-eyebrow-font);line-height:16px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin:0;padding:0}
+    .gallery-page .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:var(--kk-hero-title-font);line-height:1.04;letter-spacing:-.035em;margin:0;padding:0;color:var(--deep);max-width:none}
+    .gallery-page .hero .lead{font-size:var(--kk-hero-body-font);line-height:1.5;color:#566159;max-width:520px;margin:0;padding:0;align-self:start}
+    .gallery-page .hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:start;margin:0}
+    .gallery-page .hero-actions .btn{width:auto;min-width:148px;height:42px;min-height:42px;padding:0 18px;font-size:14px;line-height:1;gap:8px;font-weight:800}
+    .gallery-page .hero-media{position:relative;width:100%;height:350px;min-height:350px;margin:26px 0 0;padding:0}
+    .gallery-page .hero-media:before{content:"";position:absolute;inset:12px -15px -8px 18px;background:#dceab8;border-radius:46% 5% 5% 48%;transform:rotate(-1deg)}
+    .gallery-page .hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center center;border-radius:45% 5% 5% 46%;box-shadow:0 12px 28px rgba(20,66,42,.10)}
+
+    /* Two-line page title = one simple moving animation in the gap. */
+    .gallery-page .gallery-title-gap{position:relative;width:360px;height:42px;display:flex;align-items:center;overflow:hidden;pointer-events:none}
+    .gallery-page .gallery-title-gap:before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:linear-gradient(90deg,#dbe9d5,#f2d15d,#dbe9d5);border-radius:999px}
+    .gallery-page .g-line{position:absolute;left:0;right:72px;top:16px;height:10px}
+    .gallery-page .g-runner{position:absolute;left:0;top:1px;width:13px;height:13px;border-radius:50%;background:#2f8a49;box-shadow:0 0 0 6px rgba(47,138,73,.10);animation:gTravel 4.8s ease-in-out infinite alternate}
+    .gallery-page .g-star,.gallery-page .g-leaf{position:absolute;top:4px;animation:gFloat 2.4s ease-in-out infinite alternate}
+    .gallery-page .g-star{right:34px;color:#e4ac20;font-size:20px}.gallery-page .g-leaf{right:2px;color:#67a35c;font-size:19px;animation-delay:.35s}
+    @keyframes gTravel{from{transform:translateX(0)}to{transform:translateX(250px)}}
+    @keyframes gFloat{from{transform:translateY(0) rotate(0)}to{transform:translateY(-4px) rotate(8deg)}}
+
+    /* Compact stats, gallery cards and highlights. */
+    .gallery-page .section-tight{padding:10px 0}
+    .gallery-page .stats-compact{gap:0;margin:0;border-radius:20px;overflow:hidden}
+    .gallery-page .stats-compact .stat-item{padding:12px 11px;min-height:88px}
+    .gallery-page .stats-compact .icon{width:42px;height:42px;font-size:18px}
+    .gallery-page .stats-compact b{font-size:13px;line-height:1.25}.gallery-page .stats-compact small{font-size:11px;line-height:1.3}
+    .gallery-page .chips{gap:7px!important;margin-bottom:10px!important}.gallery-page .chip{font-size:12px;padding:7px 12px}
+    .gallery-page .photo-grid{gap:10px}.gallery-page .photo-grid .card{overflow:hidden;border-radius:18px}
+    .gallery-page .photo-grid img{display:block;width:100%;height:190px;object-fit:cover}
+    .gallery-page .gallery-highlights{gap:10px}.gallery-page .gallery-highlights .card{padding:13px 10px;min-height:138px}
+    .gallery-page .gallery-highlights .icon-badge{width:42px;height:42px;font-size:18px;margin-bottom:7px!important}
+    .gallery-page .gallery-highlights h3{font-size:15px!important;line-height:1.25;margin:0 0 4px}.gallery-page .gallery-highlights p{font-size:12px;line-height:1.35}
+    .gallery-page .center .eyebrow{font-size:12px}.gallery-page .section-tight .center{margin-bottom:10px!important}
+
+    /* Keep the final banner and footer tight and aligned with other pages. */
+    .gallery-page .banner-stack{padding:4px 0 0;margin:0}
+    .gallery-page .action-banner{padding:18px 24px 54px;border-radius:24px 24px 0 0;margin:0}
+    .gallery-page .action-banner h3{font-size:17px;line-height:1.25}.gallery-page .action-banner p{font-size:13px;line-height:1.4}
+    .gallery-page .action-banner .btn{min-height:40px;height:40px;padding:0 18px;font-size:13px;gap:7px}
+    .gallery-page footer{padding:22px 0 12px;margin-top:0}
+    .gallery-page .footer-grid{grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;gap:20px}
+    .gallery-page .footer-grid>div{text-align:center;min-width:0}
+    .gallery-page .footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}
+    .gallery-page .footer-brand p{max-width:240px;margin:0 auto;font-size:13px}
+    .gallery-page .footer-title{font-size:14px;margin-bottom:8px;color:var(--gold);text-align:center}
+    .gallery-page .footer-list{gap:5px;font-size:12.5px;justify-items:center;text-align:center}
+    .gallery-page .footer-links-2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+    .gallery-page .footer-bottom{margin-top:14px;padding-top:9px;font-size:11px}
+
+    @media(max-width:1100px) and (min-width:981px){
+      .gallery-page .navlinks{gap:16px}.gallery-page .hero h1{font-size:46px}.gallery-page .gallery-title-gap{width:330px}
+    }
+    @media(max-width:980px){
+      .gallery-page .nav{height:76px;gap:16px}.gallery-page .brand img{width:180px;height:58px}.gallery-page .nav>.desktop-only{display:none}.gallery-page .menu-btn{display:grid}
+      .gallery-page .hero{min-height:0;padding:4px 0 8px}.gallery-page .hero-grid{grid-template-columns:1fr;gap:12px;min-height:0}.gallery-page .hero-copy{min-height:0;grid-template-rows:auto auto 40px auto auto;padding:8px 0 0}.gallery-page .hero h1{font-size:42px}.gallery-page .hero-media{height:330px;min-height:330px;margin:0}
+      .gallery-page .stats-compact{grid-template-columns:repeat(3,1fr)}.gallery-page .footer-grid{grid-template-columns:1fr 1fr}.gallery-page .footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:620px){
+      .gallery-page .container{width:calc(100% - 28px)}.gallery-page .topbar{display:none}.gallery-page .nav{height:70px;gap:10px}.gallery-page .brand{min-width:0;width:auto;flex:1 1 auto}.gallery-page .brand img{width:156px;height:52px}
+      .gallery-page .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+      .gallery-page .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.gallery-page .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.gallery-page .menu-btn svg{width:26px;height:26px}
+      .gallery-page .hero-grid{width:calc(100% - 28px)}.gallery-page .hero-copy{grid-template-rows:auto auto 36px auto auto;row-gap:7px}.gallery-page .hero .eyebrow{font-size:11px;line-height:14px}.gallery-page .hero h1{font-size:34px;line-height:1.04}.gallery-page .gallery-title-gap{width:100%;height:36px}.gallery-page .gallery-title-gap:before{top:17px}.gallery-page .g-line{right:62px;top:13px}.gallery-page .hero .lead{font-size:14.5px;line-height:1.5}.gallery-page .hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.gallery-page .hero-actions .btn{width:100%;height:44px}.gallery-page .hero-media{height:270px;min-height:270px;border-radius:28px}.gallery-page .hero-media:before{inset:9px -7px -7px 11px;border-radius:28px}.gallery-page .hero-media img{border-radius:28px}
+      .gallery-page .section-tight{padding:8px 0}.gallery-page .stats-compact{grid-template-columns:1fr 1fr}.gallery-page .stats-compact .stat-item{min-height:78px;padding:10px 8px}.gallery-page .photo-grid{grid-template-columns:1fr 1fr;gap:8px}.gallery-page .photo-grid img{height:145px}.gallery-page .gallery-highlights{grid-template-columns:1fr 1fr;gap:8px}.gallery-page .gallery-highlights .card{min-height:126px;padding:11px 8px}
+      .gallery-page .action-banner{padding:16px 14px 72px}.gallery-page .action-banner .banner-grid{gap:9px}.gallery-page .action-banner .actions{display:grid;grid-template-columns:1fr;gap:8px}.gallery-page .action-banner .btn{width:100%}
+      .gallery-page footer{padding:18px 0 11px}.gallery-page .footer-grid{grid-template-columns:1fr;gap:16px}.gallery-page .footer-brand img{width:156px;height:56px}.gallery-page .footer-title{font-size:16px;margin-bottom:7px}.gallery-page .footer-list{gap:5px;font-size:13px}.gallery-page .footer-links-2{grid-template-columns:1fr 1fr;gap:0 16px}.gallery-page .footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
+    }
+    @media(prefers-reduced-motion:reduce){.gallery-page .gallery-title-gap *{animation:none!important}}
+  </style>
 </head>
-<body>
+<body class="gallery-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
-  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html" class="active">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
+  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html" class="active">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
 
   <main>
     <section class="hero">
@@ -17,8 +115,12 @@
         <div class="hero-copy">
           <div class="eyebrow">Gallery</div>
           <h1>A Glimpse Into<br><span style="color:var(--green)">Our Nursery Life</span></h1>
+          <div class="gallery-title-gap" aria-hidden="true"><span class="g-line"><span class="g-runner"></span></span><span class="g-star">☆</span><span class="g-leaf">⌁</span></div>
           <p class="lead">Explore real moments and spaces from Kinder Kidz Day Nursery. Our gallery shows the warm, safe and inspiring environment where children learn, play and explore every single day.</p>
-          <div class="hero-actions"><a class="btn primary" href="contact.html#visit">Book a Visit</a><a class="btn secondary" href="contact.html#enquiry">Enquire Now</a></div>
+          <div class="hero-actions">
+            <a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
+            <a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a>
+          </div>
         </div>
         <div class="hero-media"><img src="images/hero-room.jpg" alt="Nursery room at Kinder Kidz"></div>
       </div>
@@ -64,7 +166,7 @@
     </section>
 
     <section class="section banner-stack">
-      <div class="container"><div class="action-banner"><div class="banner-flower"><span></span><i></i><b></b></div><div class="banner-landscape"><span class="hill"></span><span class="trunk"></span><span class="crown c1"></span><span class="crown c2"></span><span class="crown c3"></span><div class="flower-row"><span></span><span></span><span></span></div></div><div class="banner-grid"><div><h3>Come and See Kinder Kidz in Person</h3><p>We’d love to show you around our nursery and answer any questions you may have about our rooms, routines and care.</p></div><div class="actions"><a class="btn primary small" href="contact.html#visit">Book a Visit</a><a class="btn secondary small" href="contact.html">Contact Us</a></div></div><div class="banner-zigzag"></div></div></div>
+      <div class="container"><div class="action-banner"><div class="banner-flower"><span></span><i></i><b></b></div><div class="banner-landscape"><span class="hill"></span><span class="trunk"></span><span class="crown c1"></span><span class="crown c2"></span><span class="crown c3"></span><div class="flower-row"><span></span><span></span><span></span></div></div><div class="banner-grid"><div><h3>Come and See Kinder Kidz in Person</h3><p>We’d love to show you around our nursery and answer any questions you may have about our rooms, routines and care.</p></div><div class="actions"><a class="btn primary small visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary small contact-action" href="contact.html"><span class="contact-phone" aria-hidden="true">☎</span><span class="btn-label">Contact Us</span></a></div></div><div class="banner-zigzag"></div></div></div>
     </section>
   </main>
 
