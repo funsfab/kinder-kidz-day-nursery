@@ -389,7 +389,7 @@
       .fees-page .fees-hero .hero-copy{grid-template-rows:14px 104px 92px 92px!important}
     }
 </style>
-</head>
+\n<style id="kk-scroll-nav-v23">\n/* Match the completed Home / About Us / Our Rooms / Learning pages. */\n.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#17753f;color:#f7d85b;font-size:27px;font-weight:800;line-height:1;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}\n.scroll-nav-btn:hover{transform:translateY(-2px);background:#0d5f33}\n.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}\n@media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}\n</style>\n</head>
 <body class="fees-page">
   <div class="topbar">
     <div class="container">
@@ -563,7 +563,7 @@
     </div>
   </footer>
 
-  <button class="scroll-top" type="button" aria-label="Back to top">↑</button>
-  <script src="js/script.js"></script>
+  <button aria-label="Scroll down" class="scroll-nav-btn" id="scrollNavBtn" title="Scroll down" type="button">↓</button>
+  <script src="js/script.js"></script>\n<script id="kk-scroll-nav-script-v23">\n(function(){\n  const scrollNavBtn=document.getElementById('scrollNavBtn');\n  if(!scrollNavBtn) return;\n  function updateScrollNav(){\n    const moved=window.scrollY>90;\n    scrollNavBtn.textContent=moved?'↑':'↓';\n    scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');\n    scrollNavBtn.title=moved?'Back to top':'Scroll down';\n  }\n  scrollNavBtn.addEventListener('click',function(){\n    if(window.scrollY>90){\n      window.scrollTo({top:0,behavior:'smooth'});\n    }else{\n      const target=document.querySelector('main > section:nth-of-type(2)') || document.querySelector('main');\n      if(!target) return;\n      const header=document.querySelector('header');\n      const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);\n      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});\n    }\n  });\n  window.addEventListener('scroll',updateScrollNav,{passive:true});\n  updateScrollNav();\n})();\n</script>\n
 </body>
 </html>
