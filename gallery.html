@@ -103,6 +103,164 @@
       .gallery-page footer{padding:18px 0 11px}.gallery-page .footer-grid{grid-template-columns:1fr;gap:16px}.gallery-page .footer-brand img{width:156px;height:56px}.gallery-page .footer-title{font-size:16px;margin-bottom:7px}.gallery-page .footer-list{gap:5px;font-size:13px}.gallery-page .footer-links-2{grid-template-columns:1fr 1fr;gap:0 16px}.gallery-page .footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
     }
     @media(prefers-reduced-motion:reduce){.gallery-page .gallery-title-gap *{animation:none!important}}
+
+    /* ============================================================
+       GALLERY v19 — final consistency corrections
+       Only: two-line hero animation, exact approved hero image frame,
+       and homepage-matched Ofsted/stat card sizing.
+       ============================================================ */
+
+    /* Desktop hero uses the exact approved About/Rooms footprint. */
+    @media (min-width:981px){
+      .gallery-page .hero{padding:0!important;min-height:410px!important;overflow:hidden!important}
+      .gallery-page .hero-grid{
+        width:min(1180px,calc(100% - 40px))!important;
+        grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+        align-items:start!important;gap:24px!important;min-height:410px!important;
+        margin:auto!important;padding:0!important;
+      }
+      .gallery-page .hero-copy{
+        position:relative!important;width:100%!important;min-width:0!important;
+        min-height:398px!important;align-self:start!important;
+        display:grid!important;grid-template-rows:16px 164px 76px 44px!important;
+        row-gap:8px!important;align-content:start!important;padding:20px 0 0!important;margin:0!important;
+      }
+      .gallery-page .hero h1{
+        align-self:start!important;font-size:50px!important;line-height:1.04!important;
+        letter-spacing:-.03em!important;max-width:520px!important;margin:0!important;padding:0!important;
+      }
+      .gallery-page .hero .lead{
+        align-self:start!important;font-size:15px!important;line-height:1.5!important;
+        max-width:520px!important;margin:0!important;padding:0!important;
+      }
+      .gallery-page .hero-actions{align-self:start!important;margin:0!important;padding:0!important;gap:10px!important;flex-wrap:nowrap!important}
+      .gallery-page .hero-actions .btn{width:148px!important;min-width:148px!important;height:42px!important;min-height:42px!important;padding:0 12px!important;font-size:14px!important}
+
+      /* Exact image size, position and shape from the approved pages. */
+      .gallery-page .hero-media{
+        position:relative!important;align-self:start!important;width:100%!important;
+        height:390px!important;min-height:390px!important;margin:10px 0 0!important;
+        padding:0!important;overflow:visible!important;
+      }
+      .gallery-page .hero-media:before{
+        content:""!important;position:absolute!important;inset:12px -18px -8px 18px!important;
+        background:#dceab8!important;border-radius:40% 0 0 44%!important;transform:rotate(-1.5deg)!important;
+      }
+      .gallery-page .hero-media img{
+        position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+        max-width:none!important;object-fit:cover!important;object-position:center center!important;
+        border-radius:40% 0 0 44%!important;box-shadow:0 14px 40px rgba(20,66,42,.10)!important;
+      }
+
+      /* Two moving lines centred in the title/body gap, matching About Us. */
+      .gallery-page .gallery-title-gap{
+        display:block!important;position:absolute!important;left:0!important;top:142px!important;
+        width:min(540px,98%)!important;height:58px!important;overflow:visible!important;
+        pointer-events:none!important;opacity:.96!important;
+      }
+      .gallery-page .gallery-title-gap:before{
+        content:""!important;position:absolute!important;left:6%!important;right:26%!important;
+        top:11px!important;height:2px!important;border-radius:999px!important;
+        background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.85),rgba(47,138,73,.12))!important;
+      }
+      .gallery-page .gallery-title-gap:after{
+        content:""!important;position:absolute!important;left:11%!important;top:6px!important;
+        width:11px!important;height:11px!important;border-radius:50%!important;
+        background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
+        box-shadow:0 0 0 4px rgba(109,181,223,.10)!important;
+        animation:gUpperTravel 4.6s ease-in-out infinite alternate!important;
+      }
+      .gallery-page .g-line{
+        position:absolute!important;left:8%!important;right:20%!important;top:auto!important;bottom:11px!important;
+        height:2px!important;background:linear-gradient(90deg,rgba(47,138,73,.14),rgba(247,216,91,.92),rgba(47,138,73,.16))!important;
+        border-radius:999px!important;
+      }
+      .gallery-page .g-line:before{
+        content:"A"!important;position:absolute!important;left:-2px!important;top:-14px!important;
+        width:28px!important;height:28px!important;display:grid!important;place-items:center!important;
+        border-radius:8px!important;background:#f1c84d!important;color:#285738!important;
+        font:800 13px/1 system-ui,sans-serif!important;box-shadow:0 4px 12px rgba(25,79,49,.08)!important;
+        animation:gBlockBob 2.7s ease-in-out infinite!important;
+      }
+      .gallery-page .g-runner{
+        top:-5px!important;left:44px!important;width:12px!important;height:12px!important;
+        background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
+        box-shadow:0 0 0 4px rgba(109,181,223,.10)!important;
+        animation:gLowerTravel 4.6s ease-in-out infinite alternate!important;
+      }
+      .gallery-page .g-star,.gallery-page .g-leaf{position:absolute!important;z-index:2!important;top:0!important}
+      .gallery-page .g-star{right:10%!important;font-size:20px!important}
+      .gallery-page .g-leaf{right:3%!important;top:1px!important;font-size:19px!important}
+    }
+    @keyframes gUpperTravel{to{transform:translateX(230px) rotate(250deg)}}
+    @keyframes gLowerTravel{to{transform:translateX(235px) rotate(260deg)}}
+    @keyframes gBlockBob{50%{transform:translateY(-3px) rotate(-3deg)}}
+
+    /* The Ofsted strip now uses the same dimensions/type scale as Home. */
+    .gallery-page .stats-compact{
+      display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:0!important;
+      width:100%!important;margin:0!important;background:#fff!important;border:1px solid #ece7db!important;
+      border-radius:25px!important;box-shadow:0 12px 34px rgba(27,69,44,.08)!important;overflow:hidden!important;
+    }
+    .gallery-page .stats-compact .stat-item{
+      min-height:118px!important;padding:24px 14px!important;text-align:center!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+      gap:5px!important;border-right:1px solid #eee9df!important;
+    }
+    .gallery-page .stats-compact .stat-item:last-child{border-right:0!important}
+    .gallery-page .stats-compact .icon{
+      width:42px!important;height:42px!important;border-radius:13px!important;display:grid!important;place-items:center!important;
+      background:#f4f8ec!important;font-size:22px!important;color:var(--green)!important;font-weight:900!important;
+      margin:0 auto!important;line-height:1!important;
+    }
+    .gallery-page .stats-compact .icon.ofsted-badge{
+      background:#163c80!important;color:#fff!important;font-size:9px!important;line-height:1.08!important;padding:3px!important;
+    }
+    .gallery-page .stats-compact b{display:block!important;font-size:14px!important;line-height:1.25!important}
+    .gallery-page .stats-compact small{display:block!important;font-size:11px!important;line-height:1.3!important;color:#6f746f!important}
+
+    @media (min-width:981px) and (max-width:1199px){
+      .gallery-page .hero h1{font-size:46px!important}
+      .gallery-page .hero-grid{width:min(1080px,calc(100% - 44px))!important}
+      .gallery-page .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
+      .gallery-page .gallery-title-gap{top:136px!important;width:min(500px,98%)!important}
+    }
+
+    /* Keep the same two-line treatment on mobile, without changing approved buttons/content. */
+    @media (max-width:620px){
+      .gallery-page .hero-copy{position:relative!important;grid-template-rows:14px 108px 46px auto 92px!important;row-gap:6px!important}
+      .gallery-page .gallery-title-gap{
+        position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:46px!important;
+        margin:2px 0 6px!important;overflow:visible!important;display:block!important;
+      }
+      .gallery-page .gallery-title-gap:before{
+        content:""!important;position:absolute!important;left:10%!important;right:28%!important;top:10px!important;height:2px!important;
+        background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.82),rgba(47,138,73,.12))!important;
+      }
+      .gallery-page .gallery-title-gap:after{
+        content:""!important;position:absolute!important;left:16%!important;top:5px!important;width:10px!important;height:10px!important;
+        border-radius:50%!important;background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
+        animation:gUpperTravelMobile 4s ease-in-out infinite alternate!important;
+      }
+      .gallery-page .g-line{position:absolute!important;left:10%!important;right:18%!important;top:27px!important;bottom:auto!important;width:auto!important;height:2px!important}
+      .gallery-page .g-line:before{width:24px!important;height:24px!important;top:-11px!important;font-size:11px!important}
+      .gallery-page .g-runner{width:10px!important;height:10px!important;top:-4px!important;left:32px!important;animation:gLowerTravelMobile 4s ease-in-out infinite alternate!important}
+      .gallery-page .g-star{right:12%!important;top:2px!important;font-size:18px!important}
+      .gallery-page .g-leaf{right:5%!important;top:3px!important;font-size:18px!important}
+      .gallery-page .stats-compact{grid-template-columns:1fr 1fr!important;border-radius:20px!important}
+      .gallery-page .stats-compact .stat-item{min-height:106px!important;padding:18px 8px!important;border-bottom:1px solid #eee9df!important}
+      .gallery-page .stats-compact .stat-item:nth-child(2n){border-right:0!important}
+      .gallery-page .stats-compact .stat-item:last-child{grid-column:1/-1!important;border-bottom:0!important;border-right:0!important}
+    }
+    @media (max-width:420px){
+      .gallery-page .hero-copy{grid-template-rows:14px 104px 42px auto 92px!important}
+      .gallery-page .gallery-title-gap{height:42px!important;margin:1px 0 5px!important}
+      .gallery-page .gallery-title-gap:before{left:12%!important;right:30%!important;top:8px!important}
+      .gallery-page .g-line{left:12%!important;right:20%!important;top:24px!important}
+    }
+    @keyframes gUpperTravelMobile{to{transform:translateX(150px) rotate(220deg)}}
+    @keyframes gLowerTravelMobile{to{transform:translateX(170px) rotate(240deg)}}
+
   </style>
 </head>
 <body class="gallery-page">
@@ -129,10 +287,10 @@
     <section class="section-tight">
       <div class="container">
         <div class="stat-row stats-compact">
-          <div class="stat-item"><div class="icon">🟦</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
-          <div class="stat-item"><div class="icon">☆</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
-          <div class="stat-item"><div class="icon">👧</div><div><b>3 Months – 5 Years</b><small>Age range</small></div></div>
-          <div class="stat-item"><div class="icon">☀️</div><div><b>Outdoor &amp; Indoor Play</b><small>Every day</small></div></div>
+          <div class="stat-item"><div class="icon ofsted-badge">Ofsted<br>GOOD</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
+          <div class="stat-item"><div class="icon">✿</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
+          <div class="stat-item"><div class="icon">♧</div><div><b>3 Months – 5 Years</b><small>Age range</small></div></div>
+          <div class="stat-item"><div class="icon">☀</div><div><b>Outdoor &amp; Indoor Play</b><small>Every day</small></div></div>
           <div class="stat-item"><div class="icon">♡</div><div><b>Safe, Caring</b><small>Environment</small></div></div>
         </div>
       </div>
