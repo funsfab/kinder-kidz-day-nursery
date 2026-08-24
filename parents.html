@@ -3,68 +3,212 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Parents page for Kinder Kidz Day Nursery." />
+  <meta name="description" content="Parents and family partnership at Kinder Kidz Day Nursery." />
   <title>Parents | Kinder Kidz Day Nursery</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ============================================================
+       PARENTS — CONSISTENCY PASS
+       Uses the same approved header, hero footprint, typography,
+       buttons, compact cards and footer geometry as the finished
+       Home / About / Rooms / Learning / Fees / Gallery pages.
+       ============================================================ */
+    body.parents-page{
+      --green:#176a3b;--green2:#2f8a49;--deep:#143c2c;--cream:#fffdf7;
+      --gold:#f7d85b;--pink:#e9799f;--muted:#5f6761;--line:#e8e2d5;
+      --kk-topbar-font:13px;--kk-nav-font:13px;--kk-header-btn-font:14px;
+      --kk-eyebrow-font:12px;--kk-hero-title-font:50px;--kk-hero-body-font:15px;
+      margin:0;background:var(--cream);color:#1f2a24;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px;line-height:1.5;max-width:100%;overflow-x:hidden;
+    }
+    .parents-page *{box-sizing:border-box}
+    .parents-page a{text-decoration:none;color:inherit}
+    .parents-page img{display:block;max-width:100%}
+    .parents-page button{font:inherit}
+    .parents-page .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .parents-page h1,.parents-page h2,.parents-page h3{margin:0;color:var(--deep);line-height:1.06}
+    .parents-page h1,.parents-page h2{font-family:Georgia,"Times New Roman",serif}
+    .parents-page p{margin:0}
+
+    /* SAME TOP CONTACT BAR + HEADER AS THE APPROVED PAGES */
+    .parents-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+    .parents-page .topbar .container{width:min(1180px,calc(100% - 40px));min-height:34px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:22px;padding:7px 0;font-size:var(--kk-topbar-font);line-height:1.25;color:#294633;font-weight:600}
+    .parents-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+    .parents-page header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,106,59,.08)}
+    .parents-page .nav{width:min(1180px,calc(100% - 40px));height:82px;display:flex;align-items:center;gap:24px;margin:auto;padding:0}
+    .parents-page .brand{display:flex;align-items:center;min-width:198px;width:198px;flex:0 0 198px}
+    .parents-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+    .parents-page .navlinks{display:flex;align-items:center;justify-content:center;flex:1 1 auto;gap:21px;font-size:var(--kk-nav-font);font-weight:700;line-height:1.2;margin:0;padding:0}
+    .parents-page .navlinks a{padding:9px 0;white-space:nowrap;position:relative}
+    .parents-page .navlinks a.active:after,.parents-page .navlinks a:hover:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;background:var(--green);border-radius:999px}
+    .parents-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:1.5px solid var(--green);font-weight:800;cursor:pointer;white-space:nowrap}
+    .parents-page .btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+    .parents-page .btn.secondary{background:#fff;color:var(--green);border-color:var(--green)}
+    .parents-page .header-visit.visit-action{display:inline-flex;width:148px;min-width:148px;max-width:148px;flex:0 0 148px;height:42px;min-height:42px;padding:0 15px;font-size:var(--kk-header-btn-font);line-height:1;gap:8px;background:var(--green);border-color:var(--green);color:#fff}
+    .parents-page .btn-icon{width:16px;height:16px;display:inline-grid;place-items:center;flex:0 0 16px;line-height:0}
+    .parents-page .btn-icon svg{display:block;width:16px;height:16px}
+    .parents-page .btn-label{display:inline-block;white-space:nowrap;line-height:1}
+    .parents-page .menu-btn{display:none;width:44px;height:44px;border:0;border-radius:12px;background:#f2f7ea;color:var(--green);place-items:center;padding:7px;cursor:pointer}
+    .parents-page .menu-btn svg{width:26px;height:26px}
+
+    /* HERO — SAME POSITION / SIZE SYSTEM */
+    .parents-page .hero{padding:0;min-height:410px;overflow:hidden;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%);border-bottom:1px solid #e8eadf}
+    .parents-page .hero-grid{width:min(1180px,calc(100% - 40px));display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:start;gap:24px;min-height:410px;margin:auto;padding:0}
+    .parents-page .hero-copy{position:relative;width:100%;min-width:0;min-height:398px;align-self:start;display:grid;grid-template-rows:16px 164px 76px 44px;row-gap:8px;align-content:start;padding:20px 0 0;margin:0}
+    .parents-page .hero .eyebrow{font-size:var(--kk-eyebrow-font);line-height:16px;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin:0;padding:0}
+    .parents-page .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:var(--kk-hero-title-font);line-height:1.04;letter-spacing:-.035em;margin:0;padding:0;color:var(--deep);max-width:520px;align-self:start}
+    .parents-page .hero .lead{font-size:var(--kk-hero-body-font);line-height:1.5;color:#566159;max-width:520px;margin:0;padding:0;align-self:start}
+    .parents-page .hero-actions{display:flex;gap:10px;flex-wrap:nowrap;align-items:start;margin:0;padding:0}
+    .parents-page .hero-actions .btn{width:148px;min-width:148px;height:42px;min-height:42px;padding:0 12px;font-size:14px;line-height:1}
+    .parents-page .hero-media{position:relative;align-self:start;width:100%;height:390px;min-height:390px;margin:10px 0 0;padding:0;overflow:visible}
+    .parents-page .hero-media:before{content:"";position:absolute;inset:12px -18px -8px 18px;background:#dceab8;border-radius:40% 0 0 44%;transform:rotate(-1.5deg)}
+    .parents-page .hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;border-radius:40% 0 0 44%;box-shadow:0 14px 40px rgba(20,66,42,.10)}
+
+    /* COMPACT 5-CARD PARENT VALUES — TYPE SCALE MATCHES OFSTED CARDS */
+    .parents-page .section-tight{padding:8px 0;margin:0}
+    .parents-page .parent-values{display:grid;grid-template-columns:repeat(5,1fr);gap:0;width:100%;margin:0;background:#fff;border:1px solid #ece7db;border-radius:25px;box-shadow:0 12px 34px rgba(27,69,44,.08);overflow:hidden}
+    .parents-page .parent-value{min-height:118px;padding:18px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-right:1px solid #eee9df}
+    .parents-page .parent-value:last-child{border-right:0}
+    .parents-page .parent-value .icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#f4f8ec;font-size:20px;color:var(--green);font-weight:900;line-height:1}
+    .parents-page .parent-value h3{font-family:inherit;font-size:14px;line-height:1.25;margin:0;color:#26372e}
+    .parents-page .parent-value p{font-size:11px;line-height:1.32;color:#6f746f;max-width:170px}
+
+    /* SUPPORT SECTION — 4 + 2 PHOTOS, THEN A DIFFERENT ANIMATION IN THE EMPTY SPACE */
+    .parents-page .section-label{font-size:12px;line-height:1.2;font-weight:900;color:var(--green2);letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+    .parents-page .support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0}
+    .parents-page .support-card{background:#fff;border:1px solid #ece7db;border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(20,66,42,.06);min-width:0}
+    .parents-page .support-card img{width:100%;height:145px;object-fit:cover}
+    .parents-page .support-card .caption{padding:8px 8px 10px;text-align:center;font-size:13px;line-height:1.25;font-weight:800;color:#284434}
+    .parents-page .support-card:nth-child(5),.parents-page .support-card:nth-child(6){grid-row:2}
+    .parents-page .support-animation-card{grid-column:3/5;grid-row:2;position:relative;min-height:184px;border:1px solid #e5eadc;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#f7fbef,#fff9e9);box-shadow:0 8px 22px rgba(20,66,42,.06)}
+    .parents-page .support-animation-card:before{content:"Family partnership";position:absolute;left:18px;top:15px;font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#4d7858}
+    .parents-page .orbit{position:absolute;left:50%;top:56%;width:250px;height:86px;transform:translate(-50%,-50%)}
+    .parents-page .orbit-line{position:absolute;left:10px;right:10px;top:42px;height:2px;background:linear-gradient(90deg,transparent,#b7d9af,#efd16d,#b7d9af,transparent);border-radius:99px}
+    .parents-page .bubble{position:absolute;width:46px;height:34px;border-radius:13px;background:#fff;border:2px solid #92c4a0;box-shadow:0 5px 14px rgba(23,106,59,.08);animation:bubbleFloat 3.1s ease-in-out infinite alternate}
+    .parents-page .bubble:after{content:"";position:absolute;left:10px;bottom:-7px;border:7px solid transparent;border-top-color:#92c4a0;transform:rotate(14deg)}
+    .parents-page .bubble.b1{left:12px;top:4px}.parents-page .bubble.b2{right:20px;bottom:2px;animation-delay:.55s;border-color:#e8ba52}.parents-page .bubble.b2:after{border-top-color:#e8ba52}
+    .parents-page .heart-pulse{position:absolute;left:50%;top:33px;transform:translateX(-50%);font-size:30px;color:#e9799f;animation:heartBeat 1.8s ease-in-out infinite}
+    .parents-page .dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#6db5df;animation:dotTravel 4.5s ease-in-out infinite alternate}
+    .parents-page .dot.d1{left:30px;top:37px}.parents-page .dot.d2{left:78px;top:37px;background:#f2ca4c;animation-delay:.65s}.parents-page .dot.d3{right:65px;top:37px;background:#84bd76;animation-delay:1.15s}
+    @keyframes bubbleFloat{to{transform:translateY(-8px) rotate(2deg)}}
+    @keyframes heartBeat{50%{transform:translateX(-50%) scale(1.18)}}
+    @keyframes dotTravel{to{transform:translateX(65px) translateY(-4px)}}
+
+    /* TESTIMONIALS + FINAL STRIP — COMPACT */
+    .parents-page .testimonial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .parents-page .testimonial{padding:15px;border:1px solid #ece7db;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(20,66,42,.05);min-height:190px;display:flex;flex-direction:column}
+    .parents-page .testimonial p{font-size:12.5px;line-height:1.45;color:#4f5e55}
+    .parents-page .stars{color:#e7b62d;font-size:14px;letter-spacing:1px;margin:7px 0}
+    .parents-page .person{display:flex;align-items:center;gap:9px;margin-top:auto;font-size:12px}
+    .parents-page .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#dceab8,#f5d8b5);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.09)}
+    .parents-page .muted{color:#6f746f}
+    .parents-page .parent-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--green);color:#fff;border-radius:22px;padding:16px 20px;margin:0}
+    .parents-page .parent-strip h3{font-family:inherit;color:#fff;font-size:17px;line-height:1.25;margin:0 0 4px}
+    .parents-page .parent-strip p{font-size:12.5px;line-height:1.4;color:#edf7ee}
+    .parents-page .parent-strip .actions{display:flex;gap:9px;flex-wrap:nowrap}
+    .parents-page .parent-strip .btn{height:40px;min-height:40px;padding:0 17px;font-size:13px}
+    .parents-page .parent-strip .btn.contact{background:#fff;color:var(--green)}
+    .parents-page .parent-strip .btn.visit{background:var(--gold);border-color:var(--gold);color:#24452f}
+
+    /* SAME COMPACT FOOTER */
+    .parents-page footer{background:#0f5f36;color:#fff;padding:22px 0 12px;margin-top:6px}
+    .parents-page .footer-grid{display:grid;grid-template-columns:1.05fr 1.5fr .95fr 1.18fr;gap:20px;align-items:start}
+    .parents-page .footer-grid>div{text-align:center;min-width:0}
+    .parents-page .footer-brand img{width:168px;height:60px;object-fit:contain;margin:0 auto 5px}
+    .parents-page .footer-brand p{max-width:240px;margin:0 auto;font-size:13px;color:#f4fff6}
+    .parents-page .footer-title{font-size:14px;font-weight:900;margin-bottom:8px;color:var(--gold);text-align:center}
+    .parents-page .footer-list{display:grid;gap:5px;font-size:12.5px;justify-items:center;text-align:center;color:#f6fff8}
+    .parents-page .footer-links-2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+    .parents-page .footer-bottom{display:flex;justify-content:space-between;gap:14px;margin-top:14px;padding-top:9px;border-top:1px solid rgba(255,255,255,.2);font-size:11px;color:#e7f4ea}
+    .parents-page .scroll-top{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:var(--green);color:#f7d85b;font-size:24px;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.16);z-index:70}
+
+    @media(max-width:1100px) and (min-width:981px){
+      .parents-page .navlinks{gap:16px}.parents-page .hero h1{font-size:46px}.parents-page .support-card img{height:135px}
+    }
+    @media(max-width:980px){
+      .parents-page .nav{height:76px;gap:16px}.parents-page .brand img{width:180px;height:58px}.parents-page .nav>.desktop-only{display:none}.parents-page .menu-btn{display:grid}
+      .parents-page .navlinks{display:none;position:absolute;top:76px;right:20px;width:220px;flex-direction:column;align-items:stretch;background:#fffdf7;border:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10);padding:10px 14px;gap:0;z-index:80}
+      .parents-page .navlinks.open{display:flex}.parents-page .navlinks a{font-size:12.5px;padding:8px 3px}
+      .parents-page .hero{min-height:0;padding:4px 0 8px}.parents-page .hero-grid{grid-template-columns:1fr;gap:12px;min-height:0}.parents-page .hero-copy{min-height:0;grid-template-rows:auto auto auto auto;padding:8px 0 0}.parents-page .hero h1{font-size:42px}.parents-page .hero-media{height:330px;min-height:330px;margin:0}
+      .parents-page .parent-values{grid-template-columns:repeat(3,1fr)}.parents-page .parent-value{border-bottom:1px solid #eee9df}.parents-page .parent-value:nth-child(3n){border-right:0}
+      .parents-page .support-grid{grid-template-columns:repeat(2,1fr)}.parents-page .support-card:nth-child(5),.parents-page .support-card:nth-child(6){grid-row:auto}.parents-page .support-animation-card{grid-column:1/-1;grid-row:auto;min-height:160px}
+      .parents-page .testimonial-grid{grid-template-columns:1fr 1fr}.parents-page .footer-grid{grid-template-columns:1fr 1fr}.parents-page .footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:620px){
+      .parents-page .container{width:calc(100% - 28px)}.parents-page .topbar{display:none}.parents-page .nav{height:70px;gap:10px}.parents-page .brand{min-width:0;width:auto;flex:1 1 auto}.parents-page .brand img{width:156px;height:52px}
+      .parents-page .navlinks{left:auto;right:0;top:70px;width:min(46vw,190px);max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
+      .parents-page .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.parents-page .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.parents-page .menu-btn svg{width:25px;height:25px}
+      .parents-page .hero{padding:0 0 8px}.parents-page .hero-grid{width:calc(100% - 28px);gap:10px}.parents-page .hero-copy{display:grid;grid-template-rows:14px auto auto 92px;row-gap:7px;padding:8px 0 0}.parents-page .hero .eyebrow{font-size:12px;line-height:14px}.parents-page .hero h1{font-size:42px;line-height:1.05;letter-spacing:-.035em;max-width:none}.parents-page .hero .lead{font-size:15px;line-height:1.5}.parents-page .hero-actions{display:grid;grid-template-columns:1fr}.parents-page .hero-actions .btn{width:100%;min-width:0;height:42px}.parents-page .hero-media{height:300px;min-height:300px;border-radius:30px;margin:0}.parents-page .hero-media:before{inset:8px -8px -5px 8px;border-radius:30px}.parents-page .hero-media img{border-radius:30px}
+      .parents-page .section-tight{padding:7px 0}.parents-page .parent-values{grid-template-columns:1fr 1fr;border-radius:20px}.parents-page .parent-value{min-height:106px;padding:14px 7px}.parents-page .parent-value:nth-child(2n){border-right:0}.parents-page .parent-value:last-child{grid-column:1/-1;border-bottom:0}.parents-page .parent-value h3{font-size:13px}.parents-page .parent-value p{font-size:11px}
+      .parents-page .support-grid{grid-template-columns:1fr;gap:8px}.parents-page .support-card img{height:190px}.parents-page .support-animation-card{min-height:145px}.parents-page .orbit{width:230px;transform:translate(-50%,-47%)}
+      .parents-page .testimonial-grid{grid-template-columns:1fr;gap:8px}.parents-page .testimonial{min-height:0;padding:13px}.parents-page .parent-strip{flex-direction:column;align-items:stretch;text-align:center;padding:15px}.parents-page .parent-strip .actions{display:grid;grid-template-columns:1fr 1fr}.parents-page .parent-strip .btn{width:100%}
+      .parents-page footer{padding:18px 0 10px}.parents-page .footer-grid{grid-template-columns:1fr;gap:16px}.parents-page .footer-brand{grid-column:auto}.parents-page .footer-brand img{width:154px;height:58px}.parents-page .footer-links-2{gap:0 12px}.parents-page .footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:4px;margin-top:10px}.parents-page .scroll-top{width:44px;height:44px;right:18px;bottom:18px}
+    }
+    @media(max-width:420px){
+      .parents-page .hero h1{font-size:39px}.parents-page .hero-media{height:275px;min-height:275px}.parents-page .parent-strip .actions{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-<body>
+<body class="parents-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
-  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html" class="active">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only" href="contact.html#visit">Book a Visit</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
+  <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html" class="active">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Parents</div>
-          <h1>Working Together<br><span style="color:var(--green)">for Your Child’s Happiness</span></h1>
+          <h1>Working Together<br><span style="color:var(--green)">for Your Child’s<br>Happiness</span></h1>
           <p class="lead">We believe that strong partnerships with parents and carers create the best outcomes for children. We are here to listen, support and work together every step of the way.</p>
-          <div class="hero-actions"><a class="btn primary" href="contact.html#visit">Book a Visit</a></div>
+          <div class="hero-actions"><a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></span><span class="btn-label">Book a Visit</span></a></div>
         </div>
-        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Parents talking with staff"></div>
+        <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Parents and nursery staff working together"></div>
       </div>
     </section>
 
     <section class="section-tight">
-      <div class="container grid-5">
-        <div class="card info-card center"><div class="icon-badge" style="margin-inline:auto">👨‍👩‍👧</div><h3 style="font-size:18px">Open Communication</h3><p class="muted">We keep you informed every step of the way.</p></div>
-        <div class="card info-card center"><div class="icon-badge" style="margin-inline:auto">🛡️</div><h3 style="font-size:18px">Safe &amp; Secure</h3><p class="muted">Your child’s safety and wellbeing come first.</p></div>
-        <div class="card info-card center"><div class="icon-badge" style="margin-inline:auto">♡</div><h3 style="font-size:18px">Trusted Partnerships</h3><p class="muted">Building strong, lasting relationships.</p></div>
-        <div class="card info-card center"><div class="icon-badge" style="margin-inline:auto">⭐</div><h3 style="font-size:18px">Parent Involvement</h3><p class="muted">We value your ideas and observations.</p></div>
-        <div class="card info-card center"><div class="icon-badge" style="margin-inline:auto">🗓️</div><h3 style="font-size:18px">Flexible &amp; Supportive</h3><p class="muted">We support your family’s needs.</p></div>
+      <div class="container">
+        <div class="parent-values">
+          <div class="parent-value"><div class="icon">♧</div><h3>Open Communication</h3><p>We keep you informed every step of the way.</p></div>
+          <div class="parent-value"><div class="icon">♢</div><h3>Safe &amp; Secure</h3><p>Your child’s safety and wellbeing come first.</p></div>
+          <div class="parent-value"><div class="icon">♡</div><h3>Trusted Partnerships</h3><p>Building strong, lasting relationships.</p></div>
+          <div class="parent-value"><div class="icon">☆</div><h3>Parent Involvement</h3><p>We value your ideas and observations.</p></div>
+          <div class="parent-value"><div class="icon">▦</div><h3>Flexible &amp; Supportive</h3><p>We support your family’s needs.</p></div>
+        </div>
       </div>
     </section>
 
     <section class="section-tight">
-      <div class="container"><div class="eyebrow">How We Support You</div></div>
-      <div class="container photo-grid">
-        <div class="card"><img src="images/reading-corner.jpg" alt="Daily updates"><div class="caption">Daily Updates</div></div>
-        <div class="card"><img src="images/play-corner.jpg" alt="Parent app"><div class="caption">Parent App</div></div>
-        <div class="card"><img src="images/storytime-mixed-race.png" alt="Meetings"><div class="caption">Meetings</div></div>
-        <div class="card"><img src="images/outdoor-play.jpg" alt="Workshops"><div class="caption">Workshops</div></div>
-        <div class="card"><img src="images/hero-room.jpg" alt="Open door policy"><div class="caption">Open Door Policy</div></div>
-        <div class="card"><img src="images/sensory.jpg" alt="Additional support"><div class="caption">Additional Support</div></div>
+      <div class="container"><div class="section-label">How We Support You</div>
+        <div class="support-grid">
+          <div class="support-card"><img src="images/reading-corner.jpg" alt="Daily nursery updates"><div class="caption">Daily Updates</div></div>
+          <div class="support-card"><img src="images/play-corner.jpg" alt="Parent app"><div class="caption">Parent App</div></div>
+          <div class="support-card"><img src="images/storytime-mixed-race.png" alt="Parent meetings"><div class="caption">Meetings</div></div>
+          <div class="support-card"><img src="images/outdoor-play.jpg" alt="Family workshops"><div class="caption">Workshops</div></div>
+          <div class="support-card"><img src="images/hero-room.jpg" alt="Open door policy"><div class="caption">Open Door Policy</div></div>
+          <div class="support-card"><img src="images/sensory.jpg" alt="Additional support"><div class="caption">Additional Support</div></div>
+          <div class="support-animation-card" aria-hidden="true"><div class="orbit"><span class="orbit-line"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="heart-pulse">♡</span><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div></div>
+        </div>
       </div>
     </section>
 
     <section class="section-tight">
-      <div class="container"><div class="eyebrow">What Parents Say</div></div>
-      <div class="container testimonial-grid">
-        <div class="card testimonial"><p>“The staff are so caring and our daughter loves coming here every day. We feel completely at ease knowing she is in such good hands.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>Sarah M.</strong><br><small class="muted">Parent</small></div></div></div>
-        <div class="card testimonial"><p>“Excellent communication and a warm welcoming environment. We are so much more confident in our son since he started at Kinder Kidz.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>James &amp; Priya</strong><br><small class="muted">Parents</small></div></div></div>
-        <div class="card testimonial"><p>“The activities are brilliant and our little one always comes home full of smiles! They’ve been learning so much.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>Emily R.</strong><br><small class="muted">Parent</small></div></div></div>
-        <div class="card testimonial"><p>“A fantastic nursery with amazing staff. We couldn’t be happier with the care and support our child receives.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>David T.</strong><br><small class="muted">Parent</small></div></div></div>
+      <div class="container"><div class="section-label">What Parents Say</div>
+        <div class="testimonial-grid">
+          <div class="testimonial"><p>“The staff are so caring and our daughter loves coming here every day. We feel completely at ease knowing she is in such good hands.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>Sarah M.</strong><br><span class="muted">Parent</span></div></div></div>
+          <div class="testimonial"><p>“Excellent communication and a warm welcoming environment. We are so much more confident in our son since he started at Kinder Kidz.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>James &amp; Priya</strong><br><span class="muted">Parents</span></div></div></div>
+          <div class="testimonial"><p>“The activities are brilliant and our little one always comes home full of smiles. They’ve been learning so much.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>Emily R.</strong><br><span class="muted">Parent</span></div></div></div>
+          <div class="testimonial"><p>“A fantastic nursery with amazing staff. We couldn’t be happier with the care and support our child receives.”</p><div class="stars">★★★★★</div><div class="person"><div class="avatar"></div><div><strong>David T.</strong><br><span class="muted">Parent</span></div></div></div>
+        </div>
       </div>
     </section>
 
     <section class="section-tight">
-      <div class="container parent-strip">
-        <div><h3 style="color:#fff;font-size:22px;margin-bottom:6px">We’re here for you and your family.</h3><p>If you have any questions or would like to discuss anything, please don’t hesitate to get in touch.</p></div>
-        <div class="actions"><a class="btn secondary small" href="contact.html">Contact Us</a><a class="btn gold small" href="contact.html#visit">Book a Visit</a></div>
-      </div>
+      <div class="container parent-strip"><div><h3>We’re here for you and your family.</h3><p>If you have any questions or would like to discuss anything, please don’t hesitate to get in touch.</p></div><div class="actions"><a class="btn contact" href="contact.html">Contact Us</a><a class="btn visit" href="contact.html#visit">Book a Visit</a></div></div>
     </section>
   </main>
 
-  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>Funded places for 38 weeks</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
-  <button class="scroll-top" type="button" aria-label="Back to top">↑</button><script src="js/script.js"></script>
+  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>3 Months – 5 Years</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
+  <button class="scroll-top" type="button" aria-label="Back to top">↑</button>
+  <script src="js/script.js"></script>
 </body>
 </html>
