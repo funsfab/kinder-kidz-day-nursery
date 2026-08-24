@@ -147,7 +147,15 @@
       .parents-page .hero h1{font-size:39px}.parents-page .hero-media{height:275px;min-height:275px}.parents-page .parent-strip .actions{grid-template-columns:1fr}
     }
   </style>
-\n<style id="kk-scroll-nav-v23">\n/* Match the completed Home / About Us / Our Rooms / Learning pages. */\n.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#17753f;color:#f7d85b;font-size:27px;font-weight:800;line-height:1;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}\n.scroll-nav-btn:hover{transform:translateY(-2px);background:#0d5f33}\n.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}\n@media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}\n</style>\n</head>
+
+<style id="kk-scroll-nav-v23">
+/* Match the completed Home / About Us / Our Rooms / Learning pages. */
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#17753f;color:#f7d85b;font-size:27px;font-weight:800;line-height:1;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}
+.scroll-nav-btn:hover{transform:translateY(-2px);background:#0d5f33}
+.scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
+@media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}
+</style>
+</head>
 <body class="parents-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
   <header><div class="container nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"></a><nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html" class="active">Parents</a><a href="contact.html">Contact</a></nav><a class="btn primary desktop-only header-visit visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg></button></div></header>
@@ -209,6 +217,32 @@
 
   <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>3 Months – 5 Years</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
   <button aria-label="Scroll down" class="scroll-nav-btn" id="scrollNavBtn" title="Scroll down" type="button">↓</button>
-  <script src="js/script.js"></script>\n<script id="kk-scroll-nav-script-v23">\n(function(){\n  const scrollNavBtn=document.getElementById('scrollNavBtn');\n  if(!scrollNavBtn) return;\n  function updateScrollNav(){\n    const moved=window.scrollY>90;\n    scrollNavBtn.textContent=moved?'↑':'↓';\n    scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');\n    scrollNavBtn.title=moved?'Back to top':'Scroll down';\n  }\n  scrollNavBtn.addEventListener('click',function(){\n    if(window.scrollY>90){\n      window.scrollTo({top:0,behavior:'smooth'});\n    }else{\n      const target=document.querySelector('main > section:nth-of-type(2)') || document.querySelector('main');\n      if(!target) return;\n      const header=document.querySelector('header');\n      const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);\n      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});\n    }\n  });\n  window.addEventListener('scroll',updateScrollNav,{passive:true});\n  updateScrollNav();\n})();\n</script>\n
+  <script src="js/script.js"></script>
+<script id="kk-scroll-nav-script-v23">
+(function(){
+  const scrollNavBtn=document.getElementById('scrollNavBtn');
+  if(!scrollNavBtn) return;
+  function updateScrollNav(){
+    const moved=window.scrollY>90;
+    scrollNavBtn.textContent=moved?'↑':'↓';
+    scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');
+    scrollNavBtn.title=moved?'Back to top':'Scroll down';
+  }
+  scrollNavBtn.addEventListener('click',function(){
+    if(window.scrollY>90){
+      window.scrollTo({top:0,behavior:'smooth'});
+    }else{
+      const target=document.querySelector('main > section:nth-of-type(2)') || document.querySelector('main');
+      if(!target) return;
+      const header=document.querySelector('header');
+      const top=target.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight+8:8);
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }
+  });
+  window.addEventListener('scroll',updateScrollNav,{passive:true});
+  updateScrollNav();
+})();
+</script>
+
 </body>
 </html>
