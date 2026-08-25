@@ -1046,6 +1046,59 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   }
 }
 </style>
+
+<style id="mobile-all-buttons-compact-v30">
+/* MOBILE ONLY: use the approved compact hero-button sizing throughout the site. Desktop is untouched. */
+@media (max-width:620px){
+  /* All normal action buttons use the same compact dimensions as the approved mobile hero buttons. */
+  .btn:not(.header-visit){
+    height:40px!important;
+    min-height:40px!important;
+    min-width:0!important;
+    max-width:none;
+    padding:0 8px!important;
+    font-size:12.5px!important;
+    line-height:1!important;
+    gap:6px!important;
+    white-space:nowrap!important;
+  }
+  .btn:not(.header-visit) .btn-icon{
+    width:17px!important;
+    height:17px!important;
+    min-width:17px!important;
+  }
+  .btn:not(.header-visit) .btn-icon svg{
+    width:17px!important;
+    height:17px!important;
+  }
+
+  /* Two-button call-to-action areas stay compact and side-by-side, matching the hero. */
+  .cta-actions,
+  .parent-strip .actions,
+  .funding-card .hero-actions,
+  .action-banner .actions{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:8px!important;
+    width:100%!important;
+    align-items:center!important;
+  }
+  .cta-actions .btn,
+  .parent-strip .actions .btn,
+  .funding-card .hero-actions .btn,
+  .action-banner .actions .btn{
+    width:100%!important;
+  }
+
+  /* Single utility/form buttons remain compact instead of stretching across the card. */
+  form .btn,
+  .map-address .btn{
+    width:auto!important;
+    min-width:148px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">
