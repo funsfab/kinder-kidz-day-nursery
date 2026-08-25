@@ -830,6 +830,27 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="mobile-hero-photo-gap-v34">
+/* MOBILE ONLY: close the space between the hero action buttons and photo. Desktop stays untouched. */
+@media (max-width:620px){
+  body .hero > .container,
+  body .hero .hero-grid{
+    gap:6px!important;
+    padding-bottom:4px!important;
+  }
+  body .hero .hero-copy{
+    grid-template-rows:14px auto auto 40px!important;
+  }
+  body .hero .hero-actions{
+    margin:4px 0 0!important;
+  }
+  body .hero .hero-media{
+    margin-top:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">
