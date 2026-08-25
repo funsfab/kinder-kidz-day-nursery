@@ -1906,6 +1906,42 @@ main + footer{
 }
 </style>
 
+
+<style id="learning-mobile-bottom-buttons-compact-v31">
+/* MOBILE ONLY: make the Learning & Development bottom CTA buttons match the approved compact hero buttons. Desktop is untouched. */
+@media (max-width:620px){
+  .learning-cta .cta-actions{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:8px!important;
+    width:100%!important;
+    margin-top:6px!important;
+    align-items:center!important;
+  }
+  .learning-cta .cta-actions .btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 8px!important;
+    font-size:12.5px!important;
+    line-height:1!important;
+    gap:6px!important;
+    white-space:nowrap!important;
+  }
+  .learning-cta .cta-actions .btn-icon{
+    width:17px!important;
+    height:17px!important;
+    min-width:17px!important;
+  }
+  .learning-cta .cta-actions .btn-icon svg{
+    width:17px!important;
+    height:17px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">
