@@ -990,6 +990,62 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="mobile-hero-buttons-one-row-v29">
+/* MOBILE ONLY: keep the two main hero action buttons compact and on one row. Desktop is unchanged. */
+@media (max-width:620px){
+  .hero .hero-actions,
+  .learning-hero .hero-actions,
+  .fees-page .hero > .container .hero-actions,
+  .gallery-page .hero > .container .hero-actions,
+  .parents-page .hero > .container .hero-actions,
+  .contact-page .hero > .container .hero-actions{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:8px!important;
+    width:100%!important;
+    align-items:center!important;
+    align-content:start!important;
+    flex-wrap:nowrap!important;
+  }
+  .hero .hero-actions .btn,
+  .learning-hero .hero-actions .btn,
+  .fees-page .hero > .container .hero-actions .btn,
+  .gallery-page .hero > .container .hero-actions .btn,
+  .parents-page .hero > .container .hero-actions .btn,
+  .contact-page .hero > .container .hero-actions .btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:40px!important;
+    min-height:40px!important;
+    padding:0 8px!important;
+    font-size:12.5px!important;
+    line-height:1!important;
+    gap:6px!important;
+    white-space:nowrap!important;
+  }
+  .hero .hero-actions .btn-icon,
+  .learning-hero .hero-actions .btn-icon,
+  .fees-page .hero > .container .hero-actions .btn-icon,
+  .gallery-page .hero > .container .hero-actions .btn-icon,
+  .parents-page .hero > .container .hero-actions .btn-icon,
+  .contact-page .hero > .container .hero-actions .btn-icon{
+    width:17px!important;
+    height:17px!important;
+    min-width:17px!important;
+  }
+  .hero .hero-actions .btn-icon svg,
+  .learning-hero .hero-actions .btn-icon svg,
+  .fees-page .hero > .container .hero-actions .btn-icon svg,
+  .gallery-page .hero > .container .hero-actions .btn-icon svg,
+  .parents-page .hero > .container .hero-actions .btn-icon svg,
+  .contact-page .hero > .container .hero-actions .btn-icon svg{
+    width:17px!important;
+    height:17px!important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="topbar">
