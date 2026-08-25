@@ -397,6 +397,26 @@
 .scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
 @media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}
 </style>
+
+<!-- v28: mobile-only card spacing normalization; desktop intentionally untouched -->
+<style>
+@media (max-width:620px){
+  .price-grid,
+  .accent-grid,
+  .dual-columns,
+  .faq-list{
+    row-gap:10px!important;
+  }
+  .price-grid > *,
+  .accent-grid > *,
+  .dual-columns > *,
+  .faq-list > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+</style>
+
 </head>
 <body class="fees-page">
   <div class="topbar">

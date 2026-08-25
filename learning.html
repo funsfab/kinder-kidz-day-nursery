@@ -1779,6 +1779,24 @@ main + footer{
 }
 
 </style>
+
+<!-- v28: mobile-only card spacing normalization; desktop intentionally untouched -->
+<style>
+@media (max-width:620px){
+  .approach-grid,
+  .how-grid,
+  .proof-row{
+    row-gap:10px!important;
+  }
+  .approach-grid > *,
+  .how-grid > *,
+  .proof-row > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">

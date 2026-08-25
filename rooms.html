@@ -698,6 +698,20 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 
 </style>
+
+<!-- v28: mobile-only card spacing normalization; desktop intentionally untouched -->
+<style>
+@media (max-width:620px){
+  .rooms-grid{
+    row-gap:10px!important;
+  }
+  .rooms-grid > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">

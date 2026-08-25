@@ -269,6 +269,26 @@
 @media(max-width:760px){.contact-page .scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}
 #enquiry-form{scroll-margin-top:104px}
 </style>
+
+<!-- v28: mobile-only card spacing normalization; desktop intentionally untouched -->
+<style>
+@media (max-width:620px){
+  .contact-layout,
+  .stats-compact,
+  .map-panel,
+  .faq-list{
+    row-gap:10px!important;
+  }
+  .contact-layout > *,
+  .stats-compact > *,
+  .map-panel > *,
+  .faq-list > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+</style>
+
 </head>
 <body class="contact-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>

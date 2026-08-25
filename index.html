@@ -970,6 +970,26 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 
 </style>
+
+<!-- v28: mobile-only card spacing normalization; desktop intentionally untouched -->
+<style>
+@media (max-width:620px){
+  .trust,
+  .room-grid,
+  .feature-grid,
+  .proof-grid{
+    row-gap:10px!important;
+  }
+  .trust > *,
+  .room-grid > *,
+  .feature-grid > *,
+  .proof-grid > *{
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">
