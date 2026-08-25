@@ -1942,6 +1942,16 @@ main + footer{
 }
 </style>
 
+
+<style id="mobile-hero-spacing-tight-v32">
+/* MOBILE ONLY: keep the approved animation row, while moving the buttons closer to the paragraph. Desktop is untouched. */
+@media (max-width:620px){
+  body .learning-hero .hero-copy{min-height:0!important;grid-template-rows:14px auto 46px auto 92px!important;row-gap:7px!important;align-content:start!important;}
+  body .learning-hero .hero-actions{margin:6px 0 0!important;align-self:start!important;}
+}
+@media (max-width:420px){body .learning-hero .hero-copy{grid-template-rows:14px auto 42px auto 92px!important;}}
+</style>
+
 </head>
 <body>
 <div class="topbar">

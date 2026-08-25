@@ -1099,6 +1099,20 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="mobile-hero-spacing-tight-v32">
+/* MOBILE ONLY: move hero action buttons closer to the preceding text, matching the approved Parents page. Desktop is untouched. */
+@media (max-width:620px){
+  body .hero .hero-copy{
+    min-height:0!important;
+    grid-template-rows:14px auto auto 92px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+  }
+  body .hero .hero-actions{margin:6px 0 0!important;align-self:start!important;}
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">

@@ -398,6 +398,16 @@
 }
 </style>
 
+
+<style id="mobile-hero-spacing-tight-v32">
+/* MOBILE ONLY: keep the approved animation row, while moving the buttons closer to the paragraph. Desktop is untouched. */
+@media (max-width:620px){
+  body.contact-page .hero-copy{min-height:0!important;grid-template-rows:14px auto 46px auto 92px!important;row-gap:7px!important;align-content:start!important;}
+  body.contact-page .hero-actions{margin:6px 0 0!important;align-self:start!important;}
+}
+@media (max-width:420px){body.contact-page .hero-copy{grid-template-rows:14px auto 42px auto 92px!important;}}
+</style>
+
 </head>
 <body class="contact-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
@@ -482,5 +492,25 @@
   }
 })();
 </script>
+
+<script id="mobile-menu-close-v32">
+(function(){
+  function setupMobileMenuClose(){
+    var nav=document.getElementById('navlinks');
+    var btn=document.getElementById('menuBtn');
+    if(!nav||!btn) return;
+    function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    closeMenu();
+    nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeMenu);});
+    window.addEventListener('pageshow',closeMenu);
+    document.addEventListener('click',function(e){
+      if(window.innerWidth<=980 && nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) closeMenu();
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setupMobileMenuClose);
+  else setupMobileMenuClose();
+})();
+</script>
+
 </body>
 </html>
