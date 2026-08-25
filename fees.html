@@ -535,6 +535,43 @@
 }
 </style>
 
+
+<style id="mobile-fees-hero-tight-v33">
+/* MOBILE ONLY. Keep the completed desktop layout untouched. */
+@media (max-width:620px){
+  body.fees-page .hero-grid{
+    gap:8px!important;
+    padding-bottom:6px!important;
+  }
+  body.fees-page .hero-copy{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    height:auto!important;
+    gap:0!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  body.fees-page .eyebrow{margin:0 0 7px!important;}
+  body.fees-page .hero h1,
+  body.fees-page .hero-copy h1{margin:0 0 8px!important;}
+  /* Fees title is already three lines; no extra hero animation row is needed on mobile. */
+  body.fees-page .title-gap{display:none!important;}
+  body.fees-page .hero-copy>.lead{
+    margin:0 0 8px!important;
+    padding:0!important;
+  }
+  body.fees-page .hero-actions{
+    margin:0!important;
+    padding:0!important;
+    align-self:stretch!important;
+  }
+  body.fees-page .hero-media{
+    margin:0!important;
+  }
+}
+</style>
+
 </head>
 <body class="fees-page">
   <div class="topbar">

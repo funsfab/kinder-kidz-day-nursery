@@ -405,6 +405,50 @@
 @media (max-width:420px){body.gallery-page .hero-copy{grid-template-rows:14px auto 42px auto 92px!important;}}
 </style>
 
+
+<style id="mobile-gallery-hero-menu-v33">
+/* MOBILE ONLY. Keep the completed desktop layout untouched. */
+@media (max-width:620px){
+  body.gallery-page .hero-grid{
+    gap:8px!important;
+    padding-bottom:6px!important;
+  }
+  body.gallery-page .hero-copy{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    height:auto!important;
+    gap:0!important;
+    padding-top:8px!important;
+    margin:0!important;
+  }
+  body.gallery-page .hero .eyebrow{margin:0 0 7px!important;}
+  body.gallery-page .hero h1{margin:0 0 6px!important;}
+  body.gallery-page .gallery-title-gap{
+    position:relative!important;
+    width:100%!important;
+    height:32px!important;
+    min-height:32px!important;
+    margin:0 0 7px!important;
+    flex:0 0 32px!important;
+  }
+  body.gallery-page .hero .lead{
+    margin:0 0 8px!important;
+    padding:0!important;
+  }
+  body.gallery-page .hero-actions{
+    margin:0!important;
+    padding:0!important;
+    align-self:stretch!important;
+  }
+  body.gallery-page .hero-media{margin:0!important;}
+
+  /* The drawer must be hidden whenever it does not have the open class. */
+  body.gallery-page .navlinks{display:none!important;}
+  body.gallery-page .navlinks.open{display:flex!important;}
+}
+</style>
+
 </head>
 <body class="gallery-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span></div></div>
@@ -516,6 +560,35 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setupMobileMenuClose);
   else setupMobileMenuClose();
+})();
+</script>
+
+
+<script id="mobile-current-menu-close-v33">
+(function(){
+  function init(){
+    var nav=document.getElementById('navlinks');
+    var btn=document.getElementById('menuBtn');
+    if(!nav||!btn) return;
+    function close(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+    close();
+    nav.addEventListener('click',function(e){
+      var link=e.target.closest('a');
+      if(!link) return;
+      var current=link.classList.contains('active');
+      close();
+      if(current){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    },true);
+    window.addEventListener('pageshow',close);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
 
