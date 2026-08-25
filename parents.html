@@ -150,10 +150,11 @@
 
 <style id="kk-scroll-nav-v23">
 /* Match the completed Home / About Us / Our Rooms / Learning pages. */
-.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#17753f;color:#f7d85b;font-size:27px;font-weight:800;line-height:1;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease}
+.scroll-nav-btn{position:fixed;right:24px;bottom:24px;z-index:70;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#17753f;color:#f7d85b;box-shadow:0 10px 28px rgba(18,60,43,.28);cursor:pointer;transition:transform .2s ease,background .2s ease;padding:0}
+.scroll-nav-btn .scroll-arrow{display:block;font-family:Arial,Helvetica,sans-serif!important;font-size:27px!important;font-weight:800!important;line-height:1!important;color:#f7d85b!important;transform:translateY(-1px)}
 .scroll-nav-btn:hover{transform:translateY(-2px);background:#0d5f33}
 .scroll-nav-btn:focus-visible{outline:3px solid #f7d85b;outline-offset:3px}
-@media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px;font-size:24px}}
+@media(max-width:760px){.scroll-nav-btn{width:46px;height:46px;right:16px;bottom:18px}.scroll-nav-btn .scroll-arrow{font-size:24px!important}}
 </style>
 </head>
 <body class="parents-page">
@@ -167,7 +168,7 @@
           <div class="eyebrow">Parents</div>
           <h1>Working Together<br><span style="color:var(--green)">for Your Child’s<br>Happiness</span></h1>
           <p class="lead">We believe that strong partnerships with parents and carers create the best outcomes for children. We are here to listen, support and work together every step of the way.</p>
-          <div class="hero-actions"><a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a></div>
+          <div class="hero-actions"><a class="btn primary visit-action" href="contact.html#visit"><span aria-hidden="true" class="btn-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html#enquiry"><span aria-hidden="true" class="btn-icon icon-mail"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div>
         </div>
         <div class="hero-media"><img src="images/storytime-mixed-race.png" alt="Parents and nursery staff working together"></div>
       </div>
@@ -216,15 +217,16 @@
   </main>
 
   <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/logo.jpg" alt="Kinder Kidz Day Nursery logo"><p>A warm, happy and nurturing nursery for children aged 3 months to 5 years.</p></div><div><div class="footer-title">Quick Links</div><div class="footer-links-2"><div class="footer-list"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning &amp; Development</a></div><div class="footer-list"><a href="fees.html">Fees &amp; Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a></div></div></div><div><div class="footer-title">Information</div><div class="footer-list"><div>7:30am – 6:30pm<br>Monday – Friday</div><div>51 Weeks a Year</div><div>3 Months – 5 Years</div></div></div><div><div class="footer-title">Contact Us</div><div class="footer-list"><div>07886 017430</div><div>01268 425881</div><div>kinderkidzdaynursery@hotmail.com</div><div>26 Elizabeth Court,<br>Laindon, SS15 5AG</div></div></div></div><div class="footer-bottom"><span>© 2026 Kinder Kidz Day Nursery. All rights reserved.</span><span>Ofsted URN: 2695613</span></div></div></footer>
-  <button aria-label="Scroll down" class="scroll-nav-btn" id="scrollNavBtn" title="Scroll down" type="button">↓</button>
+  <button aria-label="Scroll down" class="scroll-nav-btn" id="scrollNavBtn" title="Scroll down" type="button"><span class="scroll-arrow" aria-hidden="true">↓</span></button>
   <script src="js/script.js"></script>
 <script id="kk-scroll-nav-script-v23">
 (function(){
   const scrollNavBtn=document.getElementById('scrollNavBtn');
   if(!scrollNavBtn) return;
+  const scrollArrow=scrollNavBtn.querySelector('.scroll-arrow');
   function updateScrollNav(){
     const moved=window.scrollY>90;
-    scrollNavBtn.textContent=moved?'↑':'↓';
+    if(scrollArrow) scrollArrow.textContent=moved?'↑':'↓';
     scrollNavBtn.setAttribute('aria-label',moved?'Back to top':'Scroll down');
     scrollNavBtn.title=moved?'Back to top':'Scroll down';
   }
