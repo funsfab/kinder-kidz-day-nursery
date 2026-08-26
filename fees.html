@@ -953,5 +953,63 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 })();
 </script>
 
+
+
+<script id="kk-french-enquire-compact-v38">
+(function(){
+  const KEY='kkPreferredLanguage';
+  const FRENCH='Rendez-vous';
+  const targets=[];
+
+  function collect(){
+    document.querySelectorAll('a[href*="mode=enquiry"]').forEach(function(a){
+      const el=a.querySelector('.btn-label') || a;
+      if(!el.dataset.kkOriginalEnquire){
+        el.dataset.kkOriginalEnquire=(el.textContent||'').trim() || 'Enquire Now';
+      }
+      if(targets.indexOf(el)===-1) targets.push(el);
+    });
+  }
+  function restoreEnglish(){
+    collect();
+    targets.forEach(function(el){
+      if(el.dataset.kkOriginalEnquire) el.textContent=el.dataset.kkOriginalEnquire;
+    });
+  }
+  function applyFrenchCompact(){
+    collect();
+    if((localStorage.getItem(KEY)||'en')!=='fr') return;
+    targets.forEach(function(el){
+      if(el.textContent.trim()!==FRENCH) el.textContent=FRENCH;
+    });
+  }
+  function scheduleFrench(){
+    [0,120,350,700,1200,2000].forEach(function(ms){setTimeout(applyFrenchCompact,ms);});
+  }
+
+  collect();
+  scheduleFrench();
+  window.addEventListener('load',scheduleFrench);
+  window.addEventListener('pageshow',scheduleFrench);
+
+  /* Restore the original English label before Google translates to another language. */
+  document.addEventListener('click',function(e){
+    const opt=e.target.closest && e.target.closest('.kk-lang-option');
+    if(!opt) return;
+    const lang=opt.dataset.lang;
+    if(lang!=='fr') restoreEnglish();
+    [80,250,600,1200,2200].forEach(function(ms){setTimeout(function(){
+      if((localStorage.getItem(KEY)||'en')==='fr') applyFrenchCompact();
+    },ms);});
+  },true);
+
+  /* Google Translate can rewrite labels a moment later; keep only the French enquiry label compact. */
+  const observer=new MutationObserver(function(){
+    if((localStorage.getItem(KEY)||'en')==='fr') applyFrenchCompact();
+  });
+  if(document.body) observer.observe(document.body,{subtree:true,childList:true,characterData:true});
+})();
+</script>
+
 </body>
 </html>
