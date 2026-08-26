@@ -616,6 +616,36 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 #goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
 </style>
 
+
+<style id="kk-fees-mobile-pt-pl-title-v43">
+/* Mobile only: lock Portuguese and Polish Fees & Funding hero titles to the requested rows. Desktop is untouched. */
+.fees-title-mobile-custom{display:none;}
+@media (max-width:620px){
+  html[data-kk-lang="pt"] body.fees-page .fees-hero .hero-copy > h1,
+  html[data-kk-lang="pl"] body.fees-page .fees-hero .hero-copy > h1{display:none!important;}
+
+  html[data-kk-lang="pt"] body.fees-page .fees-title-mobile-custom.pt,
+  html[data-kk-lang="pl"] body.fees-page .fees-title-mobile-custom.pl{
+    display:block!important;
+    align-self:start!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:34px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+    font-weight:700!important;
+    color:var(--deep,#143c2c)!important;
+    margin:0!important;
+    padding:0!important;
+    max-width:none!important;
+  }
+  body.fees-page .fees-title-mobile-custom .green{color:var(--fees-green,#176a3b)!important;}
+}
+@media (max-width:420px){
+  html[data-kk-lang="pt"] body.fees-page .fees-title-mobile-custom.pt,
+  html[data-kk-lang="pl"] body.fees-page .fees-title-mobile-custom.pl{font-size:32px!important;}
+}
+</style>
+
 </head>
 <body class="fees-page">
   <div class="topbar">
@@ -681,6 +711,8 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
         <div class="hero-copy">
           <div class="eyebrow">Fees &amp; Funding</div>
           <h1>Quality Care,<br><span style="color:var(--fees-green)">Affordable for Families</span></h1>
+          <div class="fees-title-mobile-custom pt notranslate" translate="no">Atendimento de<br><span class="green">qualidade, acessível</span><br><span class="green">para famílias</span></div>
+          <div class="fees-title-mobile-custom pl notranslate" translate="no">Opieka wysokiej<br><span class="green">jakości, przystępna</span><br><span class="green">cenowo dla rodzin</span></div>
 <p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
           <div class="hero-actions">
             <a class="btn primary visit-action" href="contact.html?mode=visit#enquiry-form"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
