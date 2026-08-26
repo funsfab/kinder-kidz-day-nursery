@@ -1165,6 +1165,19 @@ html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"
 }
 </style>
 
+
+<style id="kk-hide-google-translate-toolbar-v37">
+/* Hide Google's own translation toolbar. Our Kinder Kidz language picker remains visible. */
+html{margin-top:0!important}
+body{top:0!important}
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+body > .skiptranslate:not(#google_translate_element){display:none!important;visibility:hidden!important;height:0!important;min-height:0!important}
+#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
+</style>
+
 </head>
 <body>
 <div class="topbar">
@@ -1443,5 +1456,36 @@ updateScrollNav();
 })();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=kkGoogleTranslateInit" async></script>
+
+
+<script id="kk-hide-google-translate-toolbar-script-v37">
+(function(){
+  function hideGoogleToolbar(){
+    document.documentElement.style.setProperty('margin-top','0px','important');
+    if(document.body){
+      document.body.style.setProperty('top','0px','important');
+      document.body.querySelectorAll(':scope > .skiptranslate:not(#google_translate_element)').forEach(function(el){
+        el.style.setProperty('display','none','important');
+        el.style.setProperty('height','0px','important');
+        el.setAttribute('aria-hidden','true');
+      });
+    }
+    document.querySelectorAll('.goog-te-banner-frame,.VIpgJd-ZVi9od-ORHb-OEVmcd').forEach(function(el){
+      el.style.setProperty('display','none','important');
+      el.style.setProperty('height','0px','important');
+      el.setAttribute('aria-hidden','true');
+    });
+  }
+  hideGoogleToolbar();
+  window.addEventListener('load',hideGoogleToolbar);
+  window.addEventListener('pageshow',hideGoogleToolbar);
+  document.addEventListener('click',function(e){
+    if(e.target.closest && e.target.closest('.kk-language-picker')){
+      [80,250,600,1200,2200].forEach(function(ms){setTimeout(hideGoogleToolbar,ms);});
+    }
+  });
+  var count=0, timer=setInterval(function(){hideGoogleToolbar(); if(++count>24) clearInterval(timer);},250);
+})();
+</script>
 
 </body></html>
