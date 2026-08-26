@@ -1750,5 +1750,62 @@ updateScrollNav();
 })();
 </script>
 
+
+
+<style id="kk-about-mobile-translated-title-v39">
+/* Mobile only: keep the translated About Us hero title arranged in three clean rows. */
+@media (max-width:620px){
+  html[data-kk-lang="fr"] .hero h1,
+  html[data-kk-lang="es"] .hero h1,
+  html[data-kk-lang="pt"] .hero h1{
+    font-size:clamp(27px,8vw,30px)!important;
+    line-height:1.06!important;
+    letter-spacing:-.028em!important;
+  }
+  .hero h1 .kk-mobile-title-line{display:block;white-space:nowrap}
+  .hero h1 .kk-title-dark{color:var(--deep)!important}
+  .hero h1 .kk-title-green{color:var(--green)!important}
+}
+</style>
+<script id="kk-about-mobile-translated-title-v39-script">
+(function(){
+  const KEY='kkPreferredLanguage';
+  const ENGLISH='A Loving Start,<br><span style="color:var(--green)">A Bright Future</span>';
+  const mobileTitles={
+    fr:'<span class="kk-mobile-title-line kk-title-dark">Un début plein d\'amour,</span><span class="kk-mobile-title-line kk-title-green">un avenir</span><span class="kk-mobile-title-line kk-title-green">prometteur</span>',
+    es:'<span class="kk-mobile-title-line kk-title-dark">Un comienzo lleno de</span><span class="kk-mobile-title-line"><span class="kk-title-dark">amor,</span> <span class="kk-title-green">un futuro</span></span><span class="kk-mobile-title-line kk-title-green">brillante.</span>',
+    pt:'<span class="kk-mobile-title-line kk-title-dark">Um começo cheio de</span><span class="kk-mobile-title-line"><span class="kk-title-dark">amor,</span> <span class="kk-title-green">um futuro</span></span><span class="kk-mobile-title-line kk-title-green">brilhante.</span>'
+  };
+  let busy=false;
+  function title(){return document.querySelector('.hero h1');}
+  function restoreEnglish(){
+    const h=title(); if(!h) return;
+    busy=true; h.innerHTML=ENGLISH; busy=false;
+  }
+  function apply(){
+    if(window.innerWidth>620) return;
+    const lang=localStorage.getItem(KEY)||'en';
+    const html=mobileTitles[lang];
+    const h=title();
+    if(!h || !html || h.innerHTML===html) return;
+    busy=true; h.innerHTML=html; busy=false;
+  }
+  function schedule(){[0,100,280,600,1100,1800].forEach(ms=>setTimeout(apply,ms));}
+  document.addEventListener('click',function(e){
+    const opt=e.target.closest && e.target.closest('.kk-lang-option');
+    if(!opt) return;
+    restoreEnglish();
+    schedule();
+  },true);
+  window.addEventListener('load',schedule);
+  window.addEventListener('pageshow',schedule);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',schedule); else schedule();
+  const h=title();
+  if(h){
+    new MutationObserver(function(){if(!busy) apply();}).observe(h,{subtree:true,childList:true,characterData:true});
+  }
+})();
+</script>
+
 </body>
 </html>
