@@ -852,6 +852,33 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 </style>
 
 
+
+<style id="kk-rooms-mobile-fr-pl-title-v41">
+/* Mobile-only translated title row control. Desktop remains exactly unchanged. */
+.kk-room-title-mobile{display:none;}
+@media (max-width:620px){
+  html[data-kk-lang="fr"] .rooms-page .kk-room-title-default,
+  html[data-kk-lang="pl"] .rooms-page .kk-room-title-default{display:none!important;}
+  html[data-kk-lang="fr"] .rooms-page .kk-room-title-fr,
+  html[data-kk-lang="pl"] .rooms-page .kk-room-title-pl{
+    display:block!important;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:34px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+    font-weight:700;
+    color:var(--deep);
+    margin:0!important;
+    padding:0!important;
+  }
+  html[data-kk-lang="fr"] .rooms-page .kk-room-title-fr br,
+  html[data-kk-lang="pl"] .rooms-page .kk-room-title-pl br{display:block;}
+}
+@media (max-width:420px){
+  html[data-kk-lang="fr"] .rooms-page .kk-room-title-fr,
+  html[data-kk-lang="pl"] .rooms-page .kk-room-title-pl{font-size:32px!important;}
+}
+</style>
 <style id="kk-five-language-style-v36">
 /* Five-language selector — same position on every page. */
 .topbar .container{position:relative!important}
@@ -953,7 +980,9 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
   <div class="container hero-grid">
     <div class="hero-copy">
       <div class="eyebrow">Our Rooms</div>
-      <h1>Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
+      <h1 class="kk-room-title-default">Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
+      <div class="kk-room-title-mobile kk-room-title-fr notranslate" translate="no" aria-hidden="true">Des espaces conçus<br>pour chaque étape de<br>l’apprentissage<br>précoce</div>
+      <div class="kk-room-title-mobile kk-room-title-pl notranslate" translate="no" aria-hidden="true">Sale zaprojektowane<br>dla każdego etapu<br>wczesnej edukacji</div>
       <p>Carefully designed spaces where children feel safe, supported and inspired to learn, play and grow within our warm nursery environment.</p>
       <div class="hero-actions"><a class="btn primary visit-action" href="contact.html?mode=visit#enquiry-form"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html?mode=enquiry#enquiry-form"><span class="btn-icon icon-mail" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div>
     </div>
