@@ -493,6 +493,39 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 #goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
 </style>
 
+
+<style id="kk-gallery-polish-mobile-title-v44">
+/* Mobile only: keep the Polish Gallery hero title on exactly two rows. */
+@media (max-width:620px){
+  html[data-kk-lang="pl"] body.gallery-page .hero h1{
+    font-size:0!important;
+    line-height:0!important;
+    letter-spacing:0!important;
+  }
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::before,
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::after{
+    display:block;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:34px;
+    line-height:1.04;
+    letter-spacing:-.035em;
+    white-space:nowrap;
+  }
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::before{
+    content:"Rzut oka na nasze";
+    color:var(--deep);
+  }
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::after{
+    content:"życie w przedszkolu";
+    color:var(--green);
+  }
+}
+@media (max-width:420px){
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::before,
+  html[data-kk-lang="pl"] body.gallery-page .hero h1::after{font-size:33px;}
+}
+</style>
+
 </head>
 <body class="gallery-page">
   <div class="topbar"><div class="container"><span>☎ 07886 017430</span><span>☎ 01268 425881</span><span>✉ kinderkidzdaynursery@hotmail.com</span><span>🕢 7:30am – 6:30pm, Mon – Fri</span>
