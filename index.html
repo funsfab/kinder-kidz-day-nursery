@@ -1134,6 +1134,37 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="kk-five-language-style-v36">
+/* Five-language selector — same position on every page. */
+.topbar .container{position:relative!important}
+.kk-language-picker{font-family:inherit;position:relative;z-index:240;color:#143c2c}
+.kk-lang-desktop{position:absolute;right:0;top:50%;transform:translateY(-50%);display:block}
+.kk-lang-mobile{display:none;flex:0 0 auto}
+.kk-lang-toggle{height:30px;min-width:112px;padding:0 10px;border:1.5px solid #2f7d4f;border-radius:10px;background:#fff;color:#173c2c;display:flex;align-items:center;justify-content:center;gap:7px;font:800 12px/1 inherit;cursor:pointer;white-space:nowrap;box-shadow:0 3px 10px rgba(20,60,44,.05)}
+.kk-current-flag{font-size:17px;line-height:1}.kk-current-name{min-width:49px;text-align:left}.kk-lang-chevron{font-size:15px;margin-left:2px;transition:transform .18s ease}
+.kk-language-picker.open .kk-lang-chevron{transform:rotate(180deg)}
+.kk-lang-menu{position:absolute;right:0;top:calc(100% + 7px);width:164px;padding:7px;background:#fff;border:1px solid #e5e9df;border-radius:12px;box-shadow:0 15px 34px rgba(18,58,39,.16);display:none;z-index:1000}
+.kk-language-picker.open .kk-lang-menu{display:grid}
+.kk-lang-option{width:100%;min-height:36px;border:0;background:transparent;border-radius:8px;padding:6px 8px;display:grid;grid-template-columns:23px 1fr 16px;gap:7px;align-items:center;text-align:left;color:#25382e;font:700 12px/1.2 inherit;cursor:pointer}
+.kk-lang-option:hover,.kk-lang-option:focus-visible{background:#f2f7ec;outline:none}
+.kk-lang-option b{visibility:hidden;color:#176a3b;font-size:13px}.kk-lang-option.active b{visibility:visible}.kk-lang-option.active{background:#f5f9ef}
+.kk-google-translate-host{position:fixed!important;left:-9999px!important;top:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+body{top:0!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}
+/* Keep translated navigation/buttons inside the already-approved geometry. */
+html[data-kk-lang="fr"] .navlinks,html[data-kk-lang="es"] .navlinks,html[data-kk-lang="pt"] .navlinks,html[data-kk-lang="pl"] .navlinks{font-size:11.5px!important;gap:15px!important}
+html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"] .btn,html[data-kk-lang="pl"] .btn{font-size:12.5px!important}
+@media(max-width:980px){
+  .kk-lang-desktop{display:none!important}.kk-lang-mobile{display:block!important;margin-left:auto;margin-right:2px}.kk-lang-mobile + .menu-btn{margin-left:6px!important}
+  .kk-lang-mobile .kk-lang-toggle{height:38px;min-width:98px;padding:0 8px;border-radius:12px;font-size:11.5px;gap:6px}
+  .kk-lang-mobile .kk-current-flag{font-size:16px}.kk-lang-mobile .kk-current-name{min-width:45px}.kk-lang-mobile .kk-lang-menu{width:158px;top:calc(100% + 8px)}
+}
+@media(max-width:380px){
+  .kk-lang-mobile .kk-lang-toggle{min-width:82px;padding:0 7px}.kk-lang-mobile .kk-current-name{display:none}.kk-lang-mobile .kk-lang-menu{width:154px}
+}
+</style>
+
 </head>
 <body>
 <div class="topbar">
@@ -1142,7 +1173,21 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     <span>☎ 01268 425881</span>
     <span>✉ kinderkidzdaynursery@hotmail.com</span>
     <span>🕒 7:30am – 6:30pm, Mon – Fri</span>
-  </div>
+  
+<div class="kk-language-picker kk-lang-desktop notranslate" translate="no">
+  <button type="button" class="kk-lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
+    <span class="kk-current-flag">🇬🇧</span><span class="kk-current-name">English</span><span class="kk-lang-chevron">⌄</span>
+  </button>
+  <div class="kk-lang-menu" role="menu">
+  <button type="button" class="kk-lang-option" data-lang="en" role="menuitem"><span>🇬🇧</span><span>English</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="fr" role="menuitem"><span>🇫🇷</span><span>Français</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="es" role="menuitem"><span>🇪🇸</span><span>Español</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="pt" role="menuitem"><span>🇵🇹</span><span>Português</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="pl" role="menuitem"><span>🇵🇱</span><span>Polski</span><b>✓</b></button>
+</div>
+</div>
+<div id="google_translate_element" class="kk-google-translate-host notranslate" translate="no" aria-hidden="true"></div>
+</div>
 </div>
 
 <header>
@@ -1154,7 +1199,19 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
       <a href="index.html" class="active">Home</a><a href="about.html">About Us</a><a href="rooms.html">Our Rooms</a><a href="learning.html">Learning & Development</a><a href="fees.html">Fees & Funding</a><a href="gallery.html">Gallery</a><a href="parents.html">Parents</a><a href="contact.html">Contact</a>
     </nav>
     <a class="btn primary desktop-only header-visit visit-action" href="contact.html?mode=visit#enquiry-form"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+    <div class="kk-language-picker kk-lang-mobile notranslate" translate="no">
+  <button type="button" class="kk-lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
+    <span class="kk-current-flag">🇬🇧</span><span class="kk-current-name">English</span><span class="kk-lang-chevron">⌄</span>
+  </button>
+  <div class="kk-lang-menu" role="menu">
+  <button type="button" class="kk-lang-option" data-lang="en" role="menuitem"><span>🇬🇧</span><span>English</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="fr" role="menuitem"><span>🇫🇷</span><span>Français</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="es" role="menuitem"><span>🇪🇸</span><span>Español</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="pt" role="menuitem"><span>🇵🇹</span><span>Português</span><b>✓</b></button>
+  <button type="button" class="kk-lang-option" data-lang="pl" role="menuitem"><span>🇵🇱</span><span>Polski</span><b>✓</b></button>
+</div>
+</div>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
         <path d="M3 6h18"></path><path d="M3 12h18"></path><path d="M3 18h18"></path>
       </svg>
@@ -1308,5 +1365,83 @@ scrollNavBtn.addEventListener('click',()=>{
 window.addEventListener('scroll',updateScrollNav,{passive:true});
 updateScrollNav();
 </script>
+
+
+<script id="kk-five-language-script-v36">
+(function(){
+  const KEY='kkPreferredLanguage';
+  const langs={
+    en:{name:'English',flag:'🇬🇧'},fr:{name:'Français',flag:'🇫🇷'},es:{name:'Español',flag:'🇪🇸'},pt:{name:'Português',flag:'🇵🇹'},pl:{name:'Polski',flag:'🇵🇱'}
+  };
+  let saved=localStorage.getItem(KEY)||'en';
+  if(!langs[saved]) saved='en';
+
+  function setGoogCookie(lang){
+    const value=lang==='en'?'':('/en/'+lang);
+    const expires=lang==='en'?';expires=Thu, 01 Jan 1970 00:00:00 GMT':'';
+    ['/','/kinder-kidz-day-nursery/'].forEach(function(path){
+      document.cookie='googtrans='+value+';path='+path+expires+';SameSite=Lax';
+    });
+  }
+  if(saved!=='en') setGoogCookie(saved);
+
+  function updateUI(lang){
+    document.documentElement.dataset.kkLang=lang;
+    document.querySelectorAll('.kk-language-picker').forEach(function(picker){
+      const flag=picker.querySelector('.kk-current-flag');
+      const name=picker.querySelector('.kk-current-name');
+      if(flag) flag.textContent=langs[lang].flag;
+      if(name) name.textContent=langs[lang].name;
+      picker.querySelectorAll('.kk-lang-option').forEach(function(btn){btn.classList.toggle('active',btn.dataset.lang===lang);});
+    });
+  }
+  function closeAll(){
+    document.querySelectorAll('.kk-language-picker.open').forEach(function(p){p.classList.remove('open');const b=p.querySelector('.kk-lang-toggle');if(b)b.setAttribute('aria-expanded','false');});
+  }
+  function applyGoogle(lang){
+    const combo=document.querySelector('select.goog-te-combo');
+    if(!combo) return false;
+    combo.value=lang==='en'?'':lang;
+    combo.dispatchEvent(new Event('change',{bubbles:true}));
+    return true;
+  }
+  function choose(lang){
+    if(!langs[lang]) return;
+    const previous=localStorage.getItem(KEY)||'en';
+    localStorage.setItem(KEY,lang);updateUI(lang);closeAll();
+    if(lang==='en'){
+      setGoogCookie('en');
+      if(previous!=='en' || document.cookie.indexOf('googtrans=')!==-1) location.reload();
+      return;
+    }
+    setGoogCookie(lang);
+    if(!applyGoogle(lang)) setTimeout(function(){ if(!applyGoogle(lang)) location.reload(); },350);
+  }
+
+  function setupPickers(){
+    updateUI(saved);
+    document.querySelectorAll('.kk-language-picker').forEach(function(picker){
+      const toggle=picker.querySelector('.kk-lang-toggle');
+      toggle.addEventListener('click',function(e){
+        e.stopPropagation();
+        const willOpen=!picker.classList.contains('open');closeAll();
+        if(willOpen){picker.classList.add('open');toggle.setAttribute('aria-expanded','true');const nav=document.getElementById('navlinks');const menu=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(menu)menu.setAttribute('aria-expanded','false');}
+      });
+      picker.querySelectorAll('.kk-lang-option').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();choose(btn.dataset.lang);});});
+    });
+    document.addEventListener('click',closeAll);
+    const menuBtn=document.getElementById('menuBtn');if(menuBtn)menuBtn.addEventListener('click',closeAll,true);
+    window.addEventListener('pageshow',function(){saved=localStorage.getItem(KEY)||'en';if(!langs[saved])saved='en';updateUI(saved);closeAll();});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setupPickers); else setupPickers();
+
+  window.kkGoogleTranslateInit=function(){
+    if(!window.google||!google.translate||!google.translate.TranslateElement) return;
+    new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'fr,es,pt,pl',autoDisplay:false,multilanguagePage:true},'google_translate_element');
+    setTimeout(function(){const lang=localStorage.getItem(KEY)||'en';if(lang!=='en')applyGoogle(lang);},650);
+  };
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=kkGoogleTranslateInit" async></script>
 
 </body></html>
