@@ -2178,6 +2178,130 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
   html[data-kk-lang="pl"] .learning-hero .hero-media{margin-top:18px!important}
 }
 </style>
+
+<style id="kk-learning-desktop-v50-fix">
+@media (min-width:981px){
+  html[data-kk-lang="fr"] .learning-hero .hero-copy>p:not(.kk-learning-desktop-title),
+  html[data-kk-lang="es"] .learning-hero .hero-copy>p:not(.kk-learning-desktop-title),
+  html[data-kk-lang="pt"] .learning-hero .hero-copy>p:not(.kk-learning-desktop-title),
+  html[data-kk-lang="pl"] .learning-hero .hero-copy>p:not(.kk-learning-desktop-title){
+    max-width:600px!important;
+    margin:0 0 18px 0!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .hero-grid,
+  html[data-kk-lang="es"] .learning-hero .hero-grid,
+  html[data-kk-lang="pt"] .learning-hero .hero-grid,
+  html[data-kk-lang="pl"] .learning-hero .hero-grid{
+    grid-template-columns:minmax(0, 1.16fr) minmax(330px, .84fr)!important;
+    column-gap:18px!important;
+    align-items:start!important;
+    min-height:430px!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .hero-copy,
+  html[data-kk-lang="es"] .learning-hero .hero-copy,
+  html[data-kk-lang="pt"] .learning-hero .hero-copy,
+  html[data-kk-lang="pl"] .learning-hero .hero-copy{
+    padding-top:24px!important;
+    max-width:100%!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .hero-media,
+  html[data-kk-lang="es"] .learning-hero .hero-media,
+  html[data-kk-lang="pt"] .learning-hero .hero-media,
+  html[data-kk-lang="pl"] .learning-hero .hero-media{
+    margin-top:24px!important;
+    justify-self:end!important;
+    align-self:start!important;
+    min-width:0!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .hero-media img,
+  html[data-kk-lang="es"] .learning-hero .hero-media img,
+  html[data-kk-lang="pt"] .learning-hero .hero-media img,
+  html[data-kk-lang="pl"] .learning-hero .hero-media img{
+    max-width:100%!important;
+  }
+
+  .kk-learning-desktop-title{margin:0!important;max-width:640px!important;position:relative!important;z-index:2!important}
+  .kk-learning-desktop-title span{display:block!important;white-space:nowrap!important}
+
+  html[data-kk-lang="fr"] .kk-learning-title-fr{font-size:clamp(42px, 3.45vw, 52px)!important;line-height:1.00!important;max-width:620px!important}
+  html[data-kk-lang="es"] .kk-learning-title-es{font-size:clamp(42px, 3.45vw, 52px)!important;line-height:1.00!important;max-width:620px!important}
+  html[data-kk-lang="pt"] .kk-learning-title-pt{font-size:clamp(38px, 3.12vw, 47px)!important;line-height:1.00!important;max-width:610px!important}
+  html[data-kk-lang="pl"] .kk-learning-title-pl{font-size:clamp(40px, 3.25vw, 48px)!important;line-height:1.00!important;max-width:610px!important}
+
+  html[data-kk-lang="fr"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="es"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="pt"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="pl"] .learning-hero .learning-desktop-gap-animation{display:none!important}
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation,
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation,
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation,
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation{
+    display:flex!important;
+    position:relative!important;
+    top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
+    width:100%!important;max-width:620px!important;
+    height:28px!important;
+    margin:12px 0 12px 0!important;
+    padding:0!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    transform:none!important;
+    overflow:visible!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation::before,
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation::before,
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation::before,
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation::before{
+    left:0!important;right:auto!important;top:12px!important;width:66%!important;height:1px!important;opacity:.45!important
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation .m-line,
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation .m-line,
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation .m-line,
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation .m-line{
+    position:absolute!important;
+    left:0!important;right:auto!important;top:12px!important;width:58%!important;min-width:260px!important;height:1px!important
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation .m-dot{top:-4px!important}
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation .m-dot{top:-4px!important}
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation .m-dot{top:-4px!important}
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation .m-dot{top:-4px!important}
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation .m-star,
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation .m-star,
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation .m-star,
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation .m-star{position:absolute!important;right:26%!important;top:0!important;font-size:17px!important}
+
+  html[data-kk-lang="fr"] .learning-hero .mobile-hero-gap-animation .m-leaf,
+  html[data-kk-lang="es"] .learning-hero .mobile-hero-gap-animation .m-leaf,
+  html[data-kk-lang="pt"] .learning-hero .mobile-hero-gap-animation .m-leaf,
+  html[data-kk-lang="pl"] .learning-hero .mobile-hero-gap-animation .m-leaf{position:absolute!important;right:20%!important;top:1px!important;font-size:16px!important}
+
+  html[data-kk-lang="fr"] .learning-hero .hero-actions,
+  html[data-kk-lang="es"] .learning-hero .hero-actions,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions{margin-top:2px!important;position:relative!important;z-index:3!important}
+
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn.primary{width:182px!important;min-width:182px!important}
+
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn.secondary{width:168px!important;min-width:168px!important}
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -2236,9 +2360,9 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 <div class="hero-copy">
 <div class="eyebrow">Learning &amp; Development</div>
 <h1>Learning, Play &amp;<br/><span style="color:var(--green)">Discovery Every Day</span></h1>
-<h1 class="kk-learning-desktop-title kk-learning-title-fr notranslate" translate="no" aria-label="Apprentissage, jeu et découverte au quotidien"><span>Apprentissage, jeu et</span><span class="green">découverte au quotidien</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-fr notranslate" translate="no" aria-label="Apprentissage, jeu et découverte au quotidien"><span>Apprentissage, jeu et</span><span class="green">découverte au</span><span class="green">quotidien</span></h1>
 <h1 class="kk-learning-desktop-title kk-learning-title-es notranslate" translate="no" aria-label="Aprendizaje, juego y descubrimiento todos los días"><span>Aprendizaje, juego y</span><span class="green">descubrimiento</span><span class="green">todos los días.</span></h1>
-<h1 class="kk-learning-desktop-title kk-learning-title-pt notranslate" translate="no" aria-label="Aprendizagem, brincadeira e descoberta todos os dias"><span>Aprendizagem, brincadeira e</span><span class="green">descoberta todos os</span><span class="green">dias</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-pt notranslate" translate="no" aria-label="Aprendizagem, brincadeira e descoberta todos os dias"><span>Aprendizagem,</span><span>brincadeira e</span><span class="green">descoberta todos os dias</span></h1>
 <h1 class="kk-learning-desktop-title kk-learning-title-pl notranslate" translate="no" aria-label="Nauka, zabawa i odkrywanie każdego dnia"><span>Nauka, zabawa i</span><span class="green">odkrywanie każdego</span><span class="green">dnia</span></h1>
 <div aria-hidden="true" class="learning-desktop-gap-animation"><span class="ld-line"><span class="ld-runner"></span></span><span class="ld-book">▤</span><span class="ld-star">☆</span><span class="ld-leaf">⌁</span></div>
 <div aria-hidden="true" class="mobile-hero-gap-animation"><span class="m-line"><span class="m-dot"></span></span><span class="m-star">☆</span><span class="m-leaf">⌁</span></div>
