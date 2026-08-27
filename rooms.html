@@ -922,6 +922,49 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 #goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
 </style>
 
+<style id="kk-rooms-desktop-translated-title-rows-v48">
+/* DESKTOP ONLY: fixed translated hero-title rows for Our Rooms. Mobile remains untouched. */
+.kk-room-title-desktop{display:none;}
+@media (min-width:981px){
+  html[data-kk-lang="fr"] .kk-room-title-default,
+  html[data-kk-lang="es"] .kk-room-title-default,
+  html[data-kk-lang="pt"] .kk-room-title-default,
+  html[data-kk-lang="pl"] .kk-room-title-default{display:none!important;}
+
+  html[data-kk-lang="fr"] .kk-room-title-desktop-fr,
+  html[data-kk-lang="es"] .kk-room-title-desktop-es,
+  html[data-kk-lang="pt"] .kk-room-title-desktop-pt,
+  html[data-kk-lang="pl"] .kk-room-title-desktop-pl{
+    display:block!important;
+    align-self:start!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-weight:700!important;
+    letter-spacing:-.03em!important;
+    line-height:1.01!important;
+    margin:0!important;
+    padding:0!important;
+    max-width:520px!important;
+    color:var(--deep)!important;
+  }
+
+  /* Four-row languages are deliberately smaller so the paragraph never overlaps. */
+  html[data-kk-lang="fr"] .kk-room-title-desktop-fr,
+  html[data-kk-lang="es"] .kk-room-title-desktop-es,
+  html[data-kk-lang="pt"] .kk-room-title-desktop-pt{font-size:40px!important;}
+
+  /* Polish is three rows. */
+  html[data-kk-lang="pl"] .kk-room-title-desktop-pl{font-size:44px!important;}
+
+  .kk-room-title-desktop .green{color:var(--green)!important;}
+  .kk-room-title-desktop span{display:block!important;white-space:nowrap!important;}
+}
+@media (min-width:981px) and (max-width:1199px){
+  html[data-kk-lang="fr"] .kk-room-title-desktop-fr,
+  html[data-kk-lang="es"] .kk-room-title-desktop-es,
+  html[data-kk-lang="pt"] .kk-room-title-desktop-pt{font-size:37px!important;}
+  html[data-kk-lang="pl"] .kk-room-title-desktop-pl{font-size:41px!important;}
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -981,6 +1024,10 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
     <div class="hero-copy">
       <div class="eyebrow">Our Rooms</div>
       <h1 class="kk-room-title-default">Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
+      <div class="kk-room-title-desktop kk-room-title-desktop-fr notranslate" translate="no" aria-hidden="true"><span>Des espaces conçus</span><span class="green">pour chaque étape</span><span class="green">de l’apprentissage</span><span class="green">précoce</span></div>
+      <div class="kk-room-title-desktop kk-room-title-desktop-es notranslate" translate="no" aria-hidden="true"><span>Salas diseñadas para</span><span class="green">cada etapa del</span><span class="green">aprendizaje</span><span class="green">temprano</span></div>
+      <div class="kk-room-title-desktop kk-room-title-desktop-pt notranslate" translate="no" aria-hidden="true"><span>Salas projetadas</span><span class="green">para cada etapa</span><span class="green">da aprendizagem</span><span class="green">infantil</span></div>
+      <div class="kk-room-title-desktop kk-room-title-desktop-pl notranslate" translate="no" aria-hidden="true"><span>Sale zaprojektowane</span><span class="green">dla każdego etapu</span><span class="green">wczesnej edukacji</span></div>
       <div class="kk-room-title-mobile kk-room-title-fr notranslate" translate="no" aria-hidden="true">Des espaces conçus<br>pour chaque étape de<br>l’apprentissage<br>précoce.</div>
       <div class="kk-room-title-mobile kk-room-title-pl notranslate" translate="no" aria-hidden="true">Sale zaprojektowane<br>dla każdego etapu<br>wczesnej edukacji</div>
       <p>Carefully designed spaces where children feel safe, supported and inspired to learn, play and grow within our warm nursery environment.</p>
