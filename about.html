@@ -1327,6 +1327,54 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 #goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
 </style>
 
+
+<style id="kk-about-desktop-translated-hero-v47">
+/* ABOUT US — DESKTOP ONLY. Three clean title rows, then animation, body copy and buttons in normal flow. */
+@media(min-width:981px){
+  html[data-kk-lang="fr"] .hero-copy,
+  html[data-kk-lang="es"] .hero-copy,
+  html[data-kk-lang="pt"] .hero-copy{
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;align-content:initial!important;
+    min-height:398px!important;padding:20px 0 0!important;margin:0!important;
+  }
+  html[data-kk-lang="fr"] .hero-copy .eyebrow,
+  html[data-kk-lang="es"] .hero-copy .eyebrow,
+  html[data-kk-lang="pt"] .hero-copy .eyebrow{flex:0 0 auto!important;margin:0 0 7px!important}
+  html[data-kk-lang="fr"] .hero-copy h1,
+  html[data-kk-lang="es"] .hero-copy h1,
+  html[data-kk-lang="pt"] .hero-copy h1{
+    flex:0 0 auto!important;width:100%!important;max-width:540px!important;margin:0!important;padding:0!important;
+    font-size:46px!important;line-height:1.02!important;letter-spacing:-.032em!important;
+  }
+  .hero-copy h1 .kk-desktop-title-line{display:block!important;white-space:nowrap!important}
+  .hero-copy h1 .kk-desktop-title-dark{color:var(--deep)!important}
+  .hero-copy h1 .kk-desktop-title-green{color:var(--green)!important}
+  html[data-kk-lang="fr"] .hero-copy .mobile-hero-gap-animation,
+  html[data-kk-lang="es"] .hero-copy .mobile-hero-gap-animation,
+  html[data-kk-lang="pt"] .hero-copy .mobile-hero-gap-animation{display:none!important}
+  html[data-kk-lang="fr"] .hero-copy .about-hero-mini-animation,
+  html[data-kk-lang="es"] .hero-copy .about-hero-mini-animation,
+  html[data-kk-lang="pt"] .hero-copy .about-hero-mini-animation{
+    display:flex!important;position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+    flex:0 0 44px!important;width:min(520px,98%)!important;height:44px!important;margin:5px 0 5px!important;
+    align-items:center!important;justify-content:center!important;overflow:visible!important;transform:none!important;
+  }
+  html[data-kk-lang="fr"] .hero-copy>p,
+  html[data-kk-lang="es"] .hero-copy>p,
+  html[data-kk-lang="pt"] .hero-copy>p{
+    flex:0 0 auto!important;width:100%!important;max-width:530px!important;margin:0 0 11px!important;padding:0!important;
+    font-size:15px!important;line-height:1.45!important;
+  }
+  html[data-kk-lang="fr"] .hero-copy .hero-actions,
+  html[data-kk-lang="es"] .hero-copy .hero-actions,
+  html[data-kk-lang="pt"] .hero-copy .hero-actions{
+    flex:0 0 auto!important;margin:0!important;padding:0!important;align-self:flex-start!important;
+  }
+}
+@media(min-width:981px) and (max-width:1199px){
+  html[data-kk-lang="fr"] .hero-copy h1,html[data-kk-lang="es"] .hero-copy h1,html[data-kk-lang="pt"] .hero-copy h1{font-size:42px!important}
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -1807,5 +1855,30 @@ updateScrollNav();
 })();
 </script>
 
+
+<script id="kk-about-desktop-translated-title-v47-script">
+(function(){
+  const KEY='kkPreferredLanguage';
+  const ENGLISH='A Loving Start,<br><span style="color:var(--green)">A Bright Future</span>';
+  const desktopTitles={
+    fr:'<span class="kk-desktop-title-line kk-desktop-title-dark">Un début plein</span><span class="kk-desktop-title-line"><span class="kk-desktop-title-dark">d\'amour,</span> <span class="kk-desktop-title-green">un avenir</span></span><span class="kk-desktop-title-line kk-desktop-title-green">prometteur</span>',
+    es:'<span class="kk-desktop-title-line kk-desktop-title-dark">Un comienzo lleno de</span><span class="kk-desktop-title-line"><span class="kk-desktop-title-dark">amor,</span> <span class="kk-desktop-title-green">un futuro</span></span><span class="kk-desktop-title-line kk-desktop-title-green">brillante.</span>',
+    pt:'<span class="kk-desktop-title-line kk-desktop-title-dark">Um começo cheio de</span><span class="kk-desktop-title-line"><span class="kk-desktop-title-dark">amor,</span> <span class="kk-desktop-title-green">um futuro</span></span><span class="kk-desktop-title-line kk-desktop-title-green">brilhante.</span>'
+  };
+  let busy=false;
+  function h1(){return document.querySelector('.hero h1');}
+  function restore(){const h=h1();if(!h)return;busy=true;h.innerHTML=ENGLISH;busy=false}
+  function apply(){
+    if(window.innerWidth<981)return;
+    const lang=localStorage.getItem(KEY)||'en', html=desktopTitles[lang], h=h1();
+    if(!h||!html||h.innerHTML===html)return;busy=true;h.innerHTML=html;busy=false;
+  }
+  function schedule(){[0,100,280,600,1100,1800].forEach(ms=>setTimeout(apply,ms))}
+  document.addEventListener('click',function(e){const opt=e.target.closest&&e.target.closest('.kk-lang-option');if(!opt)return;restore();schedule()},true);
+  window.addEventListener('load',schedule);window.addEventListener('pageshow',schedule);window.addEventListener('resize',schedule);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule);else schedule();
+  const h=h1();if(h)new MutationObserver(function(){if(!busy)apply()}).observe(h,{subtree:true,childList:true,characterData:true});
+})();
+</script>
 </body>
 </html>

@@ -2043,6 +2043,42 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 #goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
 </style>
 
+
+<style id="kk-learning-mobile-proof-fix-v47">
+/* LEARNING & DEVELOPMENT — MOBILE ONLY. Keep the translated Ofsted proof content inside its card. */
+.kk-proof-rating{display:none}
+@media(max-width:620px){
+  .learning-proof .kk-learning-ofsted-proof{
+    display:grid!important;
+    grid-template-columns:76px minmax(0,1fr)!important;
+    align-items:center!important;
+    gap:10px!important;
+    min-width:0!important;
+    overflow:hidden!important;
+    padding:12px 10px!important;
+  }
+  .learning-proof .kk-learning-proof-badge{
+    width:76px!important;height:76px!important;min-width:76px!important;max-width:76px!important;
+    padding:7px 5px!important;border-radius:16px!important;box-sizing:border-box!important;
+    display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;
+    text-align:center!important;white-space:normal!important;overflow:hidden!important;font-size:10px!important;line-height:1!important;
+  }
+  .learning-proof .kk-learning-proof-badge>span{font-size:10px!important;line-height:1!important;font-weight:800!important}
+  .learning-proof .kk-learning-proof-badge .kk-proof-rating{font-size:15px!important;line-height:1!important;font-weight:900!important;letter-spacing:0!important}
+  html:not([data-kk-lang]) .kk-proof-rating-en,html[data-kk-lang="en"] .kk-proof-rating-en,
+  html[data-kk-lang="fr"] .kk-proof-rating-fr,html[data-kk-lang="es"] .kk-proof-rating-es,
+  html[data-kk-lang="pt"] .kk-proof-rating-pt,html[data-kk-lang="pl"] .kk-proof-rating-pl{display:block!important}
+  .learning-proof .kk-learning-proof-copy{min-width:0!important;width:100%!important;overflow:hidden!important}
+  .learning-proof .kk-learning-proof-copy>b{
+    display:block!important;max-width:100%!important;font-size:12px!important;line-height:1.22!important;
+    white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;margin:0!important
+  }
+  .learning-proof .kk-learning-proof-copy>small{
+    display:block!important;max-width:100%!important;font-size:10.5px!important;line-height:1.25!important;
+    white-space:normal!important;overflow-wrap:anywhere!important;margin-top:4px!important
+  }
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -2156,7 +2192,7 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 </section>
 <section class="learning-proof">
 <div class="container proof-row">
-<div class="proof-item"><span class="proof-badge">Ofsted<br/><b>GOOD</b></span><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
+<div class="proof-item kk-learning-ofsted-proof"><span class="proof-badge kk-learning-proof-badge notranslate" translate="no"><span>Ofsted</span><b class="kk-proof-rating kk-proof-rating-en">GOOD</b><b class="kk-proof-rating kk-proof-rating-fr">BON</b><b class="kk-proof-rating kk-proof-rating-es">BUENO</b><b class="kk-proof-rating kk-proof-rating-pt">BOM</b><b class="kk-proof-rating kk-proof-rating-pl">DOBRY</b></span><div class="kk-learning-proof-copy"><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
 <div class="proof-item"><span class="proof-icon">☆</span><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
 <div class="proof-item"><span class="proof-icon">♧</span><div><b>3 Months – 5 Years</b><small>Caring for children from 3 months to 5 years</small></div></div>
 <div class="proof-item"><span class="proof-icon">◷</span><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
