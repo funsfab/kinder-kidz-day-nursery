@@ -2079,6 +2079,105 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
   }
 }
 </style>
+<style id="kk-learning-desktop-translated-hero-v49">
+/* LEARNING & DEVELOPMENT — DESKTOP ONLY.
+   Keep mobile approved layout untouched. Organise translated hero titles, animation, body and buttons without overlap. */
+.kk-learning-desktop-title{display:none}
+@media (min-width:981px){
+  /* Use fixed, approved line breaks for translated desktop titles instead of browser/Google wrapping. */
+  html[data-kk-lang="fr"] .learning-hero .hero-copy>h1:not(.kk-learning-desktop-title),
+  html[data-kk-lang="es"] .learning-hero .hero-copy>h1:not(.kk-learning-desktop-title),
+  html[data-kk-lang="pt"] .learning-hero .hero-copy>h1:not(.kk-learning-desktop-title),
+  html[data-kk-lang="pl"] .learning-hero .hero-copy>h1:not(.kk-learning-desktop-title){display:none!important}
+
+  html[data-kk-lang="fr"] .kk-learning-title-fr,
+  html[data-kk-lang="es"] .kk-learning-title-es,
+  html[data-kk-lang="pt"] .kk-learning-title-pt,
+  html[data-kk-lang="pl"] .kk-learning-title-pl{display:block!important}
+
+  /* Let translated content determine its natural height. This prevents the title/animation/body overlap. */
+  html[data-kk-lang="fr"] .learning-hero .hero-copy,
+  html[data-kk-lang="es"] .learning-hero .hero-copy,
+  html[data-kk-lang="pt"] .learning-hero .hero-copy,
+  html[data-kk-lang="pl"] .learning-hero .hero-copy{
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;
+    min-height:350px!important;height:auto!important;padding-top:24px!important;gap:0!important;
+    grid-template-rows:none!important;row-gap:0!important;overflow:visible!important
+  }
+
+  .kk-learning-desktop-title{
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:45px!important;line-height:1.02!important;letter-spacing:-.028em!important;
+    max-width:600px!important;margin:0!important;padding:0!important;
+  }
+  .kk-learning-desktop-title .green{color:var(--green)!important}
+  .kk-learning-desktop-title span{display:block!important;white-space:nowrap!important}
+
+  /* Spanish/Portuguese/Polish are a little longer, so keep the same visual size but give them extra width. */
+  .kk-learning-title-es,.kk-learning-title-pt,.kk-learning-title-pl{max-width:610px!important}
+
+  /* Animation belongs below the complete title, never through it. */
+  html[data-kk-lang="fr"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="es"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="pt"] .learning-hero .learning-desktop-gap-animation,
+  html[data-kk-lang="pl"] .learning-hero .learning-desktop-gap-animation{
+    display:flex!important;position:relative!important;flex:0 0 38px!important;height:38px!important;
+    width:min(500px,96%)!important;margin:5px 0 5px!important;transform:none!important;top:auto!important;left:auto!important;
+  }
+
+  html[data-kk-lang="fr"] .learning-hero .hero-copy>p,
+  html[data-kk-lang="es"] .learning-hero .hero-copy>p,
+  html[data-kk-lang="pt"] .learning-hero .hero-copy>p,
+  html[data-kk-lang="pl"] .learning-hero .hero-copy>p{
+    position:relative!important;display:block!important;max-width:550px!important;margin:0 0 9px!important;padding:0!important;
+    font-size:14px!important;line-height:1.43!important;overflow:visible!important;
+  }
+
+  /* Keep translated buttons neat and fully contained. */
+  html[data-kk-lang="fr"] .learning-hero .hero-actions,
+  html[data-kk-lang="es"] .learning-hero .hero-actions,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions{
+    display:flex!important;flex-wrap:nowrap!important;gap:10px!important;margin:0!important;padding:0!important;
+    align-items:center!important;position:relative!important;
+  }
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn{
+    height:42px!important;min-height:42px!important;padding:0 11px!important;font-size:12px!important;line-height:1!important;
+    gap:6px!important;white-space:nowrap!important;overflow:hidden!important;justify-content:center!important;box-sizing:border-box!important;
+  }
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn.primary,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn.primary{width:176px!important;min-width:176px!important}
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn.secondary,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn.secondary{width:154px!important;min-width:154px!important}
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn-icon,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn-icon,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn-icon,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn-icon{
+    width:16px!important;height:16px!important;min-width:16px!important;flex:0 0 16px!important;margin:0!important
+  }
+  html[data-kk-lang="fr"] .learning-hero .hero-actions .btn-icon svg,
+  html[data-kk-lang="es"] .learning-hero .hero-actions .btn-icon svg,
+  html[data-kk-lang="pt"] .learning-hero .hero-actions .btn-icon svg,
+  html[data-kk-lang="pl"] .learning-hero .hero-actions .btn-icon svg{width:16px!important;height:16px!important}
+
+  /* Keep the hero's right image and the next section where they already were. */
+  html[data-kk-lang="fr"] .learning-hero .hero-grid,
+  html[data-kk-lang="es"] .learning-hero .hero-grid,
+  html[data-kk-lang="pt"] .learning-hero .hero-grid,
+  html[data-kk-lang="pl"] .learning-hero .hero-grid{min-height:410px!important;align-items:start!important}
+  html[data-kk-lang="fr"] .learning-hero .hero-media,
+  html[data-kk-lang="es"] .learning-hero .hero-media,
+  html[data-kk-lang="pt"] .learning-hero .hero-media,
+  html[data-kk-lang="pl"] .learning-hero .hero-media{margin-top:18px!important}
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -2137,6 +2236,10 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
 <div class="hero-copy">
 <div class="eyebrow">Learning &amp; Development</div>
 <h1>Learning, Play &amp;<br/><span style="color:var(--green)">Discovery Every Day</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-fr notranslate" translate="no" aria-label="Apprentissage, jeu et découverte au quotidien"><span>Apprentissage, jeu et</span><span class="green">découverte au quotidien</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-es notranslate" translate="no" aria-label="Aprendizaje, juego y descubrimiento todos los días"><span>Aprendizaje, juego y</span><span class="green">descubrimiento</span><span class="green">todos los días.</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-pt notranslate" translate="no" aria-label="Aprendizagem, brincadeira e descoberta todos os dias"><span>Aprendizagem, brincadeira e</span><span class="green">descoberta todos os</span><span class="green">dias</span></h1>
+<h1 class="kk-learning-desktop-title kk-learning-title-pl notranslate" translate="no" aria-label="Nauka, zabawa i odkrywanie każdego dnia"><span>Nauka, zabawa i</span><span class="green">odkrywanie każdego</span><span class="green">dnia</span></h1>
 <div aria-hidden="true" class="learning-desktop-gap-animation"><span class="ld-line"><span class="ld-runner"></span></span><span class="ld-book">▤</span><span class="ld-star">☆</span><span class="ld-leaf">⌁</span></div>
 <div aria-hidden="true" class="mobile-hero-gap-animation"><span class="m-line"><span class="m-dot"></span></span><span class="m-star">☆</span><span class="m-leaf">⌁</span></div>
 <p>We nurture every child’s unique potential through play, exploration and meaningful experiences, guided by the Early Years Foundation Stage (EYFS) framework. For children aged 3 months to 5 years.</p>
