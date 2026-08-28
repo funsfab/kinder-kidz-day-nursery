@@ -2302,5 +2302,160 @@ scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo
 window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
 </script>
 <script src="js/language.js"></script>
+
+<script id="learning-desktop-only-polished-v67">
+/* LEARNING & DEVELOPMENT v67 — DESKTOP ONLY.
+   Mobile/tablet (980px and below) are deliberately untouched.
+   Uses the restrained Our Rooms/French desktop title scale, keeps the body
+   copy and action buttons at one fixed position in every language, and puts
+   the moving nursery animation in the title/body gap. */
+(function(){
+  'use strict';
+  var desktop=window.matchMedia ? window.matchMedia('(min-width:981px)') : null;
+
+  var desktopTitles={
+    en:[['Learning, Play &',0],['Discovery Every Day',1]],
+    fr:[['Apprentissage, jeu et',0],['découverte au quotidien',1]],
+    es:[['Aprendizaje, juego y',0],['descubrimiento',1],['todos los días.',1]],
+    pt:[['Aprendizagem, brincadeira e',0],['descoberta todos os dias',1]],
+    pl:[['Nauka, zabawa i',0],['odkrywanie każdego',1],['dnia',1]]
+  };
+  var mobileTitles={
+    en:[['Learning, Play &',0],['Discovery Every Day',1]],
+    fr:[['Apprentissage, jeu et',0],['découverte au',1],['quotidien',1]],
+    es:[['Aprendizaje, juego y',0],['descubrimiento',1],['todos los días.',1]],
+    pt:[['Aprendizagem, brincadeira e',0],['descoberta todos os',1],['dias',1]],
+    pl:[['Nauka, zabawa i',0],['odkrywanie każdego',1],['dnia',1]]
+  };
+
+  function imp(el,prop,val){ if(el) el.style.setProperty(prop,val,'important'); }
+  function lang(){
+    var l=document.documentElement.dataset.kkLang || localStorage.getItem('kkPreferredLanguage') || 'en';
+    return desktopTitles[l] ? l : 'en';
+  }
+  function safe(t){
+    return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function renderTitle(title,l,source){
+    source=source||desktopTitles;
+    var rows=source[l] || source.en;
+    title.innerHTML=rows.map(function(row){
+      return '<span class="kk-title-line'+(row[1]?' kk-title-green':'')+'">'+safe(row[0])+'</span>';
+    }).join('');
+    Array.prototype.forEach.call(title.querySelectorAll('.kk-title-line'),function(line){
+      imp(line,'display','block'); imp(line,'white-space','nowrap');
+    });
+    Array.prototype.forEach.call(title.querySelectorAll('.kk-title-green'),function(line){
+      imp(line,'color','var(--green)');
+    });
+  }
+
+  function clearDesktopOnly(){
+    if(desktop && desktop.matches) return;
+    var copy=document.querySelector('.learning-hero .hero-copy');
+    if(!copy) return;
+    var eyebrow=copy.querySelector(':scope > .eyebrow');
+    var title=document.getElementById('kkHeroTitle');
+    var animation=copy.querySelector(':scope > .learning-desktop-gap-animation');
+    var paragraph=copy.querySelector(':scope > p');
+    var actions=copy.querySelector(':scope > .hero-actions');
+    var hadDesktopLock=!!(title && title.hasAttribute('data-kk-learning-v67'));
+    [copy,eyebrow,title,animation,paragraph,actions].forEach(function(el){
+      if(!el || !el.hasAttribute('data-kk-learning-v67')) return;
+      ['position','display','height','min-height','max-height','padding','margin','overflow','left','top','width','max-width','font-size','line-height','letter-spacing','align-items','justify-content','gap','flex-wrap','pointer-events'].forEach(function(prop){el.style.removeProperty(prop);});
+      el.removeAttribute('data-kk-learning-v67');
+    });
+    /* If a desktop window is resized down, restore the already-approved mobile line breaks. */
+    if(hadDesktopLock && title) renderTitle(title,lang(),mobileTitles);
+  }
+
+  function apply(){
+    if(!desktop || !desktop.matches){ clearDesktopOnly(); return; }
+    var body=document.body;
+    if(!body || !body.classList.contains('page-learning')) return;
+
+    var copy=document.querySelector('.learning-hero .hero-copy');
+    var eyebrow=copy && copy.querySelector(':scope > .eyebrow');
+    var title=document.getElementById('kkHeroTitle');
+    var animation=copy && copy.querySelector(':scope > .learning-desktop-gap-animation');
+    var paragraph=copy && copy.querySelector(':scope > p');
+    var actions=copy && copy.querySelector(':scope > .hero-actions');
+    if(!copy || !eyebrow || !title || !animation || !paragraph || !actions) return;
+
+    renderTitle(title,lang());
+
+    /* Remove the global English-master hero lock on this desktop page only. */
+    [copy,eyebrow,title,animation,paragraph,actions].forEach(function(el){
+      el.removeAttribute('data-kk-hero-lock');
+      el.setAttribute('data-kk-learning-v67','');
+    });
+
+    var compact=window.innerWidth < 1200;
+    var titleSize=compact ? 36 : 38;
+    var titleTop=compact ? 48 : 50;
+    var rowCount=(desktopTitles[lang()]||desktopTitles.en).length;
+    var animationTop=rowCount===2 ? (compact ? 154 : 158) : (compact ? 174 : 178);
+    var paragraphTop=compact ? 226 : 232;
+    var actionsTop=compact ? 298 : 304;
+    var copyHeight=compact ? 346 : 352;
+
+    imp(copy,'position','relative');
+    imp(copy,'display','block');
+    imp(copy,'height',copyHeight+'px');
+    imp(copy,'min-height',copyHeight+'px');
+    imp(copy,'max-height',copyHeight+'px');
+    imp(copy,'padding','20px 0 0');
+    imp(copy,'margin','0');
+    imp(copy,'overflow','visible');
+
+    imp(eyebrow,'position','absolute'); imp(eyebrow,'left','0'); imp(eyebrow,'top','20px');
+    imp(eyebrow,'width','520px'); imp(eyebrow,'height','16px'); imp(eyebrow,'margin','0');
+    imp(eyebrow,'font-size','12px'); imp(eyebrow,'line-height','16px');
+
+    /* Same restrained title size across all five desktop languages. */
+    imp(title,'position','absolute'); imp(title,'left','0'); imp(title,'top',titleTop+'px');
+    imp(title,'width','560px'); imp(title,'max-width','560px'); imp(title,'height','auto');
+    imp(title,'max-height','none'); imp(title,'overflow','visible'); imp(title,'margin','0'); imp(title,'padding','0');
+    imp(title,'font-size',titleSize+'px'); imp(title,'line-height','1.04'); imp(title,'letter-spacing','-.025em');
+
+    /* The animation is always centred between the title zone and body copy. */
+    imp(animation,'position','absolute'); imp(animation,'left','0'); imp(animation,'top',animationTop+'px');
+    imp(animation,'display','flex'); imp(animation,'width','500px'); imp(animation,'max-width','500px');
+    imp(animation,'height','42px'); imp(animation,'margin','0'); imp(animation,'padding','0');
+    imp(animation,'align-items','center'); imp(animation,'justify-content','center'); imp(animation,'pointer-events','none');
+
+    /* Paragraph and buttons are locked to one shared desktop position. */
+    imp(paragraph,'position','absolute'); imp(paragraph,'left','0'); imp(paragraph,'top',paragraphTop+'px');
+    imp(paragraph,'width','520px'); imp(paragraph,'max-width','520px'); imp(paragraph,'height','66px');
+    imp(paragraph,'max-height','66px'); imp(paragraph,'overflow','visible'); imp(paragraph,'margin','0'); imp(paragraph,'padding','0');
+    imp(paragraph,'font-size','15px'); imp(paragraph,'line-height','1.45');
+
+    imp(actions,'position','absolute'); imp(actions,'left','0'); imp(actions,'top',actionsTop+'px');
+    imp(actions,'width','auto'); imp(actions,'height','42px'); imp(actions,'max-height','42px');
+    imp(actions,'margin','0'); imp(actions,'padding','0'); imp(actions,'display','flex');
+    imp(actions,'align-items','center'); imp(actions,'gap','10px'); imp(actions,'flex-wrap','nowrap');
+
+    Array.prototype.forEach.call(actions.querySelectorAll('.btn'),function(btn){
+      imp(btn,'width','148px'); imp(btn,'min-width','148px'); imp(btn,'max-width','148px');
+      imp(btn,'height','42px'); imp(btn,'min-height','42px'); imp(btn,'max-height','42px'); imp(btn,'margin','0');
+    });
+  }
+
+  function settle(){
+    apply();
+    setTimeout(apply,20);
+    setTimeout(apply,120);
+    setTimeout(apply,220);
+    setTimeout(apply,540);
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',settle,{once:true});
+  else settle();
+  document.addEventListener('kk:languagechange',settle);
+  window.addEventListener('load',settle,{once:true});
+  window.addEventListener('resize',function(){ if(desktop && desktop.matches) settle(); else clearDesktopOnly(); },{passive:true});
+})();
+</script>
+
 </body>
 </html>
