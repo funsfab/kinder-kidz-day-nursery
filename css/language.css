@@ -1,181 +1,61 @@
-/* Kinder Kidz first-party language layout. */
-
-/* Keep the language control the same size in every language. */
-.kk-lang-toggle{box-sizing:border-box!important}
-.kk-current-name{white-space:nowrap!important}
-
-/* Translated navigation and buttons stay inside the approved geometry. */
-html[data-kk-lang="fr"] .navlinks,
-html[data-kk-lang="es"] .navlinks,
-html[data-kk-lang="pt"] .navlinks,
-html[data-kk-lang="pl"] .navlinks{font-size:11.5px!important;gap:14px!important}
-html[data-kk-lang="fr"] .btn,
-html[data-kk-lang="es"] .btn,
-html[data-kk-lang="pt"] .btn,
-html[data-kk-lang="pl"] .btn{font-size:12.5px!important;white-space:nowrap!important}
-html[data-kk-lang="fr"] .btn-label,
-html[data-kk-lang="es"] .btn-label,
-html[data-kk-lang="pt"] .btn-label,
-html[data-kk-lang="pl"] .btn-label{white-space:nowrap!important}
+/* Kinder Kidz native five-language system. No external translator. */
+.kk-i18n-pending body{visibility:hidden!important}
+.kk-language-picker{font-family:inherit;position:relative;z-index:240;color:#143c2c}
+.kk-lang-desktop{position:absolute;right:0;top:50%;transform:translateY(-50%);display:block}
+.kk-lang-mobile{display:none}
+.topbar .container{position:relative}
+.kk-lang-toggle{box-sizing:border-box;height:30px;min-width:112px;padding:0 10px;border:1.5px solid #2f7d4f;border-radius:10px;background:#fff;color:#173c2c;display:flex;align-items:center;justify-content:center;gap:7px;font:800 12px/1 inherit;cursor:pointer;white-space:nowrap;box-shadow:0 3px 10px rgba(20,60,44,.05)}
+.kk-current-flag{font-size:15px}.kk-current-name{white-space:nowrap}.kk-lang-chevron{font-size:12px;transition:.18s}.kk-language-picker.open .kk-lang-chevron{transform:rotate(180deg)}
+.kk-lang-menu{position:absolute;right:0;top:calc(100% + 7px);width:164px;padding:7px;background:#fff;border:1px solid #e5e9df;border-radius:12px;box-shadow:0 15px 34px rgba(18,58,39,.16);display:none;z-index:1000}
+.kk-language-picker.open .kk-lang-menu{display:grid}
+.kk-lang-option{width:100%;height:34px;border:0;background:transparent;border-radius:8px;padding:0 8px;display:grid;grid-template-columns:24px 1fr 16px;align-items:center;text-align:left;gap:6px;font:700 12px/1 inherit;color:#21352a;cursor:pointer}.kk-lang-option:hover,.kk-lang-option.active{background:#f0f6ec}.kk-lang-option b{opacity:0;color:#1c7445}.kk-lang-option.active b{opacity:1}
+.kk-title-line{display:block;white-space:nowrap}.kk-title-green{color:var(--green,#176a3b)}
+html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"] .btn,html[data-kk-lang="pl"] .btn{white-space:nowrap}
+/* Keep Ofsted wording centered in the existing badge geometry. */
+.trust-icon.ofsted,.proof-badge,.quality .badge{text-align:center!important;line-height:1.06!important;overflow:hidden!important}
+html[data-kk-lang="fr"] .trust-icon.ofsted,html[data-kk-lang="es"] .trust-icon.ofsted,html[data-kk-lang="pt"] .trust-icon.ofsted,html[data-kk-lang="pl"] .trust-icon.ofsted{font-size:11px!important}
+html[data-kk-lang="fr"] .proof-badge,html[data-kk-lang="es"] .proof-badge,html[data-kk-lang="pt"] .proof-badge,html[data-kk-lang="pl"] .proof-badge{font-size:11px!important}
 
 @media (min-width:981px){
-  /* Header remains static across all five languages. */
-  header .nav{min-height:82px!important;height:82px!important}
-  .brand,.brand img{flex:0 0 auto!important}
-
-  /* HOME: fixed rows mean only the title typography changes. */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-home .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 176px 80px 44px!important;
-    row-gap:8px!important;
-    align-content:start!important;
-    min-height:360px!important;
-    padding-top:28px!important;
-  }
-  body.page-home .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-home .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:525px!important}
-  body.page-home .hero-copy>p{grid-row:3!important;align-self:start!important;margin:0!important;max-width:525px!important}
-  body.page-home .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
-  html[data-kk-lang="es"] body.page-home .hero-copy>h1,
-  html[data-kk-lang="pt"] body.page-home .hero-copy>h1,
-  html[data-kk-lang="pl"] body.page-home .hero-copy>h1{font-size:44px!important;line-height:1.00!important}
-
-  /* ABOUT: title, one animation, paragraph and buttons have fixed slots. */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-about .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 166px 34px 82px 44px!important;
-    row-gap:7px!important;
-    align-content:start!important;
-    min-height:384px!important;
-    padding-top:22px!important;
-  }
-  body.page-about .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-about .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:600px!important}
-  body.page-about .hero-copy>.about-hero-mini-animation{grid-row:3!important;align-self:center!important;margin:0!important}
-  body.page-about .hero-copy>.mobile-hero-gap-animation{display:none!important}
-  body.page-about .hero-copy>p{grid-row:4!important;align-self:start!important;margin:0!important;max-width:560px!important}
-  body.page-about .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
-  html[data-kk-lang="fr"] body.page-about .hero-copy>h1,
-  html[data-kk-lang="es"] body.page-about .hero-copy>h1,
-  html[data-kk-lang="pt"] body.page-about .hero-copy>h1{font-size:43px!important;line-height:.99!important}
-  html[data-kk-lang="pl"] body.page-about .hero-copy>h1{font-size:44px!important;line-height:1!important}
-
-  /* ROOMS: translated title blocks occupy one locked title area. */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-rooms .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 202px 82px 44px!important;
-    row-gap:7px!important;
-    align-content:start!important;
-    min-height:382px!important;
-    padding-top:22px!important;
-  }
-  body.page-rooms .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-rooms .hero-copy>.kk-room-title-default,
-  body.page-rooms .hero-copy>.kk-room-title-desktop{grid-row:2!important;align-self:start!important;margin:0!important}
-  body.page-rooms .hero-copy>p{grid-row:3!important;align-self:start!important;margin:0!important;max-width:555px!important}
-  body.page-rooms .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
-  body.page-rooms .kk-room-title-desktop{line-height:.98!important}
-  html[data-kk-lang="fr"] body.page-rooms .kk-room-title-desktop-fr,
-  html[data-kk-lang="es"] body.page-rooms .kk-room-title-desktop-es,
-  html[data-kk-lang="pt"] body.page-rooms .kk-room-title-desktop-pt{font-size:39px!important}
-  html[data-kk-lang="pl"] body.page-rooms .kk-room-title-desktop-pl{font-size:43px!important}
-
-  /* LEARNING: title and animation can never collide. */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-learning .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 174px 30px 80px 44px!important;
-    row-gap:7px!important;
-    align-content:start!important;
-    min-height:386px!important;
-    padding-top:22px!important;
-  }
-  body.page-learning .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-learning .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:620px!important}
-  body.page-learning .hero-copy>.learning-desktop-gap-animation,
-  body.page-learning .hero-copy>.mobile-hero-gap-animation{grid-row:3!important;align-self:center!important;margin:0!important;max-height:30px!important}
-  body.page-learning .hero-copy>p{grid-row:4!important;align-self:start!important;margin:0!important;max-width:600px!important}
-  body.page-learning .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
-  html[data-kk-lang="fr"] body.page-learning .kk-learning-title-fr{font-size:43px!important;line-height:.99!important}
-  html[data-kk-lang="es"] body.page-learning .kk-learning-title-es{font-size:42px!important;line-height:.99!important}
-  html[data-kk-lang="pt"] body.page-learning .kk-learning-title-pt{font-size:38px!important;line-height:.98!important}
-  html[data-kk-lang="pl"] body.page-learning .kk-learning-title-pl{font-size:41px!important;line-height:.99!important}
-
-  /* FEES */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-fees .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 164px 76px 44px!important;
-    row-gap:8px!important;
-    align-content:start!important;
-    min-height:350px!important;
-    padding-top:22px!important;
-  }
-  body.page-fees .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-fees .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:540px!important;font-size:44px!important;line-height:1!important}
-  body.page-fees .hero-copy>.lead{grid-row:3!important;align-self:start!important;margin:0!important;max-width:550px!important}
-  body.page-fees .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
-
-  /* GALLERY */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-gallery .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 136px 34px 80px 44px!important;
-    row-gap:7px!important;
-    align-content:start!important;
-    min-height:356px!important;
-    padding-top:22px!important;
-  }
-  body.page-gallery .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-gallery .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:43px!important;line-height:1!important;max-width:555px!important}
-  body.page-gallery .hero-copy>.gallery-title-gap{grid-row:3!important;align-self:center!important;margin:0!important}
-  body.page-gallery .hero-copy>.lead{grid-row:4!important;align-self:start!important;margin:0!important;max-width:550px!important}
-  body.page-gallery .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
-
-  /* PARENTS */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-parents .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 164px 76px 44px!important;
-    row-gap:8px!important;
-    align-content:start!important;
-    min-height:350px!important;
-    padding-top:20px!important;
-  }
-  body.page-parents .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-parents .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:42px!important;line-height:1!important;max-width:570px!important}
-  body.page-parents .hero-copy>.lead{grid-row:3!important;align-self:start!important;margin:0!important;max-width:560px!important}
-  body.page-parents .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
-
-  /* CONTACT */
-  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-contact .hero-copy{
-    display:grid!important;
-    grid-template-rows:16px 128px 34px 84px 44px!important;
-    row-gap:7px!important;
-    align-content:start!important;
-    min-height:350px!important;
-    padding-top:20px!important;
-  }
-  body.page-contact .hero-copy>.eyebrow{grid-row:1!important}
-  body.page-contact .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:43px!important;line-height:1!important;max-width:560px!important}
-  body.page-contact .hero-copy>.contact-title-gap{grid-row:3!important;align-self:center!important;margin:0!important}
-  body.page-contact .hero-copy>.lead{grid-row:4!important;align-self:start!important;margin:0!important;max-width:555px!important}
-  body.page-contact .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
-
-  /* Keep desktop hero media dimensions exactly controlled. */
-  body.page-about .hero-media,body.page-rooms .hero-media,body.page-learning .hero-media,
-  body.page-fees .hero-media,body.page-gallery .hero-media,body.page-parents .hero-media,body.page-contact .hero-media{
-    align-self:start!important;
-  }
+  html[data-kk-lang="fr"] .navlinks,html[data-kk-lang="es"] .navlinks,html[data-kk-lang="pt"] .navlinks,html[data-kk-lang="pl"] .navlinks{font-size:11.5px!important;gap:14px!important}
+  html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"] .btn,html[data-kk-lang="pl"] .btn{font-size:12.5px!important}
+  /* Only translated desktop heroes are locked. English retains the approved original geometry. */
+  html:not([data-kk-lang="en"]) body.page-home .hero-copy{display:grid!important;grid-template-rows:16px 176px 80px 44px!important;row-gap:8px!important;align-content:start!important;min-height:360px!important;padding-top:28px!important}
+  body.page-home .hero-copy>.eyebrow{grid-row:1}body.page-home #kkHeroTitle{grid-row:2;margin:0!important;max-width:560px}body.page-home .hero-copy>p{grid-row:3;margin:0!important;max-width:560px}body.page-home .hero-copy>.hero-actions{grid-row:4;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-about .hero-copy{display:grid!important;grid-template-rows:16px 158px 34px 82px 44px!important;row-gap:7px!important;align-content:start!important;min-height:370px!important;padding-top:22px!important}
+  body.page-about .hero-copy>.eyebrow{grid-row:1}body.page-about #kkHeroTitle{grid-row:2;margin:0!important;max-width:600px}body.page-about .about-hero-mini-animation{grid-row:3!important;margin:0!important;align-self:center!important}body.page-about .mobile-hero-gap-animation{display:none!important}body.page-about .hero-copy>p{grid-row:4;margin:0!important;max-width:560px}body.page-about .hero-copy>.hero-actions{grid-row:5;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-rooms .hero-copy{display:grid!important;grid-template-rows:16px 202px 82px 44px!important;row-gap:7px!important;align-content:start!important;min-height:382px!important;padding-top:22px!important}
+  body.page-rooms .hero-copy>.eyebrow{grid-row:1}body.page-rooms #kkHeroTitle{grid-row:2;margin:0!important;max-width:600px}body.page-rooms .hero-copy>p{grid-row:3;margin:0!important;max-width:555px}body.page-rooms .hero-copy>.hero-actions{grid-row:4;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-learning .hero-copy{display:grid!important;grid-template-rows:16px 174px 30px 80px 44px!important;row-gap:7px!important;align-content:start!important;min-height:386px!important;padding-top:22px!important}
+  body.page-learning .hero-copy>.eyebrow{grid-row:1}body.page-learning #kkHeroTitle{grid-row:2;margin:0!important;max-width:620px}body.page-learning .learning-desktop-gap-animation{grid-row:3!important;margin:0!important;align-self:center!important;max-height:30px!important}body.page-learning .mobile-hero-gap-animation{display:none!important}body.page-learning .hero-copy>p{grid-row:4;margin:0!important;max-width:600px}body.page-learning .hero-copy>.hero-actions{grid-row:5;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-fees .hero-copy{display:grid!important;grid-template-rows:16px 164px 76px 44px!important;row-gap:8px!important;align-content:start!important;min-height:350px!important;padding-top:22px!important}body.page-fees .hero-copy>.eyebrow{grid-row:1}body.page-fees #kkHeroTitle{grid-row:2;margin:0!important;max-width:560px}body.page-fees .hero-copy>.lead{grid-row:3;margin:0!important}body.page-fees .hero-copy>.hero-actions{grid-row:4;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-gallery .hero-copy{display:grid!important;grid-template-rows:16px 136px 34px 80px 44px!important;row-gap:7px!important;align-content:start!important;min-height:356px!important;padding-top:22px!important}body.page-gallery .hero-copy>.eyebrow{grid-row:1}body.page-gallery #kkHeroTitle{grid-row:2;margin:0!important;max-width:560px}body.page-gallery .gallery-title-gap{grid-row:3!important;margin:0!important;align-self:center!important}body.page-gallery .hero-copy>.lead{grid-row:4;margin:0!important}body.page-gallery .hero-copy>.hero-actions{grid-row:5;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-parents .hero-copy{display:grid!important;grid-template-rows:16px 164px 76px 44px!important;row-gap:8px!important;align-content:start!important;min-height:350px!important;padding-top:20px!important}body.page-parents .hero-copy>.eyebrow{grid-row:1}body.page-parents #kkHeroTitle{grid-row:2;margin:0!important;max-width:570px}body.page-parents .hero-copy>.lead{grid-row:3;margin:0!important}body.page-parents .hero-copy>.hero-actions{grid-row:4;margin:0!important}
+  html:not([data-kk-lang="en"]) body.page-contact .hero-copy{display:grid!important;grid-template-rows:16px 128px 34px 84px 44px!important;row-gap:7px!important;align-content:start!important;min-height:350px!important;padding-top:20px!important}body.page-contact .hero-copy>.eyebrow{grid-row:1}body.page-contact #kkHeroTitle{grid-row:2;margin:0!important;max-width:560px}body.page-contact .contact-title-gap{grid-row:3!important;margin:0!important;align-self:center!important}body.page-contact .hero-copy>.lead{grid-row:4;margin:0!important}body.page-contact .hero-copy>.hero-actions{grid-row:5;margin:0!important}
+  /* translated desktop title sizes: never exceed the approved English size */
+  html[data-kk-lang="fr"] body.page-home #kkHeroTitle{font-size:44px!important;line-height:1!important}html[data-kk-lang="es"] body.page-home #kkHeroTitle,html[data-kk-lang="pt"] body.page-home #kkHeroTitle,html[data-kk-lang="pl"] body.page-home #kkHeroTitle{font-size:43px!important;line-height:1!important}
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle,html[data-kk-lang="es"] body.page-about #kkHeroTitle,html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:42px!important;line-height:.99!important}html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:44px!important}
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,html[data-kk-lang="pt"] body.page-rooms #kkHeroTitle{font-size:39px!important;line-height:.98!important}html[data-kk-lang="es"] body.page-rooms #kkHeroTitle{font-size:40px!important;line-height:.99!important}html[data-kk-lang="pl"] body.page-rooms #kkHeroTitle{font-size:42px!important;line-height:.99!important}
+  html[data-kk-lang="fr"] body.page-learning #kkHeroTitle{font-size:42px!important;line-height:.99!important}html[data-kk-lang="es"] body.page-learning #kkHeroTitle{font-size:41px!important;line-height:.99!important}html[data-kk-lang="pt"] body.page-learning #kkHeroTitle{font-size:37px!important;line-height:.98!important}html[data-kk-lang="pl"] body.page-learning #kkHeroTitle{font-size:40px!important;line-height:.99!important}
+  html:not([data-kk-lang="en"]) body.page-fees #kkHeroTitle{font-size:42px!important;line-height:1!important}html:not([data-kk-lang="en"]) body.page-gallery #kkHeroTitle{font-size:42px!important;line-height:1!important}html:not([data-kk-lang="en"]) body.page-parents #kkHeroTitle{font-size:41px!important;line-height:1!important}html:not([data-kk-lang="en"]) body.page-contact #kkHeroTitle{font-size:42px!important;line-height:1!important}
 }
 
-/* MOBILE: do not redesign. Only make translated labels fit the already-approved controls. */
+@media (max-width:980px){
+  .kk-lang-desktop{display:none!important}.kk-lang-mobile{display:block!important;margin-left:auto;flex:0 0 auto}.menu-btn{margin-left:8px!important}
+}
 @media (max-width:620px){
-  html[data-kk-lang="fr"] .btn,
-  html[data-kk-lang="es"] .btn,
-  html[data-kk-lang="pt"] .btn,
-  html[data-kk-lang="pl"] .btn{font-size:12.2px!important;letter-spacing:-.01em!important}
-  html[data-kk-lang="fr"] .hero-actions .btn,
-  html[data-kk-lang="es"] .hero-actions .btn,
-  html[data-kk-lang="pt"] .hero-actions .btn,
-  html[data-kk-lang="pl"] .hero-actions .btn{overflow:hidden!important}
-  .kk-lang-mobile .kk-lang-toggle{min-width:96px!important}
+  .kk-lang-mobile .kk-lang-toggle{height:38px;min-width:98px;padding:0 8px;border-radius:12px;font-size:11.5px;gap:6px}.kk-lang-mobile .kk-current-flag{font-size:16px}.kk-lang-mobile .kk-current-name{display:none}.kk-lang-mobile .kk-lang-menu{width:154px;top:calc(100% + 8px)}
+  html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"] .btn,html[data-kk-lang="pl"] .btn{font-size:12.2px!important;letter-spacing:-.01em!important}
+  #kkHeroTitle{max-width:100%!important}.kk-title-line{white-space:nowrap}
+  html[data-kk-lang="fr"] body.page-home #kkHeroTitle,html[data-kk-lang="es"] body.page-home #kkHeroTitle,html[data-kk-lang="pt"] body.page-home #kkHeroTitle,html[data-kk-lang="pl"] body.page-home #kkHeroTitle{font-size:32px!important;line-height:1.03!important}
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle,html[data-kk-lang="es"] body.page-about #kkHeroTitle,html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:29px!important;line-height:1.03!important}html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:31px!important}
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,html[data-kk-lang="pt"] body.page-rooms #kkHeroTitle{font-size:27px!important;line-height:1.03!important}html[data-kk-lang="es"] body.page-rooms #kkHeroTitle{font-size:29px!important}html[data-kk-lang="pl"] body.page-rooms #kkHeroTitle{font-size:30px!important}
+  html[data-kk-lang="fr"] body.page-learning #kkHeroTitle,html[data-kk-lang="es"] body.page-learning #kkHeroTitle,html[data-kk-lang="pl"] body.page-learning #kkHeroTitle{font-size:29px!important;line-height:1.03!important}html[data-kk-lang="pt"] body.page-learning #kkHeroTitle{font-size:27px!important;line-height:1.03!important}
+  html[data-kk-lang="pt"] body.page-fees #kkHeroTitle,html[data-kk-lang="pl"] body.page-fees #kkHeroTitle{font-size:29px!important;line-height:1.03!important}html[data-kk-lang="fr"] body.page-fees #kkHeroTitle,html[data-kk-lang="es"] body.page-fees #kkHeroTitle{font-size:31px!important}
+  html:not([data-kk-lang="en"]) body.page-gallery #kkHeroTitle{font-size:30px!important;line-height:1.03!important}html[data-kk-lang="pl"] body.page-gallery #kkHeroTitle{font-size:31px!important}
+  html:not([data-kk-lang="en"]) body.page-parents #kkHeroTitle{font-size:29px!important;line-height:1.03!important}html:not([data-kk-lang="en"]) body.page-contact #kkHeroTitle{font-size:30px!important;line-height:1.03!important}
+  /* Keep approved compact mobile buttons; translated labels must stay inside them. */
+  .hero-actions .btn{overflow:hidden!important}.hero-actions .btn .btn-label{white-space:nowrap!important}
+  .trust-icon.ofsted{font-size:11px!important}.trust-item>b{overflow-wrap:anywhere}
 }
-
-.kk-i18n-pending body{visibility:hidden!important}
+@media (max-width:390px){.kk-lang-mobile .kk-lang-toggle{min-width:82px;padding:0 7px}.kk-lang-mobile .kk-lang-menu{width:150px}html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,html[data-kk-lang="pt"] body.page-rooms #kkHeroTitle{font-size:25px!important}}
