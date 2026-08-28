@@ -39,12 +39,122 @@
   }
   function updatePickerUI(lang){document.querySelectorAll('.kk-language-picker').forEach(p=>{const f=p.querySelector('.kk-current-flag'),n=p.querySelector('.kk-current-name');if(f)f.textContent=LANGS[lang].flag;if(n)n.textContent=LANGS[lang].name;p.querySelectorAll('.kk-lang-option').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));});}
   function closeAll(){document.querySelectorAll('.kk-language-picker.open').forEach(p=>{p.classList.remove('open');const b=p.querySelector('.kk-lang-toggle');if(b)b.setAttribute('aria-expanded','false');});}
-  function choose(lang){if(!LANGS[lang])return;localStorage.setItem(KEY,lang);updatePickerUI(lang);closeAll();translateDocument(lang);document.documentElement.classList.remove('kk-i18n-pending');document.dispatchEvent(new CustomEvent('kk:languagechange',{detail:{lang}}));}
+
+  /* v59 — desktop hero geometry master.
+     Every page measures its ORIGINAL English hero before translation, then all
+     other languages are fitted into those exact English slots. This keeps the
+     title, paragraph and Book a Visit / Enquire buttons in the same position. */
+  let heroMaster=null;
+  const heroInlineOriginals=new WeakMap();
+  function desktopHeroMode(){return !!(window.matchMedia&&window.matchMedia('(min-width:981px)').matches);}
+  function directChild(root,selectors){
+    if(!root)return null;
+    const list=Array.from(root.children||[]);
+    for(const s of selectors){const hit=list.find(el=>el.matches&&el.matches(s));if(hit)return hit;}
+    return null;
+  }
+  function rememberInline(el){if(el&&!heroInlineOriginals.has(el))heroInlineOriginals.set(el,el.getAttribute('style'));}
+  function setImp(el,prop,val){if(el)el.style.setProperty(prop,val,'important');}
+  function clearHeroLock(){
+    document.querySelectorAll('[data-kk-hero-lock]').forEach(el=>{
+      const old=heroInlineOriginals.get(el);
+      if(old===null||typeof old==='undefined')el.removeAttribute('style');else el.setAttribute('style',old);
+      el.removeAttribute('data-kk-hero-lock');
+    });
+  }
+  function metric(el,base){
+    if(!el)return null;
+    const r=el.getBoundingClientRect(), cs=getComputedStyle(el);
+    const fs=parseFloat(cs.fontSize)||16, lh=parseFloat(cs.lineHeight)||fs*1.2;
+    return {top:r.top-base.top,left:r.left-base.left,width:r.width,height:r.height,fontSize:fs,lineRatio:lh/fs};
+  }
+  function captureEnglishHeroGeometry(){
+    if(!desktopHeroMode())return null;
+    clearHeroLock();
+    const copy=document.querySelector('.hero-copy'); if(!copy)return null;
+    const base=copy.getBoundingClientRect();
+    const title=document.getElementById('kkHeroTitle');
+    const eyebrow=directChild(copy,['.eyebrow']);
+    const paragraph=directChild(copy,['p','.lead']);
+    const actions=directChild(copy,['.hero-actions']);
+    const animation=directChild(copy,['.about-hero-mini-animation','.learning-desktop-gap-animation','.gallery-title-gap','.contact-title-gap']);
+    const buttons=actions?Array.from(actions.querySelectorAll('.btn')).map(b=>{const r=b.getBoundingClientRect(),cs=getComputedStyle(b);return {width:r.width,height:r.height,fontSize:parseFloat(cs.fontSize)||14};}):[];
+    heroMaster={
+      copy:{height:base.height,width:base.width},
+      eyebrow:metric(eyebrow,base), title:metric(title,base), paragraph:metric(paragraph,base),
+      actions:metric(actions,base), animation:metric(animation,base), buttons
+    };
+    return heroMaster;
+  }
+  function fitInto(el,m,minSize){
+    if(!el||!m)return;
+    let size=m.fontSize;
+    setImp(el,'font-size',size+'px');
+    setImp(el,'line-height',String(m.lineRatio));
+    setImp(el,'width',m.width+'px');
+    setImp(el,'max-width',m.width+'px');
+    setImp(el,'height',m.height+'px');
+    setImp(el,'max-height',m.height+'px');
+    setImp(el,'overflow','visible');
+    for(let i=0;i<40;i++){
+      const tooWide=el.scrollWidth>m.width+2;
+      const tooTall=el.scrollHeight>m.height+2;
+      if(!tooWide&&!tooTall)break;
+      size=Math.max(minSize,size-.5);
+      setImp(el,'font-size',size+'px');
+      if(size<=minSize)break;
+    }
+  }
+  function fitButtons(actions,masters){
+    if(!actions||!masters||!masters.length)return;
+    Array.from(actions.querySelectorAll('.btn')).forEach((btn,i)=>{
+      const m=masters[i]||masters[masters.length-1]; if(!m)return;
+      rememberInline(btn); btn.setAttribute('data-kk-hero-lock','');
+      setImp(btn,'width',m.width+'px'); setImp(btn,'min-width',m.width+'px'); setImp(btn,'max-width',m.width+'px');
+      setImp(btn,'height',m.height+'px'); setImp(btn,'min-height',m.height+'px'); setImp(btn,'max-height',m.height+'px');
+      let size=m.fontSize; setImp(btn,'font-size',size+'px');
+      const label=btn.querySelector('.btn-label');
+      for(let n=0;n<24;n++){
+        if(btn.scrollWidth<=m.width+1)break;
+        size=Math.max(10,size-.35); setImp(btn,'font-size',size+'px'); if(label)setImp(label,'font-size',size+'px');
+        if(size<=10)break;
+      }
+    });
+  }
+  function pin(el,m,fit,minSize){
+    if(!el||!m)return;
+    rememberInline(el); el.setAttribute('data-kk-hero-lock','');
+    setImp(el,'position','absolute'); setImp(el,'top',m.top+'px'); setImp(el,'left',m.left+'px');
+    setImp(el,'margin','0');
+    if(fit)fitInto(el,m,minSize||10);else{setImp(el,'width',m.width+'px');setImp(el,'max-width',m.width+'px');setImp(el,'height',m.height+'px');}
+  }
+  function applyEnglishHeroGeometry(){
+    if(!desktopHeroMode()||!heroMaster)return;
+    const copy=document.querySelector('.hero-copy'); if(!copy)return;
+    const title=document.getElementById('kkHeroTitle');
+    const eyebrow=directChild(copy,['.eyebrow']);
+    const paragraph=directChild(copy,['p','.lead']);
+    const actions=directChild(copy,['.hero-actions']);
+    const animation=directChild(copy,['.about-hero-mini-animation','.learning-desktop-gap-animation','.gallery-title-gap','.contact-title-gap']);
+    rememberInline(copy); copy.setAttribute('data-kk-hero-lock','');
+    setImp(copy,'position','relative'); setImp(copy,'display','block');
+    setImp(copy,'height',heroMaster.copy.height+'px'); setImp(copy,'min-height',heroMaster.copy.height+'px'); setImp(copy,'max-height',heroMaster.copy.height+'px');
+    pin(eyebrow,heroMaster.eyebrow,true,10);
+    pin(title,heroMaster.title,true,24);
+    pin(paragraph,heroMaster.paragraph,true,11.5);
+    pin(animation,heroMaster.animation,false);
+    pin(actions,heroMaster.actions,false);
+    if(actions){setImp(actions,'display','flex');setImp(actions,'align-items','center');setImp(actions,'flex-wrap','nowrap');fitButtons(actions,heroMaster.buttons);}
+  }
+  function choose(lang){if(!LANGS[lang])return;localStorage.setItem(KEY,lang);updatePickerUI(lang);closeAll();translateDocument(lang);applyEnglishHeroGeometry();document.documentElement.classList.remove('kk-i18n-pending');document.dispatchEvent(new CustomEvent('kk:languagechange',{detail:{lang}}));setTimeout(applyEnglishHeroGeometry,0);setTimeout(applyEnglishHeroGeometry,90);}
   function setup(){
     let lang=localStorage.getItem(KEY)||'en';if(!LANGS[lang])lang='en';
+    /* Capture the page exactly in its original English desktop geometry, even when a translated language was saved. */
+    if(desktopHeroMode()){const wanted=document.documentElement.dataset.kkLang||lang;document.documentElement.dataset.kkLang='en';captureEnglishHeroGeometry();document.documentElement.dataset.kkLang=wanted;}
     document.querySelectorAll('.kk-language-picker').forEach(p=>{const t=p.querySelector('.kk-lang-toggle');if(t)t.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const o=!p.classList.contains('open');closeAll();if(o){p.classList.add('open');t.setAttribute('aria-expanded','true');const nav=document.getElementById('navlinks'),menu=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(menu)menu.setAttribute('aria-expanded','false');}});p.querySelectorAll('.kk-lang-option').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();choose(b.dataset.lang);}));});
     document.addEventListener('click',closeAll);const menu=document.getElementById('menuBtn');if(menu)menu.addEventListener('click',closeAll,true);
-    updatePickerUI(lang);translateDocument(lang);setTimeout(()=>translateDocument(lang),80);setTimeout(()=>translateDocument(lang),420);document.documentElement.classList.remove('kk-i18n-pending');
+    updatePickerUI(lang);translateDocument(lang);applyEnglishHeroGeometry();setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();},80);setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();},420);document.documentElement.classList.remove('kk-i18n-pending');
+    window.addEventListener('resize',()=>{if(!desktopHeroMode())clearHeroLock();else if(heroMaster)applyEnglishHeroGeometry();},{passive:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup,{once:true});else setup();
 })();
