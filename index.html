@@ -1304,78 +1304,92 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 
 
-<style id="kk-home-desktop-english-master-v57">
+
+
+<style id="kk-home-desktop-compact-consistent-v58">
 /* HOME PAGE — DESKTOP ONLY
-   The approved English hero is the master layout.
-   Every language uses the same title slot, paragraph slot and button position.
-   Mobile/tablet rules are not changed. */
+   Smaller, cleaner hero title.
+   Every language is locked to the same vertical structure and button position.
+   Mobile/tablet styling is untouched. */
 @media (min-width:981px){
 
   body.page-home .hero-copy{
-    display:block!important;
+    display:grid!important;
+    grid-template-rows:17px 156px 48px 42px!important;
+    row-gap:14px!important;
+    align-content:start!important;
     align-self:start!important;
     padding-top:34px!important;
     margin:0!important;
+    min-height:0!important;
   }
 
-  body.page-home .eyebrow{
-    margin:0 0 9px!important;
-  }
-
-  /* Exactly three headline rows for every language.
-     Fixed row height keeps everything below in the English position. */
-  body.page-home #kkHeroTitle{
-    display:block!important;
-    width:560px!important;
-    max-width:560px!important;
-    height:175px!important;
-    min-height:175px!important;
-    max-height:175px!important;
+  body.page-home .hero-copy>.eyebrow{
+    align-self:start!important;
     margin:0!important;
     padding:0!important;
-    line-height:58px!important;
+    line-height:17px!important;
+  }
+
+  body.page-home #kkHeroTitle{
+    display:block!important;
+    align-self:start!important;
+    width:560px!important;
+    max-width:560px!important;
+    height:156px!important;
+    min-height:156px!important;
+    max-height:156px!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:52px!important;
     overflow:visible!important;
+    letter-spacing:-.032em!important;
   }
 
   body.page-home #kkHeroTitle .kk-title-line{
     display:block!important;
-    height:58px!important;
-    line-height:58px!important;
+    height:52px!important;
+    line-height:52px!important;
     white-space:nowrap!important;
     margin:0!important;
     padding:0!important;
   }
 
-  /* English remains the visual master size. Translations only shrink enough
-     to preserve the same three rows — never larger than English. */
-  html[data-kk-lang="en"] body.page-home #kkHeroTitle{font-size:56px!important;}
-  html[data-kk-lang="fr"] body.page-home #kkHeroTitle{font-size:52px!important;}
-  html[data-kk-lang="es"] body.page-home #kkHeroTitle{font-size:52px!important;}
-  html[data-kk-lang="pt"] body.page-home #kkHeroTitle{font-size:51px!important;}
-  html[data-kk-lang="pl"] body.page-home #kkHeroTitle{font-size:49px!important;}
+  /* The English title is deliberately smaller than before.
+     Long translations shrink only enough to keep the same 3-row structure. */
+  html[data-kk-lang="en"] body.page-home #kkHeroTitle{font-size:48px!important;}
+  html[data-kk-lang="fr"] body.page-home #kkHeroTitle{font-size:43px!important;}
+  html[data-kk-lang="es"] body.page-home #kkHeroTitle{font-size:46px!important;}
+  html[data-kk-lang="pt"] body.page-home #kkHeroTitle{font-size:45px!important;}
+  html[data-kk-lang="pl"] body.page-home #kkHeroTitle{font-size:42px!important;}
 
-  /* Same two-line description area as English. */
+  /* Fixed two-line description slot for every language. */
   body.page-home .hero-copy>p{
+    align-self:start!important;
     display:block!important;
     width:520px!important;
     max-width:520px!important;
     height:48px!important;
     min-height:48px!important;
     max-height:48px!important;
-    margin:15px 0 20px!important;
+    margin:0!important;
     padding:0!important;
     font-size:16px!important;
     line-height:24px!important;
     overflow:visible!important;
   }
 
-  /* Same button row position for English, French, Spanish, Portuguese & Polish. */
+  /* The two buttons now sit on exactly the same horizontal/vertical line
+     in English, French, Spanish, Portuguese and Polish. */
   body.page-home .hero-copy>.hero-actions{
+    align-self:start!important;
     display:flex!important;
     align-items:center!important;
     flex-wrap:nowrap!important;
     gap:13px!important;
     width:auto!important;
+    height:42px!important;
+    min-height:42px!important;
     margin:0!important;
     padding:0!important;
   }
@@ -1385,8 +1399,11 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     min-width:148px!important;
     height:42px!important;
     min-height:42px!important;
-    padding:0 12px!important;
-    font-size:14px!important;
+    margin:0!important;
+    padding:0 11px!important;
+    font-size:13.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
   }
 }
 </style>
