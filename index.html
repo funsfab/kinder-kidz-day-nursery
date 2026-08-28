@@ -1302,52 +1302,91 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 </style>
 
 
-<style id="kk-home-desktop-language-alignment-v56">
-/* HOME PAGE — DESKTOP ONLY.
-   Keep French / Spanish / Portuguese / Polish in the exact same vertical
-   hero slots as the approved English version. Mobile/tablet are untouched. */
+
+
+<style id="kk-home-desktop-english-master-v57">
+/* HOME PAGE — DESKTOP ONLY
+   The approved English hero is the master layout.
+   Every language uses the same title slot, paragraph slot and button position.
+   Mobile/tablet rules are not changed. */
 @media (min-width:981px){
-  html:not([data-kk-lang="en"]) body.page-home .hero-copy{
+
+  body.page-home .hero-copy{
     display:block!important;
-    min-height:0!important;
-    padding-top:18px!important;
+    align-self:start!important;
+    padding-top:34px!important;
+    margin:0!important;
   }
 
-  /* English uses three headline rows. Reserve the same headline height for
-     every translated desktop title, even when its font is slightly smaller. */
-  html:not([data-kk-lang="en"]) body.page-home #kkHeroTitle{
+  body.page-home .eyebrow{
+    margin:0 0 9px!important;
+  }
+
+  /* Exactly three headline rows for every language.
+     Fixed row height keeps everything below in the English position. */
+  body.page-home #kkHeroTitle{
     display:block!important;
-    height:190px!important;
-    min-height:190px!important;
-    max-height:190px!important;
-    margin:0!important;
+    width:560px!important;
     max-width:560px!important;
+    height:175px!important;
+    min-height:175px!important;
+    max-height:175px!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:58px!important;
     overflow:visible!important;
   }
 
-  html:not([data-kk-lang="en"]) body.page-home #kkHeroTitle .kk-title-line{
+  body.page-home #kkHeroTitle .kk-title-line{
     display:block!important;
+    height:58px!important;
+    line-height:58px!important;
     white-space:nowrap!important;
-  }
-
-  /* Match the English two-line description slot and its spacing. */
-  html:not([data-kk-lang="en"]) body.page-home .hero-copy>p{
-    display:block!important;
-    height:56px!important;
-    min-height:56px!important;
-    max-height:56px!important;
-    margin:24px 0 28px!important;
-    max-width:560px!important;
-    font-size:18px!important;
-    line-height:1.55!important;
-  }
-
-  /* Buttons now start at one fixed position for every language. */
-  html:not([data-kk-lang="en"]) body.page-home .hero-copy>.hero-actions{
-    display:flex!important;
     margin:0!important;
-    gap:13px!important;
+    padding:0!important;
+  }
+
+  /* English remains the visual master size. Translations only shrink enough
+     to preserve the same three rows — never larger than English. */
+  html[data-kk-lang="en"] body.page-home #kkHeroTitle{font-size:56px!important;}
+  html[data-kk-lang="fr"] body.page-home #kkHeroTitle{font-size:52px!important;}
+  html[data-kk-lang="es"] body.page-home #kkHeroTitle{font-size:52px!important;}
+  html[data-kk-lang="pt"] body.page-home #kkHeroTitle{font-size:51px!important;}
+  html[data-kk-lang="pl"] body.page-home #kkHeroTitle{font-size:49px!important;}
+
+  /* Same two-line description area as English. */
+  body.page-home .hero-copy>p{
+    display:block!important;
+    width:520px!important;
+    max-width:520px!important;
+    height:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    margin:15px 0 20px!important;
+    padding:0!important;
+    font-size:16px!important;
+    line-height:24px!important;
+    overflow:visible!important;
+  }
+
+  /* Same button row position for English, French, Spanish, Portuguese & Polish. */
+  body.page-home .hero-copy>.hero-actions{
+    display:flex!important;
     align-items:center!important;
+    flex-wrap:nowrap!important;
+    gap:13px!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  body.page-home .hero-copy>.hero-actions .btn{
+    width:148px!important;
+    min-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    padding:0 12px!important;
+    font-size:14px!important;
   }
 }
 </style>
