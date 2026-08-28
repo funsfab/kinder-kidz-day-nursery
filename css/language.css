@@ -1,0 +1,181 @@
+/* Kinder Kidz first-party language layout. */
+
+/* Keep the language control the same size in every language. */
+.kk-lang-toggle{box-sizing:border-box!important}
+.kk-current-name{white-space:nowrap!important}
+
+/* Translated navigation and buttons stay inside the approved geometry. */
+html[data-kk-lang="fr"] .navlinks,
+html[data-kk-lang="es"] .navlinks,
+html[data-kk-lang="pt"] .navlinks,
+html[data-kk-lang="pl"] .navlinks{font-size:11.5px!important;gap:14px!important}
+html[data-kk-lang="fr"] .btn,
+html[data-kk-lang="es"] .btn,
+html[data-kk-lang="pt"] .btn,
+html[data-kk-lang="pl"] .btn{font-size:12.5px!important;white-space:nowrap!important}
+html[data-kk-lang="fr"] .btn-label,
+html[data-kk-lang="es"] .btn-label,
+html[data-kk-lang="pt"] .btn-label,
+html[data-kk-lang="pl"] .btn-label{white-space:nowrap!important}
+
+@media (min-width:981px){
+  /* Header remains static across all five languages. */
+  header .nav{min-height:82px!important;height:82px!important}
+  .brand,.brand img{flex:0 0 auto!important}
+
+  /* HOME: fixed rows mean only the title typography changes. */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-home .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 176px 80px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    min-height:360px!important;
+    padding-top:28px!important;
+  }
+  body.page-home .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-home .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:525px!important}
+  body.page-home .hero-copy>p{grid-row:3!important;align-self:start!important;margin:0!important;max-width:525px!important}
+  body.page-home .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
+  html[data-kk-lang="es"] body.page-home .hero-copy>h1,
+  html[data-kk-lang="pt"] body.page-home .hero-copy>h1,
+  html[data-kk-lang="pl"] body.page-home .hero-copy>h1{font-size:44px!important;line-height:1.00!important}
+
+  /* ABOUT: title, one animation, paragraph and buttons have fixed slots. */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-about .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 166px 34px 82px 44px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+    min-height:384px!important;
+    padding-top:22px!important;
+  }
+  body.page-about .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-about .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:600px!important}
+  body.page-about .hero-copy>.about-hero-mini-animation{grid-row:3!important;align-self:center!important;margin:0!important}
+  body.page-about .hero-copy>.mobile-hero-gap-animation{display:none!important}
+  body.page-about .hero-copy>p{grid-row:4!important;align-self:start!important;margin:0!important;max-width:560px!important}
+  body.page-about .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
+  html[data-kk-lang="fr"] body.page-about .hero-copy>h1,
+  html[data-kk-lang="es"] body.page-about .hero-copy>h1,
+  html[data-kk-lang="pt"] body.page-about .hero-copy>h1{font-size:43px!important;line-height:.99!important}
+  html[data-kk-lang="pl"] body.page-about .hero-copy>h1{font-size:44px!important;line-height:1!important}
+
+  /* ROOMS: translated title blocks occupy one locked title area. */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-rooms .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 202px 82px 44px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+    min-height:382px!important;
+    padding-top:22px!important;
+  }
+  body.page-rooms .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-rooms .hero-copy>.kk-room-title-default,
+  body.page-rooms .hero-copy>.kk-room-title-desktop{grid-row:2!important;align-self:start!important;margin:0!important}
+  body.page-rooms .hero-copy>p{grid-row:3!important;align-self:start!important;margin:0!important;max-width:555px!important}
+  body.page-rooms .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
+  body.page-rooms .kk-room-title-desktop{line-height:.98!important}
+  html[data-kk-lang="fr"] body.page-rooms .kk-room-title-desktop-fr,
+  html[data-kk-lang="es"] body.page-rooms .kk-room-title-desktop-es,
+  html[data-kk-lang="pt"] body.page-rooms .kk-room-title-desktop-pt{font-size:39px!important}
+  html[data-kk-lang="pl"] body.page-rooms .kk-room-title-desktop-pl{font-size:43px!important}
+
+  /* LEARNING: title and animation can never collide. */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-learning .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 174px 30px 80px 44px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+    min-height:386px!important;
+    padding-top:22px!important;
+  }
+  body.page-learning .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-learning .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:620px!important}
+  body.page-learning .hero-copy>.learning-desktop-gap-animation,
+  body.page-learning .hero-copy>.mobile-hero-gap-animation{grid-row:3!important;align-self:center!important;margin:0!important;max-height:30px!important}
+  body.page-learning .hero-copy>p{grid-row:4!important;align-self:start!important;margin:0!important;max-width:600px!important}
+  body.page-learning .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
+  html[data-kk-lang="fr"] body.page-learning .kk-learning-title-fr{font-size:43px!important;line-height:.99!important}
+  html[data-kk-lang="es"] body.page-learning .kk-learning-title-es{font-size:42px!important;line-height:.99!important}
+  html[data-kk-lang="pt"] body.page-learning .kk-learning-title-pt{font-size:38px!important;line-height:.98!important}
+  html[data-kk-lang="pl"] body.page-learning .kk-learning-title-pl{font-size:41px!important;line-height:.99!important}
+
+  /* FEES */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-fees .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 164px 76px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    min-height:350px!important;
+    padding-top:22px!important;
+  }
+  body.page-fees .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-fees .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;max-width:540px!important;font-size:44px!important;line-height:1!important}
+  body.page-fees .hero-copy>.lead{grid-row:3!important;align-self:start!important;margin:0!important;max-width:550px!important}
+  body.page-fees .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
+
+  /* GALLERY */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-gallery .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 136px 34px 80px 44px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+    min-height:356px!important;
+    padding-top:22px!important;
+  }
+  body.page-gallery .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-gallery .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:43px!important;line-height:1!important;max-width:555px!important}
+  body.page-gallery .hero-copy>.gallery-title-gap{grid-row:3!important;align-self:center!important;margin:0!important}
+  body.page-gallery .hero-copy>.lead{grid-row:4!important;align-self:start!important;margin:0!important;max-width:550px!important}
+  body.page-gallery .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
+
+  /* PARENTS */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-parents .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 164px 76px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    min-height:350px!important;
+    padding-top:20px!important;
+  }
+  body.page-parents .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-parents .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:42px!important;line-height:1!important;max-width:570px!important}
+  body.page-parents .hero-copy>.lead{grid-row:3!important;align-self:start!important;margin:0!important;max-width:560px!important}
+  body.page-parents .hero-copy>.hero-actions{grid-row:4!important;align-self:start!important;margin:0!important}
+
+  /* CONTACT */
+  html[data-kk-lang]:not([data-kk-lang="en"]) body.page-contact .hero-copy{
+    display:grid!important;
+    grid-template-rows:16px 128px 34px 84px 44px!important;
+    row-gap:7px!important;
+    align-content:start!important;
+    min-height:350px!important;
+    padding-top:20px!important;
+  }
+  body.page-contact .hero-copy>.eyebrow{grid-row:1!important}
+  body.page-contact .hero-copy>h1{grid-row:2!important;align-self:start!important;margin:0!important;font-size:43px!important;line-height:1!important;max-width:560px!important}
+  body.page-contact .hero-copy>.contact-title-gap{grid-row:3!important;align-self:center!important;margin:0!important}
+  body.page-contact .hero-copy>.lead{grid-row:4!important;align-self:start!important;margin:0!important;max-width:555px!important}
+  body.page-contact .hero-copy>.hero-actions{grid-row:5!important;align-self:start!important;margin:0!important}
+
+  /* Keep desktop hero media dimensions exactly controlled. */
+  body.page-about .hero-media,body.page-rooms .hero-media,body.page-learning .hero-media,
+  body.page-fees .hero-media,body.page-gallery .hero-media,body.page-parents .hero-media,body.page-contact .hero-media{
+    align-self:start!important;
+  }
+}
+
+/* MOBILE: do not redesign. Only make translated labels fit the already-approved controls. */
+@media (max-width:620px){
+  html[data-kk-lang="fr"] .btn,
+  html[data-kk-lang="es"] .btn,
+  html[data-kk-lang="pt"] .btn,
+  html[data-kk-lang="pl"] .btn{font-size:12.2px!important;letter-spacing:-.01em!important}
+  html[data-kk-lang="fr"] .hero-actions .btn,
+  html[data-kk-lang="es"] .hero-actions .btn,
+  html[data-kk-lang="pt"] .hero-actions .btn,
+  html[data-kk-lang="pl"] .hero-actions .btn{overflow:hidden!important}
+  .kk-lang-mobile .kk-lang-toggle{min-width:96px!important}
+}
+
+.kk-i18n-pending body{visibility:hidden!important}
