@@ -2003,6 +2003,125 @@ main + footer{
 
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
+
+<style id="kk-ofsted-badge-consistency-v54">
+/* v54 — same Ofsted badge structure on desktop and mobile:
+   Ofsted + GOOD centered inside blue; date always outside underneath. */
+.kk-ofsted-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  flex:0 0 auto;
+  text-align:center;
+}
+.kk-ofsted-date{
+  display:block;
+  margin:0!important;
+  color:#707771!important;
+  font-weight:500!important;
+  white-space:nowrap;
+  text-align:center;
+  line-height:1.15!important;
+}
+.kk-ofsted-badge{
+  background:#214f90;
+  color:#fff;
+  border-radius:16px;
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-sizing:border-box;
+  padding:7px 8px!important;
+  line-height:1!important;
+  overflow:hidden;
+}
+.kk-ofsted-badge .kk-ofsted-brand{
+  display:block;
+  font-size:11px;
+  line-height:1;
+  font-weight:800;
+}
+.kk-ofsted-badge .kk-ofsted-rating{
+  display:block;
+  margin-top:7px;
+  font-size:17px;
+  line-height:1;
+  font-weight:900;
+}
+.kk-ofsted-compact .kk-ofsted-badge{
+  width:64px!important;
+  height:58px!important;
+  min-width:64px!important;
+}
+.kk-ofsted-compact .kk-ofsted-date{
+  font-size:10.5px!important;
+}
+.kk-ofsted-large .kk-ofsted-badge{
+  width:108px!important;
+  height:92px!important;
+  min-width:108px!important;
+  border-radius:20px;
+}
+.kk-ofsted-large .kk-ofsted-badge .kk-ofsted-brand{
+  font-size:14px;
+}
+.kk-ofsted-large .kk-ofsted-badge .kk-ofsted-rating{
+  font-size:28px;
+  margin-top:9px;
+}
+.kk-ofsted-large .kk-ofsted-date{
+  font-size:12px!important;
+}
+
+/* Compact stat/proof item: keep the badge/date centred in its cell. */
+.kk-ofsted-stat{
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+.kk-ofsted-stat > .kk-ofsted-stack{
+  margin-inline:auto;
+}
+
+/* Home quality card: the date sits immediately below the badge, not inside it. */
+.proof-card.quality .kk-ofsted-stack{
+  align-self:center;
+}
+
+/* Learning/Gallery/Contact: do not let old icon/badge rules distort the new badge. */
+.learning-proof .kk-ofsted-badge,
+.gallery-page .kk-ofsted-badge,
+.contact-page .kk-ofsted-badge{
+  flex:none!important;
+  font-style:normal!important;
+}
+
+/* Mobile: keep the blue block slightly shorter and the date clearly underneath. */
+@media(max-width:620px){
+  .kk-ofsted-compact .kk-ofsted-badge{
+    width:72px!important;
+    height:62px!important;
+    min-width:72px!important;
+  }
+  .kk-ofsted-compact .kk-ofsted-badge .kk-ofsted-brand{font-size:11px}
+  .kk-ofsted-compact .kk-ofsted-badge .kk-ofsted-rating{font-size:18px;margin-top:7px}
+  .kk-ofsted-compact .kk-ofsted-date{font-size:11px!important}
+
+  .kk-ofsted-large .kk-ofsted-badge{
+    width:112px!important;
+    height:94px!important;
+    min-width:112px!important;
+  }
+  .kk-ofsted-large .kk-ofsted-badge .kk-ofsted-brand{font-size:14px}
+  .kk-ofsted-large .kk-ofsted-badge .kk-ofsted-rating{font-size:28px}
+  .kk-ofsted-large .kk-ofsted-date{font-size:12px!important}
+}
+</style>
+
 </head>
 <body class="page-learning notranslate" translate="no">
 <div class="topbar">
@@ -2115,7 +2234,12 @@ main + footer{
 </section>
 <section class="learning-proof">
 <div class="container proof-row">
-<div class="proof-item"><span class="proof-badge">Ofsted<br/><b>GOOD</b></span><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
+<div class="proof-item kk-ofsted-stat">
+  <div class="kk-ofsted-stack kk-ofsted-compact">
+    <span class="kk-ofsted-badge"><span class="kk-ofsted-brand">Ofsted</span><span class="kk-ofsted-rating">GOOD</span></span>
+    <small class="kk-ofsted-date">September 2025</small>
+  </div>
+</div>
 <div class="proof-item"><span class="proof-icon">☆</span><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
 <div class="proof-item"><span class="proof-icon">♧</span><div><b>3 Months – 5 Years</b><small>Caring for children from 3 months to 5 years</small></div></div>
 <div class="proof-item"><span class="proof-icon">◷</span><div><b>51 Weeks a Year</b><small>Open throughout the year</small></div></div>
