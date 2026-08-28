@@ -40,6 +40,92 @@
   function updatePickerUI(lang){document.querySelectorAll('.kk-language-picker').forEach(p=>{const f=p.querySelector('.kk-current-flag'),n=p.querySelector('.kk-current-name');if(f)f.textContent=LANGS[lang].flag;if(n)n.textContent=LANGS[lang].name;p.querySelectorAll('.kk-lang-option').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));});}
   function closeAll(){document.querySelectorAll('.kk-language-picker.open').forEach(p=>{p.classList.remove('open');const b=p.querySelector('.kk-lang-toggle');if(b)b.setAttribute('aria-expanded','false');});}
 
+  /* v61 — centre every action-button icon + label as one compact group.
+     This keeps the icon close to the words, gives equal breathing room on both
+     sides, and automatically reduces only the button text when a translation is
+     too long for the existing button width. Button sizes and positions are not
+     changed. */
+  function installButtonContentFix(){
+    if(document.getElementById('kk-button-content-fix-v61'))return;
+    const st=document.createElement('style');
+    st.id='kk-button-content-fix-v61';
+    st.textContent=`
+      .btn.visit-action,.btn.enquire-action,.btn.contact-action,
+      .hero-actions .btn,.cta-actions .btn,.header-visit,
+      .parent-strip .actions .btn,.funding-card .hero-actions .btn,
+      .action-banner .actions .btn{
+        display:inline-flex!important;
+        align-items:center!important;
+        justify-content:center!important;
+        text-align:center!important;
+        white-space:nowrap!important;
+        flex-wrap:nowrap!important;
+        column-gap:5px!important;
+        box-sizing:border-box!important;
+        overflow:hidden!important;
+      }
+      .btn.visit-action .btn-icon,.btn.enquire-action .btn-icon,.btn.contact-action .btn-icon,
+      .hero-actions .btn .btn-icon,.cta-actions .btn .btn-icon,.header-visit .btn-icon,
+      .parent-strip .actions .btn .btn-icon,.funding-card .hero-actions .btn .btn-icon,
+      .action-banner .actions .btn .btn-icon{
+        width:15px!important;height:15px!important;min-width:15px!important;
+        flex:0 0 15px!important;margin:0!important;padding:0!important;
+        display:inline-grid!important;place-items:center!important;line-height:0!important;
+        transform:none!important;
+      }
+      .btn.visit-action .btn-icon svg,.btn.enquire-action .btn-icon svg,.btn.contact-action .btn-icon svg,
+      .hero-actions .btn .btn-icon svg,.cta-actions .btn .btn-icon svg,.header-visit .btn-icon svg,
+      .parent-strip .actions .btn .btn-icon svg,.funding-card .hero-actions .btn .btn-icon svg,
+      .action-banner .actions .btn .btn-icon svg{
+        width:15px!important;height:15px!important;display:block!important;
+      }
+      .btn .btn-label{
+        display:inline-block!important;margin:0!important;padding:0!important;
+        white-space:nowrap!important;line-height:1!important;text-align:center!important;
+      }
+      @media (min-width:981px){
+        .btn.visit-action,.btn.enquire-action,.btn.contact-action,
+        .hero-actions .btn,.cta-actions .btn,.header-visit,
+        .parent-strip .actions .btn,.funding-card .hero-actions .btn,
+        .action-banner .actions .btn{
+          padding-left:6px!important;padding-right:6px!important;
+          column-gap:4px!important;
+        }
+      }
+    `;
+    (document.head||document.documentElement).appendChild(st);
+  }
+  function fitActionButtonContents(){
+    installButtonContentFix();
+    const sel=[
+      '.btn.visit-action','.btn.enquire-action','.btn.contact-action',
+      '.hero-actions .btn','.cta-actions .btn','.header-visit',
+      '.parent-strip .actions .btn','.funding-card .hero-actions .btn',
+      '.action-banner .actions .btn'
+    ].join(',');
+    document.querySelectorAll(sel).forEach(btn=>{
+      if(!btn.dataset.kkButtonBaseFont){
+        const fs=parseFloat(getComputedStyle(btn).fontSize)||14;
+        btn.dataset.kkButtonBaseFont=String(fs);
+      }
+      let size=parseFloat(btn.dataset.kkButtonBaseFont)||14;
+      const isMobile=!!(window.matchMedia&&window.matchMedia('(max-width:980px)').matches);
+      const min=isMobile?10.5:10.5;
+      btn.style.setProperty('font-size',size+'px','important');
+      const label=btn.querySelector('.btn-label');
+      if(label)label.style.setProperty('font-size',size+'px','important');
+      /* Let layout settle, then shrink only enough to keep the complete icon +
+         wording inside the button. */
+      for(let i=0;i<32;i++){
+        if(btn.scrollWidth<=btn.clientWidth+1)break;
+        size=Math.max(min,size-.25);
+        btn.style.setProperty('font-size',size+'px','important');
+        if(label)label.style.setProperty('font-size',size+'px','important');
+        if(size<=min)break;
+      }
+    });
+  }
+
   /* v59 — desktop hero geometry master.
      Every page measures its ORIGINAL English hero before translation, then all
      other languages are fitted into those exact English slots. This keeps the
@@ -146,15 +232,15 @@
     pin(actions,heroMaster.actions,false);
     if(actions){setImp(actions,'display','flex');setImp(actions,'align-items','center');setImp(actions,'flex-wrap','nowrap');fitButtons(actions,heroMaster.buttons);}
   }
-  function choose(lang){if(!LANGS[lang])return;localStorage.setItem(KEY,lang);updatePickerUI(lang);closeAll();translateDocument(lang);applyEnglishHeroGeometry();document.documentElement.classList.remove('kk-i18n-pending');document.dispatchEvent(new CustomEvent('kk:languagechange',{detail:{lang}}));setTimeout(applyEnglishHeroGeometry,0);setTimeout(applyEnglishHeroGeometry,90);}
+  function choose(lang){if(!LANGS[lang])return;localStorage.setItem(KEY,lang);updatePickerUI(lang);closeAll();translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();document.documentElement.classList.remove('kk-i18n-pending');document.dispatchEvent(new CustomEvent('kk:languagechange',{detail:{lang}}));setTimeout(()=>{applyEnglishHeroGeometry();fitActionButtonContents();},0);setTimeout(()=>{applyEnglishHeroGeometry();fitActionButtonContents();},90);}
   function setup(){
     let lang=localStorage.getItem(KEY)||'en';if(!LANGS[lang])lang='en';
     /* Capture the page exactly in its original English desktop geometry, even when a translated language was saved. */
     if(desktopHeroMode()){const wanted=document.documentElement.dataset.kkLang||lang;document.documentElement.dataset.kkLang='en';captureEnglishHeroGeometry();document.documentElement.dataset.kkLang=wanted;}
     document.querySelectorAll('.kk-language-picker').forEach(p=>{const t=p.querySelector('.kk-lang-toggle');if(t)t.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const o=!p.classList.contains('open');closeAll();if(o){p.classList.add('open');t.setAttribute('aria-expanded','true');const nav=document.getElementById('navlinks'),menu=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(menu)menu.setAttribute('aria-expanded','false');}});p.querySelectorAll('.kk-lang-option').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();choose(b.dataset.lang);}));});
     document.addEventListener('click',closeAll);const menu=document.getElementById('menuBtn');if(menu)menu.addEventListener('click',closeAll,true);
-    updatePickerUI(lang);translateDocument(lang);applyEnglishHeroGeometry();setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();},80);setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();},420);document.documentElement.classList.remove('kk-i18n-pending');
-    window.addEventListener('resize',()=>{if(!desktopHeroMode())clearHeroLock();else if(heroMaster)applyEnglishHeroGeometry();},{passive:true});
+    installButtonContentFix();updatePickerUI(lang);translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();},80);setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();},420);document.documentElement.classList.remove('kk-i18n-pending');
+    window.addEventListener('resize',()=>{if(!desktopHeroMode())clearHeroLock();else if(heroMaster)applyEnglishHeroGeometry();fitActionButtonContents();},{passive:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup,{once:true});else setup();
 })();
