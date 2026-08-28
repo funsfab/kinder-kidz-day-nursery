@@ -40,18 +40,20 @@
   function updatePickerUI(lang){document.querySelectorAll('.kk-language-picker').forEach(p=>{const f=p.querySelector('.kk-current-flag'),n=p.querySelector('.kk-current-name');if(f)f.textContent=LANGS[lang].flag;if(n)n.textContent=LANGS[lang].name;p.querySelectorAll('.kk-lang-option').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));});}
   function closeAll(){document.querySelectorAll('.kk-language-picker.open').forEach(p=>{p.classList.remove('open');const b=p.querySelector('.kk-lang-toggle');if(b)b.setAttribute('aria-expanded','false');});}
 
-  /* v61 — centre every action-button icon + label as one compact group.
+  /* v62 — centre every action-button icon + label as one compact group.
      This keeps the icon close to the words, gives equal breathing room on both
      sides, and automatically reduces only the button text when a translation is
      too long for the existing button width. Button sizes and positions are not
      changed. */
   function installButtonContentFix(){
-    if(document.getElementById('kk-button-content-fix-v61'))return;
+    const old=document.getElementById('kk-button-content-fix-v61');
+    if(old)old.remove();
+    if(document.getElementById('kk-button-content-fix-v62'))return;
     const st=document.createElement('style');
-    st.id='kk-button-content-fix-v61';
+    st.id='kk-button-content-fix-v62';
     st.textContent=`
       .btn.visit-action,.btn.enquire-action,.btn.contact-action,
-      .hero-actions .btn,.cta-actions .btn,.header-visit,
+      .hero-actions .btn,.cta-actions .btn,
       .parent-strip .actions .btn,.funding-card .hero-actions .btn,
       .action-banner .actions .btn{
         display:inline-flex!important;
@@ -90,6 +92,15 @@
         .action-banner .actions .btn{
           padding-left:6px!important;padding-right:6px!important;
           column-gap:4px!important;
+        }
+      }
+      /* v62: the header Book-a-Visit control is desktop-only.
+         Never allow the global button-centering helper to reveal it on mobile. */
+      @media (max-width:980px){
+        .header-visit,.header-visit.visit-action,.nav>.header-visit,.nav>.desktop-only.header-visit{
+          display:none!important;
+          visibility:hidden!important;
+          pointer-events:none!important;
         }
       }
     `;
