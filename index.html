@@ -1301,6 +1301,57 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="kk-home-desktop-language-alignment-v56">
+/* HOME PAGE — DESKTOP ONLY.
+   Keep French / Spanish / Portuguese / Polish in the exact same vertical
+   hero slots as the approved English version. Mobile/tablet are untouched. */
+@media (min-width:981px){
+  html:not([data-kk-lang="en"]) body.page-home .hero-copy{
+    display:block!important;
+    min-height:0!important;
+    padding-top:18px!important;
+  }
+
+  /* English uses three headline rows. Reserve the same headline height for
+     every translated desktop title, even when its font is slightly smaller. */
+  html:not([data-kk-lang="en"]) body.page-home #kkHeroTitle{
+    display:block!important;
+    height:190px!important;
+    min-height:190px!important;
+    max-height:190px!important;
+    margin:0!important;
+    max-width:560px!important;
+    overflow:visible!important;
+  }
+
+  html:not([data-kk-lang="en"]) body.page-home #kkHeroTitle .kk-title-line{
+    display:block!important;
+    white-space:nowrap!important;
+  }
+
+  /* Match the English two-line description slot and its spacing. */
+  html:not([data-kk-lang="en"]) body.page-home .hero-copy>p{
+    display:block!important;
+    height:56px!important;
+    min-height:56px!important;
+    max-height:56px!important;
+    margin:24px 0 28px!important;
+    max-width:560px!important;
+    font-size:18px!important;
+    line-height:1.55!important;
+  }
+
+  /* Buttons now start at one fixed position for every language. */
+  html:not([data-kk-lang="en"]) body.page-home .hero-copy>.hero-actions{
+    display:flex!important;
+    margin:0!important;
+    gap:13px!important;
+    align-items:center!important;
+  }
+}
+</style>
+
 </head>
 <body class="page-home notranslate" translate="no">
 <div class="topbar">
