@@ -1257,6 +1257,50 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="kk-home-polish-mobile-v55">
+/* HOME PAGE ONLY — Polish mobile correction. Desktop is unchanged. */
+@media (max-width:620px){
+  html[data-kk-lang="pl"] body.page-home #kkHeroTitle{
+    font-size:30px!important;
+    line-height:1.04!important;
+    max-width:100%!important;
+    overflow:visible!important;
+  }
+  html[data-kk-lang="pl"] body.page-home #kkHeroTitle .kk-title-line{
+    display:block!important;
+    white-space:nowrap!important;
+  }
+
+  /* Keep both Polish hero buttons compact, inside the screen and on one row. */
+  html[data-kk-lang="pl"] body.page-home .hero-actions{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:8px!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  html[data-kk-lang="pl"] body.page-home .hero-actions .btn{
+    width:100%!important;
+    min-width:0!important;
+    height:38px!important;
+    min-height:38px!important;
+    padding:0 5px!important;
+    gap:4px!important;
+    font-size:11.4px!important;
+    letter-spacing:-.02em!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+  }
+  html[data-kk-lang="pl"] body.page-home .hero-actions .btn-icon,
+  html[data-kk-lang="pl"] body.page-home .hero-actions .btn-icon svg{
+    width:15px!important;
+    height:15px!important;
+    min-width:15px!important;
+  }
+}
+</style>
+
 </head>
 <body class="page-home notranslate" translate="no">
 <div class="topbar">
@@ -1466,4 +1510,49 @@ updateScrollNav();
 </script>
 
 <script src="js/language.js"></script>
+
+<script id="kk-home-polish-mobile-title-v55">
+(function(){
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  function setLines(lines){
+    var h=document.getElementById("kkHeroTitle");
+    if(!h) return;
+    h.innerHTML=lines.map(function(x){
+      return '<span class="kk-title-line '+(x[1]?'kk-title-green':'')+'">'+esc(x[0])+'</span>';
+    }).join("");
+  }
+  function apply(){
+    if(!document.body || !document.body.classList.contains("page-home")) return;
+    var lang=document.documentElement.dataset.kkLang || localStorage.getItem("kkPreferredLanguage") || "en";
+    if(lang!=="pl") return;
+
+    if(window.matchMedia("(max-width:620px)").matches){
+      setLines([
+        ["Miejsce, gdzie każde",0],
+        ["dziecko czuje się",1],
+        ["docenione i",1],
+        ["inspirowane ♡",1]
+      ]);
+    }else{
+      /* Preserve the existing approved desktop Polish layout. */
+      setLines([
+        ["Miejsce, gdzie każde dziecko",0],
+        ["czuje się docenione i",1],
+        ["inspirowane ♡",1]
+      ]);
+    }
+  }
+
+  document.addEventListener("kk:languagechange",apply);
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",function(){ setTimeout(apply,0); },{once:true});
+  }else{
+    setTimeout(apply,0);
+  }
+  window.addEventListener("resize",apply,{passive:true});
+})();
+</script>
+
 </body></html>
