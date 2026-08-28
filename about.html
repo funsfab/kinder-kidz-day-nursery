@@ -1298,8 +1298,6 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 .kk-lang-option{width:100%;min-height:36px;border:0;background:transparent;border-radius:8px;padding:6px 8px;display:grid;grid-template-columns:23px 1fr 16px;gap:7px;align-items:center;text-align:left;color:#25382e;font:700 12px/1.2 inherit;cursor:pointer}
 .kk-lang-option:hover,.kk-lang-option:focus-visible{background:#f2f7ec;outline:none}
 .kk-lang-option b{visibility:hidden;color:#176a3b;font-size:13px}.kk-lang-option.active b{visibility:visible}.kk-lang-option.active{background:#f5f9ef}
-.kk-google-translate-host{position:fixed!important;left:-9999px!important;top:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
-.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
 body{top:0!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}
 /* Keep translated navigation/buttons inside the already-approved geometry. */
 html[data-kk-lang="fr"] .navlinks,html[data-kk-lang="es"] .navlinks,html[data-kk-lang="pt"] .navlinks,html[data-kk-lang="pl"] .navlinks{font-size:11.5px!important;gap:15px!important}
@@ -1315,17 +1313,7 @@ html[data-kk-lang="fr"] .btn,html[data-kk-lang="es"] .btn,html[data-kk-lang="pt"
 </style>
 
 
-<style id="kk-hide-google-translate-toolbar-v37">
-/* Hide Google's own translation toolbar. Our Kinder Kidz language picker remains visible. */
-html{margin-top:0!important}
-body{top:0!important}
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-iframe.goog-te-banner-frame,
-.VIpgJd-ZVi9od-ORHb-OEVmcd,
-body > .skiptranslate:not(#google_translate_element){display:none!important;visibility:hidden!important;height:0!important;min-height:0!important}
-#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip{display:none!important}
-</style>
+
 
 
 <style id="kk-about-desktop-translated-hero-v47">
@@ -1375,8 +1363,10 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
   html[data-kk-lang="fr"] .hero-copy h1,html[data-kk-lang="es"] .hero-copy h1,html[data-kk-lang="pt"] .hero-copy h1{font-size:42px!important}
 }
 </style>
+<script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang=l==='en'?'en-GB':l;if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');}catch(e){document.documentElement.dataset.kkLang='en';document.documentElement.lang='en-GB';}})();</script>
+<link rel="stylesheet" href="css/language.css">
 </head>
-<body>
+<body class="page-about">
 <div class="topbar">
 <div class="container">
 <span>☎ 07886 017430</span>
@@ -1396,7 +1386,7 @@ body > .skiptranslate:not(#google_translate_element){display:none!important;visi
   <button type="button" class="kk-lang-option" data-lang="pl" role="menuitem"><span>🇵🇱</span><span>Polski</span><b>✓</b></button>
 </div>
 </div>
-<div id="google_translate_element" class="kk-google-translate-host notranslate" translate="no" aria-hidden="true"></div>
+
 </div>
 </div>
 <header>
@@ -1632,171 +1622,15 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});
 updateScrollNav();
 </script>
 
-<script id="kk-five-language-script-v36">
-(function(){
-  const KEY='kkPreferredLanguage';
-  const langs={
-    en:{name:'English',flag:'🇬🇧'},fr:{name:'Français',flag:'🇫🇷'},es:{name:'Español',flag:'🇪🇸'},pt:{name:'Português',flag:'🇵🇹'},pl:{name:'Polski',flag:'🇵🇱'}
-  };
-  let saved=localStorage.getItem(KEY)||'en';
-  if(!langs[saved]) saved='en';
-
-  function setGoogCookie(lang){
-    const value=lang==='en'?'':('/en/'+lang);
-    const expires=lang==='en'?';expires=Thu, 01 Jan 1970 00:00:00 GMT':'';
-    ['/','/kinder-kidz-day-nursery/'].forEach(function(path){
-      document.cookie='googtrans='+value+';path='+path+expires+';SameSite=Lax';
-    });
-  }
-  if(saved!=='en') setGoogCookie(saved);
-
-  function updateUI(lang){
-    document.documentElement.dataset.kkLang=lang;
-    document.querySelectorAll('.kk-language-picker').forEach(function(picker){
-      const flag=picker.querySelector('.kk-current-flag');
-      const name=picker.querySelector('.kk-current-name');
-      if(flag) flag.textContent=langs[lang].flag;
-      if(name) name.textContent=langs[lang].name;
-      picker.querySelectorAll('.kk-lang-option').forEach(function(btn){btn.classList.toggle('active',btn.dataset.lang===lang);});
-    });
-  }
-  function closeAll(){
-    document.querySelectorAll('.kk-language-picker.open').forEach(function(p){p.classList.remove('open');const b=p.querySelector('.kk-lang-toggle');if(b)b.setAttribute('aria-expanded','false');});
-  }
-  function applyGoogle(lang){
-    const combo=document.querySelector('select.goog-te-combo');
-    if(!combo) return false;
-    combo.value=lang==='en'?'':lang;
-    combo.dispatchEvent(new Event('change',{bubbles:true}));
-    return true;
-  }
-  function choose(lang){
-    if(!langs[lang]) return;
-    const previous=localStorage.getItem(KEY)||'en';
-    localStorage.setItem(KEY,lang);updateUI(lang);closeAll();
-    if(lang==='en'){
-      setGoogCookie('en');
-      if(previous!=='en' || document.cookie.indexOf('googtrans=')!==-1) location.reload();
-      return;
-    }
-    setGoogCookie(lang);
-    if(!applyGoogle(lang)) setTimeout(function(){ if(!applyGoogle(lang)) location.reload(); },350);
-  }
-
-  function setupPickers(){
-    updateUI(saved);
-    document.querySelectorAll('.kk-language-picker').forEach(function(picker){
-      const toggle=picker.querySelector('.kk-lang-toggle');
-      toggle.addEventListener('click',function(e){
-        e.stopPropagation();
-        const willOpen=!picker.classList.contains('open');closeAll();
-        if(willOpen){picker.classList.add('open');toggle.setAttribute('aria-expanded','true');const nav=document.getElementById('navlinks');const menu=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(menu)menu.setAttribute('aria-expanded','false');}
-      });
-      picker.querySelectorAll('.kk-lang-option').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();choose(btn.dataset.lang);});});
-    });
-    document.addEventListener('click',closeAll);
-    const menuBtn=document.getElementById('menuBtn');if(menuBtn)menuBtn.addEventListener('click',closeAll,true);
-    window.addEventListener('pageshow',function(){saved=localStorage.getItem(KEY)||'en';if(!langs[saved])saved='en';updateUI(saved);closeAll();});
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setupPickers); else setupPickers();
-
-  window.kkGoogleTranslateInit=function(){
-    if(!window.google||!google.translate||!google.translate.TranslateElement) return;
-    new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'fr,es,pt,pl',autoDisplay:false,multilanguagePage:true},'google_translate_element');
-    setTimeout(function(){const lang=localStorage.getItem(KEY)||'en';if(lang!=='en')applyGoogle(lang);},650);
-  };
-})();
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=kkGoogleTranslateInit" async></script>
-
-
-<script id="kk-hide-google-translate-toolbar-script-v37">
-(function(){
-  function hideGoogleToolbar(){
-    document.documentElement.style.setProperty('margin-top','0px','important');
-    if(document.body){
-      document.body.style.setProperty('top','0px','important');
-      document.body.querySelectorAll(':scope > .skiptranslate:not(#google_translate_element)').forEach(function(el){
-        el.style.setProperty('display','none','important');
-        el.style.setProperty('height','0px','important');
-        el.setAttribute('aria-hidden','true');
-      });
-    }
-    document.querySelectorAll('.goog-te-banner-frame,.VIpgJd-ZVi9od-ORHb-OEVmcd').forEach(function(el){
-      el.style.setProperty('display','none','important');
-      el.style.setProperty('height','0px','important');
-      el.setAttribute('aria-hidden','true');
-    });
-  }
-  hideGoogleToolbar();
-  window.addEventListener('load',hideGoogleToolbar);
-  window.addEventListener('pageshow',hideGoogleToolbar);
-  document.addEventListener('click',function(e){
-    if(e.target.closest && e.target.closest('.kk-language-picker')){
-      [80,250,600,1200,2200].forEach(function(ms){setTimeout(hideGoogleToolbar,ms);});
-    }
-  });
-  var count=0, timer=setInterval(function(){hideGoogleToolbar(); if(++count>24) clearInterval(timer);},250);
-})();
-</script>
 
 
 
-<script id="kk-french-enquire-compact-v38">
-(function(){
-  const KEY='kkPreferredLanguage';
-  const FRENCH='Rendez-vous';
-  const targets=[];
 
-  function collect(){
-    document.querySelectorAll('a[href*="mode=enquiry"]').forEach(function(a){
-      const el=a.querySelector('.btn-label') || a;
-      if(!el.dataset.kkOriginalEnquire){
-        el.dataset.kkOriginalEnquire=(el.textContent||'').trim() || 'Enquire Now';
-      }
-      if(targets.indexOf(el)===-1) targets.push(el);
-    });
-  }
-  function restoreEnglish(){
-    collect();
-    targets.forEach(function(el){
-      if(el.dataset.kkOriginalEnquire) el.textContent=el.dataset.kkOriginalEnquire;
-    });
-  }
-  function applyFrenchCompact(){
-    collect();
-    if((localStorage.getItem(KEY)||'en')!=='fr') return;
-    targets.forEach(function(el){
-      if(el.textContent.trim()!==FRENCH) el.textContent=FRENCH;
-    });
-  }
-  function scheduleFrench(){
-    [0,120,350,700,1200,2000].forEach(function(ms){setTimeout(applyFrenchCompact,ms);});
-  }
 
-  collect();
-  scheduleFrench();
-  window.addEventListener('load',scheduleFrench);
-  window.addEventListener('pageshow',scheduleFrench);
 
-  /* Restore the original English label before Google translates to another language. */
-  document.addEventListener('click',function(e){
-    const opt=e.target.closest && e.target.closest('.kk-lang-option');
-    if(!opt) return;
-    const lang=opt.dataset.lang;
-    if(lang!=='fr') restoreEnglish();
-    [80,250,600,1200,2200].forEach(function(ms){setTimeout(function(){
-      if((localStorage.getItem(KEY)||'en')==='fr') applyFrenchCompact();
-    },ms);});
-  },true);
 
-  /* Google Translate can rewrite labels a moment later; keep only the French enquiry label compact. */
-  const observer=new MutationObserver(function(){
-    if((localStorage.getItem(KEY)||'en')==='fr') applyFrenchCompact();
-  });
-  if(document.body) observer.observe(document.body,{subtree:true,childList:true,characterData:true});
-})();
-</script>
+
+
 
 
 
@@ -1880,5 +1714,6 @@ updateScrollNav();
   const h=h1();if(h)new MutationObserver(function(){if(!busy)apply()}).observe(h,{subtree:true,childList:true,characterData:true});
 })();
 </script>
+<script src="js/language.js"></script>
 </body>
 </html>
