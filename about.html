@@ -1287,6 +1287,156 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
+
+
+<style id="about-language-layout-v63">
+/* ABOUT US v63
+   Desktop: every language uses the same fixed hero slots so the paragraph,
+   animation and two action buttons never move when the language changes.
+   Mobile: keeps the approved mobile design; only the French title is tightened
+   to the requested two lines. */
+
+/* The translation table describes intentional title rows. Keep those rows
+   explicit on About Us rather than letting the browser invent new wraps. */
+body.page-about #kkHeroTitle .kk-title-line{
+  display:block!important;
+}
+
+@media (min-width:981px){
+  html body.page-about .hero-copy{
+    position:relative!important;
+    display:grid!important;
+    grid-template-rows:16px 126px 38px 74px 44px!important;
+    row-gap:8px!important;
+    align-content:start!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:352px!important;
+    height:352px!important;
+    max-height:352px!important;
+    padding:22px 0 0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+  html body.page-about .hero-copy>.eyebrow{
+    grid-row:1!important;
+    position:static!important;
+    align-self:start!important;
+    margin:0!important;
+    padding:0!important;
+    width:auto!important;
+    height:auto!important;
+  }
+  html body.page-about #kkHeroTitle{
+    grid-row:2!important;
+    position:static!important;
+    align-self:start!important;
+    margin:0!important;
+    padding:0!important;
+    width:100%!important;
+    max-width:520px!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+    font-size:48px!important;
+    line-height:1.02!important;
+    letter-spacing:-.03em!important;
+  }
+  html body.page-about #kkHeroTitle .kk-title-line{
+    display:block!important;
+    white-space:nowrap!important;
+    line-height:1.02!important;
+  }
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:45px!important}
+  html[data-kk-lang="es"] body.page-about #kkHeroTitle{font-size:38px!important}
+  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:38px!important}
+  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:44px!important}
+
+  /* One animation row, directly below the title and above the paragraph. */
+  html body.page-about .about-hero-mini-animation{
+    grid-row:3!important;
+    display:flex!important;
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    align-self:center!important;
+    justify-self:stretch!important;
+    width:100%!important;
+    max-width:520px!important;
+    height:38px!important;
+    min-height:38px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+    overflow:visible!important;
+  }
+  html body.page-about .mobile-hero-gap-animation{display:none!important}
+
+  html body.page-about .hero-copy>p{
+    grid-row:4!important;
+    position:static!important;
+    align-self:start!important;
+    width:100%!important;
+    max-width:520px!important;
+    height:auto!important;
+    max-height:74px!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:15px!important;
+    line-height:1.48!important;
+  }
+  html body.page-about .hero-copy>.hero-actions{
+    grid-row:5!important;
+    position:static!important;
+    align-self:start!important;
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    align-items:center!important;
+    gap:10px!important;
+    width:auto!important;
+    height:44px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* Keep the already-approved right-hand photo untouched. */
+  html body.page-about .hero-media{
+    align-self:start!important;
+  }
+}
+
+/* Smaller laptops: same positions, only title typography is reduced enough
+   to stay inside the left hero column. */
+@media (min-width:981px) and (max-width:1199px){
+  html body.page-about #kkHeroTitle{font-size:44px!important}
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:42px!important}
+  html[data-kk-lang="es"] body.page-about #kkHeroTitle{font-size:35px!important}
+  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:35px!important}
+  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:40px!important}
+}
+
+/* MOBILE ONLY: requested French title = exactly two rows.
+   The existing auto-height mobile grid then naturally pulls the animation,
+   paragraph, buttons and photo upward without touching their design. */
+@media (max-width:620px){
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
+    font-size:31px!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+  }
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle .kk-title-line{
+    display:block!important;
+    white-space:nowrap!important;
+  }
+}
+@media (max-width:380px){
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:29px!important}
+}
+</style>
+
 </head>
 <body class="page-about notranslate" translate="no">
 <div class="topbar">
