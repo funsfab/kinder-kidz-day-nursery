@@ -1015,5 +1015,132 @@ scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo
 window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
 </script>
 <script src="js/language.js"></script>
+<script id="rooms-desktop-french-master-v65">
+/* OUR ROOMS v65 — DESKTOP ONLY.
+   The approved French desktop title scale is now the visual master.
+   Mobile/tablet layouts at 980px and below are deliberately untouched.
+   Paragraph and action buttons are locked to one shared desktop position in
+   every language so changing language never pushes the buttons up/down. */
+(function(){
+  'use strict';
+  var desktop=window.matchMedia ? window.matchMedia('(min-width:981px)') : null;
+
+  function imp(el,prop,val){
+    if(el) el.style.setProperty(prop,val,'important');
+  }
+
+  function applyRoomsDesktop(){
+    if(!desktop || !desktop.matches) return;
+    var body=document.body;
+    if(!body || !body.classList.contains('page-rooms')) return;
+
+    var copy=document.querySelector('.hero-copy');
+    var eyebrow=copy && copy.querySelector(':scope > .eyebrow');
+    var title=document.getElementById('kkHeroTitle');
+    var paragraph=copy && copy.querySelector(':scope > p');
+    var actions=copy && copy.querySelector(':scope > .hero-actions');
+    if(!copy || !title || !paragraph || !actions) return;
+
+    var compact=window.innerWidth < 1200;
+    var titleSize=compact ? 36 : 40;
+    var titleTop=compact ? 48 : 50;
+    var paragraphTop=compact ? 216 : 232;
+    var actionsTop=compact ? 286 : 302;
+    var copyHeight=compact ? 344 : 360;
+
+    /* Undo the global English-master pinning only inside this desktop page. */
+    [copy,eyebrow,title,paragraph,actions].forEach(function(el){
+      if(el) el.removeAttribute('data-kk-hero-lock');
+    });
+
+    imp(copy,'position','relative');
+    imp(copy,'display','block');
+    imp(copy,'height',copyHeight+'px');
+    imp(copy,'min-height',copyHeight+'px');
+    imp(copy,'max-height',copyHeight+'px');
+    imp(copy,'padding','20px 0 0');
+    imp(copy,'margin','0');
+    imp(copy,'overflow','visible');
+
+    imp(eyebrow,'position','absolute');
+    imp(eyebrow,'left','0');
+    imp(eyebrow,'top','20px');
+    imp(eyebrow,'width','520px');
+    imp(eyebrow,'height','16px');
+    imp(eyebrow,'margin','0');
+    imp(eyebrow,'font-size','12px');
+    imp(eyebrow,'line-height','16px');
+
+    /* Same restrained French-approved title size in all five languages. */
+    imp(title,'position','absolute');
+    imp(title,'left','0');
+    imp(title,'top',titleTop+'px');
+    imp(title,'width','520px');
+    imp(title,'max-width','520px');
+    imp(title,'height','auto');
+    imp(title,'max-height','none');
+    imp(title,'overflow','visible');
+    imp(title,'margin','0');
+    imp(title,'padding','0');
+    imp(title,'font-size',titleSize+'px');
+    imp(title,'line-height','1.04');
+    imp(title,'letter-spacing','-.025em');
+
+    /* These are the fixed master positions for every desktop language. */
+    imp(paragraph,'position','absolute');
+    imp(paragraph,'left','0');
+    imp(paragraph,'top',paragraphTop+'px');
+    imp(paragraph,'width','520px');
+    imp(paragraph,'max-width','520px');
+    imp(paragraph,'height','auto');
+    imp(paragraph,'max-height','none');
+    imp(paragraph,'overflow','visible');
+    imp(paragraph,'margin','0');
+    imp(paragraph,'padding','0');
+    imp(paragraph,'font-size','15px');
+    imp(paragraph,'line-height','1.5');
+
+    imp(actions,'position','absolute');
+    imp(actions,'left','0');
+    imp(actions,'top',actionsTop+'px');
+    imp(actions,'width','auto');
+    imp(actions,'height','42px');
+    imp(actions,'max-height','42px');
+    imp(actions,'margin','0');
+    imp(actions,'padding','0');
+    imp(actions,'display','flex');
+    imp(actions,'align-items','center');
+    imp(actions,'gap','10px');
+    imp(actions,'flex-wrap','nowrap');
+
+    Array.prototype.forEach.call(actions.querySelectorAll('.btn'),function(btn){
+      imp(btn,'width','148px');
+      imp(btn,'min-width','148px');
+      imp(btn,'max-width','148px');
+      imp(btn,'height','42px');
+      imp(btn,'min-height','42px');
+      imp(btn,'max-height','42px');
+      imp(btn,'margin','0');
+    });
+  }
+
+  function settle(){
+    applyRoomsDesktop();
+    setTimeout(applyRoomsDesktop,120);
+    setTimeout(applyRoomsDesktop,520);
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',settle,{once:true});
+  }else{
+    settle();
+  }
+  document.addEventListener('kk:languagechange',settle);
+  window.addEventListener('load',settle,{once:true});
+  window.addEventListener('resize',function(){
+    if(desktop && desktop.matches) settle();
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
