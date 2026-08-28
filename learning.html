@@ -2303,8 +2303,8 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
 </script>
 <script src="js/language.js"></script>
 
-<script id="learning-desktop-only-polished-v67">
-/* LEARNING & DEVELOPMENT v67 — DESKTOP ONLY.
+<script id="learning-desktop-animation-centred-v68">
+/* LEARNING & DEVELOPMENT v68 — DESKTOP ONLY.
    Mobile/tablet (980px and below) are deliberately untouched.
    Uses the restrained Our Rooms/French desktop title scale, keeps the body
    copy and action buttons at one fixed position in every language, and puts
@@ -2394,7 +2394,15 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
     var titleSize=compact ? 36 : 38;
     var titleTop=compact ? 48 : 50;
     var rowCount=(desktopTitles[lang()]||desktopTitles.en).length;
-    var animationTop=rowCount===2 ? (compact ? 154 : 158) : (compact ? 174 : 178);
+    var animationTop;
+    /* v68: visually centre the animation in the title/body vertical gap.
+       Two-line titles have a taller free gap, so the animation sits slightly lower;
+       three-line titles use a smaller shift to preserve breathing room above the paragraph. */
+    if(rowCount===2){
+      animationTop=compact ? 166 : 170;
+    }else{
+      animationTop=compact ? 178 : 182;
+    }
     var paragraphTop=compact ? 226 : 232;
     var actionsTop=compact ? 298 : 304;
     var copyHeight=compact ? 346 : 352;
