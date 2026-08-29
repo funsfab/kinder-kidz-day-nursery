@@ -2122,6 +2122,18 @@ main + footer{
 }
 </style>
 
+
+<style id="learning-desktop-es-pl-animation-fix-v69">
+/* DESKTOP ONLY — Spanish + Polish Learning hero animation.
+   Keep both decorative lines fully inside the title/body gap so neither
+   line touches “todos los días” or “dnia”. Mobile remains unchanged. */
+@media (min-width:981px){
+  html[data-kk-lang="es"] .learning-hero .learning-desktop-gap-animation::before,
+  html[data-kk-lang="pl"] .learning-hero .learning-desktop-gap-animation::before{
+    top:7px!important;
+  }
+}
+</style>
 </head>
 <body class="page-learning notranslate" translate="no">
 <div class="topbar">
