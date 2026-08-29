@@ -873,6 +873,59 @@
 
 <script src="js/language.js"></script>
 
+
+<script id="fees-pt-pl-title-match-english-v71">
+(function(){
+  'use strict';
+  var desktop = window.matchMedia ? window.matchMedia('(min-width:981px)') : null;
+
+  function currentLang(){
+    return document.documentElement.dataset.kkLang ||
+           localStorage.getItem('kkPreferredLanguage') || 'en';
+  }
+
+  function applyTitleSize(){
+    var title = document.getElementById('kkHeroTitle');
+    if(!title) return;
+
+    if(!desktop || !desktop.matches){
+      title.style.removeProperty('font-size');
+      title.style.removeProperty('line-height');
+      return;
+    }
+
+    var l = currentLang();
+
+    /* Portuguese and Polish must use exactly the approved English desktop title scale. */
+    if(l === 'pt' || l === 'pl'){
+      title.style.setProperty('font-size','38px','important');
+      title.style.setProperty('line-height','1.04','important');
+    }else{
+      /* EN/FR/ES keep their existing approved desktop rules. */
+      title.style.removeProperty('font-size');
+      title.style.removeProperty('line-height');
+    }
+  }
+
+  function settle(){
+    applyTitleSize();
+    setTimeout(applyTitleSize,20);
+    setTimeout(applyTitleSize,120);
+    setTimeout(applyTitleSize,300);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', settle, {once:true});
+  }else{
+    settle();
+  }
+
+  document.addEventListener('kk:languagechange', settle);
+  window.addEventListener('load', settle, {once:true});
+  window.addEventListener('resize', settle, {passive:true});
+})();
+</script>
+
 <script id="fees-desktop-animation-position-v70">
 (function(){
   'use strict';
