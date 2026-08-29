@@ -1469,9 +1469,13 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     background:linear-gradient(
       90deg,
       rgba(46,132,73,.16),
-      rgba(232,190,58,.82),
+      rgba(232,190,58,.90),
+      rgba(46,132,73,.16),
+      rgba(232,190,58,.72),
       rgba(46,132,73,.16)
     )!important;
+    background-size:220% 100%!important;
+    animation:kkAboutRow3ShimmerV82 4.4s linear infinite!important;
     overflow:visible!important;
   }
 
@@ -1501,12 +1505,14 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     position:absolute!important;
     top:50%!important;
     left:0!important;
-    width:9px!important;
-    height:9px!important;
+    width:10px!important;
+    height:10px!important;
     border-radius:50%!important;
     background:linear-gradient(135deg,#60c7e8,#eb6aa9)!important;
-    transform:translateY(-50%)!important;
-    animation:kkAboutRow3TravelV81 4.2s ease-in-out infinite alternate!important;
+    transform:translate3d(0,-50%,0)!important;
+    box-shadow:0 0 0 4px rgba(96,199,232,.10)!important;
+    will-change:transform!important;
+    animation:kkAboutRow3TravelV82 3.6s ease-in-out infinite alternate!important;
   }
 
   html body.page-about .about-hero-mini-animation .mini-star{
@@ -1538,7 +1544,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     height:48px!important;
     min-height:48px!important;
     max-height:48px!important;
-    margin:0 0 12px!important;
+    margin:0 0 20px!important;
     padding:0!important;
     font-size:16px!important;
     line-height:24px!important;
@@ -1590,9 +1596,14 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   }
 }
 
-@keyframes kkAboutRow3TravelV81{
-  from{left:0}
-  to{left:calc(100% - 9px)}
+@keyframes kkAboutRow3TravelV82{
+  0%{transform:translate3d(0,-50%,0) scale(1)}
+  48%{transform:translate3d(196px,-8px,0) scale(1.08)}
+  100%{transform:translate3d(392px,-50%,0) scale(1)}
+}
+@keyframes kkAboutRow3ShimmerV82{
+  from{background-position:0% 50%}
+  to{background-position:220% 50%}
 }
 @keyframes kkAboutRow3StarV81{
   0%,100%{transform:translateY(-50%) scale(1) rotate(0deg);opacity:.76}
