@@ -1315,58 +1315,42 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
-<style id="about-desktop-exact-home-master-v81">
-/* ================================================================
-   ABOUT US — DESKTOP EXACT HOME MASTER v81
-   Home page measurements copied exactly:
-     eyebrow            17px
-     title slot        126px (3 × 42px)
-     paragraph          48px (2 × 24px)
-     buttons            42px
-     gaps               12px
-     top offset          34px
-     buttons           148px × 42px
 
-   IMPORTANT:
-   • 2 title rows = row 3 is ONE animation row.
-   • 3 title rows = NO animation.
-   • No animation creates extra height.
-   • Paragraph and buttons therefore stay at the same Y-position
-     as the Home page in every language.
-   • Mobile/tablet are untouched.
-   ================================================================ */
 
+<style id="about-desktop-clean-home-grid-v83">
+/* ABOUT US DESKTOP v83 — one authoritative Home-matched hero layout.
+   The geometry is copied from the approved Home page.
+   Mobile/tablet remain controlled by the existing mobile rules. */
 @media (min-width:981px){
-
-  /* Kill all earlier desktop grid positioning on About only. */
+  /* Exact Home geometry: 17px eyebrow + 126px title slot + 48px message + 42px buttons,
+     with the SAME 12px gap between every row. */
   html body.page-about .hero-copy{
     position:relative!important;
-    display:block!important;
-    grid-template:none!important;
-    grid-template-rows:none!important;
-    grid-template-columns:none!important;
-    align-content:initial!important;
-    align-items:initial!important;
+    display:grid!important;
+    grid-template-columns:520px!important;
+    grid-template-rows:17px 126px 48px 42px!important;
+    row-gap:12px!important;
+    align-content:start!important;
+    align-items:start!important;
     align-self:start!important;
     width:100%!important;
     min-width:0!important;
     min-height:0!important;
     height:auto!important;
-    max-height:none!important;
     padding:34px 0 0!important;
     margin:0!important;
     overflow:visible!important;
   }
 
-  /* 1. Eyebrow: EXACT Home slot */
-  html body.page-about .hero-copy > .eyebrow{
+  html body.page-about .hero-copy>.eyebrow{
+    grid-column:1!important;
+    grid-row:1!important;
     position:static!important;
-    display:block!important;
     width:auto!important;
     height:17px!important;
     min-height:17px!important;
     max-height:17px!important;
-    margin:0 0 12px!important;
+    margin:0!important;
     padding:0!important;
     font-size:12px!important;
     line-height:17px!important;
@@ -1374,16 +1358,18 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     transform:none!important;
   }
 
-  /* 2. Title: fixed THREE-ROW Home slot */
   html body.page-about #kkHeroTitle{
+    grid-column:1!important;
+    grid-row:2!important;
     position:static!important;
     display:block!important;
+    align-self:start!important;
     width:560px!important;
     max-width:560px!important;
     height:126px!important;
     min-height:126px!important;
     max-height:126px!important;
-    margin:0 0 12px!important;
+    margin:0!important;
     padding:0!important;
     font-family:Georgia,"Times New Roman",serif!important;
     font-size:38px!important;
@@ -1392,104 +1378,75 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     overflow:visible!important;
     transform:none!important;
   }
-
   html body.page-about #kkHeroTitle .kk-title-line{
     display:block!important;
-    position:static!important;
     width:100%!important;
     height:42px!important;
     min-height:42px!important;
     max-height:42px!important;
     margin:0!important;
     padding:0!important;
-    font-family:inherit!important;
-    font-size:38px!important;
+    font:inherit!important;
     line-height:42px!important;
     letter-spacing:inherit!important;
     white-space:nowrap!important;
     transform:none!important;
   }
 
-  /*
-   * ONE animation row only.
-   * It is placed INSIDE the empty third title row.
-   * It adds ZERO height and cannot push paragraph/buttons.
-   */
+  /* The animation occupies ONLY the otherwise-empty third title row.
+     It is absolutely positioned, so it cannot shift the message/buttons. */
   html body.page-about .about-hero-mini-animation{
     display:none!important;
     position:absolute!important;
     left:0!important;
-    top:147px!important;
+    top:147px!important; /* 34 top + 17 eyebrow + 12 gap + two 42px title rows */
     width:520px!important;
-    max-width:520px!important;
     height:42px!important;
-    min-height:42px!important;
-    max-height:42px!important;
     margin:0!important;
     padding:0!important;
-    align-items:center!important;
     pointer-events:none!important;
     overflow:visible!important;
-    transform:none!important;
     opacity:1!important;
-    z-index:2!important;
+    z-index:4!important;
+    transform:none!important;
   }
-
-  /* EN / FR / PL are exactly two title rows -> animation is row 3. */
   html[data-kk-lang="en"] body.page-about .about-hero-mini-animation,
   html[data-kk-lang="fr"] body.page-about .about-hero-mini-animation,
   html[data-kk-lang="pl"] body.page-about .about-hero-mini-animation{
-    display:flex!important;
+    display:block!important;
   }
-
-  /* ES / PT already fill all three title rows -> no animation. */
   html[data-kk-lang="es"] body.page-about .about-hero-mini-animation,
   html[data-kk-lang="pt"] body.page-about .about-hero-mini-animation{
     display:none!important;
   }
-
   html body.page-about .about-hero-mini-animation::before,
   html body.page-about .about-hero-mini-animation::after{
     content:none!important;
     display:none!important;
   }
-
-  /* Exactly ONE simple line. */
   html body.page-about .about-hero-mini-animation .mini-track{
     position:absolute!important;
     left:48px!important;
-    right:55px!important;
-    top:50%!important;
+    right:52px!important;
+    top:20px!important;
     width:auto!important;
     height:2px!important;
     margin:0!important;
     padding:0!important;
-    transform:translateY(-50%)!important;
     border-radius:999px!important;
-    background:linear-gradient(
-      90deg,
-      rgba(46,132,73,.16),
-      rgba(232,190,58,.90),
-      rgba(46,132,73,.16),
-      rgba(232,190,58,.72),
-      rgba(46,132,73,.16)
-    )!important;
-    background-size:220% 100%!important;
-    animation:kkAboutRow3ShimmerV82 4.4s linear infinite!important;
+    background:linear-gradient(90deg,rgba(46,132,73,.16),rgba(232,190,58,.92),rgba(46,132,73,.16))!important;
     overflow:visible!important;
+    transform:none!important;
   }
-
-  /* Small A tile on the missing third row. */
   html body.page-about .about-hero-mini-animation .mini-track::before{
     content:"A"!important;
     position:absolute!important;
     left:-48px!important;
-    top:50%!important;
+    top:-14px!important;
     width:36px!important;
     height:30px!important;
     display:grid!important;
     place-items:center!important;
-    transform:translateY(-50%)!important;
     border-radius:8px!important;
     background:#efc75a!important;
     color:#376447!important;
@@ -1498,53 +1455,43 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     font-weight:900!important;
     line-height:1!important;
   }
-
-  /* One moving dot only. */
   html body.page-about .about-hero-mini-animation .mini-track::after{
     content:""!important;
     position:absolute!important;
-    top:50%!important;
+    top:-4px!important;
     left:0!important;
     width:10px!important;
     height:10px!important;
     border-radius:50%!important;
     background:linear-gradient(135deg,#60c7e8,#eb6aa9)!important;
-    transform:translate3d(0,-50%,0)!important;
-    box-shadow:0 0 0 4px rgba(96,199,232,.10)!important;
-    will-change:transform!important;
-    animation:kkAboutRow3TravelV82 3.6s ease-in-out infinite alternate!important;
+    box-shadow:0 0 0 4px rgba(96,199,232,.11)!important;
+    animation:kkAboutDotMoveV83 2.6s ease-in-out infinite alternate!important;
   }
-
   html body.page-about .about-hero-mini-animation .mini-star{
     position:absolute!important;
-    right:18px!important;
-    top:50%!important;
+    right:16px!important;
+    top:10px!important;
     color:#dfaa27!important;
-    font-size:17px!important;
+    font-size:18px!important;
     line-height:1!important;
-    transform:translateY(-50%)!important;
-    animation:kkAboutRow3StarV81 2.4s ease-in-out infinite!important;
+    animation:kkAboutStarMoveV83 1.8s ease-in-out infinite!important;
   }
+  html body.page-about .about-hero-mini-animation .mini-leaf{display:none!important;}
+  html body.page-about .mobile-hero-gap-animation{display:none!important;}
 
-  html body.page-about .about-hero-mini-animation .mini-leaf{
-    display:none!important;
-  }
-
-  /* Desktop must never show the separate mobile animation. */
-  html body.page-about .mobile-hero-gap-animation{
-    display:none!important;
-  }
-
-  /* 3. Message: EXACT Home two-row slot */
-  html body.page-about .hero-copy > p{
+  /* Exact Home message row and exact Home 12px grid gap before buttons. */
+  html body.page-about .hero-copy>p{
+    grid-column:1!important;
+    grid-row:3!important;
     position:static!important;
     display:block!important;
+    align-self:start!important;
     width:520px!important;
     max-width:520px!important;
     height:48px!important;
     min-height:48px!important;
     max-height:48px!important;
-    margin:0 0 20px!important;
+    margin:0!important;
     padding:0!important;
     font-size:16px!important;
     line-height:24px!important;
@@ -1553,11 +1500,12 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     transform:none!important;
   }
 
-  /* 4. Buttons: EXACT Home position AND size */
-  html body.page-about .hero-copy > .hero-actions{
+  html body.page-about .hero-copy>.hero-actions{
+    grid-column:1!important;
+    grid-row:4!important;
     position:static!important;
     display:flex!important;
-    grid-template:none!important;
+    align-self:start!important;
     align-items:center!important;
     justify-content:flex-start!important;
     flex-wrap:nowrap!important;
@@ -1570,8 +1518,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     padding:0!important;
     transform:none!important;
   }
-
-  html body.page-about .hero-copy > .hero-actions .btn{
+  html body.page-about .hero-copy>.hero-actions .btn{
     position:static!important;
     display:inline-flex!important;
     align-items:center!important;
@@ -1589,30 +1536,21 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     white-space:nowrap!important;
     transform:none!important;
   }
-
-  html body.page-about .hero-copy > .hero-actions .btn-icon{
-    flex:0 0 auto!important;
-    margin:0!important;
-  }
 }
 
-@keyframes kkAboutRow3TravelV82{
-  0%{transform:translate3d(0,-50%,0) scale(1)}
-  48%{transform:translate3d(196px,-8px,0) scale(1.08)}
-  100%{transform:translate3d(392px,-50%,0) scale(1)}
+@keyframes kkAboutDotMoveV83{
+  from{left:0}
+  to{left:calc(100% - 10px)}
 }
-@keyframes kkAboutRow3ShimmerV82{
-  from{background-position:0% 50%}
-  to{background-position:220% 50%}
-}
-@keyframes kkAboutRow3StarV81{
-  0%,100%{transform:translateY(-50%) scale(1) rotate(0deg);opacity:.76}
-  50%{transform:translateY(-50%) scale(1.12) rotate(10deg);opacity:1}
+@keyframes kkAboutStarMoveV83{
+  0%,100%{transform:translateY(0) scale(1) rotate(0deg);opacity:.72}
+  50%{transform:translateY(-5px) scale(1.14) rotate(12deg);opacity:1}
 }
 
-/* Same exact compact Home values at laptop widths. */
 @media (min-width:981px) and (max-width:1199px){
-
+  html body.page-about .hero-copy{
+    grid-template-rows:17px 120px 48px 42px!important;
+  }
   html body.page-about #kkHeroTitle{
     height:120px!important;
     min-height:120px!important;
@@ -1620,7 +1558,6 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     font-size:36px!important;
     line-height:40px!important;
   }
-
   html body.page-about #kkHeroTitle .kk-title-line{
     height:40px!important;
     min-height:40px!important;
@@ -1628,17 +1565,15 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     font-size:36px!important;
     line-height:40px!important;
   }
-
   html body.page-about .about-hero-mini-animation{
-    top:143px!important;
+    top:143px!important; /* 34 + 17 + 12 + 80 */
     height:40px!important;
-    min-height:40px!important;
-    max-height:40px!important;
   }
 }
 </style>
 
 </head>
+<!-- Kinder Kidz About desktop clean Home grid v83 -->
 <body class="page-about notranslate" translate="no">
 <div class="topbar">
 <div class="container">
