@@ -1572,8 +1572,144 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 
+
+<style id="about-desktop-third-row-animation-v84">
+/* v84 — DESKTOP ONLY.
+   The animation is now physically INSIDE the fixed 3rd title row for EN/FR/PL.
+   It therefore cannot fall below the paragraph/buttons and cannot move their positions. */
+@media (min-width:981px){
+  /* Disable the old separate desktop animation box completely. */
+  html body.page-about .about-hero-mini-animation{display:none!important;}
+
+  /* Same title slot as Home: three equal rows. */
+  html body.page-about #kkHeroTitle{
+    display:block!important;
+    height:126px!important;
+    min-height:126px!important;
+    max-height:126px!important;
+    overflow:visible!important;
+  }
+  html body.page-about #kkHeroTitle .kk-title-line,
+  html body.page-about #kkHeroTitle .kk-title-animation-line{
+    display:block!important;
+    width:520px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:42px!important;
+  }
+
+  /* This is the missing third title row on English/French/Polish. */
+  html body.page-about #kkHeroTitle .kk-title-animation-line{
+    position:relative!important;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font-size:14px!important;
+    letter-spacing:0!important;
+    overflow:visible!important;
+  }
+  html body.page-about .kk-inline-anim{
+    position:absolute!important;
+    inset:0!important;
+    display:flex!important;
+    align-items:center!important;
+    width:520px!important;
+    height:42px!important;
+    gap:10px!important;
+    overflow:visible!important;
+    pointer-events:none!important;
+  }
+  html body.page-about .kk-inline-a{
+    flex:0 0 36px!important;
+    width:36px!important;
+    height:30px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:8px!important;
+    background:#efc75a!important;
+    color:#376447!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    line-height:1!important;
+    box-shadow:0 4px 10px rgba(30,80,45,.08)!important;
+  }
+  html body.page-about .kk-inline-track{
+    position:relative!important;
+    flex:1 1 auto!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(46,132,73,.18),rgba(232,190,58,.92),rgba(46,132,73,.18))!important;
+    overflow:visible!important;
+  }
+  html body.page-about .kk-inline-dot{
+    position:absolute!important;
+    left:0!important;
+    top:-4px!important;
+    width:10px!important;
+    height:10px!important;
+    border-radius:50%!important;
+    background:linear-gradient(135deg,#60c7e8,#eb6aa9)!important;
+    box-shadow:0 0 0 4px rgba(96,199,232,.11)!important;
+    animation:kkAboutInlineDotV84 2.35s ease-in-out infinite alternate!important;
+    animation-play-state:running!important;
+    will-change:left!important;
+  }
+  html body.page-about .kk-inline-star{
+    flex:0 0 24px!important;
+    width:24px!important;
+    text-align:center!important;
+    color:#dfaa27!important;
+    font-size:18px!important;
+    line-height:1!important;
+    animation:kkAboutInlineStarV84 1.8s ease-in-out infinite!important;
+    animation-play-state:running!important;
+  }
+
+  /* Paragraph and buttons retain the exact Home grid rows. */
+  html body.page-about .hero-copy>p{
+    grid-row:3!important;
+    margin:0!important;
+  }
+  html body.page-about .hero-copy>.hero-actions{
+    grid-row:4!important;
+    margin:0!important;
+  }
+}
+
+@media (min-width:981px) and (max-width:1199px){
+  html body.page-about #kkHeroTitle{
+    height:120px!important;
+    min-height:120px!important;
+    max-height:120px!important;
+  }
+  html body.page-about #kkHeroTitle .kk-title-line,
+  html body.page-about #kkHeroTitle .kk-title-animation-line{
+    height:40px!important;
+    min-height:40px!important;
+    max-height:40px!important;
+    line-height:40px!important;
+  }
+  html body.page-about .kk-inline-anim{height:40px!important;}
+}
+
+@media (max-width:980px){
+  /* v84 is desktop-only; never alter the approved mobile layout. */
+  html body.page-about #kkHeroTitle .kk-title-animation-line{display:none!important;}
+}
+
+@keyframes kkAboutInlineDotV84{
+  from{left:0}
+  to{left:calc(100% - 10px)}
+}
+@keyframes kkAboutInlineStarV84{
+  0%,100%{transform:translateY(0) scale(1) rotate(0deg);opacity:.72}
+  50%{transform:translateY(-4px) scale(1.14) rotate(12deg);opacity:1}
+}
+</style>
+
 </head>
-<!-- Kinder Kidz About desktop clean Home grid v83 -->
+<!-- Kinder Kidz About desktop third-row animation v84 -->
 <body class="page-about notranslate" translate="no">
 <div class="topbar">
 <div class="container">
@@ -1830,7 +1966,7 @@ updateScrollNav();
 </script>
 <script src="js/language.js"></script>
 
-<script id="about-desktop-line-breaks-only-v81">
+<script id="about-desktop-third-row-title-v84">
 (function(){
   "use strict";
 
@@ -1840,11 +1976,13 @@ updateScrollNav();
   const titleRows = {
     en: [
       ["A Loving Start,", false],
-      ["A Bright Future", true]
+      ["A Bright Future", true],
+      ["__ANIMATION__", false]
     ],
     fr: [
       ["Un début plein d’amour,", false],
-      ["un avenir prometteur", true]
+      ["un avenir prometteur", true],
+      ["__ANIMATION__", false]
     ],
     es: [
       ["Un comienzo lleno", false],
@@ -1858,13 +1996,24 @@ updateScrollNav();
     ],
     pl: [
       ["Pełen miłości początek,", false],
-      ["jasna przyszłość", true]
+      ["jasna przyszłość", true],
+      ["__ANIMATION__", false]
     ]
   };
 
   function lang(){
     const value = document.documentElement.dataset.kkLang || "en";
     return /^(en|fr|es|pt|pl)$/.test(value) ? value : "en";
+  }
+
+  function animationRow(){
+    return '<span class="kk-title-animation-line" aria-hidden="true">' +
+      '<span class="kk-inline-anim">' +
+        '<span class="kk-inline-a">A</span>' +
+        '<span class="kk-inline-track"><span class="kk-inline-dot"></span></span>' +
+        '<span class="kk-inline-star">☆</span>' +
+      '</span>' +
+    '</span>';
   }
 
   function enforceTitle(){
@@ -1875,6 +2024,7 @@ updateScrollNav();
 
     const rows = titleRows[lang()] || titleRows.en;
     const markup = rows.map(function(row){
+      if(row[0] === "__ANIMATION__") return animationRow();
       return '<span class="kk-title-line' +
         (row[1] ? ' kk-title-green' : '') +
         '"' +
@@ -1891,20 +2041,16 @@ updateScrollNav();
 
   function fitMessage(){
     if(!desktop.matches) return;
-
     const p = document.querySelector("body.page-about .hero-copy > p");
     if(!p) return;
 
     let size = 16;
     p.style.setProperty("font-size", size + "px", "important");
     p.style.setProperty("letter-spacing", "0", "important");
-
     while(p.scrollHeight > 49 && size > 12.5){
       size -= 0.25;
       p.style.setProperty("font-size", size + "px", "important");
-      if(size <= 14){
-        p.style.setProperty("letter-spacing", "-0.01em", "important");
-      }
+      if(size <= 14) p.style.setProperty("letter-spacing", "-0.01em", "important");
     }
   }
 
@@ -1915,9 +2061,7 @@ updateScrollNav();
   }
 
   function settle(){
-    [0,40,120,300,700].forEach(function(ms){
-      setTimeout(apply,ms);
-    });
+    [0,40,120,300,700].forEach(function(ms){ setTimeout(apply,ms); });
   }
 
   document.addEventListener("kk:languagechange", settle);
@@ -1927,11 +2071,7 @@ updateScrollNav();
   if(h1){
     new MutationObserver(function(){
       if(!writing) setTimeout(apply,0);
-    }).observe(h1,{
-      childList:true,
-      subtree:true,
-      characterData:true
-    });
+    }).observe(h1,{childList:true,subtree:true,characterData:true});
   }
 
   settle();
