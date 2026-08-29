@@ -454,121 +454,91 @@
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
 
-<style id="kk-ofsted-badge-consistency-v54">
-/* v54 — same Ofsted badge structure on desktop and mobile:
-   Ofsted + GOOD centered inside blue; date always outside underneath. */
-.kk-ofsted-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  flex:0 0 auto;
-  text-align:center;
-}
-.kk-ofsted-date{
-  display:block;
-  margin:0!important;
-  color:#707771!important;
-  font-weight:500!important;
-  white-space:nowrap;
-  text-align:center;
-  line-height:1.15!important;
-}
-.kk-ofsted-badge{
-  background:#214f90;
-  color:#fff;
-  border-radius:16px;
-  display:flex!important;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  box-sizing:border-box;
-  padding:7px 8px!important;
-  line-height:1!important;
-  overflow:hidden;
-}
-.kk-ofsted-badge .kk-ofsted-brand{
-  display:block;
-  font-size:11px;
-  line-height:1;
-  font-weight:800;
-}
-.kk-ofsted-badge .kk-ofsted-rating{
-  display:block;
-  margin-top:7px;
-  font-size:17px;
-  line-height:1;
-  font-weight:900;
-}
-.kk-ofsted-compact .kk-ofsted-badge{
-  width:64px!important;
-  height:58px!important;
-  min-width:64px!important;
-}
-.kk-ofsted-compact .kk-ofsted-date{
-  font-size:10.5px!important;
-}
-.kk-ofsted-large .kk-ofsted-badge{
-  width:108px!important;
-  height:92px!important;
-  min-width:108px!important;
-  border-radius:20px;
-}
-.kk-ofsted-large .kk-ofsted-badge .kk-ofsted-brand{
-  font-size:14px;
-}
-.kk-ofsted-large .kk-ofsted-badge .kk-ofsted-rating{
-  font-size:28px;
-  margin-top:9px;
-}
-.kk-ofsted-large .kk-ofsted-date{
-  font-size:12px!important;
-}
-
-/* Compact stat/proof item: keep the badge/date centred in its cell. */
-.kk-ofsted-stat{
-  justify-content:center!important;
-  align-items:center!important;
-  text-align:center!important;
-}
-.kk-ofsted-stat > .kk-ofsted-stack{
-  margin-inline:auto;
-}
-
-/* Home quality card: the date sits immediately below the badge, not inside it. */
-.proof-card.quality .kk-ofsted-stack{
-  align-self:center;
-}
-
-/* Learning/Gallery/Contact: do not let old icon/badge rules distort the new badge. */
-.learning-proof .kk-ofsted-badge,
-.gallery-page .kk-ofsted-badge,
-.contact-page .kk-ofsted-badge{
-  flex:none!important;
-  font-style:normal!important;
-}
-
-/* Mobile: keep the blue block slightly shorter and the date clearly underneath. */
-@media(max-width:620px){
-  .kk-ofsted-compact .kk-ofsted-badge{
-    width:72px!important;
-    height:62px!important;
-    min-width:72px!important;
+<style id="gallery-desktop-title-animation-magicfill-v72">
+/* v72: Desktop-only Gallery hero title scale + centred animation + decorative fill beside Small Group Learning. */
+@media (min-width:981px){
+  .gallery-page .gallery-highlights{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:12px!important;
+    align-items:stretch!important;
   }
-  .kk-ofsted-compact .kk-ofsted-badge .kk-ofsted-brand{font-size:11px}
-  .kk-ofsted-compact .kk-ofsted-badge .kk-ofsted-rating{font-size:18px;margin-top:7px}
-  .kk-ofsted-compact .kk-ofsted-date{font-size:11px!important}
-
-  .kk-ofsted-large .kk-ofsted-badge{
-    width:112px!important;
-    height:94px!important;
-    min-width:112px!important;
+  .gallery-page .gallery-highlights .card{
+    min-height:140px!important;
   }
-  .kk-ofsted-large .kk-ofsted-badge .kk-ofsted-brand{font-size:14px}
-  .kk-ofsted-large .kk-ofsted-badge .kk-ofsted-rating{font-size:28px}
-  .kk-ofsted-large .kk-ofsted-date{font-size:12px!important}
+  .gallery-page .gallery-magic-fill{
+    grid-column:2 / 6!important;
+    grid-row:2!important;
+    position:relative!important;
+    min-height:140px!important;
+    border-radius:22px!important;
+    overflow:hidden!important;
+    background:linear-gradient(135deg,rgba(246,252,244,.98) 0%,rgba(238,249,234,.98) 48%,rgba(252,247,230,.98) 100%)!important;
+    border:1px solid rgba(23,106,59,.12)!important;
+    box-shadow:0 12px 28px rgba(25,70,48,.06)!important;
+    isolation:isolate!important;
+  }
+  .gallery-page .gallery-magic-fill .gm-cloud,
+  .gallery-page .gallery-magic-fill .gm-hill,
+  .gallery-page .gallery-magic-fill .gm-path,
+  .gallery-page .gallery-magic-fill .gm-sun,
+  .gallery-page .gallery-magic-fill .gm-icon,
+  .gallery-page .gallery-magic-fill .gm-dots span{
+    position:absolute!important;
+    display:block!important;
+  }
+  .gallery-page .gallery-magic-fill .gm-cloud{
+    width:88px;height:30px;border-radius:999px;background:rgba(255,255,255,.85);top:16px;left:28px;
+    box-shadow:28px 8px 0 6px rgba(255,255,255,.72),58px -2px 0 2px rgba(255,255,255,.62);
+    animation:gmFloatCloud 6.5s ease-in-out infinite alternate;
+  }
+  .gallery-page .gallery-magic-fill .gm-cloud.c2{left:auto;right:36px;top:22px;transform:scale(.82);animation-delay:.9s}
+  .gallery-page .gallery-magic-fill .gm-sun{
+    width:46px;height:46px;border-radius:50%;top:24px;left:50%;transform:translateX(-50%);
+    background:radial-gradient(circle at 35% 35%,#fff8ce 0%,#f7dc6b 55%,#efc33e 100%);
+    box-shadow:0 0 0 10px rgba(247,220,107,.14);
+    animation:gmPulseSun 3.2s ease-in-out infinite;
+  }
+  .gallery-page .gallery-magic-fill .gm-hill{
+    left:-4%;right:-4%;bottom:-22px;height:74px;border-radius:50% 50% 0 0/100% 100% 0 0;
+    background:linear-gradient(180deg,#a8d48f 0%,#7dbb6d 100%);
+  }
+  .gallery-page .gallery-magic-fill .gm-hill.h2{bottom:-34px;left:24%;right:-12%;height:88px;background:linear-gradient(180deg,#c4e2a7 0%,#96ca7e 100%)}
+  .gallery-page .gallery-magic-fill .gm-path{
+    left:12%;right:10%;bottom:22px;height:34px;border-radius:999px;
+    background:linear-gradient(90deg,rgba(247,236,188,.9) 0%,rgba(255,249,222,.96) 52%,rgba(247,236,188,.9) 100%);
+    transform:rotate(-2.4deg);
+    box-shadow:0 2px 0 rgba(255,255,255,.55) inset;
+  }
+  .gallery-page .gallery-magic-fill .gm-dots{
+    position:absolute;left:17%;right:15%;bottom:34px;height:12px;z-index:2;
+  }
+  .gallery-page .gallery-magic-fill .gm-dots span{
+    width:8px;height:8px;border-radius:50%;bottom:0;background:#2f8a49;opacity:.55;
+    animation:gmHop 3.1s ease-in-out infinite;
+  }
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(1){left:0;animation-delay:0s}
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(2){left:18%;animation-delay:.22s}
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(3){left:36%;animation-delay:.44s}
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(4){left:54%;animation-delay:.66s}
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(5){left:72%;animation-delay:.88s}
+  .gallery-page .gallery-magic-fill .gm-dots span:nth-child(6){left:90%;animation-delay:1.1s}
+  .gallery-page .gallery-magic-fill .gm-icon{
+    width:34px;height:34px;border-radius:12px;display:grid!important;place-items:center!important;font-size:17px;
+    background:rgba(255,255,255,.9);box-shadow:0 10px 18px rgba(23,106,59,.08);z-index:2;
+    animation:gmBob 3.4s ease-in-out infinite alternate;
+  }
+  .gallery-page .gallery-magic-fill .gm-i1{left:26%;top:42px;color:#d98d24;animation-delay:.1s}
+  .gallery-page .gallery-magic-fill .gm-i2{left:42%;top:72px;color:#2f8a49;animation-delay:.55s}
+  .gallery-page .gallery-magic-fill .gm-i3{left:58%;top:48px;color:#5b8fdf;animation-delay:.95s}
+  .gallery-page .gallery-magic-fill .gm-i4{left:72%;top:68px;color:#e27b9f;animation-delay:1.35s}
+}
+@keyframes gmFloatCloud{from{transform:translateX(0)}to{transform:translateX(12px)}}
+@keyframes gmPulseSun{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
+@keyframes gmBob{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+@keyframes gmHop{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-8px);opacity:.82}}
+@media (prefers-reduced-motion:reduce){
+  .gallery-page .gallery-magic-fill *, .gallery-page .gallery-title-gap *{animation:none!important}
 }
 </style>
 
@@ -622,12 +592,7 @@
     <section class="section-tight">
       <div class="container">
         <div class="stat-row stats-compact">
-          <div class="stat-item kk-ofsted-stat">
-            <div class="kk-ofsted-stack kk-ofsted-compact">
-              <div class="kk-ofsted-badge"><span class="kk-ofsted-brand">Ofsted</span><span class="kk-ofsted-rating">GOOD</span></div>
-              <small class="kk-ofsted-date">September 2025</small>
-            </div>
-          </div>
+          <div class="stat-item"><div class="icon ofsted-badge">Ofsted<br>GOOD</div><div><b>Ofsted Rated Good</b><small>September 2025</small></div></div>
           <div class="stat-item"><div class="icon">✿</div><div><b>Registered with Ofsted</b><small>Since 2022</small></div></div>
           <div class="stat-item"><div class="icon">♧</div><div><b>3 Months – 5 Years</b><small>Age range</small></div></div>
           <div class="stat-item"><div class="icon">☀</div><div><b>Outdoor &amp; Indoor Play</b><small>Every day</small></div></div>
@@ -661,6 +626,7 @@
         <div class="card"><div class="icon-badge" style="margin-inline:auto">📚</div><h3 style="font-size:18px">Cosy Corners</h3><p class="muted">Quiet spaces for reading, rest and small group time.</p></div>
         <div class="card"><div class="icon-badge" style="margin-inline:auto">🎨</div><h3 style="font-size:18px">Creative Activities</h3><p class="muted">Art, music and role play to inspire imagination.</p></div>
         <div class="card"><div class="icon-badge" style="margin-inline:auto">🧩</div><h3 style="font-size:18px">Small Group Learning</h3><p class="muted">Sharing, teamwork and fun activities that build confidence together.</p></div>
+        <div class="gallery-magic-fill" aria-hidden="true"><span class="gm-cloud"></span><span class="gm-cloud c2"></span><span class="gm-sun"></span><span class="gm-icon gm-i1">★</span><span class="gm-icon gm-i2">🍃</span><span class="gm-icon gm-i3">📚</span><span class="gm-icon gm-i4">🎨</span><span class="gm-path"></span><span class="gm-dots"><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="gm-hill"></span><span class="gm-hill h2"></span></div>
       </div>
     </section>
 
@@ -743,6 +709,115 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
   else init();
+})();
+</script>
+
+
+<script id="gallery-desktop-hero-fixes-v72">
+(function(){
+  'use strict';
+  var desktop = window.matchMedia ? window.matchMedia('(min-width:981px)') : null;
+  var desktopTitles = {
+    en:['A Glimpse Into','Our Nursery Life'],
+    fr:['Un aperçu de','la vie de notre crèche'],
+    es:['Un vistazo a','nuestra vida en la guardería'],
+    pt:['Um olhar sobre','a vida na nossa creche'],
+    pl:['Rzut oka na nasze','życie w przedszkolu']
+  };
+  var mobileTitles = desktopTitles;
+
+  function lang(){
+    var l = (document.documentElement.dataset.kkLang || localStorage.getItem('kkPreferredLanguage') || 'en').toLowerCase();
+    return /^(en|fr|es|pt|pl)$/.test(l) ? l : 'en';
+  }
+  function imp(el,prop,val){ if(el) el.style.setProperty(prop,val,'important'); }
+  function renderTitle(title, language){
+    if(!title) return;
+    var lines = (desktop && desktop.matches ? desktopTitles : mobileTitles)[language] || desktopTitles.en;
+    var html = lines.map(function(line, index){
+      var cls = index===lines.length-1 ? ' class="kk-title-green"' : '';
+      return '<span'+cls+'>'+line+'</span>';
+    }).join('<br>');
+    title.innerHTML = html;
+    Array.prototype.forEach.call(title.querySelectorAll('.kk-title-green'), function(el){
+      imp(el,'color','var(--green)');
+    });
+  }
+
+  function clearDesktopOnly(){
+    if(desktop && desktop.matches) return;
+    var copy=document.querySelector('.gallery-page .hero-copy');
+    if(!copy) return;
+    var eyebrow=copy.querySelector(':scope > .eyebrow');
+    var title=document.getElementById('kkHeroTitle');
+    var animation=copy.querySelector(':scope > .gallery-title-gap');
+    var paragraph=copy.querySelector(':scope > p');
+    var actions=copy.querySelector(':scope > .hero-actions');
+    var items=[copy,eyebrow,title,animation,paragraph,actions];
+    items.forEach(function(el){
+      if(!el || !el.hasAttribute('data-kk-gallery-v72')) return;
+      ['position','display','height','min-height','max-height','padding','margin','overflow','left','top','width','max-width','font-size','line-height','letter-spacing','align-items','justify-content','gap','flex-wrap','pointer-events'].forEach(function(prop){
+        el.style.removeProperty(prop);
+      });
+      el.removeAttribute('data-kk-gallery-v72');
+    });
+    if(title) renderTitle(title, lang());
+  }
+
+  function apply(){
+    var title=document.getElementById('kkHeroTitle');
+    if(title) renderTitle(title, lang());
+    if(!desktop || !desktop.matches){ clearDesktopOnly(); return; }
+    var body=document.body;
+    if(!body || !body.classList.contains('gallery-page')) return;
+
+    var copy=document.querySelector('.gallery-page .hero-copy');
+    var eyebrow=copy && copy.querySelector(':scope > .eyebrow');
+    var animation=copy && copy.querySelector(':scope > .gallery-title-gap');
+    var paragraph=copy && copy.querySelector(':scope > p');
+    var actions=copy && copy.querySelector(':scope > .hero-actions');
+    if(!copy || !eyebrow || !title || !animation || !paragraph || !actions) return;
+
+    [copy,eyebrow,title,animation,paragraph,actions].forEach(function(el){ el.setAttribute('data-kk-gallery-v72',''); });
+
+    var compact = window.innerWidth < 1200;
+    var titleSize = compact ? 36 : 38;
+    var titleTop = compact ? 48 : 50;
+    var animationTop = compact ? 160 : 166;
+    var paragraphTop = compact ? 216 : 222;
+    var actionsTop = compact ? 292 : 298;
+    var copyHeight = compact ? 348 : 354;
+
+    imp(copy,'position','relative'); imp(copy,'display','block');
+    imp(copy,'height',copyHeight+'px'); imp(copy,'min-height',copyHeight+'px'); imp(copy,'max-height',copyHeight+'px');
+    imp(copy,'padding','20px 0 0'); imp(copy,'margin','0'); imp(copy,'overflow','visible');
+
+    imp(eyebrow,'position','absolute'); imp(eyebrow,'left','0'); imp(eyebrow,'top','20px');
+    imp(eyebrow,'width','520px'); imp(eyebrow,'height','16px'); imp(eyebrow,'margin','0'); imp(eyebrow,'font-size','12px'); imp(eyebrow,'line-height','16px');
+
+    imp(title,'position','absolute'); imp(title,'left','0'); imp(title,'top',titleTop+'px');
+    imp(title,'width','560px'); imp(title,'max-width','560px'); imp(title,'height','auto'); imp(title,'max-height','none'); imp(title,'overflow','visible'); imp(title,'margin','0'); imp(title,'padding','0');
+    imp(title,'font-size',titleSize+'px'); imp(title,'line-height','1.04'); imp(title,'letter-spacing','-.025em');
+
+    imp(animation,'position','absolute'); imp(animation,'left','0'); imp(animation,'top',animationTop+'px');
+    imp(animation,'display','flex'); imp(animation,'width','500px'); imp(animation,'max-width','500px'); imp(animation,'height','42px'); imp(animation,'margin','0'); imp(animation,'padding','0');
+    imp(animation,'align-items','center'); imp(animation,'justify-content','center'); imp(animation,'pointer-events','none');
+
+    imp(paragraph,'position','absolute'); imp(paragraph,'left','0'); imp(paragraph,'top',paragraphTop+'px');
+    imp(paragraph,'width','520px'); imp(paragraph,'max-width','520px'); imp(paragraph,'height','66px'); imp(paragraph,'max-height','66px'); imp(paragraph,'overflow','visible'); imp(paragraph,'margin','0'); imp(paragraph,'padding','0'); imp(paragraph,'font-size','15px'); imp(paragraph,'line-height','1.45');
+
+    imp(actions,'position','absolute'); imp(actions,'left','0'); imp(actions,'top',actionsTop+'px');
+    imp(actions,'width','auto'); imp(actions,'height','42px'); imp(actions,'max-height','42px'); imp(actions,'margin','0'); imp(actions,'padding','0'); imp(actions,'display','flex'); imp(actions,'align-items','center'); imp(actions,'gap','10px'); imp(actions,'flex-wrap','nowrap');
+    Array.prototype.forEach.call(actions.querySelectorAll('.btn'), function(btn){
+      imp(btn,'width','148px'); imp(btn,'min-width','148px'); imp(btn,'max-width','148px'); imp(btn,'height','42px'); imp(btn,'min-height','42px'); imp(btn,'max-height','42px'); imp(btn,'margin','0');
+    });
+  }
+
+  function settle(){ apply(); setTimeout(apply,20); setTimeout(apply,120); setTimeout(apply,260); setTimeout(apply,520); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', settle, {once:true}); else settle();
+  document.addEventListener('kk:languagechange', settle);
+  window.addEventListener('load', settle, {once:true});
+  window.addEventListener('resize', function(){ if(desktop && desktop.matches) settle(); else clearDesktopOnly(); }, {passive:true});
 })();
 </script>
 
