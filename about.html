@@ -1287,217 +1287,6 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
-
-<style id="about-desktop-title-uniform-v79">
-/* ABOUT US v79 — DESKTOP TITLE CONSISTENCY
-   Same visual title size as the corrected Home page:
-   38px on large desktop, 36px on laptop desktop widths.
-   English, French, Spanish, Portuguese and Polish use the SAME size.
-   Mobile/tablet remains unchanged. */
-@media (min-width:981px){
-  html body.page-about .hero-copy{
-    position:relative!important;
-    display:grid!important;
-    grid-template-rows:16px 80px 84px 74px 44px!important;
-    row-gap:8px!important;
-    align-content:start!important;
-    width:100%!important;
-    min-width:0!important;
-    min-height:352px!important;
-    height:352px!important;
-    max-height:352px!important;
-    padding:22px 0 0!important;
-    margin:0!important;
-    overflow:visible!important;
-  }
-
-  html body.page-about .hero-copy>.eyebrow{
-    grid-row:1!important;
-    position:static!important;
-    align-self:start!important;
-    margin:0!important;
-    padding:0!important;
-  }
-
-  html body.page-about #kkHeroTitle{
-    grid-row:2!important;
-    position:static!important;
-    align-self:start!important;
-    width:560px!important;
-    max-width:560px!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    margin:0!important;
-    padding:0!important;
-    overflow:visible!important;
-    font-family:Georgia,"Times New Roman",serif!important;
-    font-size:38px!important;
-    line-height:40px!important;
-    letter-spacing:-.03em!important;
-  }
-
-  /* Force every translated title line itself to the exact same size.
-     This prevents the shared language script from making some languages
-     look smaller than English. */
-  html body.page-about #kkHeroTitle .kk-title-line,
-  html body.page-about #kkHeroTitle > span{
-    display:block!important;
-    white-space:nowrap!important;
-    margin:0!important;
-    padding:0!important;
-    font-family:inherit!important;
-    font-size:38px!important;
-    line-height:40px!important;
-    letter-spacing:inherit!important;
-  }
-
-  /* Spanish and Portuguese use three title rows. Keep the same 38px type;
-     only redistribute the fixed title + animation area. */
-  html[data-kk-lang="es"] body.page-about .hero-copy,
-  html[data-kk-lang="pt"] body.page-about .hero-copy{
-    grid-template-rows:16px 120px 44px 74px 44px!important;
-  }
-
-  html body.page-about .about-hero-mini-animation{
-    grid-row:3!important;
-    display:flex!important;
-    position:relative!important;
-    top:auto!important;
-    left:auto!important;
-    right:auto!important;
-    bottom:auto!important;
-    align-self:stretch!important;
-    justify-self:stretch!important;
-    width:100%!important;
-    max-width:520px!important;
-    height:84px!important;
-    min-height:84px!important;
-    margin:0!important;
-    padding:0!important;
-    transform:none!important;
-    overflow:visible!important;
-  }
-
-  html[data-kk-lang="es"] body.page-about .about-hero-mini-animation,
-  html[data-kk-lang="pt"] body.page-about .about-hero-mini-animation{
-    height:44px!important;
-    min-height:44px!important;
-  }
-
-  html body.page-about .mobile-hero-gap-animation{
-    display:none!important;
-  }
-
-  html body.page-about .about-hero-mini-animation::before{
-    left:4%!important;
-    right:18%!important;
-    top:10px!important;
-    height:2px!important;
-  }
-
-  html body.page-about .about-hero-mini-animation::after{
-    content:""!important;
-    position:absolute!important;
-    left:11%!important;
-    right:8%!important;
-    top:50%!important;
-    height:2px!important;
-    transform:translateY(-50%)!important;
-    border-radius:999px!important;
-    background:linear-gradient(
-      90deg,
-      rgba(47,138,73,.10),
-      rgba(247,216,91,.78),
-      rgba(47,138,73,.12)
-    )!important;
-    pointer-events:none!important;
-  }
-
-  html body.page-about .about-hero-mini-animation .mini-track{
-    left:7%!important;
-    right:12%!important;
-    width:auto!important;
-    bottom:10px!important;
-  }
-
-  html body.page-about .about-hero-mini-animation .mini-track:before{
-    top:-13px!important;
-  }
-
-  html body.page-about .about-hero-mini-animation .mini-star{
-    top:4px!important;
-    right:9%!important;
-  }
-
-  html body.page-about .about-hero-mini-animation .mini-leaf{
-    top:5px!important;
-    right:2%!important;
-  }
-
-  html body.page-about .hero-copy>p{
-    grid-row:4!important;
-    position:static!important;
-    align-self:start!important;
-    width:100%!important;
-    max-width:520px!important;
-    height:auto!important;
-    max-height:74px!important;
-    overflow:hidden!important;
-    margin:0!important;
-    padding:0!important;
-    font-size:15px!important;
-    line-height:1.48!important;
-  }
-
-  html body.page-about .hero-copy>.hero-actions{
-    grid-row:5!important;
-    position:static!important;
-    align-self:start!important;
-    display:flex!important;
-    flex-wrap:nowrap!important;
-    align-items:center!important;
-    gap:10px!important;
-    width:auto!important;
-    height:44px!important;
-    margin:0!important;
-    padding:0!important;
-  }
-
-  html body.page-about .hero-media{
-    align-self:start!important;
-  }
-}
-
-/* Exact same laptop-desktop title size as the corrected Home page. */
-@media (min-width:981px) and (max-width:1199px){
-  html body.page-about #kkHeroTitle,
-  html body.page-about #kkHeroTitle .kk-title-line,
-  html body.page-about #kkHeroTitle > span{
-    font-size:36px!important;
-    line-height:38px!important;
-  }
-}
-
-/* Preserve the already-approved French mobile treatment. */
-@media (max-width:620px){
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
-    font-size:31px!important;
-    line-height:1.04!important;
-    letter-spacing:-.025em!important;
-  }
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle .kk-title-line{
-    display:block!important;
-    white-space:nowrap!important;
-  }
-}
-@media (max-width:380px){
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
-    font-size:29px!important;
-  }
-}
-</style>
-
 <style id="kk-desktop-header-font-consistency-v76">
 /* v76 — DESKTOP HEADER TYPOGRAPHY ONLY.
    Matches the smaller recent desktop header scale.
@@ -1525,6 +1314,287 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   }
 }
 </style>
+
+<style id="about-desktop-home-rhythm-v80">
+/* ================================================================
+   ABOUT US DESKTOP v80 — HOME PAGE IS THE MASTER TEMPLATE
+   ------------------------------------------------
+   Rule:
+   • Every desktop title area always occupies THREE visual rows.
+   • 2 title rows = one simple animation in the missing third row.
+   • 3 title rows = NO animation.
+   • Paragraph starts at the same height as Home.
+   • Book a Visit / Enquire starts at the same height as Home.
+   • Mobile/tablet is intentionally untouched.
+   ================================================================ */
+
+@media (min-width:981px){
+
+  /* EXACT HOME PAGE HERO-COPY RHYTHM */
+  html body.page-about .hero-copy{
+    position:relative!important;
+    display:grid!important;
+    grid-template-rows:17px 126px 48px 42px!important;
+    row-gap:12px!important;
+    align-content:start!important;
+    align-self:start!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    padding:34px 0 0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body.page-about .hero-copy>.eyebrow{
+    grid-row:1!important;
+    position:static!important;
+    align-self:start!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:17px!important;
+  }
+
+  /* EXACT SAME TITLE SCALE / SLOT AS HOME */
+  html body.page-about #kkHeroTitle{
+    grid-row:2!important;
+    position:static!important;
+    align-self:start!important;
+    display:block!important;
+    width:560px!important;
+    max-width:560px!important;
+    height:126px!important;
+    min-height:126px!important;
+    max-height:126px!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:38px!important;
+    line-height:42px!important;
+    letter-spacing:-.03em!important;
+  }
+
+  html body.page-about #kkHeroTitle .kk-title-line{
+    display:block!important;
+    width:100%!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    white-space:nowrap!important;
+    font-family:inherit!important;
+    font-size:38px!important;
+    line-height:42px!important;
+    letter-spacing:inherit!important;
+  }
+
+  /*
+   * ONE SIMPLE ANIMATION ONLY.
+   * It sits exactly in the missing THIRD TITLE ROW.
+   * No stacked lines. No extra animation rows.
+   */
+  html body.page-about .about-hero-mini-animation{
+    display:none!important;
+    position:absolute!important;
+    left:0!important;
+    top:147px!important; /* 34 + 17 + 12 + (2 × 42) */
+    width:520px!important;
+    max-width:520px!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    align-items:center!important;
+    pointer-events:none!important;
+    overflow:visible!important;
+    transform:none!important;
+    opacity:1!important;
+    z-index:2!important;
+  }
+
+  /* Show the third-row animation ONLY for the 2-line languages. */
+  html[data-kk-lang="en"] body.page-about .about-hero-mini-animation,
+  html[data-kk-lang="fr"] body.page-about .about-hero-mini-animation,
+  html[data-kk-lang="pl"] body.page-about .about-hero-mini-animation{
+    display:flex!important;
+  }
+
+  /* Spanish + Portuguese already use all 3 title rows: NO animation. */
+  html[data-kk-lang="es"] body.page-about .about-hero-mini-animation,
+  html[data-kk-lang="pt"] body.page-about .about-hero-mini-animation{
+    display:none!important;
+  }
+
+  /* Remove the old multi-line animation decorations. */
+  html body.page-about .about-hero-mini-animation::before,
+  html body.page-about .about-hero-mini-animation::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  /* One horizontal line only. */
+  html body.page-about .about-hero-mini-animation .mini-track{
+    position:absolute!important;
+    left:52px!important;
+    right:58px!important;
+    top:50%!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:2px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:translateY(-50%)!important;
+    border-radius:999px!important;
+    overflow:visible!important;
+    background:linear-gradient(
+      90deg,
+      rgba(47,138,73,.12),
+      rgba(232,190,58,.85),
+      rgba(47,138,73,.15)
+    )!important;
+  }
+
+  /* Yellow A badge at the beginning of the ONE animation row. */
+  html body.page-about .about-hero-mini-animation .mini-track::before{
+    content:"A"!important;
+    position:absolute!important;
+    left:-52px!important;
+    top:50%!important;
+    width:38px!important;
+    height:32px!important;
+    display:grid!important;
+    place-items:center!important;
+    transform:translateY(-50%)!important;
+    border-radius:9px!important;
+    background:#f1c85a!important;
+    color:#376447!important;
+    font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
+    font-size:15px!important;
+    font-weight:900!important;
+    line-height:1!important;
+    box-shadow:0 4px 10px rgba(70,90,60,.08)!important;
+  }
+
+  /* Moving dot on the same single line. */
+  html body.page-about .about-hero-mini-animation .mini-track::after{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    top:50%!important;
+    width:10px!important;
+    height:10px!important;
+    border-radius:50%!important;
+    background:linear-gradient(135deg,#62c5e8,#e86baa)!important;
+    transform:translateY(-50%)!important;
+    animation:kkAboutSingleTravelV80 4.2s ease-in-out infinite alternate!important;
+  }
+
+  html body.page-about .about-hero-mini-animation .mini-star{
+    position:absolute!important;
+    right:22px!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    color:#e2ad29!important;
+    font-size:18px!important;
+    line-height:1!important;
+    animation:kkAboutSingleStarV80 2.4s ease-in-out infinite!important;
+  }
+
+  /* Keep it simple: no second decorative icon. */
+  html body.page-about .about-hero-mini-animation .mini-leaf{
+    display:none!important;
+  }
+
+  /* The mobile-only animation stays mobile-only. */
+  html body.page-about .mobile-hero-gap-animation{
+    display:none!important;
+  }
+
+  /* EXACT HOME PARAGRAPH SLOT */
+  html body.page-about .hero-copy>p{
+    grid-row:3!important;
+    position:static!important;
+    align-self:start!important;
+    display:block!important;
+    width:520px!important;
+    max-width:520px!important;
+    height:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    font-size:16px!important;
+    line-height:24px!important;
+    letter-spacing:0!important;
+  }
+
+  /* EXACT HOME BUTTON SLOT */
+  html body.page-about .hero-copy>.hero-actions{
+    grid-row:4!important;
+    position:static!important;
+    align-self:start!important;
+    display:flex!important;
+    align-items:center!important;
+    flex-wrap:nowrap!important;
+    gap:13px!important;
+    width:auto!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body.page-about .hero-copy>.hero-actions .btn{
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    white-space:nowrap!important;
+  }
+}
+
+@keyframes kkAboutSingleTravelV80{
+  from{left:0}
+  to{left:calc(100% - 10px)}
+}
+@keyframes kkAboutSingleStarV80{
+  0%,100%{transform:translateY(-50%) scale(1) rotate(0deg);opacity:.78}
+  50%{transform:translateY(-50%) scale(1.14) rotate(12deg);opacity:1}
+}
+
+/* HOME uses 36px / 40px rows on laptop-size desktop.
+   About follows the same exact rule. */
+@media (min-width:981px) and (max-width:1199px){
+  html body.page-about .hero-copy{
+    grid-template-rows:17px 120px 48px 42px!important;
+  }
+
+  html body.page-about #kkHeroTitle{
+    height:120px!important;
+    min-height:120px!important;
+    max-height:120px!important;
+    font-size:36px!important;
+    line-height:40px!important;
+  }
+
+  html body.page-about #kkHeroTitle .kk-title-line{
+    height:40px!important;
+    min-height:40px!important;
+    font-size:36px!important;
+    line-height:40px!important;
+  }
+
+  html body.page-about .about-hero-mini-animation{
+    top:143px!important; /* 34 + 17 + 12 + (2 × 40) */
+    height:40px!important;
+    min-height:40px!important;
+  }
+}
+</style>
+
 </head>
 <body class="page-about notranslate" translate="no">
 <div class="topbar">
@@ -1782,76 +1852,133 @@ updateScrollNav();
 </script>
 <script src="js/language.js"></script>
 
-<script id="about-desktop-language-geometry-v79">
+<script id="about-desktop-three-row-master-v80">
 (function(){
   "use strict";
 
   const desktop = window.matchMedia("(min-width:981px)");
-  let busy = false;
+  let internal = false;
 
-  function frenchTwoLines(){
-    if(!desktop.matches || document.documentElement.dataset.kkLang !== "fr") return;
+  const titles = {
+    en: [
+      ["A Loving Start,", false],
+      ["A Bright Future", true]
+    ],
+    fr: [
+      ["Un début plein d’amour,", false],
+      ["un avenir prometteur", true]
+    ],
+    es: [
+      ["Un comienzo lleno", false],
+      ["de amor, un futuro", true],
+      ["brillante", true]
+    ],
+    pt: [
+      ["Um começo cheio de", false],
+      ["amor, um futuro", true],
+      ["brilhante", true]
+    ],
+    pl: [
+      ["Pełen miłości początek,", false],
+      ["jasna przyszłość", true]
+    ]
+  };
 
+  function currentLang(){
+    const l = document.documentElement.dataset.kkLang || "en";
+    return /^(en|fr|es|pt|pl)$/.test(l) ? l : "en";
+  }
+
+  function setExactTitle(){
+    if(!desktop.matches) return;
     const h = document.getElementById("kkHeroTitle");
     if(!h) return;
 
-    const lines = h.querySelectorAll(".kk-title-line");
-    if(lines.length === 2 &&
-       lines[1].textContent.trim() === "un avenir prometteur"){
-      return;
-    }
+    const rows = titles[currentLang()] || titles.en;
+    const wanted = rows.map(function(row){
+      return '<span class="kk-title-line' +
+        (row[1] ? ' kk-title-green' : '') +
+        '"' +
+        (row[1] ? ' style="color:var(--green)"' : '') +
+        '>' + row[0] + '</span>';
+    }).join("");
 
-    h.innerHTML =
-      '<span class="kk-title-line">Un début plein d’amour,</span>' +
-      '<span class="kk-title-line kk-title-green">un avenir prometteur</span>';
+    if(h.innerHTML !== wanted){
+      internal = true;
+      h.innerHTML = wanted;
+      internal = false;
+    }
   }
 
-  function releaseDesktopHeroLock(){
-    if(!desktop.matches || busy) return;
+  /*
+   * The HOME template gives body copy exactly two 24px rows.
+   * Translation length varies, so fit ONLY the paragraph text until
+   * the whole message fits those same two rows. Its position and the
+   * button position never change.
+   */
+  function fitParagraphToTwoRows(){
+    if(!desktop.matches) return;
 
-    busy = true;
+    const p = document.querySelector("body.page-about .hero-copy > p");
+    if(!p) return;
 
-    const copy = document.querySelector("body.page-about .hero-copy");
-    if(!copy){
-      busy = false;
-      return;
+    p.style.removeProperty("font-size");
+    p.style.removeProperty("letter-spacing");
+
+    let size = 16;
+    p.style.setProperty("font-size", size + "px", "important");
+    p.style.setProperty("letter-spacing", "0", "important");
+
+    while(p.scrollHeight > 49 && size > 12.75){
+      size -= 0.25;
+      p.style.setProperty("font-size", size + "px", "important");
+      if(size <= 14){
+        p.style.setProperty("letter-spacing", "-0.01em", "important");
+      }
     }
+  }
+
+  function cleanOldDesktopInlineLocks(){
+    if(!desktop.matches) return;
+    const copy = document.querySelector("body.page-about .hero-copy");
+    if(!copy) return;
 
     [
       copy,
       copy.querySelector(":scope > .eyebrow"),
       document.getElementById("kkHeroTitle"),
       copy.querySelector(":scope > .about-hero-mini-animation"),
-      copy.querySelector(":scope > p"),
       copy.querySelector(":scope > .hero-actions")
     ].filter(Boolean).forEach(function(el){
-      el.removeAttribute("style");
       el.removeAttribute("data-kk-hero-lock");
+      /* language.js may add inline geometry; final v80 CSS owns desktop geometry */
+      if(el !== document.querySelector("body.page-about .hero-copy > p")){
+        el.removeAttribute("style");
+      }
     });
+  }
 
-    frenchTwoLines();
-    busy = false;
+  function apply(){
+    if(!desktop.matches || internal) return;
+    cleanOldDesktopInlineLocks();
+    setExactTitle();
+    requestAnimationFrame(fitParagraphToTwoRows);
   }
 
   function settle(){
-    [0,25,120,500,900].forEach(function(ms){
-      setTimeout(releaseDesktopHeroLock, ms);
+    [0,30,120,350,750].forEach(function(ms){
+      setTimeout(apply, ms);
     });
   }
 
   document.addEventListener("kk:languagechange", settle);
   window.addEventListener("resize", settle, {passive:true});
 
-  const target = document.querySelector("body.page-about .hero-copy");
-  if(target){
+  const title = document.getElementById("kkHeroTitle");
+  if(title){
     new MutationObserver(function(){
-      if(!busy) setTimeout(releaseDesktopHeroLock, 0);
-    }).observe(target, {
-      attributes:true,
-      subtree:true,
-      childList:true,
-      attributeFilter:["style","data-kk-hero-lock"]
-    });
+      if(!internal) setTimeout(apply,0);
+    }).observe(title,{childList:true,subtree:true,characterData:true,attributes:true});
   }
 
   settle();
