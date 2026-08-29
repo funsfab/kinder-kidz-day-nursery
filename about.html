@@ -1288,25 +1288,17 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
 
-
-<style id="about-language-layout-v63">
-/* ABOUT US v63
-   Desktop: every language uses the same fixed hero slots so the paragraph,
-   animation and two action buttons never move when the language changes.
-   Mobile: keeps the approved mobile design; only the French title is tightened
-   to the requested two lines. */
-
-/* The translation table describes intentional title rows. Keep those rows
-   explicit on About Us rather than letting the browser invent new wraps. */
-body.page-about #kkHeroTitle .kk-title-line{
-  display:block!important;
-}
-
+<style id="about-desktop-title-uniform-v79">
+/* ABOUT US v79 — DESKTOP TITLE CONSISTENCY
+   Same visual title size as the corrected Home page:
+   38px on large desktop, 36px on laptop desktop widths.
+   English, French, Spanish, Portuguese and Polish use the SAME size.
+   Mobile/tablet remains unchanged. */
 @media (min-width:981px){
   html body.page-about .hero-copy{
     position:relative!important;
     display:grid!important;
-    grid-template-rows:16px 126px 38px 74px 44px!important;
+    grid-template-rows:16px 80px 84px 74px 44px!important;
     row-gap:8px!important;
     align-content:start!important;
     width:100%!important;
@@ -1318,41 +1310,55 @@ body.page-about #kkHeroTitle .kk-title-line{
     margin:0!important;
     overflow:visible!important;
   }
+
   html body.page-about .hero-copy>.eyebrow{
     grid-row:1!important;
     position:static!important;
     align-self:start!important;
     margin:0!important;
     padding:0!important;
-    width:auto!important;
-    height:auto!important;
   }
+
   html body.page-about #kkHeroTitle{
     grid-row:2!important;
     position:static!important;
     align-self:start!important;
+    width:560px!important;
+    max-width:560px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
     margin:0!important;
     padding:0!important;
-    width:100%!important;
-    max-width:520px!important;
-    height:auto!important;
-    max-height:none!important;
     overflow:visible!important;
-    font-size:48px!important;
-    line-height:1.02!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:38px!important;
+    line-height:40px!important;
     letter-spacing:-.03em!important;
   }
-  html body.page-about #kkHeroTitle .kk-title-line{
+
+  /* Force every translated title line itself to the exact same size.
+     This prevents the shared language script from making some languages
+     look smaller than English. */
+  html body.page-about #kkHeroTitle .kk-title-line,
+  html body.page-about #kkHeroTitle > span{
     display:block!important;
     white-space:nowrap!important;
-    line-height:1.02!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:inherit!important;
+    font-size:38px!important;
+    line-height:40px!important;
+    letter-spacing:inherit!important;
   }
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:45px!important}
-  html[data-kk-lang="es"] body.page-about #kkHeroTitle{font-size:38px!important}
-  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:38px!important}
-  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:44px!important}
 
-  /* One animation row, directly below the title and above the paragraph. */
+  /* Spanish and Portuguese use three title rows. Keep the same 38px type;
+     only redistribute the fixed title + animation area. */
+  html[data-kk-lang="es"] body.page-about .hero-copy,
+  html[data-kk-lang="pt"] body.page-about .hero-copy{
+    grid-template-rows:16px 120px 44px 74px 44px!important;
+  }
+
   html body.page-about .about-hero-mini-animation{
     grid-row:3!important;
     display:flex!important;
@@ -1361,18 +1367,73 @@ body.page-about #kkHeroTitle .kk-title-line{
     left:auto!important;
     right:auto!important;
     bottom:auto!important;
-    align-self:center!important;
+    align-self:stretch!important;
     justify-self:stretch!important;
     width:100%!important;
     max-width:520px!important;
-    height:38px!important;
-    min-height:38px!important;
+    height:84px!important;
+    min-height:84px!important;
     margin:0!important;
     padding:0!important;
     transform:none!important;
     overflow:visible!important;
   }
-  html body.page-about .mobile-hero-gap-animation{display:none!important}
+
+  html[data-kk-lang="es"] body.page-about .about-hero-mini-animation,
+  html[data-kk-lang="pt"] body.page-about .about-hero-mini-animation{
+    height:44px!important;
+    min-height:44px!important;
+  }
+
+  html body.page-about .mobile-hero-gap-animation{
+    display:none!important;
+  }
+
+  html body.page-about .about-hero-mini-animation::before{
+    left:4%!important;
+    right:18%!important;
+    top:10px!important;
+    height:2px!important;
+  }
+
+  html body.page-about .about-hero-mini-animation::after{
+    content:""!important;
+    position:absolute!important;
+    left:11%!important;
+    right:8%!important;
+    top:50%!important;
+    height:2px!important;
+    transform:translateY(-50%)!important;
+    border-radius:999px!important;
+    background:linear-gradient(
+      90deg,
+      rgba(47,138,73,.10),
+      rgba(247,216,91,.78),
+      rgba(47,138,73,.12)
+    )!important;
+    pointer-events:none!important;
+  }
+
+  html body.page-about .about-hero-mini-animation .mini-track{
+    left:7%!important;
+    right:12%!important;
+    width:auto!important;
+    bottom:10px!important;
+  }
+
+  html body.page-about .about-hero-mini-animation .mini-track:before{
+    top:-13px!important;
+  }
+
+  html body.page-about .about-hero-mini-animation .mini-star{
+    top:4px!important;
+    right:9%!important;
+  }
+
+  html body.page-about .about-hero-mini-animation .mini-leaf{
+    top:5px!important;
+    right:2%!important;
+  }
 
   html body.page-about .hero-copy>p{
     grid-row:4!important;
@@ -1388,6 +1449,7 @@ body.page-about #kkHeroTitle .kk-title-line{
     font-size:15px!important;
     line-height:1.48!important;
   }
+
   html body.page-about .hero-copy>.hero-actions{
     grid-row:5!important;
     position:static!important;
@@ -1402,25 +1464,22 @@ body.page-about #kkHeroTitle .kk-title-line{
     padding:0!important;
   }
 
-  /* Keep the already-approved right-hand photo untouched. */
   html body.page-about .hero-media{
     align-self:start!important;
   }
 }
 
-/* Smaller laptops: same positions, only title typography is reduced enough
-   to stay inside the left hero column. */
+/* Exact same laptop-desktop title size as the corrected Home page. */
 @media (min-width:981px) and (max-width:1199px){
-  html body.page-about #kkHeroTitle{font-size:44px!important}
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:42px!important}
-  html[data-kk-lang="es"] body.page-about #kkHeroTitle{font-size:35px!important}
-  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:35px!important}
-  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:40px!important}
+  html body.page-about #kkHeroTitle,
+  html body.page-about #kkHeroTitle .kk-title-line,
+  html body.page-about #kkHeroTitle > span{
+    font-size:36px!important;
+    line-height:38px!important;
+  }
 }
 
-/* MOBILE ONLY: requested French title = exactly two rows.
-   The existing auto-height mobile grid then naturally pulls the animation,
-   paragraph, buttons and photo upward without touching their design. */
+/* Preserve the already-approved French mobile treatment. */
 @media (max-width:620px){
   html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
     font-size:31px!important;
@@ -1433,162 +1492,11 @@ body.page-about #kkHeroTitle .kk-title-line{
   }
 }
 @media (max-width:380px){
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:29px!important}
-}
-</style>
-
-
-
-<style id="about-desktop-compact-animation-v64">
-/* ABOUT US v78 — DESKTOP ONLY.
-   Title scale now exactly matches corrected homepage v77:
-   38px on larger desktop, 36px on laptop desktop widths, all languages.
-   Mobile remains untouched.
-
-   Previous layout/animation geometry is preserved.
-
-   Original v64 note:
-   Mobile remains exactly as previously approved.
-   Every language keeps the paragraph and buttons on the same vertical line.
-   Shorter 2-line titles get a taller animation; 3-line titles get a shorter
-   animation so the total title+animation area is identical in every language. */
-@media (min-width:981px){
-  html body.page-about .hero-copy{
-    grid-template-rows:16px 100px 64px 74px 44px!important;
-    row-gap:8px!important;
-    min-height:352px!important;
-    height:352px!important;
-    max-height:352px!important;
-    padding-top:22px!important;
-  }
-
-  /* English: deliberately smaller than before. */
-  html body.page-about #kkHeroTitle{
-    font-size:38px!important;
-    line-height:1.03!important;
-    letter-spacing:-.028em!important;
-    max-width:520px!important;
-  }
-
-  /* French and Polish are also 2-line titles: same compact geometry. */
-  html[data-kk-lang="fr"] body.page-about .hero-copy{
-    grid-template-rows:16px 96px 68px 74px 44px!important;
-  }
   html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
-    font-size:38px!important;
-    line-height:1.03!important;
-  }
-  html[data-kk-lang="pl"] body.page-about .hero-copy{
-    grid-template-rows:16px 98px 66px 74px 44px!important;
-  }
-  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{
-    font-size:38px!important;
-    line-height:1.03!important;
-  }
-
-  /* Spanish and Portuguese use 3 title rows. Their title area is taller,
-     while their animation area is shorter, preserving the exact same body
-     and button position as English/French/Polish. */
-  html[data-kk-lang="es"] body.page-about .hero-copy,
-  html[data-kk-lang="pt"] body.page-about .hero-copy{
-    grid-template-rows:16px 116px 48px 74px 44px!important;
-  }
-  html[data-kk-lang="es"] body.page-about #kkHeroTitle,
-  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{
-    font-size:38px!important;
-    line-height:1.03!important;
-  }
-
-  /* Fill the previous empty area with a larger, centered nursery animation. */
-  html body.page-about .about-hero-mini-animation{
-    width:100%!important;
-    max-width:520px!important;
-    height:64px!important;
-    min-height:64px!important;
-    align-self:stretch!important;
-    justify-self:stretch!important;
-    margin:0!important;
-    overflow:visible!important;
-  }
-  html[data-kk-lang="fr"] body.page-about .about-hero-mini-animation{
-    height:68px!important;
-    min-height:68px!important;
-  }
-  html[data-kk-lang="pl"] body.page-about .about-hero-mini-animation{
-    height:66px!important;
-    min-height:66px!important;
-  }
-  html[data-kk-lang="es"] body.page-about .about-hero-mini-animation,
-  html[data-kk-lang="pt"] body.page-about .about-hero-mini-animation{
-    height:48px!important;
-    min-height:48px!important;
-  }
-
-  /* Three soft horizontal levels make the animation visually occupy the
-     whole gap rather than leaving a large blank zone. */
-  html body.page-about .about-hero-mini-animation::before{
-    left:4%!important;
-    right:18%!important;
-    top:8px!important;
-    height:2px!important;
-  }
-  html body.page-about .about-hero-mini-animation::after{
-    content:""!important;
-    position:absolute!important;
-    left:11%!important;
-    right:8%!important;
-    top:50%!important;
-    height:2px!important;
-    transform:translateY(-50%)!important;
-    border-radius:999px!important;
-    background:linear-gradient(90deg,rgba(47,138,73,.10),rgba(247,216,91,.78),rgba(47,138,73,.12))!important;
-    pointer-events:none!important;
-  }
-  html body.page-about .about-hero-mini-animation .mini-track{
-    left:7%!important;
-    right:12%!important;
-    width:auto!important;
-    bottom:8px!important;
-  }
-  html body.page-about .about-hero-mini-animation .mini-track:before{
-    top:-13px!important;
-  }
-  html body.page-about .about-hero-mini-animation .mini-star{
-    top:2px!important;
-    right:9%!important;
-  }
-  html body.page-about .about-hero-mini-animation .mini-leaf{
-    top:3px!important;
-    right:2%!important;
-  }
-
-  /* Keep body copy and buttons locked to the same rows in every language. */
-  html body.page-about .hero-copy>p{
-    grid-row:4!important;
-    align-self:start!important;
-    margin:0!important;
-  }
-  html body.page-about .hero-copy>.hero-actions{
-    grid-row:5!important;
-    align-self:start!important;
-    margin:0!important;
-  }
-}
-
-/* Smaller desktop/laptop widths: preserve the same compact geometry while
-   trimming typography only. Still desktop-only; mobile CSS is untouched. */
-@media (min-width:981px) and (max-width:1199px){
-  html body.page-about #kkHeroTitle,
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle,
-  html[data-kk-lang="es"] body.page-about #kkHeroTitle,
-  html[data-kk-lang="pt"] body.page-about #kkHeroTitle,
-  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{
-    font-size:36px!important;
+    font-size:29px!important;
   }
 }
 </style>
-
-
 
 <style id="kk-desktop-header-font-consistency-v76">
 /* v76 — DESKTOP HEADER TYPOGRAPHY ONLY.
@@ -1873,5 +1781,82 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});
 updateScrollNav();
 </script>
 <script src="js/language.js"></script>
+
+<script id="about-desktop-language-geometry-v79">
+(function(){
+  "use strict";
+
+  const desktop = window.matchMedia("(min-width:981px)");
+  let busy = false;
+
+  function frenchTwoLines(){
+    if(!desktop.matches || document.documentElement.dataset.kkLang !== "fr") return;
+
+    const h = document.getElementById("kkHeroTitle");
+    if(!h) return;
+
+    const lines = h.querySelectorAll(".kk-title-line");
+    if(lines.length === 2 &&
+       lines[1].textContent.trim() === "un avenir prometteur"){
+      return;
+    }
+
+    h.innerHTML =
+      '<span class="kk-title-line">Un début plein d’amour,</span>' +
+      '<span class="kk-title-line kk-title-green">un avenir prometteur</span>';
+  }
+
+  function releaseDesktopHeroLock(){
+    if(!desktop.matches || busy) return;
+
+    busy = true;
+
+    const copy = document.querySelector("body.page-about .hero-copy");
+    if(!copy){
+      busy = false;
+      return;
+    }
+
+    [
+      copy,
+      copy.querySelector(":scope > .eyebrow"),
+      document.getElementById("kkHeroTitle"),
+      copy.querySelector(":scope > .about-hero-mini-animation"),
+      copy.querySelector(":scope > p"),
+      copy.querySelector(":scope > .hero-actions")
+    ].filter(Boolean).forEach(function(el){
+      el.removeAttribute("style");
+      el.removeAttribute("data-kk-hero-lock");
+    });
+
+    frenchTwoLines();
+    busy = false;
+  }
+
+  function settle(){
+    [0,25,120,500,900].forEach(function(ms){
+      setTimeout(releaseDesktopHeroLock, ms);
+    });
+  }
+
+  document.addEventListener("kk:languagechange", settle);
+  window.addEventListener("resize", settle, {passive:true});
+
+  const target = document.querySelector("body.page-about .hero-copy");
+  if(target){
+    new MutationObserver(function(){
+      if(!busy) setTimeout(releaseDesktopHeroLock, 0);
+    }).observe(target, {
+      attributes:true,
+      subtree:true,
+      childList:true,
+      attributeFilter:["style","data-kk-hero-lock"]
+    });
+  }
+
+  settle();
+})();
+</script>
+
 </body>
 </html>
