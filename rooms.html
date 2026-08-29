@@ -855,6 +855,34 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
+
+<style id="kk-desktop-header-font-consistency-v75">
+/* v75 — DESKTOP HEADER TYPOGRAPHY ONLY.
+   One shared header scale across all eight pages and all five languages.
+   Mobile/tablet rules are deliberately untouched. */
+@media (min-width:981px){
+  body .topbar .container{
+    font-size:13px!important;
+  }
+  body header .navlinks,
+  body .navlinks{
+    font-size:13px!important;
+  }
+  body header .navlinks a,
+  body .navlinks a{
+    font-size:13px!important;
+  }
+  body header .header-visit,
+  body header .nav>.btn.primary.desktop-only{
+    font-size:14px!important;
+  }
+  body .kk-lang-desktop .kk-lang-toggle,
+  body .kk-lang-desktop .kk-current-name,
+  body .kk-lang-desktop .kk-lang-option{
+    font-size:13px!important;
+  }
+}
+</style>
 </head>
 <body class="page-rooms notranslate" translate="no">
 <div class="topbar">
