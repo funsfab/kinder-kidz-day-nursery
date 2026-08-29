@@ -2163,7 +2163,283 @@ main + footer{
   }
 }
 </style>
+<style id="kk-v86-desktop-consistency">
+
+/* ================================================================
+   v86 — DESKTOP HERO CONSISTENCY RULE (ROOMS → CONTACT ONLY)
+   Home and About are intentionally NOT included in this package.
+
+   Approved rule copied from the finished Home/About pages:
+   • All desktop hero titles use the same scale: 38/42 (36/40 on smaller laptops).
+   • 2 title rows = one animated third title row.
+   • 3 title rows = no animation.
+   • 4+ title rows = no animation; the content below naturally moves down by one row.
+   • Mobile/tablet (<=980px) are untouched.
+   ================================================================ */
+@media (min-width:981px){
+  html body .hero .hero-copy,
+  html body .learning-hero .hero-copy,
+  html body.fees-page .fees-hero .hero-copy,
+  html body.gallery-page .hero .hero-copy,
+  html body.parents-page .hero .hero-copy,
+  html body.contact-page .hero .hero-copy{
+    --kk-v86-line:42px;
+    --kk-v86-title-slot:126px;
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:520px!important;
+    grid-template-rows:17px var(--kk-v86-title-slot) auto 42px!important;
+    row-gap:12px!important;
+    align-content:start!important;
+    align-items:start!important;
+    align-self:start!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:34px 0 0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body .hero .hero-copy>.eyebrow,
+  html body .learning-hero .hero-copy>.eyebrow,
+  html body.fees-page .fees-hero .hero-copy>.eyebrow,
+  html body.gallery-page .hero .hero-copy>.eyebrow,
+  html body.parents-page .hero .hero-copy>.eyebrow,
+  html body.contact-page .hero .hero-copy>.eyebrow{
+    grid-column:1!important;
+    grid-row:1!important;
+    position:static!important;
+    width:auto!important;
+    height:17px!important;
+    min-height:17px!important;
+    max-height:17px!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:12px!important;
+    line-height:17px!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+
+  /* Exact same title scale as the approved Home/About desktop pages. */
+  html body #kkHeroTitle{
+    grid-column:1!important;
+    grid-row:2!important;
+    position:relative!important;
+    display:block!important;
+    align-self:start!important;
+    width:560px!important;
+    max-width:560px!important;
+    height:var(--kk-v86-title-slot)!important;
+    min-height:var(--kk-v86-title-slot)!important;
+    max-height:var(--kk-v86-title-slot)!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:38px!important;
+    line-height:42px!important;
+    letter-spacing:-.03em!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+
+  html body #kkHeroTitle br{line-height:inherit!important}
+
+  /* Existing page-specific desktop animation rows are disabled.
+     Their mobile versions are untouched and continue to work below 981px. */
+  html body .learning-desktop-gap-animation,
+  html body .fees-desktop-gap-animation,
+  html body .gallery-title-gap,
+  html body.contact-page .contact-title-gap{
+    display:none!important;
+  }
+
+  /* One animated replacement row, inserted ONLY when the title has 2 rows. */
+  html body #kkHeroTitle>.kk-v86-animation-row{
+    position:relative!important;
+    display:block!important;
+    width:520px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font-size:14px!important;
+    line-height:42px!important;
+    letter-spacing:0!important;
+    overflow:visible!important;
+    pointer-events:none!important;
+  }
+  html body #kkHeroTitle .kk-v86-anim{
+    position:absolute!important;
+    inset:0!important;
+    display:flex!important;
+    align-items:center!important;
+    width:520px!important;
+    height:42px!important;
+    gap:10px!important;
+    pointer-events:none!important;
+    overflow:visible!important;
+  }
+  html body #kkHeroTitle .kk-v86-a{
+    flex:0 0 36px!important;
+    width:36px!important;
+    height:30px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:8px!important;
+    background:#efc75a!important;
+    color:#376447!important;
+    box-shadow:0 4px 10px rgba(30,80,45,.08)!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    line-height:1!important;
+  }
+  html body #kkHeroTitle .kk-v86-track{
+    position:relative!important;
+    flex:0 0 420px!important;
+    width:420px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(46,132,73,.18),rgba(232,190,58,.92),rgba(46,132,73,.18))!important;
+    overflow:visible!important;
+  }
+  html body #kkHeroTitle .kk-v86-dot{
+    position:absolute!important;
+    left:0!important;
+    top:-4px!important;
+    width:10px!important;
+    height:10px!important;
+    border-radius:50%!important;
+    background:linear-gradient(135deg,#60c7e8,#eb6aa9)!important;
+    box-shadow:0 0 0 4px rgba(96,199,232,.11)!important;
+    animation:kkV86DotTravel 2.4s ease-in-out infinite alternate!important;
+    animation-play-state:running!important;
+    will-change:transform!important;
+  }
+  html body #kkHeroTitle .kk-v86-star{
+    flex:0 0 24px!important;
+    width:24px!important;
+    text-align:center!important;
+    color:#dfaa27!important;
+    font-size:18px!important;
+    line-height:1!important;
+    animation:kkV86StarFloat 1.8s ease-in-out infinite!important;
+    animation-play-state:running!important;
+  }
+
+  /* Paragraph and buttons follow the standard title slot. Existing text is preserved. */
+  html body .hero .hero-copy>p,
+  html body .learning-hero .hero-copy>p,
+  html body.fees-page .fees-hero .hero-copy>p,
+  html body.gallery-page .hero .hero-copy>p,
+  html body.parents-page .hero .hero-copy>p,
+  html body.contact-page .hero .hero-copy>p{
+    grid-column:1!important;
+    grid-row:3!important;
+    position:static!important;
+    align-self:start!important;
+    width:520px!important;
+    max-width:520px!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:15px!important;
+    line-height:24px!important;
+    transform:none!important;
+  }
+
+  html body .hero .hero-copy>.hero-actions,
+  html body .learning-hero .hero-copy>.hero-actions,
+  html body.fees-page .fees-hero .hero-copy>.hero-actions,
+  html body.gallery-page .hero .hero-copy>.hero-actions,
+  html body.parents-page .hero .hero-copy>.hero-actions,
+  html body.contact-page .hero .hero-copy>.hero-actions{
+    grid-column:1!important;
+    grid-row:4!important;
+    position:static!important;
+    display:flex!important;
+    align-self:start!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    flex-wrap:nowrap!important;
+    gap:13px!important;
+    width:auto!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body .hero .hero-copy>.hero-actions .btn,
+  html body .learning-hero .hero-copy>.hero-actions .btn,
+  html body.fees-page .fees-hero .hero-copy>.hero-actions .btn,
+  html body.gallery-page .hero .hero-copy>.hero-actions .btn,
+  html body.parents-page .hero .hero-copy>.hero-actions .btn,
+  html body.contact-page .hero .hero-copy>.hero-actions .btn{
+    position:static!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:148px!important;
+    min-width:148px!important;
+    max-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0 11px!important;
+    font-size:13.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    transform:none!important;
+  }
+}
+
+@media (min-width:981px) and (max-width:1199px){
+  html body .hero .hero-copy,
+  html body .learning-hero .hero-copy,
+  html body.fees-page .fees-hero .hero-copy,
+  html body.gallery-page .hero .hero-copy,
+  html body.parents-page .hero .hero-copy,
+  html body.contact-page .hero .hero-copy{
+    --kk-v86-line:40px;
+  }
+  html body #kkHeroTitle{
+    font-size:36px!important;
+    line-height:40px!important;
+  }
+  html body #kkHeroTitle>.kk-v86-animation-row,
+  html body #kkHeroTitle .kk-v86-anim{height:40px!important;min-height:40px!important;max-height:40px!important;line-height:40px!important}
+  html body #kkHeroTitle .kk-v86-track{flex-basis:400px!important;width:400px!important}
+}
+
+@keyframes kkV86DotTravel{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(390px,0,0)}
+}
+@media (min-width:1200px){
+  @keyframes kkV86DotTravel{
+    0%{transform:translate3d(0,0,0)}
+    100%{transform:translate3d(410px,0,0)}
+  }
+}
+@keyframes kkV86StarFloat{
+  0%,100%{transform:translateY(0) scale(1) rotate(0deg);opacity:.72}
+  50%{transform:translateY(-4px) scale(1.14) rotate(12deg);opacity:1}
+}
+
+@media (max-width:980px){
+  /* Safety: the new rule is desktop-only. */
+  html body #kkHeroTitle>.kk-v86-animation-row{display:none!important}
+}
+
+</style>
 </head>
+<!-- Kinder Kidz learning desktop consistency rules v86 -->
 <body class="page-learning notranslate" translate="no">
 <div class="topbar">
 <div class="container">
@@ -2343,6 +2619,112 @@ scrollNavBtn.addEventListener('click',()=>{if(window.scrollY>90){window.scrollTo
 window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav();
 </script>
 <script src="js/language.js"></script>
+
+<script id="kk-v86-desktop-title-rule">
+(function(){
+  const ANIM_CLASS='kk-v86-animation-row';
+  let busy=false;
+
+  function logicalLines(title){
+    if(!title) return 3;
+    const old=title.querySelector(':scope > .'+ANIM_CLASS);
+    if(old) old.remove();
+
+    const explicit=title.querySelectorAll('br').length+1;
+    if(explicit>1) return explicit;
+
+    /* Fallback for any translation that wraps naturally instead of using <br>. */
+    if(window.innerWidth<=980) return 3;
+    const clone=title.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.style.cssText=[
+      'position:absolute','visibility:hidden','pointer-events:none','height:auto','min-height:0','max-height:none',
+      'width:560px','max-width:560px','white-space:normal','overflow:visible','margin:0','padding:0',
+      'font-family:Georgia,Times New Roman,serif',
+      'font-size:'+(window.innerWidth<1200?'36px':'38px'),
+      'line-height:'+(window.innerWidth<1200?'40px':'42px'),
+      'letter-spacing:-.03em','left:-99999px','top:0'
+    ].join('!important;')+'!important';
+    document.body.appendChild(clone);
+    const lh=window.innerWidth<1200?40:42;
+    const n=Math.max(1,Math.round(clone.getBoundingClientRect().height/lh));
+    clone.remove();
+    return n;
+  }
+
+  function animationRow(){
+    const row=document.createElement('span');
+    row.className=ANIM_CLASS;
+    row.setAttribute('aria-hidden','true');
+    row.innerHTML='<span class="kk-v86-anim"><span class="kk-v86-a">A</span><span class="kk-v86-track"><span class="kk-v86-dot"></span></span><span class="kk-v86-star">☆</span></span>';
+    return row;
+  }
+
+  function apply(){
+    if(busy) return;
+    const title=document.getElementById('kkHeroTitle');
+    const copy=title && title.closest('.hero-copy');
+    if(!title || !copy) return;
+    busy=true;
+    try{
+      const old=title.querySelector(':scope > .'+ANIM_CLASS);
+      if(old) old.remove();
+      if(window.innerWidth<=980){
+        copy.style.removeProperty('--kk-v86-title-slot');
+        return;
+      }
+      let lines=logicalLines(title);
+      /* The approved system treats anything longer than 3 as a natural 4+ row title. */
+      lines=Math.max(2,Math.min(6,lines));
+      const linePx=window.innerWidth<1200?40:42;
+      const slotLines=lines<=3?3:lines;
+      copy.style.setProperty('--kk-v86-title-slot',(slotLines*linePx)+'px');
+      copy.dataset.kkV86TitleLines=String(lines);
+      if(lines===2) title.appendChild(animationRow());
+    }finally{
+      busy=false;
+    }
+  }
+
+  function schedule(){
+    requestAnimationFrame(function(){requestAnimationFrame(apply)});
+    setTimeout(apply,80);
+    setTimeout(apply,260);
+  }
+
+  function init(){
+    const title=document.getElementById('kkHeroTitle');
+    if(!title) return;
+    schedule();
+
+    const obs=new MutationObserver(function(muts){
+      if(busy) return;
+      /* Ignore mutations created solely by the moving animation itself. */
+      const external=muts.some(function(m){
+        if(m.type==='childList'){
+          const changed=[].slice.call(m.addedNodes||[]).concat([].slice.call(m.removedNodes||[]));
+          if(changed.length && changed.every(function(node){
+            return node && node.nodeType===1 && node.classList && node.classList.contains(ANIM_CLASS);
+          })) return false;
+        }
+        const n=m.target.nodeType===1?m.target:m.target.parentElement;
+        return !(n && n.closest && n.closest('.'+ANIM_CLASS));
+      });
+      if(external) schedule();
+    });
+    obs.observe(title,{subtree:true,childList:true,characterData:true});
+
+    document.querySelectorAll('.kk-lang-option').forEach(function(btn){
+      btn.addEventListener('click',function(){setTimeout(schedule,30);setTimeout(schedule,180)});
+    });
+    window.addEventListener('resize',schedule,{passive:true});
+    window.addEventListener('pageshow',schedule);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
+
 
 <script id="learning-desktop-animation-centred-v68">
 /* LEARNING & DEVELOPMENT v68 — DESKTOP ONLY.
