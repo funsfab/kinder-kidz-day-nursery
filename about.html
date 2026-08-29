@@ -1440,7 +1440,14 @@ body.page-about #kkHeroTitle .kk-title-line{
 
 
 <style id="about-desktop-compact-animation-v64">
-/* ABOUT US v64 — DESKTOP ONLY.
+/* ABOUT US v78 — DESKTOP ONLY.
+   Title scale now exactly matches corrected homepage v77:
+   38px on larger desktop, 36px on laptop desktop widths, all languages.
+   Mobile remains untouched.
+
+   Previous layout/animation geometry is preserved.
+
+   Original v64 note:
    Mobile remains exactly as previously approved.
    Every language keeps the paragraph and buttons on the same vertical line.
    Shorter 2-line titles get a taller animation; 3-line titles get a shorter
@@ -1457,7 +1464,7 @@ body.page-about #kkHeroTitle .kk-title-line{
 
   /* English: deliberately smaller than before. */
   html body.page-about #kkHeroTitle{
-    font-size:42px!important;
+    font-size:38px!important;
     line-height:1.03!important;
     letter-spacing:-.028em!important;
     max-width:520px!important;
@@ -1468,14 +1475,14 @@ body.page-about #kkHeroTitle .kk-title-line{
     grid-template-rows:16px 96px 68px 74px 44px!important;
   }
   html[data-kk-lang="fr"] body.page-about #kkHeroTitle{
-    font-size:40px!important;
+    font-size:38px!important;
     line-height:1.03!important;
   }
   html[data-kk-lang="pl"] body.page-about .hero-copy{
     grid-template-rows:16px 98px 66px 74px 44px!important;
   }
   html[data-kk-lang="pl"] body.page-about #kkHeroTitle{
-    font-size:40px!important;
+    font-size:38px!important;
     line-height:1.03!important;
   }
 
@@ -1488,7 +1495,7 @@ body.page-about #kkHeroTitle .kk-title-line{
   }
   html[data-kk-lang="es"] body.page-about #kkHeroTitle,
   html[data-kk-lang="pt"] body.page-about #kkHeroTitle{
-    font-size:36px!important;
+    font-size:38px!important;
     line-height:1.03!important;
   }
 
@@ -1571,11 +1578,13 @@ body.page-about #kkHeroTitle .kk-title-line{
 /* Smaller desktop/laptop widths: preserve the same compact geometry while
    trimming typography only. Still desktop-only; mobile CSS is untouched. */
 @media (min-width:981px) and (max-width:1199px){
-  html body.page-about #kkHeroTitle{font-size:39px!important}
-  html[data-kk-lang="fr"] body.page-about #kkHeroTitle{font-size:37px!important}
+  html body.page-about #kkHeroTitle,
+  html[data-kk-lang="fr"] body.page-about #kkHeroTitle,
   html[data-kk-lang="es"] body.page-about #kkHeroTitle,
-  html[data-kk-lang="pt"] body.page-about #kkHeroTitle{font-size:34px!important}
-  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{font-size:37px!important}
+  html[data-kk-lang="pt"] body.page-about #kkHeroTitle,
+  html[data-kk-lang="pl"] body.page-about #kkHeroTitle{
+    font-size:36px!important;
+  }
 }
 </style>
 
