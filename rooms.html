@@ -1345,5 +1345,22 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html body #kkHeroTitle>.kk-v87-animation-row{display:none!important}
 }
 </style>
+
+<style id="kk-french-rooms-title-size-fix-v89">
+/* French Our Rooms only: match the approved About Us hero-title size.
+   No English/Spanish/Portuguese/Polish or mobile typography is changed. */
+@media (min-width:1200px){
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle{
+    font-size:42px!important;
+    line-height:42px!important;
+  }
+}
+@media (min-width:981px) and (max-width:1199px){
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle{
+    font-size:42px!important;
+    line-height:40px!important;
+  }
+}
+</style>
 </body>
 </html>
