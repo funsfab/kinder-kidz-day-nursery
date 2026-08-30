@@ -885,7 +885,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 }
 </style>
 </head>
-<!-- Kinder Kidz rooms desktop consistency rules v86 -->
+<!-- Kinder Kidz rooms desktop consistency rules v88 -->
 <body class="page-rooms notranslate" translate="no">
 <div class="topbar">
   <div class="container">
@@ -1048,7 +1048,7 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
 
 <style id="kk-v87-desktop-hero-consistency">
 /* ================================================================
-   v87 — FINAL DESKTOP HERO FLOW (OUR ROOMS → CONTACT)
+   v88 — OUR ROOMS DESKTOP TITLE SCALE (FR / PL) + EXISTING HERO FLOW
    Home and About Us are deliberately untouched.
 
    Rule:
@@ -1067,6 +1067,7 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html body.contact-page .hero .hero-copy{
     --kk-v87-line:42px;
     --kk-v87-title-slot:126px;
+    --kk-v87-title-font:38px;
     position:relative!important;
     display:grid!important;
     grid-template-columns:520px!important;
@@ -1119,13 +1120,19 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
     margin:0!important;
     padding:0!important;
     font-family:Georgia,"Times New Roman",serif!important;
-    font-size:38px!important;
+    font-size:var(--kk-v87-title-font)!important;
     line-height:42px!important;
     letter-spacing:-.03em!important;
     overflow:visible!important;
     transform:none!important;
   }
   html body #kkHeroTitle br{line-height:inherit!important}
+
+  /* Our Rooms: match the approved Home desktop title scale for the two languages
+     that were visibly too small. This replaces the smaller common title value;
+     no extra late override block is added. */
+  html[data-kk-lang="fr"] body.page-rooms .hero-copy{--kk-v87-title-font:43px;}
+  html[data-kk-lang="pl"] body.page-rooms .hero-copy{--kk-v87-title-font:42px;}
 
   /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
   html body .learning-desktop-gap-animation,
@@ -1286,8 +1293,10 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html body.fees-page .fees-hero .hero-copy,
   html body.gallery-page .hero .hero-copy,
   html body.parents-page .hero .hero-copy,
-  html body.contact-page .hero .hero-copy{--kk-v87-line:40px}
-  html body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
+  html body.contact-page .hero .hero-copy{--kk-v87-line:40px;--kk-v87-title-font:36px}
+  html[data-kk-lang="fr"] body.page-rooms .hero-copy{--kk-v87-title-font:41px}
+  html[data-kk-lang="pl"] body.page-rooms .hero-copy{--kk-v87-title-font:40px}
+  html body #kkHeroTitle{font-size:var(--kk-v87-title-font)!important;line-height:40px!important}
   html body #kkHeroTitle>.kk-v87-animation-row,
   html body #kkHeroTitle .kk-v87-anim{height:40px!important;min-height:40px!important;max-height:40px!important;line-height:40px!important}
   html body #kkHeroTitle .kk-v87-track{flex-basis:400px!important;width:400px!important}
@@ -1329,7 +1338,10 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
     clone.removeAttribute('id');
     clone.querySelectorAll('.kk-v86-animation-row,.kk-title-animation-line,.'+ANIM).forEach(function(n){n.remove()});
     const compact=window.innerWidth<1200;
-    const size=compact?36:38;
+    const lang=document.documentElement.dataset.kkLang || localStorage.getItem('kkPreferredLanguage') || 'en';
+    const desktopSizes={fr:43,pl:42};
+    const compactSizes={fr:41,pl:40};
+    const size=(compact?compactSizes[lang]:desktopSizes[lang]) || (compact?36:38);
     const lh=compact?40:42;
     clone.style.cssText=[
       'position:absolute','visibility:hidden','pointer-events:none','display:block',
