@@ -1141,19 +1141,6 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   }
   html body #kkHeroTitle br{line-height:inherit!important}
 
-  /* French Our Rooms: exact approved About-Us title typography and clean flow. */
-  html[data-kk-lang="fr"] body #kkHeroTitle{
-    font-size:38px!important;
-    line-height:42px!important;
-    width:560px!important;
-    max-width:560px!important;
-    margin:0!important;
-    padding:0!important;
-    top:auto!important;
-    left:auto!important;
-    transform:none!important;
-  }
-
   /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
   html body .learning-desktop-gap-animation,
   html body .fees-desktop-gap-animation,
@@ -1320,7 +1307,6 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html[data-kk-lang="fr"] body .hero .hero-copy,
   html[data-kk-lang="pt"] body .hero .hero-copy{--kk-v87-title-slot:160px}
   html body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
-  html[data-kk-lang="fr"] body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
   html body #kkHeroTitle>.kk-v87-animation-row,
   html body #kkHeroTitle .kk-v87-anim{height:40px!important;min-height:40px!important;max-height:40px!important;line-height:40px!important}
   html body #kkHeroTitle .kk-v87-track{flex-basis:400px!important;width:400px!important}
@@ -1343,23 +1329,6 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
 
 @media (max-width:980px){
   html body #kkHeroTitle>.kk-v87-animation-row{display:none!important}
-}
-</style>
-
-<style id="kk-french-rooms-title-size-fix-v89">
-/* French Our Rooms only: match the approved About Us hero-title size.
-   No English/Spanish/Portuguese/Polish or mobile typography is changed. */
-@media (min-width:1200px){
-  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle{
-    font-size:42px!important;
-    line-height:42px!important;
-  }
-}
-@media (min-width:981px) and (max-width:1199px){
-  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle{
-    font-size:42px!important;
-    line-height:40px!important;
-  }
 }
 </style>
 </body>
