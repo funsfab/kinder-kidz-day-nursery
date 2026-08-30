@@ -144,6 +144,10 @@
   let heroMaster=null;
   const heroInlineOriginals=new WeakMap();
   function desktopHeroMode(){return !!(window.matchMedia&&window.matchMedia('(min-width:981px)').matches);}
+  /* Our Rooms owns its desktop hero geometry in rooms.html because French and
+     Portuguese need four title rows. Do not force those titles into the
+     three-row English box. */
+  function pageOwnsDesktopHeroGeometry(){return pageKey()==='rooms';}
   function directChild(root,selectors){
     if(!root)return null;
     const list=Array.from(root.children||[]);
@@ -166,7 +170,7 @@
     return {top:r.top-base.top,left:r.left-base.left,width:r.width,height:r.height,fontSize:fs,lineRatio:lh/fs};
   }
   function captureEnglishHeroGeometry(){
-    if(!desktopHeroMode())return null;
+    if(!desktopHeroMode()||pageOwnsDesktopHeroGeometry())return null;
     clearHeroLock();
     const copy=document.querySelector('.hero-copy'); if(!copy)return null;
     const base=copy.getBoundingClientRect();
@@ -226,6 +230,7 @@
     if(fit)fitInto(el,m,minSize||10);else{setImp(el,'width',m.width+'px');setImp(el,'max-width',m.width+'px');setImp(el,'height',m.height+'px');}
   }
   function applyEnglishHeroGeometry(){
+    if(pageOwnsDesktopHeroGeometry()){clearHeroLock();return;}
     if(!desktopHeroMode()||!heroMaster)return;
     const copy=document.querySelector('.hero-copy'); if(!copy)return;
     const title=document.getElementById('kkHeroTitle');
@@ -247,11 +252,11 @@
   function setup(){
     let lang=localStorage.getItem(KEY)||'en';if(!LANGS[lang])lang='en';
     /* Capture the page exactly in its original English desktop geometry, even when a translated language was saved. */
-    if(desktopHeroMode()){const wanted=document.documentElement.dataset.kkLang||lang;document.documentElement.dataset.kkLang='en';captureEnglishHeroGeometry();document.documentElement.dataset.kkLang=wanted;}
+    if(desktopHeroMode()&&!pageOwnsDesktopHeroGeometry()){const wanted=document.documentElement.dataset.kkLang||lang;document.documentElement.dataset.kkLang='en';captureEnglishHeroGeometry();document.documentElement.dataset.kkLang=wanted;}
     document.querySelectorAll('.kk-language-picker').forEach(p=>{const t=p.querySelector('.kk-lang-toggle');if(t)t.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const o=!p.classList.contains('open');closeAll();if(o){p.classList.add('open');t.setAttribute('aria-expanded','true');const nav=document.getElementById('navlinks'),menu=document.getElementById('menuBtn');if(nav)nav.classList.remove('open');if(menu)menu.setAttribute('aria-expanded','false');}});p.querySelectorAll('.kk-lang-option').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();choose(b.dataset.lang);}));});
     document.addEventListener('click',closeAll);const menu=document.getElementById('menuBtn');if(menu)menu.addEventListener('click',closeAll,true);
     installButtonContentFix();updatePickerUI(lang);translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();},80);setTimeout(()=>{translateDocument(lang);applyEnglishHeroGeometry();fitActionButtonContents();},420);document.documentElement.classList.remove('kk-i18n-pending');
-    window.addEventListener('resize',()=>{if(!desktopHeroMode())clearHeroLock();else if(heroMaster)applyEnglishHeroGeometry();fitActionButtonContents();},{passive:true});
+    window.addEventListener('resize',()=>{if(!desktopHeroMode()||pageOwnsDesktopHeroGeometry())clearHeroLock();else if(heroMaster)applyEnglishHeroGeometry();fitActionButtonContents();},{passive:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup,{once:true});else setup();
 })();
