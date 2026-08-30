@@ -884,88 +884,9 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
   }
 }
 </style>
-
-<style id="kk-rooms-fr-pl-desktop-title-lock-v88">
-/* v88 — OUR ROOMS ONLY, DESKTOP ONLY.
-   French + Polish hero titles now use the exact same title scale as the
-   approved Home/About pages. No JavaScript font resizing is used here.
-   Mobile/tablet rules are deliberately untouched. */
-@media (min-width:981px){
-  /* Hide the translated H1 only for these two desktop languages and use
-     fixed native rows so language.js cannot shrink the title after load. */
-  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,
-  html[data-kk-lang="pl"] body.page-rooms #kkHeroTitle{
-    display:none!important;
-  }
-
-  html body.page-rooms .kk-room-title-v88{
-    display:none;
-    grid-column:1!important;
-    grid-row:2!important;
-    align-self:start!important;
-    width:560px!important;
-    max-width:560px!important;
-    margin:0!important;
-    padding:0!important;
-    font-family:Georgia,"Times New Roman",serif!important;
-    font-size:38px!important;
-    line-height:42px!important;
-    letter-spacing:-.03em!important;
-    overflow:visible!important;
-  }
-  html body.page-rooms .kk-room-title-v88 > span{
-    display:block!important;
-    width:100%!important;
-    height:42px!important;
-    min-height:42px!important;
-    margin:0!important;
-    padding:0!important;
-    font:inherit!important;
-    line-height:42px!important;
-    white-space:nowrap!important;
-  }
-  html body.page-rooms .kk-room-title-v88 .green{color:var(--green)!important;}
-
-  html[data-kk-lang="fr"] body.page-rooms .kk-room-title-v88-fr,
-  html[data-kk-lang="pl"] body.page-rooms .kk-room-title-v88-pl{
-    display:block!important;
-  }
-
-  /* French is four title rows at the SAME font size; reserve the fourth row
-     immediately so the paragraph/buttons do not jump after JavaScript loads. */
-  html[data-kk-lang="fr"] body.page-rooms .hero-copy{
-    --kk-v87-title-slot:168px!important;
-  }
-  html[data-kk-lang="pl"] body.page-rooms .hero-copy{
-    --kk-v87-title-slot:126px!important;
-  }
-}
-
-@media (min-width:981px) and (max-width:1199px){
-  html body.page-rooms .kk-room-title-v88{
-    font-size:36px!important;
-    line-height:40px!important;
-  }
-  html body.page-rooms .kk-room-title-v88 > span{
-    height:40px!important;
-    min-height:40px!important;
-    line-height:40px!important;
-  }
-  html[data-kk-lang="fr"] body.page-rooms .hero-copy{
-    --kk-v87-title-slot:160px!important;
-  }
-  html[data-kk-lang="pl"] body.page-rooms .hero-copy{
-    --kk-v87-title-slot:120px!important;
-  }
-}
-
-@media (max-width:980px){
-  html body.page-rooms .kk-room-title-v88{display:none!important;}
-}
-</style>
-
 </head>
 <!-- Kinder Kidz rooms desktop consistency rules v86 -->
+<!-- Kinder Kidz Our Rooms French desktop correction v88 -->
 <body class="page-rooms notranslate" translate="no">
 <div class="topbar">
   <div class="container">
@@ -1023,8 +944,6 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
     <div class="hero-copy">
       <div class="eyebrow">Our Rooms</div>
       <h1 id="kkHeroTitle">Rooms Designed for<br><span style="color:var(--green)">Every Stage of<br>Early Learning</span></h1>
-      <div class="kk-room-title-v88 kk-room-title-v88-fr notranslate" translate="no" aria-hidden="true"><span>Des espaces conçus</span><span class="green">pour chaque étape de</span><span class="green">l’apprentissage</span><span class="green">précoce</span></div>
-      <div class="kk-room-title-v88 kk-room-title-v88-pl notranslate" translate="no" aria-hidden="true"><span>Sale zaprojektowane</span><span class="green">dla każdego etapu</span><span class="green">wczesnej edukacji</span></div>
       <p>Carefully designed spaces where children feel safe, supported and inspired to learn, play and grow within our warm nursery environment.</p>
       <div class="hero-actions"><a class="btn primary visit-action" href="contact.html?mode=visit#enquiry-form"><span class="btn-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a><a class="btn secondary enquire-action" href="contact.html?mode=enquiry#enquiry-form"><span class="btn-icon icon-mail" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span class="btn-label">Enquire Now</span></a></div>
     </div>
@@ -1130,7 +1049,7 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
 
 <style id="kk-v87-desktop-hero-consistency">
 /* ================================================================
-   v87 — FINAL DESKTOP HERO FLOW (OUR ROOMS → CONTACT)
+   v88 — OUR ROOMS DESKTOP STATIC HERO FLOW (French corrected)
    Home and About Us are deliberately untouched.
 
    Rule:
@@ -1164,6 +1083,19 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
     padding:34px 0 0!important;
     margin:0!important;
     overflow:visible!important;
+  }
+
+  /* OUR ROOMS: static desktop title slots — no JavaScript layout override.
+     The approved Home/About title size is 38px / 42px line-height.
+     French and Portuguese naturally occupy four title rows; the others use three. */
+  html[data-kk-lang="en"] body .hero .hero-copy,
+  html[data-kk-lang="es"] body .hero .hero-copy,
+  html[data-kk-lang="pl"] body .hero .hero-copy{
+    --kk-v87-title-slot:126px;
+  }
+  html[data-kk-lang="fr"] body .hero .hero-copy,
+  html[data-kk-lang="pt"] body .hero .hero-copy{
+    --kk-v87-title-slot:168px;
   }
 
   html body .hero .hero-copy>.eyebrow,
@@ -1208,6 +1140,19 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
     transform:none!important;
   }
   html body #kkHeroTitle br{line-height:inherit!important}
+
+  /* French Our Rooms: exact approved About-Us title typography and clean flow. */
+  html[data-kk-lang="fr"] body #kkHeroTitle{
+    font-size:38px!important;
+    line-height:42px!important;
+    width:560px!important;
+    max-width:560px!important;
+    margin:0!important;
+    padding:0!important;
+    top:auto!important;
+    left:auto!important;
+    transform:none!important;
+  }
 
   /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
   html body .learning-desktop-gap-animation,
@@ -1369,7 +1314,13 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html body.gallery-page .hero .hero-copy,
   html body.parents-page .hero .hero-copy,
   html body.contact-page .hero .hero-copy{--kk-v87-line:40px}
+  html[data-kk-lang="en"] body .hero .hero-copy,
+  html[data-kk-lang="es"] body .hero .hero-copy,
+  html[data-kk-lang="pl"] body .hero .hero-copy{--kk-v87-title-slot:120px}
+  html[data-kk-lang="fr"] body .hero .hero-copy,
+  html[data-kk-lang="pt"] body .hero .hero-copy{--kk-v87-title-slot:160px}
   html body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
+  html[data-kk-lang="fr"] body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
   html body #kkHeroTitle>.kk-v87-animation-row,
   html body #kkHeroTitle .kk-v87-anim{height:40px!important;min-height:40px!important;max-height:40px!important;line-height:40px!important}
   html body #kkHeroTitle .kk-v87-track{flex-basis:400px!important;width:400px!important}
@@ -1394,97 +1345,5 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
   html body #kkHeroTitle>.kk-v87-animation-row{display:none!important}
 }
 </style>
-<script id="kk-v87-desktop-title-rule">
-(function(){
-  'use strict';
-  const ANIM='kk-v87-animation-row';
-  let busy=false;
-
-  function removeInjected(title){
-    if(!title) return;
-    title.querySelectorAll(':scope > .kk-v86-animation-row, :scope > .kk-title-animation-line, :scope > .'+ANIM).forEach(function(n){n.remove()});
-  }
-
-  function measureLines(title){
-    if(window.innerWidth<=980) return 3;
-    const clone=title.cloneNode(true);
-    clone.removeAttribute('id');
-    clone.querySelectorAll('.kk-v86-animation-row,.kk-title-animation-line,.'+ANIM).forEach(function(n){n.remove()});
-    const compact=window.innerWidth<1200;
-    const size=compact?36:38;
-    const lh=compact?40:42;
-    clone.style.cssText=[
-      'position:absolute','visibility:hidden','pointer-events:none','display:block',
-      'height:auto','min-height:0','max-height:none','overflow:visible',
-      'width:560px','max-width:560px','white-space:normal','margin:0','padding:0',
-      'font-family:Georgia,Times New Roman,serif','font-size:'+size+'px','line-height:'+lh+'px',
-      'letter-spacing:-.03em','left:-99999px','top:0'
-    ].join(';');
-    document.body.appendChild(clone);
-    const h=clone.getBoundingClientRect().height;
-    clone.remove();
-    return Math.max(1,Math.round(h/lh));
-  }
-
-  function makeAnimation(){
-    const row=document.createElement('span');
-    row.className=ANIM;
-    row.setAttribute('aria-hidden','true');
-    row.innerHTML='<span class="kk-v87-anim"><span class="kk-v87-a">A</span><span class="kk-v87-track"><span class="kk-v87-dot"></span></span><span class="kk-v87-star">☆</span></span>';
-    return row;
-  }
-
-  function apply(){
-    if(busy) return;
-    const title=document.getElementById('kkHeroTitle');
-    const copy=title && title.closest('.hero-copy');
-    if(!title || !copy) return;
-    busy=true;
-    try{
-      removeInjected(title);
-      if(window.innerWidth<=980){
-        copy.style.removeProperty('--kk-v87-title-slot');
-        delete copy.dataset.kkV87TitleLines;
-        return;
-      }
-      let lines=measureLines(title);
-      lines=Math.max(1,Math.min(7,lines));
-      const linePx=window.innerWidth<1200?40:42;
-      const slotLines=lines<=3?3:lines;
-      copy.style.setProperty('--kk-v87-title-slot',(slotLines*linePx)+'px');
-      copy.dataset.kkV87TitleLines=String(lines);
-      if(lines===2) title.appendChild(makeAnimation());
-    }finally{busy=false;}
-  }
-
-  function settle(){
-    requestAnimationFrame(function(){requestAnimationFrame(apply)});
-    [50,180,420,760].forEach(function(ms){setTimeout(apply,ms)});
-  }
-
-  function init(){
-    const title=document.getElementById('kkHeroTitle');
-    if(!title) return;
-    settle();
-    const obs=new MutationObserver(function(muts){
-      if(busy) return;
-      const external=muts.some(function(m){
-        const target=m.target.nodeType===1?m.target:m.target.parentElement;
-        return !(target && target.closest && target.closest('.'+ANIM));
-      });
-      if(external) settle();
-    });
-    obs.observe(title,{subtree:true,childList:true,characterData:true});
-    document.querySelectorAll('.kk-lang-option').forEach(function(btn){
-      btn.addEventListener('click',function(){setTimeout(settle,20)});
-    });
-    document.addEventListener('kk:languagechange',settle);
-    window.addEventListener('pageshow',settle);
-    window.addEventListener('resize',settle,{passive:true});
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
-  else init();
-})();
-</script>
 </body>
 </html>
