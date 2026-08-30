@@ -281,7 +281,7 @@ footer h3,.footer h3{font-size:var(--site-footer-title-size)!important;line-heig
   --kk-nav-font:13px;
   --kk-header-btn-font:14px;
   --kk-eyebrow-font:12px;
-  --kk-hero-title-font:50px; /* same desktop title size as approved Home/About */
+  --kk-hero-title-font:50px;
   --kk-hero-body-font:15px;
   --kk-hero-line:1.04;
 }
@@ -449,7 +449,7 @@ header{position:sticky!important;top:0!important;z-index:50!important;background
 
 /* Slightly tighter shared desktop frame on smaller laptops */
 @media (min-width:981px) and (max-width:1199px){
-  :root{--kk-hero-title-font:46px /* same smaller-laptop title size as approved Home/About */}
+  :root{--kk-hero-title-font:46px}
   .topbar .container,.nav,.hero > .container,.hero-grid{width:min(1080px,calc(100% - 44px))!important}
   .nav{gap:18px!important}
   .brand{min-width:185px!important;width:185px!important;flex-basis:185px!important}
@@ -1046,5 +1046,373 @@ window.addEventListener('scroll',updateScrollNav,{passive:true});updateScrollNav
 </script>
 <script src="js/language.js"></script>
 
+<style id="kk-v87-desktop-hero-consistency">
+/* ================================================================
+   v87 — FINAL DESKTOP HERO FLOW (OUR ROOMS → CONTACT)
+   Home and About Us are deliberately untouched.
+
+   Rule:
+   • 2 title rows -> exactly ONE moving A-animation occupying row 3.
+   • 3 title rows -> NO animation; message follows immediately.
+   • 4+ title rows -> NO animation; content moves only by the extra title row(s).
+   • Existing old desktop hero animations are hidden so they cannot duplicate.
+   • Tablet/mobile (<=980px) is untouched.
+   ================================================================ */
+@media (min-width:981px){
+  html body .hero .hero-copy,
+  html body .learning-hero .hero-copy,
+  html body.fees-page .fees-hero .hero-copy,
+  html body.gallery-page .hero .hero-copy,
+  html body.parents-page .hero .hero-copy,
+  html body.contact-page .hero .hero-copy{
+    --kk-v87-line:42px;
+    --kk-v87-title-slot:126px;
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:520px!important;
+    grid-template-rows:17px var(--kk-v87-title-slot) auto 42px!important;
+    row-gap:12px!important;
+    align-content:start!important;
+    align-items:start!important;
+    align-self:start!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:34px 0 0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body .hero .hero-copy>.eyebrow,
+  html body .learning-hero .hero-copy>.eyebrow,
+  html body.fees-page .fees-hero .hero-copy>.eyebrow,
+  html body.gallery-page .hero .hero-copy>.eyebrow,
+  html body.parents-page .hero .hero-copy>.eyebrow,
+  html body.contact-page .hero .hero-copy>.eyebrow{
+    grid-column:1!important;
+    grid-row:1!important;
+    position:static!important;
+    width:auto!important;
+    height:17px!important;
+    min-height:17px!important;
+    max-height:17px!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:12px!important;
+    line-height:17px!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+
+  html body #kkHeroTitle{
+    grid-column:1!important;
+    grid-row:2!important;
+    position:relative!important;
+    display:block!important;
+    align-self:start!important;
+    width:560px!important;
+    max-width:560px!important;
+    height:var(--kk-v87-title-slot)!important;
+    min-height:var(--kk-v87-title-slot)!important;
+    max-height:var(--kk-v87-title-slot)!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:38px!important;
+    line-height:42px!important;
+    letter-spacing:-.03em!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  html body #kkHeroTitle br{line-height:inherit!important}
+
+  /* Our Rooms desktop: French and Polish titles use the same strong visual scale
+     as the approved Home/About hero titles. Desktop only; mobile/tablet untouched. */
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,
+  html[data-kk-lang="pl"] body.page-rooms #kkHeroTitle{
+    font-size:42px!important;
+    line-height:42px!important;
+  }
+
+  /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
+  html body .learning-desktop-gap-animation,
+  html body .fees-desktop-gap-animation,
+  html body .gallery-title-gap,
+  html body.contact-page .contact-title-gap,
+  html body #kkHeroTitle>.kk-v86-animation-row,
+  html body #kkHeroTitle>.kk-title-animation-line{
+    display:none!important;
+  }
+
+  /* Exactly one replacement animation for a two-row title. */
+  html body #kkHeroTitle>.kk-v87-animation-row{
+    position:relative!important;
+    display:block!important;
+    width:520px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font-size:14px!important;
+    line-height:42px!important;
+    letter-spacing:0!important;
+    overflow:visible!important;
+    pointer-events:none!important;
+  }
+  html body #kkHeroTitle .kk-v87-anim{
+    position:absolute!important;
+    inset:0!important;
+    display:flex!important;
+    align-items:center!important;
+    width:520px!important;
+    height:42px!important;
+    gap:10px!important;
+    pointer-events:none!important;
+    overflow:visible!important;
+  }
+  html body #kkHeroTitle .kk-v87-a{
+    flex:0 0 36px!important;
+    width:36px!important;
+    height:30px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:8px!important;
+    background:#efc75a!important;
+    color:#376447!important;
+    box-shadow:0 4px 10px rgba(30,80,45,.08)!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    line-height:1!important;
+  }
+  html body #kkHeroTitle .kk-v87-track{
+    position:relative!important;
+    flex:0 0 420px!important;
+    width:420px!important;
+    height:2px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,rgba(46,132,73,.18),rgba(232,190,58,.92),rgba(46,132,73,.18))!important;
+    overflow:visible!important;
+  }
+  html body #kkHeroTitle .kk-v87-dot{
+    position:absolute!important;
+    left:0!important;
+    top:-4px!important;
+    width:10px!important;
+    height:10px!important;
+    border-radius:50%!important;
+    background:linear-gradient(135deg,#60c7e8,#eb6aa9)!important;
+    box-shadow:0 0 0 4px rgba(96,199,232,.11)!important;
+    animation:kkV87DotTravel 2.4s ease-in-out infinite alternate!important;
+    animation-play-state:running!important;
+    will-change:transform!important;
+  }
+  html body #kkHeroTitle .kk-v87-star{
+    flex:0 0 24px!important;
+    width:24px!important;
+    text-align:center!important;
+    color:#dfaa27!important;
+    font-size:18px!important;
+    line-height:1!important;
+    animation:kkV87StarFloat 1.8s ease-in-out infinite!important;
+    animation-play-state:running!important;
+  }
+
+  /* Message comes straight after the three-row title zone — no dead vertical space. */
+  html body .hero .hero-copy>p,
+  html body .learning-hero .hero-copy>p,
+  html body.fees-page .fees-hero .hero-copy>p,
+  html body.gallery-page .hero .hero-copy>p,
+  html body.parents-page .hero .hero-copy>p,
+  html body.contact-page .hero .hero-copy>p{
+    grid-column:1!important;
+    grid-row:3!important;
+    position:static!important;
+    align-self:start!important;
+    width:520px!important;
+    max-width:520px!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:15px!important;
+    line-height:24px!important;
+    transform:none!important;
+  }
+
+  html body .hero .hero-copy>.hero-actions,
+  html body .learning-hero .hero-copy>.hero-actions,
+  html body.fees-page .fees-hero .hero-copy>.hero-actions,
+  html body.gallery-page .hero .hero-copy>.hero-actions,
+  html body.parents-page .hero .hero-copy>.hero-actions,
+  html body.contact-page .hero .hero-copy>.hero-actions{
+    grid-column:1!important;
+    grid-row:4!important;
+    position:static!important;
+    display:flex!important;
+    align-self:start!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    flex-wrap:nowrap!important;
+    gap:13px!important;
+    width:auto!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body .hero .hero-copy>.hero-actions .btn,
+  html body .learning-hero .hero-copy>.hero-actions .btn,
+  html body.fees-page .fees-hero .hero-copy>.hero-actions .btn,
+  html body.gallery-page .hero .hero-copy>.hero-actions .btn,
+  html body.parents-page .hero .hero-copy>.hero-actions .btn,
+  html body.contact-page .hero .hero-copy>.hero-actions .btn{
+    position:static!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:148px!important;
+    min-width:148px!important;
+    max-width:148px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0 11px!important;
+    font-size:13.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    transform:none!important;
+  }
+}
+
+@media (min-width:981px) and (max-width:1199px){
+  html body .hero .hero-copy,
+  html body .learning-hero .hero-copy,
+  html body.fees-page .fees-hero .hero-copy,
+  html body.gallery-page .hero .hero-copy,
+  html body.parents-page .hero .hero-copy,
+  html body.contact-page .hero .hero-copy{--kk-v87-line:40px}
+  html body #kkHeroTitle{font-size:36px!important;line-height:40px!important}
+  html[data-kk-lang="fr"] body.page-rooms #kkHeroTitle,
+  html[data-kk-lang="pl"] body.page-rooms #kkHeroTitle{font-size:40px!important;line-height:40px!important}
+  html body #kkHeroTitle>.kk-v87-animation-row,
+  html body #kkHeroTitle .kk-v87-anim{height:40px!important;min-height:40px!important;max-height:40px!important;line-height:40px!important}
+  html body #kkHeroTitle .kk-v87-track{flex-basis:400px!important;width:400px!important}
+}
+
+@keyframes kkV87DotTravel{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(390px,0,0)}
+}
+@media (min-width:1200px){
+  @keyframes kkV87DotTravel{
+    0%{transform:translate3d(0,0,0)}
+    100%{transform:translate3d(410px,0,0)}
+  }
+}
+@keyframes kkV87StarFloat{
+  0%,100%{transform:translateY(0) scale(1) rotate(0deg);opacity:.72}
+  50%{transform:translateY(-4px) scale(1.14) rotate(12deg);opacity:1}
+}
+
+@media (max-width:980px){
+  html body #kkHeroTitle>.kk-v87-animation-row{display:none!important}
+}
+</style>
+<script id="kk-v87-desktop-title-rule">
+(function(){
+  'use strict';
+  const ANIM='kk-v87-animation-row';
+  let busy=false;
+
+  function removeInjected(title){
+    if(!title) return;
+    title.querySelectorAll(':scope > .kk-v86-animation-row, :scope > .kk-title-animation-line, :scope > .'+ANIM).forEach(function(n){n.remove()});
+  }
+
+  function measureLines(title){
+    if(window.innerWidth<=980) return 3;
+    const clone=title.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.querySelectorAll('.kk-v86-animation-row,.kk-title-animation-line,.'+ANIM).forEach(function(n){n.remove()});
+    const compact=window.innerWidth<1200;
+    const size=compact?36:38;
+    const lh=compact?40:42;
+    clone.style.cssText=[
+      'position:absolute','visibility:hidden','pointer-events:none','display:block',
+      'height:auto','min-height:0','max-height:none','overflow:visible',
+      'width:560px','max-width:560px','white-space:normal','margin:0','padding:0',
+      'font-family:Georgia,Times New Roman,serif','font-size:'+size+'px','line-height:'+lh+'px',
+      'letter-spacing:-.03em','left:-99999px','top:0'
+    ].join(';');
+    document.body.appendChild(clone);
+    const h=clone.getBoundingClientRect().height;
+    clone.remove();
+    return Math.max(1,Math.round(h/lh));
+  }
+
+  function makeAnimation(){
+    const row=document.createElement('span');
+    row.className=ANIM;
+    row.setAttribute('aria-hidden','true');
+    row.innerHTML='<span class="kk-v87-anim"><span class="kk-v87-a">A</span><span class="kk-v87-track"><span class="kk-v87-dot"></span></span><span class="kk-v87-star">☆</span></span>';
+    return row;
+  }
+
+  function apply(){
+    if(busy) return;
+    const title=document.getElementById('kkHeroTitle');
+    const copy=title && title.closest('.hero-copy');
+    if(!title || !copy) return;
+    busy=true;
+    try{
+      removeInjected(title);
+      if(window.innerWidth<=980){
+        copy.style.removeProperty('--kk-v87-title-slot');
+        delete copy.dataset.kkV87TitleLines;
+        return;
+      }
+      let lines=measureLines(title);
+      lines=Math.max(1,Math.min(7,lines));
+      const linePx=window.innerWidth<1200?40:42;
+      const slotLines=lines<=3?3:lines;
+      copy.style.setProperty('--kk-v87-title-slot',(slotLines*linePx)+'px');
+      copy.dataset.kkV87TitleLines=String(lines);
+      if(lines===2) title.appendChild(makeAnimation());
+    }finally{busy=false;}
+  }
+
+  function settle(){
+    requestAnimationFrame(function(){requestAnimationFrame(apply)});
+    [50,180,420,760].forEach(function(ms){setTimeout(apply,ms)});
+  }
+
+  function init(){
+    const title=document.getElementById('kkHeroTitle');
+    if(!title) return;
+    settle();
+    const obs=new MutationObserver(function(muts){
+      if(busy) return;
+      const external=muts.some(function(m){
+        const target=m.target.nodeType===1?m.target:m.target.parentElement;
+        return !(target && target.closest && target.closest('.'+ANIM));
+      });
+      if(external) settle();
+    });
+    obs.observe(title,{subtree:true,childList:true,characterData:true});
+    document.querySelectorAll('.kk-lang-option').forEach(function(btn){
+      btn.addEventListener('click',function(){setTimeout(settle,20)});
+    });
+    document.addEventListener('kk:languagechange',settle);
+    window.addEventListener('pageshow',settle);
+    window.addEventListener('resize',settle,{passive:true});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
+</script>
 </body>
 </html>
