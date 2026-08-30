@@ -577,72 +577,7 @@
 <script id="kk-language-bootstrap">(function(){try{var l=localStorage.getItem('kkPreferredLanguage')||'en';if(!/^(en|fr|es|pt|pl)$/.test(l))l='en';document.documentElement.dataset.kkLang=l;document.documentElement.lang='en-GB';document.documentElement.setAttribute('translate','no');if(l!=='en')document.documentElement.classList.add('kk-i18n-pending');setTimeout(function(){document.documentElement.classList.remove('kk-i18n-pending')},1800)}catch(e){}})();</script>
 <link rel="stylesheet" href="css/language.css">
 
-<style id="fees-desktop-title-animation-v70">
-/* FEES & FUNDING v70 — DESKTOP ONLY.
-   Match the approved Learning & Development desktop hero title scale.
-   Paragraphs, buttons, media and all mobile/tablet layouts are untouched.
-   The decorative animation is centred only for EN/FR/ES, as requested. */
-.fees-desktop-gap-animation{display:none}
-@media (min-width:981px){
-  body.page-fees .fees-hero .hero-copy{position:relative!important}
-  body.page-fees .fees-hero #kkHeroTitle{
-    font-size:38px!important;
-    line-height:1.04!important;
-    letter-spacing:-.025em!important;
-    max-width:560px!important;
-  }
-  body.page-fees .fees-desktop-gap-animation{
-    position:absolute!important;
-    left:0!important;
-    width:500px!important;
-    max-width:500px!important;
-    height:42px!important;
-    margin:0!important;
-    padding:0!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:14px!important;
-    pointer-events:none!important;
-    opacity:.94!important;
-    z-index:3!important;
-  }
-  html[data-kk-lang="en"] body.page-fees .fees-desktop-gap-animation,
-  html[data-kk-lang="fr"] body.page-fees .fees-desktop-gap-animation,
-  html[data-kk-lang="es"] body.page-fees .fees-desktop-gap-animation{display:flex!important}
-  html[data-kk-lang="pt"] body.page-fees .fees-desktop-gap-animation,
-  html[data-kk-lang="pl"] body.page-fees .fees-desktop-gap-animation{display:none!important}
 
-  .fees-desktop-gap-animation::before{
-    content:"";position:absolute;left:7%;right:24%;top:9px;height:2px;border-radius:999px;
-    background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.85),rgba(47,138,73,.12));
-  }
-  .fees-desktop-gap-animation .fd-line{
-    position:absolute;left:9%;right:18%;bottom:8px;height:2px;border-radius:999px;
-    background:linear-gradient(90deg,rgba(47,138,73,.14),rgba(247,216,91,.88),rgba(47,138,73,.18));
-  }
-  .fees-desktop-gap-animation .fd-runner{
-    position:absolute;left:0;top:-5px;width:12px;height:12px;border-radius:50%;
-    background:#2f8a49;box-shadow:0 0 0 5px rgba(47,138,73,.08);
-    animation:kkFeesTravelV70 4.6s ease-in-out infinite alternate;
-  }
-  .fees-desktop-gap-animation .fd-book,
-  .fees-desktop-gap-animation .fd-star,
-  .fees-desktop-gap-animation .fd-leaf{position:absolute;top:0;z-index:2}
-  .fees-desktop-gap-animation .fd-book{right:15%;font-size:18px;color:#d36d8d;animation:kkFeesBobV70 2.7s ease-in-out infinite}
-  .fees-desktop-gap-animation .fd-star{right:8%;font-size:20px;color:#e4ac20;animation:kkFeesTwinkleV70 2.2s ease-in-out infinite}
-  .fees-desktop-gap-animation .fd-leaf{right:1%;font-size:19px;color:#67a35c;animation:kkFeesFloatV70 2.9s ease-in-out infinite}
-}
-@media (min-width:981px) and (max-width:1199px){
-  body.page-fees .fees-hero #kkHeroTitle{font-size:36px!important}
-}
-@media (max-width:980px){
-  .fees-desktop-gap-animation{display:none!important}
-}
-@keyframes kkFeesTravelV70{to{transform:translateX(235px) rotate(240deg)}}
-@keyframes kkFeesBobV70{50%{transform:translateY(-4px) rotate(-5deg)}}
-@keyframes kkFeesTwinkleV70{50%{transform:scale(1.28) rotate(16deg);opacity:.62}}
-@keyframes kkFeesFloatV70{50%{transform:translateY(-4px) rotate(-8deg)}}
-</style>
 
 
 <style id="kk-desktop-header-font-consistency-v76">
@@ -737,7 +672,6 @@
         <div class="hero-copy">
           <div class="eyebrow">Fees &amp; Funding</div>
           <h1 id="kkHeroTitle">Quality Care,<br><span style="color:var(--fees-green)">Affordable for Families</span></h1>
-          <div class="fees-desktop-gap-animation" aria-hidden="true"><span class="fd-line"><span class="fd-runner"></span></span><span class="fd-book">▤</span><span class="fd-star">☆</span><span class="fd-leaf">⌁</span></div>
 <p class="lead">Our fees are designed to be clear, transparent and supportive of your family’s needs. We are also here to guide you through funded childcare options.</p>
           <div class="hero-actions">
             <a class="btn primary visit-action" href="contact.html?mode=visit#enquiry-form"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
@@ -986,7 +920,6 @@
 
   /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
   html body .learning-desktop-gap-animation,
-  html body .fees-desktop-gap-animation,
   html body .gallery-title-gap,
   html body.contact-page .contact-title-gap,
   html body #kkHeroTitle>.kk-v86-animation-row,
