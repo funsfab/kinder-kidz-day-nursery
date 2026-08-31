@@ -2031,7 +2031,7 @@ updateScrollNav();
 (function(){
   "use strict";
 
-  const desktop = window.matchMedia("(min-width:981px)");
+  const desktop = window.matchMedia("(min-width:1181px), (min-width:981px) and (orientation:landscape)");
   let writing = false;
 
   const titleRows = {
@@ -2139,5 +2139,6 @@ updateScrollNav();
 })();
 </script>
 
+<link rel="stylesheet" href="css/tablet-portrait.css" data-kk-tablet-portrait="1">
 </body>
 </html>

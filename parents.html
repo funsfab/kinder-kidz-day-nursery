@@ -760,7 +760,7 @@
   }
 
   function measureLines(title){
-    if(window.innerWidth<=980) return 3;
+    if((window.innerWidth<=980 || (window.matchMedia&&window.matchMedia("(orientation:portrait) and (min-width:700px) and (max-width:1180px)").matches))) return 3;
     const clone=title.cloneNode(true);
     clone.removeAttribute('id');
     clone.querySelectorAll('.kk-v86-animation-row,.kk-title-animation-line,.'+ANIM).forEach(function(n){n.remove()});
@@ -796,7 +796,7 @@
     busy=true;
     try{
       removeInjected(title);
-      if(window.innerWidth<=980){
+      if((window.innerWidth<=980 || (window.matchMedia&&window.matchMedia("(orientation:portrait) and (min-width:700px) and (max-width:1180px)").matches))){
         copy.style.removeProperty('--kk-v87-title-slot');
         delete copy.dataset.kkV87TitleLines;
         return;
@@ -840,5 +840,6 @@
   else init();
 })();
 </script>
+<link rel="stylesheet" href="css/tablet-portrait.css" data-kk-tablet-portrait="1">
 </body>
 </html>
