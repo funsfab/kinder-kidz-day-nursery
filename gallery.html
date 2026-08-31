@@ -48,15 +48,19 @@
     .gallery-page .hero-media:before{content:"";position:absolute;inset:12px -15px -8px 18px;background:#dceab8;border-radius:46% 5% 5% 48%;transform:rotate(-1deg)}
     .gallery-page .hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center center;border-radius:45% 5% 5% 46%;box-shadow:0 12px 28px rgba(20,66,42,.10)}
 
-    /* Two-line page title = one simple moving animation in the gap. */
-    .gallery-page .gallery-title-gap{position:relative;width:360px;height:42px;display:flex;align-items:center;overflow:hidden;pointer-events:none}
-    .gallery-page .gallery-title-gap:before{content:"";position:absolute;left:0;right:0;top:20px;height:2px;background:linear-gradient(90deg,#dbe9d5,#f2d15d,#dbe9d5);border-radius:999px}
-    .gallery-page .g-line{position:absolute;left:0;right:72px;top:16px;height:10px}
-    .gallery-page .g-runner{position:absolute;left:0;top:1px;width:13px;height:13px;border-radius:50%;background:#2f8a49;box-shadow:0 0 0 6px rgba(47,138,73,.10);animation:gTravel 4.8s ease-in-out infinite alternate}
-    .gallery-page .g-star,.gallery-page .g-leaf{position:absolute;top:4px;animation:gFloat 2.4s ease-in-out infinite alternate}
-    .gallery-page .g-star{right:34px;color:#e4ac20;font-size:20px}.gallery-page .g-leaf{right:2px;color:#67a35c;font-size:19px;animation-delay:.35s}
-    @keyframes gTravel{from{transform:translateX(0)}to{transform:translateX(250px)}}
-    @keyframes gFloat{from{transform:translateY(0) rotate(0)}to{transform:translateY(-4px) rotate(8deg)}}
+    /* Gallery title animation: one component only. Desktop (981px+) uses the v87 title row below; tablet/mobile uses this same single-row treatment. */
+    .gallery-page .gallery-mobile-single-animation{display:none;pointer-events:none}
+    @media(max-width:980px){
+      .gallery-page .gallery-mobile-single-animation{display:flex;align-items:center;gap:9px;width:min(520px,100%);height:40px;min-height:40px;margin:0;padding:0;overflow:visible;flex:0 0 40px}
+      .gallery-page .gma-a{flex:0 0 34px;width:34px;height:28px;display:grid;place-items:center;border-radius:8px;background:#efc75a;color:#376447;font:900 13px/1 system-ui,sans-serif;box-shadow:0 4px 10px rgba(30,80,45,.08)}
+      .gallery-page .gma-track{position:relative;flex:1 1 auto;max-width:420px;height:2px;border-radius:999px;background:linear-gradient(90deg,rgba(46,132,73,.18),rgba(232,190,58,.92),rgba(46,132,73,.18));overflow:visible}
+      .gallery-page .gma-dot{position:absolute;left:0;top:-4px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#60c7e8,#eb6aa9);box-shadow:0 0 0 4px rgba(96,199,232,.11);animation:gmaTravel 2.4s ease-in-out infinite alternate;--gma-distance:360px}
+      .gallery-page .gma-star{flex:0 0 22px;width:22px;text-align:center;color:#dfaa27;font-size:18px;line-height:1;animation:gmaFloat 1.8s ease-in-out infinite}
+    }
+    @keyframes gmaTravel{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(var(--gma-distance),0,0)}}
+    @media(max-width:760px){.gallery-page .gma-dot{--gma-distance:250px}}
+    @media(max-width:480px){.gallery-page .gma-dot{--gma-distance:180px}}
+    @keyframes gmaFloat{0%,100%{transform:translateY(0);opacity:.72}50%{transform:translateY(-4px);opacity:1}}
 
     /* Compact stats, gallery cards and highlights. */
     .gallery-page .section-tight{padding:10px 0}
@@ -88,7 +92,7 @@
     .gallery-page .footer-bottom{margin-top:14px;padding-top:9px;font-size:11px}
 
     @media(max-width:1100px) and (min-width:981px){
-      .gallery-page .navlinks{gap:16px}.gallery-page .hero h1{font-size:46px}.gallery-page .gallery-title-gap{width:330px}
+      .gallery-page .navlinks{gap:16px}.gallery-page .hero h1{font-size:46px}
     }
     @media(max-width:980px){
       .gallery-page .nav{height:76px;gap:16px}.gallery-page .brand img{width:180px;height:58px}.gallery-page .nav>.desktop-only{display:none}.gallery-page .menu-btn{display:grid}
@@ -99,12 +103,12 @@
       .gallery-page .container{width:calc(100% - 28px)}.gallery-page .topbar{display:none}.gallery-page .nav{height:70px;gap:10px}.gallery-page .brand{min-width:0;width:auto;flex:1 1 auto}.gallery-page .brand img{width:156px;height:52px}
       .gallery-page .navlinks{left:auto;right:0;width:min(46vw,190px);top:70px;max-height:calc(100vh - 70px);overflow:auto;padding:9px 12px 14px;gap:0;border-left:1px solid #e9e5dc;border-bottom:1px solid #e9e5dc;border-radius:0 0 0 18px;box-shadow:-12px 16px 30px rgba(0,0,0,.10)}
       .gallery-page .navlinks a{font-size:12.5px;padding:7px 3px;line-height:1.24}.gallery-page .menu-btn{width:40px;height:40px;border-radius:11px;padding:5px}.gallery-page .menu-btn svg{width:26px;height:26px}
-      .gallery-page .hero-grid{width:calc(100% - 28px)}.gallery-page .hero-copy{grid-template-rows:auto auto 36px auto auto;row-gap:7px}.gallery-page .hero .eyebrow{font-size:11px;line-height:14px}.gallery-page .hero h1{font-size:34px;line-height:1.04}.gallery-page .gallery-title-gap{width:100%;height:36px}.gallery-page .gallery-title-gap:before{top:17px}.gallery-page .g-line{right:62px;top:13px}.gallery-page .hero .lead{font-size:14.5px;line-height:1.5}.gallery-page .hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.gallery-page .hero-actions .btn{width:100%;height:44px}.gallery-page .hero-media{height:270px;min-height:270px;border-radius:28px}.gallery-page .hero-media:before{inset:9px -7px -7px 11px;border-radius:28px}.gallery-page .hero-media img{border-radius:28px}
+      .gallery-page .hero-grid{width:calc(100% - 28px)}.gallery-page .hero-copy{grid-template-rows:auto auto 36px auto auto;row-gap:7px}.gallery-page .hero .eyebrow{font-size:11px;line-height:14px}.gallery-page .hero h1{font-size:34px;line-height:1.04}.gallery-page .hero .lead{font-size:14.5px;line-height:1.5}.gallery-page .hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.gallery-page .hero-actions .btn{width:100%;height:44px}.gallery-page .hero-media{height:270px;min-height:270px;border-radius:28px}.gallery-page .hero-media:before{inset:9px -7px -7px 11px;border-radius:28px}.gallery-page .hero-media img{border-radius:28px}
       .gallery-page .section-tight{padding:8px 0}.gallery-page .stats-compact{grid-template-columns:1fr 1fr}.gallery-page .stats-compact .stat-item{min-height:78px;padding:10px 8px}.gallery-page .photo-grid{grid-template-columns:1fr 1fr;gap:8px}.gallery-page .photo-grid img{height:145px}.gallery-page .gallery-highlights{grid-template-columns:1fr 1fr;gap:8px}.gallery-page .gallery-highlights .card{min-height:126px;padding:11px 8px}
       .gallery-page .action-banner{padding:16px 14px 72px}.gallery-page .action-banner .banner-grid{gap:9px}.gallery-page .action-banner .actions{display:grid;grid-template-columns:1fr;gap:8px}.gallery-page .action-banner .btn{width:100%}
       .gallery-page footer{padding:18px 0 11px}.gallery-page .footer-grid{grid-template-columns:1fr;gap:16px}.gallery-page .footer-brand img{width:156px;height:56px}.gallery-page .footer-title{font-size:16px;margin-bottom:7px}.gallery-page .footer-list{gap:5px;font-size:13px}.gallery-page .footer-links-2{grid-template-columns:1fr 1fr;gap:0 16px}.gallery-page .footer-bottom{margin-top:12px;padding-top:8px;font-size:11px;justify-content:center;text-align:center}
     }
-    @media(prefers-reduced-motion:reduce){.gallery-page .gallery-title-gap *{animation:none!important}}
+    @media(prefers-reduced-motion:reduce){.gallery-page .gallery-mobile-single-animation *{animation:none!important}}
 
     /* ============================================================
        GALLERY v19 — final consistency corrections
@@ -153,50 +157,7 @@
         max-width:none!important;object-fit:cover!important;object-position:center center!important;
         border-radius:40% 0 0 44%!important;box-shadow:0 14px 40px rgba(20,66,42,.10)!important;
       }
-
-      /* Two moving lines centred in the title/body gap, matching About Us. */
-      .gallery-page .gallery-title-gap{
-        display:block!important;position:absolute!important;left:0!important;top:142px!important;
-        width:min(540px,98%)!important;height:58px!important;overflow:visible!important;
-        pointer-events:none!important;opacity:.96!important;
-      }
-      .gallery-page .gallery-title-gap:before{
-        content:""!important;position:absolute!important;left:6%!important;right:26%!important;
-        top:11px!important;height:2px!important;border-radius:999px!important;
-        background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.85),rgba(47,138,73,.12))!important;
-      }
-      .gallery-page .gallery-title-gap:after{
-        content:""!important;position:absolute!important;left:11%!important;top:6px!important;
-        width:11px!important;height:11px!important;border-radius:50%!important;
-        background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
-        box-shadow:0 0 0 4px rgba(109,181,223,.10)!important;
-        animation:gUpperTravel 4.6s ease-in-out infinite alternate!important;
-      }
-      .gallery-page .g-line{
-        position:absolute!important;left:8%!important;right:20%!important;top:auto!important;bottom:11px!important;
-        height:2px!important;background:linear-gradient(90deg,rgba(47,138,73,.14),rgba(247,216,91,.92),rgba(47,138,73,.16))!important;
-        border-radius:999px!important;
-      }
-      .gallery-page .g-line:before{
-        content:"A"!important;position:absolute!important;left:-2px!important;top:-14px!important;
-        width:28px!important;height:28px!important;display:grid!important;place-items:center!important;
-        border-radius:8px!important;background:#f1c84d!important;color:#285738!important;
-        font:800 13px/1 system-ui,sans-serif!important;box-shadow:0 4px 12px rgba(25,79,49,.08)!important;
-        animation:gBlockBob 2.7s ease-in-out infinite!important;
-      }
-      .gallery-page .g-runner{
-        top:-5px!important;left:44px!important;width:12px!important;height:12px!important;
-        background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
-        box-shadow:0 0 0 4px rgba(109,181,223,.10)!important;
-        animation:gLowerTravel 4.6s ease-in-out infinite alternate!important;
-      }
-      .gallery-page .g-star,.gallery-page .g-leaf{position:absolute!important;z-index:2!important;top:0!important}
-      .gallery-page .g-star{right:10%!important;font-size:20px!important}
-      .gallery-page .g-leaf{right:3%!important;top:1px!important;font-size:19px!important}
     }
-    @keyframes gUpperTravel{to{transform:translateX(230px) rotate(250deg)}}
-    @keyframes gLowerTravel{to{transform:translateX(235px) rotate(260deg)}}
-    @keyframes gBlockBob{50%{transform:translateY(-3px) rotate(-3deg)}}
 
     /* The Ofsted strip now uses the same dimensions/type scale as Home. */
     .gallery-page .stats-compact{
@@ -225,43 +186,16 @@
       .gallery-page .hero h1{font-size:46px!important}
       .gallery-page .hero-grid{width:min(1080px,calc(100% - 44px))!important}
       .gallery-page .hero-copy{grid-template-rows:16px 154px 76px 44px!important}
-      .gallery-page .gallery-title-gap{top:136px!important;width:min(500px,98%)!important}
     }
 
     /* Keep the same two-line treatment on mobile, without changing approved buttons/content. */
     @media (max-width:620px){
       .gallery-page .hero-copy{position:relative!important;grid-template-rows:14px 108px 46px auto 92px!important;row-gap:6px!important}
-      .gallery-page .gallery-title-gap{
-        position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:46px!important;
-        margin:2px 0 6px!important;overflow:visible!important;display:block!important;
-      }
-      .gallery-page .gallery-title-gap:before{
-        content:""!important;position:absolute!important;left:10%!important;right:28%!important;top:10px!important;height:2px!important;
-        background:linear-gradient(90deg,rgba(47,138,73,.12),rgba(247,216,91,.82),rgba(47,138,73,.12))!important;
-      }
-      .gallery-page .gallery-title-gap:after{
-        content:""!important;position:absolute!important;left:16%!important;top:5px!important;width:10px!important;height:10px!important;
-        border-radius:50%!important;background:linear-gradient(135deg,#6db5df 0 50%,#e87899 50% 100%)!important;
-        animation:gUpperTravelMobile 4s ease-in-out infinite alternate!important;
-      }
-      .gallery-page .g-line{position:absolute!important;left:10%!important;right:18%!important;top:27px!important;bottom:auto!important;width:auto!important;height:2px!important}
-      .gallery-page .g-line:before{width:24px!important;height:24px!important;top:-11px!important;font-size:11px!important}
-      .gallery-page .g-runner{width:10px!important;height:10px!important;top:-4px!important;left:32px!important;animation:gLowerTravelMobile 4s ease-in-out infinite alternate!important}
-      .gallery-page .g-star{right:12%!important;top:2px!important;font-size:18px!important}
-      .gallery-page .g-leaf{right:5%!important;top:3px!important;font-size:18px!important}
       .gallery-page .stats-compact{grid-template-columns:1fr 1fr!important;border-radius:20px!important}
       .gallery-page .stats-compact .stat-item{min-height:106px!important;padding:18px 8px!important;border-bottom:1px solid #eee9df!important}
       .gallery-page .stats-compact .stat-item:nth-child(2n){border-right:0!important}
       .gallery-page .stats-compact .stat-item:last-child{grid-column:1/-1!important;border-bottom:0!important;border-right:0!important}
     }
-    @media (max-width:420px){
-      .gallery-page .hero-copy{grid-template-rows:14px 104px 42px auto 92px!important}
-      .gallery-page .gallery-title-gap{height:42px!important;margin:1px 0 5px!important}
-      .gallery-page .gallery-title-gap:before{left:12%!important;right:30%!important;top:8px!important}
-      .gallery-page .g-line{left:12%!important;right:20%!important;top:24px!important}
-    }
-    @keyframes gUpperTravelMobile{to{transform:translateX(150px) rotate(220deg)}}
-    @keyframes gLowerTravelMobile{to{transform:translateX(170px) rotate(240deg)}}
 
   </style>
 
@@ -426,7 +360,7 @@
   }
   body.gallery-page .hero .eyebrow{margin:0 0 7px!important;}
   body.gallery-page .hero h1{margin:0 0 6px!important;}
-  body.gallery-page .gallery-title-gap{
+  body.gallery-page .gallery-mobile-single-animation{
     position:relative!important;
     width:100%!important;
     height:32px!important;
@@ -538,7 +472,7 @@
 @keyframes gmBob{from{transform:translateY(0)}to{transform:translateY(-7px)}}
 @keyframes gmHop{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-8px);opacity:.82}}
 @media (prefers-reduced-motion:reduce){
-  .gallery-page .gallery-magic-fill *, .gallery-page .gallery-title-gap *{animation:none!important}
+  .gallery-page .gallery-magic-fill *, .gallery-page .gallery-mobile-single-animation *{animation:none!important}
 }
 </style>
 
@@ -608,7 +542,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Gallery</div>
           <h1 id="kkHeroTitle">A Glimpse Into<br><span style="color:var(--green)">Our Nursery Life</span></h1>
-          <div class="gallery-title-gap" aria-hidden="true"><span class="g-line"><span class="g-runner"></span></span><span class="g-star">☆</span><span class="g-leaf">⌁</span></div>
+          <div class="gallery-mobile-single-animation" aria-hidden="true"><span class="gma-a">A</span><span class="gma-track"><span class="gma-dot"></span></span><span class="gma-star">☆</span></div>
           <p class="lead">Explore real moments and spaces from Kinder Kidz Day Nursery. Our gallery shows the warm, safe and inspiring environment where children learn, play and explore every single day.</p>
           <div class="hero-actions">
             <a class="btn primary visit-action" href="contact.html?mode=visit#enquiry-form"><span aria-hidden="true" class="btn-icon icon-calendar"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M16 3v4M8 3v4M3 10h18"></path><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span><span class="btn-label">Book a Visit</span></a>
@@ -830,7 +764,6 @@
   /* Kill every older DESKTOP title-gap animation. Mobile rules remain untouched. */
   html body .learning-desktop-gap-animation,
   html body .fees-desktop-gap-animation,
-  html body .gallery-title-gap,
   html body.contact-page .contact-title-gap,
   html body #kkHeroTitle>.kk-v86-animation-row,
   html body #kkHeroTitle>.kk-title-animation-line{
