@@ -85,7 +85,7 @@
         display:inline-block!important;margin:0!important;padding:0!important;
         white-space:nowrap!important;line-height:1!important;text-align:center!important;
       }
-      @media (min-width:981px){
+      @media (min-width:1181px), (min-width:981px) and (orientation:landscape){
         .btn.visit-action,.btn.enquire-action,.btn.contact-action,
         .hero-actions .btn,.cta-actions .btn,.header-visit,
         .parent-strip .actions .btn,.funding-card .hero-actions .btn,
@@ -96,7 +96,7 @@
       }
       /* v62: the header Book-a-Visit control is desktop-only.
          Never allow the global button-centering helper to reveal it on mobile. */
-      @media (max-width:980px){
+      @media (max-width:980px), (orientation:portrait) and (min-width:700px) and (max-width:1180px){
         .header-visit,.header-visit.visit-action,.nav>.header-visit,.nav>.desktop-only.header-visit{
           display:none!important;
           visibility:hidden!important;
@@ -120,7 +120,7 @@
         btn.dataset.kkButtonBaseFont=String(fs);
       }
       let size=parseFloat(btn.dataset.kkButtonBaseFont)||14;
-      const isMobile=!!(window.matchMedia&&window.matchMedia('(max-width:980px)').matches);
+      const isMobile=!!(window.matchMedia&&window.matchMedia('(max-width:980px), (orientation:portrait) and (min-width:700px) and (max-width:1180px)').matches);
       const min=isMobile?10.5:10.5;
       btn.style.setProperty('font-size',size+'px','important');
       const label=btn.querySelector('.btn-label');
@@ -143,7 +143,7 @@
      title, paragraph and Book a Visit / Enquire buttons in the same position. */
   let heroMaster=null;
   const heroInlineOriginals=new WeakMap();
-  function desktopHeroMode(){return !!(window.matchMedia&&window.matchMedia('(min-width:981px)').matches);}
+  function desktopHeroMode(){return !!(window.matchMedia&&window.matchMedia('(min-width:1181px), (min-width:981px) and (orientation:landscape)').matches);}
   /* Our Rooms owns its desktop hero geometry in rooms.html because French and
      Portuguese need four title rows. Do not force those titles into the
      three-row English box. */
