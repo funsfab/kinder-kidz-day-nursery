@@ -173,7 +173,57 @@
   /* MAIN CONTENT — use landscape width efficiently */
   html body.page-about .story-grid{grid-template-columns:.82fr 1.18fr!important;gap:20px!important;align-items:center!important}
   html body.page-about .stat-strip{grid-template-columns:repeat(3,minmax(0,1fr))!important}
-  html body.page-about .values-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  /* ABOUT ONLY — five value cards leave one landscape grid cell empty.
+     Use that exact sixth cell for a decorative animation. */
+  html body.page-about .values-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    position:relative!important;
+  }
+  html body.page-about .values-grid::after{
+    content:"☆   ♡   ✿";
+    grid-column:3;
+    grid-row:2;
+    align-self:stretch;
+    justify-self:stretch;
+    min-height:100%;
+    display:grid;
+    place-items:center;
+    border-left:1px dashed #d6dcd1;
+    color:#2f8a49;
+    font-size:30px;
+    letter-spacing:24px;
+    text-indent:24px;
+    background:
+      radial-gradient(circle at 20% 40%,#3c94bd 0 6px,transparent 7px),
+      radial-gradient(circle at 50% 58%,#ef7898 0 6px,transparent 7px),
+      radial-gradient(circle at 80% 38%,#e5b52d 0 6px,transparent 7px),
+      linear-gradient(90deg,transparent 8%,rgba(229,181,45,.48) 9% 90%,transparent 91%) 50% 42%/88% 2px no-repeat,
+      linear-gradient(90deg,transparent 16%,rgba(47,138,73,.28) 17% 83%,transparent 84%) 50% 61%/76% 2px no-repeat;
+    opacity:.86;
+    animation:kkAboutLandscapePlay 3.4s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+
+  @keyframes kkAboutLandscapePlay{
+    0%{
+      transform:translateY(5px) scale(.985);
+      background-position:
+        14% 43%,
+        47% 58%,
+        76% 40%,
+        50% 42%,
+        50% 61%;
+    }
+    100%{
+      transform:translateY(-5px) scale(1);
+      background-position:
+        24% 38%,
+        57% 53%,
+        87% 34%,
+        50% 42%,
+        50% 61%;
+    }
+  }
 
   html body .room-grid,
   html body .rooms-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
