@@ -359,8 +359,14 @@
   html body .footer-grid>.footer-brand,
   html body .footer-grid-v5>.footer-brand{
     grid-area:brand!important;
-    grid-column:auto!important;
     min-width:0!important;
+    width:100%!important;
+    justify-self:stretch!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
   }
 
   /* Semantic footer used by Home/About/Rooms/Learning */
