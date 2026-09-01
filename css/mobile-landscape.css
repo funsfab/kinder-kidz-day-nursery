@@ -173,120 +173,105 @@
   /* MAIN CONTENT — use landscape width efficiently */
   html body.page-about .story-grid{grid-template-columns:.82fr 1.18fr!important;gap:20px!important;align-items:center!important}
   html body.page-about .stat-strip{grid-template-columns:repeat(3,minmax(0,1fr))!important}
-  /* ABOUT ONLY — five value cards leave one landscape grid cell empty.
-     Use that exact sixth cell for a decorative animation. */
-  html body.page-about .values-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    position:relative!important;
-  }
-  html body.page-about .values-grid::after{
-    content:"☆   ♡   ✿";
-    grid-column:3;
-    grid-row:2;
-    align-self:stretch;
-    justify-self:stretch;
-    min-height:100%;
-    display:grid;
-    place-items:center;
-    border-left:1px dashed #d6dcd1;
-    color:#2f8a49;
-    font-size:30px;
-    letter-spacing:24px;
-    text-indent:24px;
-    background:
-      radial-gradient(circle at 20% 40%,#3c94bd 0 6px,transparent 7px),
-      radial-gradient(circle at 50% 58%,#ef7898 0 6px,transparent 7px),
-      radial-gradient(circle at 80% 38%,#e5b52d 0 6px,transparent 7px),
-      linear-gradient(90deg,transparent 8%,rgba(229,181,45,.48) 9% 90%,transparent 91%) 50% 42%/88% 2px no-repeat,
-      linear-gradient(90deg,transparent 16%,rgba(47,138,73,.28) 17% 83%,transparent 84%) 50% 61%/76% 2px no-repeat;
-    opacity:.86;
-    animation:kkAboutLandscapePlay 3.4s ease-in-out infinite alternate;
-    pointer-events:none;
-  }
-
-  @keyframes kkAboutLandscapePlay{
-    0%{
-      transform:translateY(5px) scale(.985);
-      background-position:
-        14% 43%,
-        47% 58%,
-        76% 40%,
-        50% 42%,
-        50% 61%;
-    }
-    100%{
-      transform:translateY(-5px) scale(1);
-      background-position:
-        24% 38%,
-        57% 53%,
-        87% 34%,
-        50% 42%,
-        50% 61%;
-    }
-  }
+  html body.page-about .values-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 
   html body .room-grid,
   html body .rooms-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
   html body .feature-grid,
   html body .feature-card{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 
-  /* HOME ONLY — landscape decoration beside Outdoor Learning. */
-  html body.page-home .feature-grid{
+  /* ROOMS PAGE — keep the five-card strip tidy in landscape and use the empty space decoratively. */
+  html body.page-rooms .feature-card{
     position:relative!important;
+    align-items:stretch!important;
   }
-  html body.page-home .feature-grid>.feature:last-child{
-    grid-column:1/-1!important;
+  html body.page-rooms .feature{
+    min-height:142px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
   }
-  html body.page-home .feature-grid::after{
-    content:"☆   ♡   ✿";
+  html body.page-rooms .feature:nth-child(2):after,
+  html body.page-rooms .feature:nth-child(4):after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    right:0!important;
+    top:16px!important;
+    bottom:16px!important;
+    width:1px!important;
+    background:#e9e4d8!important;
+  }
+  html body.page-rooms .feature:nth-child(4){grid-column:1!important;grid-row:2!important}
+  html body.page-rooms .feature:nth-child(5){grid-column:1/-1!important;grid-row:3!important}
+  html body.page-rooms .feature-card::after{
+    content:"●   ☆   ♡   ●\A      ✿";
+    white-space:pre;
     grid-column:2/4;
     grid-row:2;
     align-self:stretch;
     justify-self:stretch;
-    min-height:100%;
     display:grid;
     place-items:center;
-    border-radius:22px;
+    border-left:1px solid #e9e4d8;
+    border-bottom:1px solid #eee9df;
     color:#2f8a49;
-    font-size:31px;
-    letter-spacing:30px;
-    text-indent:30px;
+    font-size:28px;
+    line-height:1.55;
+    letter-spacing:14px;
+    text-indent:14px;
     background:
-      radial-gradient(circle at 18% 40%,#3c94bd 0 6px,transparent 7px),
-      radial-gradient(circle at 50% 58%,#ef7898 0 6px,transparent 7px),
-      radial-gradient(circle at 82% 38%,#e5b52d 0 6px,transparent 7px),
-      linear-gradient(90deg,transparent 7%,rgba(229,181,45,.48) 8% 91%,transparent 92%) 50% 42%/88% 2px no-repeat,
-      linear-gradient(90deg,transparent 14%,rgba(47,138,73,.28) 15% 84%,transparent 85%) 50% 61%/78% 2px no-repeat;
-    opacity:.86;
-    animation:kkHomeLandscapePlay 3.4s ease-in-out infinite alternate;
+      linear-gradient(90deg,transparent 13%,rgba(229,181,45,.48) 14% 86%,transparent 87%) 50% 40%/56% 2px no-repeat,
+      linear-gradient(90deg,transparent 22%,rgba(143,189,143,.42) 23% 77%,transparent 78%) 50% 68%/42% 2px no-repeat;
+    opacity:.9;
+    animation:kkRoomsFeaturePlay 3.4s ease-in-out infinite alternate;
     pointer-events:none;
   }
 
-  @keyframes kkHomeLandscapePlay{
-    0%{
-      transform:translateY(5px) scale(.985);
-      background-position:
-        12% 43%,
-        48% 58%,
-        78% 40%,
-        50% 42%,
-        50% 61%;
-    }
-    100%{
-      transform:translateY(-5px) scale(1);
-      background-position:
-        23% 38%,
-        56% 53%,
-        87% 34%,
-        50% 42%,
-        50% 61%;
-    }
-  }
   html body .photo-grid,
   html body .gallery-row,
   html body .experience-gallery,
   html body .gallery-highlights,
   html body .accent-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important}
+
+  /* ROOMS PAGE — the last gallery image leaves a wide second-row gap in landscape.
+     Turn that exact gap into the same playful decorative zone instead of blank space. */
+  html body.page-rooms .gallery-row{
+    position:relative!important;
+    align-items:stretch!important;
+  }
+  html body.page-rooms .gallery-row::after{
+    content:"☁  🌈  A  ★  ◐  ☆  ☁";
+    grid-column:2/4;
+    grid-row:2;
+    align-self:stretch;
+    justify-self:stretch;
+    min-height:116px;
+    display:grid;
+    place-items:center;
+    border:1px solid #ecf0e3;
+    border-radius:18px;
+    background:
+      linear-gradient(180deg,#fafcf2 0%,#fffdf3 100%),
+      linear-gradient(90deg,rgba(143,189,143,.38),rgba(143,189,143,.38)) 50% 64%/72% 2px no-repeat;
+    box-shadow:0 8px 20px rgba(23,70,42,.04);
+    color:#2f8a49;
+    font-size:26px;
+    letter-spacing:10px;
+    animation:kkRoomsGalleryTrail 4s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+
+  @keyframes kkRoomsFeaturePlay{
+    0%{transform:translateY(4px) scale(.988);background-position:50% 40%,50% 68%}
+    100%{transform:translateY(-4px) scale(1);background-position:54% 36%,46% 70%}
+  }
+
+  @keyframes kkRoomsGalleryTrail{
+    0%{transform:translateY(4px) scale(.99)}
+    100%{transform:translateY(-4px) scale(1)}
+  }
   html body.page-parents .parent-values{grid-template-columns:repeat(3,minmax(0,1fr))!important}
   html body.page-parents .support-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
   html body .testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
