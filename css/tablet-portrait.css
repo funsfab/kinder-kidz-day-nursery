@@ -343,17 +343,36 @@
     min-width:170px!important;
   }
 
-  /* FOOTER — balanced 2-column tablet portrait layout */
+  /* FOOTER — tablet portrait: brand above, then Quick Links | Contact Us | Information */
   html body .footer-grid,
   html body .footer-grid-v5{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    gap:24px 28px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1.18fr) minmax(0,1.08fr) minmax(0,.92fr)!important;
+    grid-template-areas:
+      "brand brand brand"
+      "quick contact info"!important;
+    column-gap:22px!important;
+    row-gap:18px!important;
     align-items:start!important;
   }
-  html body .footer-grid .footer-brand,
-  html body .footer-grid-v5 .footer-brand{
-    grid-column:1/-1!important;
+
+  html body .footer-grid>.footer-brand,
+  html body .footer-grid-v5>.footer-brand{
+    grid-area:brand!important;
+    grid-column:auto!important;
+    min-width:0!important;
   }
+
+  /* Semantic footer used by Home/About/Rooms/Learning */
+  html body .footer-grid-v5>.quicklinks-group{grid-area:quick!important;min-width:0!important}
+  html body .footer-grid-v5>.footer-contact-col{grid-area:contact!important;min-width:0!important}
+  html body .footer-grid-v5>.footer-info{grid-area:info!important;min-width:0!important}
+
+  /* Same visual order for Fees/Gallery/Parents/Contact */
+  html body .footer-grid:not(.footer-grid-v5)>:nth-child(2){grid-area:quick!important;min-width:0!important}
+  html body .footer-grid:not(.footer-grid-v5)>:nth-child(3){grid-area:info!important;min-width:0!important}
+  html body .footer-grid:not(.footer-grid-v5)>:nth-child(4){grid-area:contact!important;min-width:0!important}
+
   html body footer .footer-brand img{
     margin-left:auto!important;
     margin-right:auto!important;
@@ -363,10 +382,24 @@
     margin-right:auto!important;
     text-align:center!important;
   }
+
   html body .quicklinks-columns,
   html body .footer-links-2{
     grid-template-columns:1fr 1fr!important;
+    column-gap:14px!important;
   }
+
+  html body footer .footer-title,
+  html body footer h3{
+    margin-top:0!important;
+  }
+
+  html body footer .footer-contact-col .footer-list,
+  html body .footer-grid:not(.footer-grid-v5)>:nth-child(4) .footer-list{
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+  }
+
   html body .footer-bottom{
     display:flex!important;
     justify-content:space-between!important;
