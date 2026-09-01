@@ -179,6 +179,59 @@
   html body .rooms-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
   html body .feature-grid,
   html body .feature-card{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+
+  /* HOME ONLY — landscape decoration beside Outdoor Learning. */
+  html body.page-home .feature-grid{
+    position:relative!important;
+  }
+  html body.page-home .feature-grid>.feature:last-child{
+    grid-column:1/-1!important;
+  }
+  html body.page-home .feature-grid::after{
+    content:"☆   ♡   ✿";
+    grid-column:2/4;
+    grid-row:2;
+    align-self:stretch;
+    justify-self:stretch;
+    min-height:100%;
+    display:grid;
+    place-items:center;
+    border-radius:22px;
+    color:#2f8a49;
+    font-size:31px;
+    letter-spacing:30px;
+    text-indent:30px;
+    background:
+      radial-gradient(circle at 18% 40%,#3c94bd 0 6px,transparent 7px),
+      radial-gradient(circle at 50% 58%,#ef7898 0 6px,transparent 7px),
+      radial-gradient(circle at 82% 38%,#e5b52d 0 6px,transparent 7px),
+      linear-gradient(90deg,transparent 7%,rgba(229,181,45,.48) 8% 91%,transparent 92%) 50% 42%/88% 2px no-repeat,
+      linear-gradient(90deg,transparent 14%,rgba(47,138,73,.28) 15% 84%,transparent 85%) 50% 61%/78% 2px no-repeat;
+    opacity:.86;
+    animation:kkHomeLandscapePlay 3.4s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+
+  @keyframes kkHomeLandscapePlay{
+    0%{
+      transform:translateY(5px) scale(.985);
+      background-position:
+        12% 43%,
+        48% 58%,
+        78% 40%,
+        50% 42%,
+        50% 61%;
+    }
+    100%{
+      transform:translateY(-5px) scale(1);
+      background-position:
+        23% 38%,
+        56% 53%,
+        87% 34%,
+        50% 42%,
+        50% 61%;
+    }
+  }
   html body .photo-grid,
   html body .gallery-row,
   html body .experience-gallery,
