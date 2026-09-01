@@ -97,13 +97,18 @@
     left:auto!important;
     right:0!important;
     top:84px!important;
-    width:min(42vw,320px)!important;
+    width:min(44vw,330px)!important;
+    height:auto!important;
+    min-height:0!important;
     max-height:calc(100vh - 84px)!important;
     overflow:auto!important;
+    flex:none!important;
     flex-direction:column!important;
     align-items:stretch!important;
+    justify-content:flex-start!important;
+    align-content:stretch!important;
     gap:0!important;
-    padding:13px 18px 18px!important;
+    padding:8px 16px 12px!important;
     background:#fffdf7!important;
     border-left:1px solid #e9e5dc!important;
     border-bottom:1px solid #e9e5dc!important;
@@ -113,11 +118,26 @@
   }
   html body .navlinks.open{display:flex!important}
   html body .navlinks a{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
     width:100%!important;
-    padding:10px 4px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:9px 12px!important;
     font-size:14px!important;
     line-height:1.25!important;
     text-align:left!important;
+    white-space:normal!important;
+    position:relative!important;
+  }
+  html body .navlinks a.active:after,
+  html body .navlinks a:hover:after{
+    left:12px!important;
+    right:auto!important;
+    bottom:3px!important;
+    width:40px!important;
+    height:2px!important;
   }
 
   /* HERO — one clean column in tablet portrait */
