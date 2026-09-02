@@ -377,6 +377,45 @@
   html body .gallery-highlights,
   html body .accent-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important}
 
+  /* GALLERY PAGE — mobile landscape only: fill the final empty photo-grid cell
+     with a soft semi-transparent nursery animation. */
+  html body.page-gallery .photo-grid{
+    position:relative!important;
+    align-items:stretch!important;
+  }
+  html body.page-gallery .photo-grid::after{
+    content:"☆   ♡   ✿\A   •   ☆   •";
+    white-space:pre;
+    grid-column:3;
+    grid-row:3;
+    align-self:stretch;
+    justify-self:stretch;
+    min-height:190px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(47,138,73,.12);
+    border-radius:18px;
+    color:rgba(47,138,73,.55);
+    font-size:27px;
+    line-height:1.6;
+    letter-spacing:12px;
+    text-indent:12px;
+    background:
+      radial-gradient(circle at 18% 24%,rgba(112,181,212,.20) 0 7px,transparent 8px),
+      radial-gradient(circle at 80% 28%,rgba(247,216,91,.22) 0 7px,transparent 8px),
+      radial-gradient(circle at 72% 72%,rgba(233,121,159,.18) 0 7px,transparent 8px),
+      linear-gradient(135deg,rgba(255,253,247,.72),rgba(242,247,233,.52));
+    box-shadow:0 8px 20px rgba(23,70,42,.03);
+    opacity:.72;
+    animation:kkGalleryLandscapePlay 3.6s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+
+  @keyframes kkGalleryLandscapePlay{
+    0%{transform:translateY(4px) scale(.99);opacity:.64}
+    100%{transform:translateY(-4px) scale(1);opacity:.78}
+  }
+
   /* ROOMS PAGE — the last gallery image leaves a wide second-row gap in landscape.
      Turn that exact gap into the same playful decorative zone instead of blank space. */
   html body.page-rooms .gallery-row{
