@@ -30,22 +30,26 @@
       line-height:1.5;
     }
 
-    /* ---------- SAME TOP BAR + HEADER AS APPROVED PAGES ---------- */
-    .fees-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
-    .fees-page .topbar .container{
-      display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-      gap:22px;padding:7px 0;font-size:13px;line-height:1.25;
-      color:#294633;font-weight:600;
-    }
-    .fees-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
-    .fees-page .nav{height:82px;gap:24px;align-items:center}
-    .fees-page .brand{min-width:198px;display:flex;align-items:center}
-    .fees-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
-    .fees-page .navlinks{gap:21px;font-size:13px;font-weight:700;line-height:1.2}
-    .fees-page .navlinks a{padding:9px 0;white-space:nowrap}
-    .fees-page .nav>.btn.primary.desktop-only{
-      padding:12px 20px;min-height:42px;font-size:14px;line-height:1;
-      gap:8px;background:var(--fees-green);border-color:var(--fees-green);color:#fff;
+    /* ---------- DESKTOP HEADER ONLY ----------
+       Responsive header/menu geometry comes from the same shared files as Home:
+       style.css, tablet-portrait.css and mobile-landscape.css. */
+    @media (min-width:981px){
+      .fees-page .topbar{background:#fbf6eb;border-bottom:1px solid rgba(23,106,59,.09)}
+      .fees-page .topbar .container{
+        display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+        gap:22px;padding:7px 0;font-size:13px;line-height:1.25;
+        color:#294633;font-weight:600;
+      }
+      .fees-page .topbar span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+      .fees-page .nav{height:82px;gap:24px;align-items:center}
+      .fees-page .brand{min-width:198px;display:flex;align-items:center}
+      .fees-page .brand img{width:198px;height:64px;object-fit:contain;object-position:left center}
+      .fees-page .navlinks{gap:21px;font-size:13px;font-weight:700;line-height:1.2}
+      .fees-page .navlinks a{padding:9px 0;white-space:nowrap}
+      .fees-page .nav>.btn.primary.desktop-only{
+        padding:12px 20px;min-height:42px;font-size:14px;line-height:1;
+        gap:8px;background:var(--fees-green);border-color:var(--fees-green);color:#fff;
+      }
     }
 
     /* ---------- SAME HERO GEOMETRY / TYPE SCALE ---------- */
@@ -263,11 +267,6 @@
     }
 
     @media(max-width:620px){
-      .fees-page .topbar{display:none}
-      .fees-page .nav{height:70px;gap:10px}
-      .fees-page .brand{min-width:0}
-      .fees-page .brand img{width:156px;height:52px}
-      .fees-page .navlinks{top:70px;max-height:calc(100vh - 70px);width:min(46vw,190px)}
       .fees-page .hero{padding:4px 0 5px}
       .fees-page .hero-grid{gap:10px}
       .fees-page .hero-copy{padding-top:0}
@@ -302,7 +301,6 @@
     }
 
     @media(max-width:420px){
-      .fees-page .navlinks{width:min(47vw,176px)}
       .fees-page .accent-grid{grid-template-columns:1fr}
       .fees-page .fees-play-card{grid-column:auto}
     }
@@ -319,6 +317,7 @@
       --kk-eyebrow-font:12px;--kk-hero-title-font:50px;--kk-hero-body-font:15px;
       --kk-hero-line:1.04;
     }
+    @media (min-width:981px){
     .fees-page header{position:sticky!important;top:0!important;z-index:50!important;background:rgba(255,253,247,.96)!important;backdrop-filter:blur(10px)!important;border-bottom:1px solid rgba(23,106,59,.08)!important}
     .fees-page .topbar{background:#fbf6eb!important;border-bottom:1px solid rgba(23,106,59,.09)!important}
     .fees-page .topbar .container{width:min(1180px,calc(100% - 40px))!important;min-height:34px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:22px!important;padding:7px 0!important;font-size:var(--kk-topbar-font)!important;line-height:1.25!important;color:#294633!important;font-weight:600!important}
@@ -333,6 +332,7 @@
     .fees-page .btn-icon{width:16px!important;height:16px!important;display:inline-grid!important;place-items:center!important;flex:0 0 16px!important;line-height:0!important}
     .fees-page .btn-icon svg{display:block!important;width:16px!important;height:16px!important}
     .fees-page .btn-label{display:inline-block!important;white-space:nowrap!important;line-height:1!important}
+    }
     .fees-page .btn.visit-action{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
     .fees-page .btn.enquire-action{background:#fff!important;color:var(--green)!important;border-color:var(--green)!important}
 
@@ -365,106 +365,7 @@
       .fees-page .title-gap{top:128px!important;width:330px!important}
     }
 
-    /* Same compact PORTRAIT header / hero used on approved pages.
-       Landscape is intentionally left to css/mobile-landscape.css so Fees
-       uses the exact same language/menu geometry as Home. */
-    @media (orientation:portrait) and (max-width:980px){
-      .fees-page .topbar{display:none!important}
-      .fees-page .nav{
-        width:min(940px,calc(100% - 48px))!important;
-        height:84px!important;
-        min-height:84px!important;
-        margin-left:auto!important;
-        margin-right:auto!important;
-        padding:0!important;
-        display:flex!important;
-        align-items:center!important;
-        gap:12px!important;
-      }
-      .fees-page .brand{
-        min-width:0!important;
-        width:auto!important;
-        flex:0 1 auto!important;
-        margin-right:auto!important;
-      }
-      .fees-page .brand img{
-        width:170px!important;
-        height:58px!important;
-        object-fit:contain!important;
-        object-position:left center!important;
-      }
-      .fees-page .header-visit.visit-action{display:none!important;visibility:hidden!important;pointer-events:none!important}
-      .fees-page .menu-btn{
-        display:grid!important;
-        margin-left:8px!important;
-        width:46px!important;
-        height:46px!important;
-        min-width:46px!important;
-        border-radius:12px!important;
-        padding:7px!important;
-        background:#f3f7ec!important;
-        color:var(--green)!important;
-        place-items:center!important;
-      }
-      .fees-page .menu-btn svg{width:28px!important;height:28px!important}
-      .fees-page .navlinks{
-        display:none!important;
-        position:fixed!important;
-        left:auto!important;
-        right:0!important;
-        top:84px!important;
-        width:min(44vw,330px)!important;
-        height:auto!important;
-        min-height:0!important;
-        max-height:calc(100vh - 84px)!important;
-        overflow:auto!important;
-        flex:none!important;
-        flex-direction:column!important;
-        align-items:stretch!important;
-        justify-content:flex-start!important;
-        align-content:stretch!important;
-        gap:0!important;
-        padding:8px 16px 12px!important;
-        background:#fffdf7!important;
-        border-left:1px solid #e9e5dc!important;
-        border-bottom:1px solid #e9e5dc!important;
-        border-radius:0 0 0 20px!important;
-        box-shadow:-14px 18px 34px rgba(0,0,0,.12)!important;
-        z-index:300!important;
-      }
-      .fees-page .navlinks.open{display:flex!important}
-      .fees-page .navlinks a{
-        display:flex!important;
-        align-items:center!important;
-        justify-content:flex-start!important;
-        width:100%!important;
-        min-height:42px!important;
-        margin:0!important;
-        padding:9px 12px!important;
-        font-size:14px!important;
-        line-height:1.25!important;
-        text-align:left!important;
-        white-space:normal!important;
-        position:relative!important;
-      }
-      .fees-page .navlinks a.active:after,
-      .fees-page .navlinks a:hover:after{
-        left:12px!important;
-        right:auto!important;
-        bottom:3px!important;
-        width:40px!important;
-        height:2px!important;
-      }
-      .fees-page .hero-grid{grid-template-columns:1fr!important}
-    }
     @media (orientation:portrait) and (max-width:620px){
-      .fees-page .nav{width:calc(100% - 28px)!important;height:70px!important;gap:10px!important}
-      .fees-page .brand img{width:154px!important;height:52px!important}
-      .fees-page .menu-btn{margin-left:8px!important;width:44px!important;height:44px!important;min-width:44px!important;border-radius:12px!important;padding:8px!important;background:#f3f7ec!important;color:var(--green)!important}
-      .fees-page .menu-btn svg{width:26px!important;height:26px!important}
-      .fees-page .navlinks{position:fixed!important;left:auto!important;right:0!important;top:70px!important;width:min(46vw,190px)!important;max-height:calc(100vh - 70px)!important;overflow:auto!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;padding:9px 12px 14px!important;background:#fffdf7!important;border-left:1px solid #e9e5dc!important;border-bottom:1px solid #e9e5dc!important;border-radius:0 0 0 18px!important;box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important}
-      .fees-page .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
-      .fees-page .navlinks a.active:after,.fees-page .navlinks a:hover:after{left:0!important;right:0!important;bottom:1px!important;width:auto!important;height:2px!important}
       .fees-page .hero{padding:0!important;min-height:0!important;background:linear-gradient(120deg,#fffef9 0%,#fffdf7 58%,#eef7dc 100%)!important;border-bottom:1px solid #e8eadf!important}
       .fees-page .hero-grid{width:calc(100% - 28px)!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:14px!important;margin:auto!important;padding:4px 0 8px!important;min-height:0!important}
       .fees-page .hero-copy{position:relative!important;width:100%!important;min-height:0!important;display:grid!important;grid-template-rows:14px 108px 42px 92px 92px!important;row-gap:6px!important;align-content:start!important;padding:0!important;margin:0!important}
@@ -484,7 +385,6 @@
       .fees-page .dual-columns{gap:8px!important}
     }
     @media(max-width:420px){
-      .fees-page .navlinks{width:min(47vw,176px)!important}
       .fees-page .hero-grid{width:calc(100% - 22px)!important}
       .fees-page .hero-copy{grid-template-rows:14px 104px 40px 92px 92px!important}
       .fees-page .hero h1,.fees-page .hero-copy h1{font-size:32px!important}
@@ -1314,5 +1214,6 @@
 })();
 </script>
 <link rel="stylesheet" href="css/tablet-portrait.css" data-kk-tablet-portrait="1">
+<link rel="stylesheet" href="css/mobile-landscape.css" data-kk-mobile-landscape="1">
 </body>
 </html>
