@@ -224,6 +224,57 @@
       .fees-page .footer-brand{grid-column:1/-1}
     }
 
+    @media (max-width:980px) and (orientation:landscape) and (max-height:500px){
+      .fees-page .accent-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:0;
+        border:1px solid rgba(23,106,59,.10);
+        border-radius:26px;
+        overflow:hidden;
+        background:#fff;
+      }
+      .fees-page .accent-grid > .card{
+        min-height:164px;
+        margin:0;
+        border:0;
+        border-right:1px solid rgba(23,106,59,.10);
+        border-bottom:1px solid rgba(23,106,59,.10);
+        border-radius:0;
+        box-shadow:none;
+      }
+      .fees-page .accent-grid > .card:nth-child(3){border-right:0}
+      .fees-page .accent-grid > .card:nth-child(4){
+        grid-column:1;
+        grid-row:2;
+        border-bottom:0;
+      }
+      .fees-page .fees-play-card{
+        grid-column:2 / 4;
+        grid-row:2;
+        min-height:164px !important;
+        height:164px;
+        border-right:0;
+        border-bottom:0;
+        border-left:1px solid rgba(23,106,59,.10);
+        background:linear-gradient(180deg,#fffaf0,#f2f7e9);
+      }
+      .fees-page .fees-play-card::before{
+        left:7%;
+        right:7%;
+        bottom:34px;
+        height:22px;
+      }
+      .fees-page .play-cloud{transform:scale(.92)}
+      .fees-page .cloud-one{left:10%;top:18px}
+      .fees-page .cloud-two{right:9%;top:20px;transform:scale(.72)}
+      .fees-page .fee-rainbow{left:12%;bottom:18px;font-size:38px}
+      .fees-page .fee-block{bottom:22px;width:34px;height:34px;font-size:20px}
+      .fees-page .block-one{left:38%}
+      .fees-page .block-two{left:50%}
+      .fees-page .fee-ball{right:21%;bottom:24px;width:32px;height:32px}
+      .fees-page .fee-star{right:10%;bottom:32px;font-size:24px}
+    }
+
     @media(max-width:620px){
       .fees-page .topbar{display:none}
       .fees-page .nav{height:70px;gap:10px}
@@ -1195,6 +1246,5 @@
 })();
 </script>
 <link rel="stylesheet" href="css/tablet-portrait.css" data-kk-tablet-portrait="1">
-<link rel="stylesheet" href="css/mobile-landscape.css" data-kk-mobile-landscape="1">
 </body>
 </html>
