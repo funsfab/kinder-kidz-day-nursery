@@ -365,8 +365,10 @@
       .fees-page .title-gap{top:128px!important;width:330px!important}
     }
 
-    /* Same compact mobile header / hero used on approved pages. */
-    @media (max-width:980px){
+    /* Same compact PORTRAIT header / hero used on approved pages.
+       Landscape is intentionally left to css/mobile-landscape.css so Fees
+       uses the exact same language/menu geometry as Home. */
+    @media (orientation:portrait) and (max-width:980px){
       .fees-page .topbar{display:none!important}
       .fees-page .nav{
         width:min(940px,calc(100% - 48px))!important;
@@ -394,7 +396,7 @@
       .fees-page .header-visit.visit-action{display:none!important;visibility:hidden!important;pointer-events:none!important}
       .fees-page .menu-btn{
         display:grid!important;
-        margin-left:6px!important;
+        margin-left:8px!important;
         width:46px!important;
         height:46px!important;
         min-width:46px!important;
@@ -455,10 +457,10 @@
       }
       .fees-page .hero-grid{grid-template-columns:1fr!important}
     }
-    @media (max-width:620px){
+    @media (orientation:portrait) and (max-width:620px){
       .fees-page .nav{width:calc(100% - 28px)!important;height:70px!important;gap:10px!important}
-      .fees-page .brand img{width:156px!important;height:52px!important}
-      .fees-page .menu-btn{width:40px!important;height:40px!important;border-radius:11px!important;padding:5px!important;background:#f3f7ec!important;color:var(--green)!important}
+      .fees-page .brand img{width:154px!important;height:52px!important}
+      .fees-page .menu-btn{margin-left:8px!important;width:44px!important;height:44px!important;min-width:44px!important;border-radius:12px!important;padding:8px!important;background:#f3f7ec!important;color:var(--green)!important}
       .fees-page .menu-btn svg{width:26px!important;height:26px!important}
       .fees-page .navlinks{position:fixed!important;left:auto!important;right:0!important;top:70px!important;width:min(46vw,190px)!important;max-height:calc(100vh - 70px)!important;overflow:auto!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;padding:9px 12px 14px!important;background:#fffdf7!important;border-left:1px solid #e9e5dc!important;border-bottom:1px solid #e9e5dc!important;border-radius:0 0 0 18px!important;box-shadow:-12px 16px 30px rgba(0,0,0,.10)!important}
       .fees-page .navlinks a{font-size:12.5px!important;padding:7px 3px!important;line-height:1.24!important}
