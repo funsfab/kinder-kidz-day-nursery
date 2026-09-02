@@ -494,7 +494,48 @@
     0%{transform:translateY(4px) scale(.99);background-position:50% 42%,50% 66%}
     100%{transform:translateY(-4px) scale(1);background-position:53% 39%,47% 69%}
   }
-  html body.page-parents .parent-values{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  /* PARENTS PAGE — five value cards leave one empty landscape cell after Flexible & Supportive. */
+  html body.page-parents .parent-values{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    position:relative!important;
+    align-items:stretch!important;
+  }
+  html body.page-parents .parent-values::after{
+    content:"☆   ♡   ✿";
+    grid-column:3;
+    grid-row:2;
+    align-self:stretch;
+    justify-self:stretch;
+    min-height:100%;
+    display:grid;
+    place-items:center;
+    border-left:1px solid rgba(23,106,59,.10);
+    color:#2f8a49;
+    font-size:30px;
+    letter-spacing:22px;
+    text-indent:22px;
+    background:
+      radial-gradient(circle at 20% 40%,rgba(60,148,189,.72) 0 6px,transparent 7px),
+      radial-gradient(circle at 50% 58%,rgba(239,120,152,.68) 0 6px,transparent 7px),
+      radial-gradient(circle at 80% 38%,rgba(229,181,45,.72) 0 6px,transparent 7px),
+      linear-gradient(90deg,transparent 10%,rgba(229,181,45,.34) 11% 89%,transparent 90%) 50% 42%/80% 2px no-repeat,
+      linear-gradient(90deg,transparent 22%,rgba(47,138,73,.24) 23% 77%,transparent 78%) 50% 66%/56% 2px no-repeat;
+    opacity:.76;
+    animation:kkParentsValuesPlay 3.4s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+
+  @keyframes kkParentsValuesPlay{
+    0%{
+      transform:translateY(4px) scale(.988);
+      background-position:15% 43%,47% 58%,76% 40%,50% 42%,50% 66%;
+    }
+    100%{
+      transform:translateY(-4px) scale(1);
+      background-position:24% 38%,57% 53%,87% 34%,50% 42%,50% 66%;
+    }
+  }
+
   html body.page-parents .support-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
   html body .testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   html body .price-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
